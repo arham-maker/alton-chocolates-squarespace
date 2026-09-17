@@ -15,18 +15,27 @@
     var closeBtn = document.querySelector("[data-announcement-close]");
     if (!bar || !closeBtn) return;
 
+    function dismiss() {
+      bar.hidden = true;
+      bar.setAttribute("hidden", "");
+      bar.classList.add("is-dismissed");
+      bar.style.setProperty("display", "none", "important");
+      try {
+        sessionStorage.setItem("alton-announcement-dismissed", "1");
+      } catch (e) {}
+    }
+
     try {
       if (sessionStorage.getItem("alton-announcement-dismissed") === "1") {
-        bar.hidden = true;
+        dismiss();
         return;
       }
     } catch (e) {}
 
-    closeBtn.addEventListener("click", function () {
-      bar.hidden = true;
-      try {
-        sessionStorage.setItem("alton-announcement-dismissed", "1");
-      } catch (e) {}
+    closeBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dismiss();
     });
   }
 
