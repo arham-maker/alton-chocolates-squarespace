@@ -249,4 +249,5 @@
 </section>
 
 {@|apply contact-section.block}
+{@|apply testimonials.block}
 {@|apply newsletter.block}

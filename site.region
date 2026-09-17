@@ -88,7 +88,12 @@ html,body\{margin:0!important;padding:0!important;background:#F5F2EC!important;c
 .banner-section__side\{display:none!important\}
 .contact-section\{display:grid!important;grid-template-columns:1fr 1fr!important;gap:60px!important;padding:80px 100px!important;align-items:start!important\}
 .testimonials\{padding:80px 100px!important;text-align:center!important;background:#f7f5f0!important\}
-.testimonials__track\{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:40px!important;margin-top:40px!important;position:relative!important\}
+.testimonials__slider\{position:relative!important;display:grid!important;grid-template-columns:54px 1fr 54px!important;align-items:center!important;gap:16px!important;margin:40px auto 0!important;max-width:1240px!important\}
+.testimonials__viewport\{overflow:hidden!important;width:100%!important\}
+.testimonials__track\{display:flex!important;gap:40px!important;margin:0!important;will-change:transform!important\}
+.testimonial-card\{flex:0 0 calc((100% - 80px)/3)!important;min-width:0!important;display:flex!important;flex-direction:column!important;gap:20px!important;align-items:center!important\}
+.testimonial-card__quote\{font-family:"Playfair Display",Georgia,serif!important;font-style:italic!important;font-size:22px!important;line-height:1.5!important;color:#2F1A0D!important\}
+.testimonials__nav\{width:54px!important;height:54px!important;border-radius:50%!important;border:1px solid rgba(47,26,13,.2)!important;background:rgba(255,255,255,.85)!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;position:static!important;transform:none!important\}
 .testimonial-card__quote\{font-family:"Playfair Display",Georgia,serif!important;font-style:italic!important;font-size:22px!important;line-height:1.5!important;color:#2F1A0D!important\}
 .newsletter\{padding:70px 100px!important;text-align:center!important;background:rgba(236,215,208,.35)!important\}
 .site-footer\{background:#F5F2EC!important;padding:60px 100px 30px!important;border-top:1px solid #F0E8E0!important\}

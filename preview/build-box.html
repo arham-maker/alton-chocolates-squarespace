@@ -304,16 +304,57 @@
 
 
     <section class="testimonials" aria-labelledby="testimonials-heading" data-testimonials>
-      <p class="label">Kind words from our clients</p>
-      <h2 id="testimonials-heading" class="heading-lg">Testimonials</h2>
+  <p class="label">Kind words from our clients</p>
+  <h2 id="testimonials-heading" class="heading-lg">Testimonials</h2>
+
+  <div class="testimonials__slider">
+    <button type="button" class="testimonials__nav testimonials__nav--prev" data-testimonials-prev aria-label="Previous testimonials">
+      <img src="../assets/icons/arrow-left.svg" alt="" width="20" height="20">
+    </button>
+
+    <div class="testimonials__viewport">
       <div class="testimonials__track" data-testimonials-track>
-        <button type="button" class="testimonials__nav testimonials__nav--prev" data-testimonials-prev aria-label="Previous"><img src="../assets/icons/arrow-left.svg" alt="" width="20" height="20"></button>
-        <article class="testimonial-card"><p class="testimonial-card__quote">Sample text goes here</p><p class="testimonial-card__name">— Jamie L.</p></article>
-        <article class="testimonial-card"><p class="testimonial-card__quote">Sample text goes here</p><p class="testimonial-card__name">— Morgan S.</p></article>
-        <article class="testimonial-card"><p class="testimonial-card__quote">Sample text goes here</p><p class="testimonial-card__name">— Riley T.</p></article>
-        <button type="button" class="testimonials__nav testimonials__nav--next" data-testimonials-next aria-label="Next"><img src="../assets/icons/chevron-right.svg" alt="" width="20" height="20"></button>
+        
+                  {.section excerpt}{excerpt}
+                
+              </p>
+              <p class="testimonial-card__name">— {title}</p>
+            </article>
+          
+        {.or}
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Sample text goes here”</p>
+            <p class="testimonial-card__name">— Jamie L.</p>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Sample text goes here”</p>
+            <p class="testimonial-card__name">— Morgan S.</p>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Sample text goes here”</p>
+            <p class="testimonial-card__name">— Riley T.</p>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Every box feels like a celebration.”</p>
+            <p class="testimonial-card__name">— Avery K.</p>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“The bonbons are pure artistry.”</p>
+            <p class="testimonial-card__name">— Sam P.</p>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-card__quote">“Our go-to gift for every occasion.”</p>
+            <p class="testimonial-card__name">— Jordan M.</p>
+          </article>
+        
       </div>
-    </section>
+    </div>
+
+    <button type="button" class="testimonials__nav testimonials__nav--next" data-testimonials-next aria-label="Next testimonials">
+      <img src="../assets/icons/arrow-right-dark.svg" alt="" width="20" height="20">
+    </button>
+  </div>
+</section>
 
     <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
   <div class="newsletter__inner">

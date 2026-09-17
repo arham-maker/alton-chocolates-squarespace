@@ -256,17 +256,87 @@
   }
 
   function initTestimonials() {
-    var track = document.querySelector("[data-testimonials-track]");
-    if (!track) return;
-    var prev = document.querySelector("[data-testimonials-prev]");
-    var next = document.querySelector("[data-testimonials-next]");
-    function scrollByCard(dir) {
-      var card = track.querySelector(".testimonial-card");
-      var amount = card ? card.getBoundingClientRect().width + 40 : 320;
-      track.scrollBy({ left: dir * amount, behavior: "smooth" });
-    }
-    if (prev) prev.addEventListener("click", function () { scrollByCard(-1); });
-    if (next) next.addEventListener("click", function () { scrollByCard(1); });
+    document.querySelectorAll("[data-testimonials]").forEach(function (section) {
+      var track = section.querySelector("[data-testimonials-track]");
+      var prev = section.querySelector("[data-testimonials-prev]");
+      var next = section.querySelector("[data-testimonials-next]");
+      if (!track) return;
+
+      var cards = Array.prototype.slice.call(track.querySelectorAll(".testimonial-card"));
+      if (!cards.length) return;
+
+      var index = 0;
+      var timer = null;
+
+      function perView() {
+        if (window.matchMedia("(max-width: 640px)").matches) return 1;
+        if (window.matchMedia("(max-width: 900px)").matches) return 2;
+        return 3;
+      }
+
+      function maxIndex() {
+        return Math.max(0, cards.length - perView());
+      }
+
+      function goTo(nextIndex, animate) {
+        var max = maxIndex();
+        if (nextIndex < 0) nextIndex = max;
+        if (nextIndex > max) nextIndex = 0;
+        index = nextIndex;
+
+        var card = cards[0];
+        var styles = window.getComputedStyle(track);
+        var gap = parseFloat(styles.columnGap || styles.gap) || 40;
+        var step = card.getBoundingClientRect().width + gap;
+        track.style.transition = animate === false ? "none" : "transform 0.45s ease";
+        track.style.transform = "translate3d(" + -(index * step) + "px, 0, 0)";
+      }
+
+      function refresh() {
+        goTo(Math.min(index, maxIndex()), false);
+      }
+
+      if (prev) {
+        prev.addEventListener("click", function () {
+          goTo(index - 1);
+          restartAuto();
+        });
+      }
+      if (next) {
+        next.addEventListener("click", function () {
+          goTo(index + 1);
+          restartAuto();
+        });
+      }
+
+      // swipe support
+      var startX = 0;
+      var dragging = false;
+      track.addEventListener("touchstart", function (e) {
+        if (!e.touches.length) return;
+        startX = e.touches[0].clientX;
+        dragging = true;
+        restartAuto();
+      }, { passive: true });
+      track.addEventListener("touchend", function (e) {
+        if (!dragging || !e.changedTouches.length) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        dragging = false;
+        if (Math.abs(dx) < 40) return;
+        goTo(index + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+
+      function restartAuto() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(function () {
+          goTo(index + 1);
+        }, 5000);
+      }
+
+      window.addEventListener("resize", refresh);
+      refresh();
+      restartAuto();
+    });
   }
 
   function initSqsFormSlots() {
