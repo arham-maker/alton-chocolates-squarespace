@@ -1,12 +1,82 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {squarespace-headers}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Direct asset CSS bypasses Squarespace LESS/site.css bundling issues -->
+    <link rel="stylesheet" href="/assets/alton.css">
+  <style id="alton-critical">
+.alton-site{margin:0;background:#F5F2EC;color:#2F1A0D;font-family:Poppins,Helvetica Neue,Arial,sans-serif}
+.alton-site a{color:inherit;text-decoration:none}
+.announcement-bar{background:#626145;color:#F5F2EC;min-height:50px;display:flex;align-items:center;justify-content:center;position:relative;padding:12px 48px;text-align:center}
+.announcement-bar__fallback{margin:0;font-size:14px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#F5F2EC}
+.announcement-bar__close{position:absolute;right:50px;top:50%;transform:translateY(-50%);background:0;border:0;width:20px;height:20px;padding:0;cursor:pointer}
+.site-header{background:#F5F2EC;padding:30px 50px 20px;position:relative;z-index:100}
+.site-header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;max-width:1440px;margin:0 auto}
+.site-header__search{display:inline-flex;align-items:center;gap:10px;justify-self:start;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#2F1A0D}
+.site-header__brand{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.site-header__logo,.site-header__logo img{width:155px;height:auto;display:block}
+.site-header__actions{justify-self:end;display:flex;align-items:center;gap:16px}
+.site-header__toggle{display:none}
+.site-nav{display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap}
+.site-nav a{font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#5D5958;padding:10px 0;border-bottom:1px solid transparent}
+.site-nav a.is-active,.site-nav a:hover{color:#2F1A0D;border-bottom-color:#2F1A0D;opacity:1}
+.mobile-nav{display:none}
+.home-hero{position:relative;min-height:568px;display:flex;align-items:center;overflow:hidden}
+.home-hero__media{position:absolute;inset:0}
+.home-hero__media img{width:100%;height:100%;object-fit:cover;display:block}
+.home-hero__overlay{position:absolute;inset:0;background:linear-gradient(89.83deg,rgba(239,232,224,.5) 21%,rgba(239,232,224,0) 72%)}
+.home-hero__content{position:relative;z-index:1;max-width:725px;padding:60px 50px;display:flex;flex-direction:column;gap:28px}
+.label{font-size:14px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#5D5958}
+.heading-xl{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:88px;line-height:1;letter-spacing:.01em;text-transform:uppercase;color:#2F1A0D}
+.heading-lg{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:58px;line-height:1;text-transform:uppercase;color:#2F1A0D}
+.body-lg{font-size:18px;line-height:30px;color:#2F1A0D}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 50px;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:0;cursor:pointer}
+.btn--terracotta{background:#A9705E;color:#F5F2EC}
+.btn--olive{background:#626145;color:#F5F2EC}
+.btn--text{background:transparent;color:#2F1A0D;padding:10px 0;border-bottom:1px solid #2F1A0D}
+.category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;max-width:1240px;margin:0 auto;padding:50px 20px}
+.category-card{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.category-card__image{width:150px;height:150px;border-radius:50%;overflow:hidden;background:#ECD7D0}
+.category-card__image img{width:100%;height:100%;object-fit:cover}
+.category-card__label{font-size:14px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#5D5958}
+.home-bestsellers{padding:50px 100px 70px}
+.section-header--row{display:flex;align-items:flex-end;justify-content:space-between;position:relative;min-height:110px;margin-bottom:50px}
+.section-header__center{position:absolute;left:50%;transform:translateX(-50%);text-align:center}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 20px}
+.product-card{display:flex;flex-direction:column;gap:14px}
+.product-card__image{aspect-ratio:1/1.05;overflow:hidden}
+.product-card__image img{width:100%;height:100%;object-fit:cover}
+.product-title{font-size:18px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#2F1A0D}
+.product-card__price{font-size:18px;font-weight:600;color:#2F1A0D}
+.split-section{display:grid;grid-template-columns:1fr 1fr;min-height:396px}
+.split-section__media img{width:100%;height:100%;object-fit:cover;min-height:320px}
+.split-section__content{display:flex;flex-direction:column;justify-content:center;padding:50px 74px;gap:28px}
+.split-section__content--blush{background:#ECD7D0}
+.split-section__content--cream{background:#F5F2EC}
+.banner-section{position:relative;min-height:329px;display:flex;align-items:center;overflow:hidden;color:#F5F2EC}
+.banner-section__bg{position:absolute;inset:0}
+.banner-section__bg img{width:100%;height:100%;object-fit:cover}
+.banner-section__overlay{position:absolute;inset:0;background:linear-gradient(90.63deg,rgba(46,25,12,.7) 33%,rgba(46,25,12,0) 57%)}
+.banner-section__content{position:relative;z-index:1;padding:50px 100px;max-width:640px;display:flex;flex-direction:column;gap:20px}
+.banner-section__content .label{color:#ECD7D0}
+.banner-section__content .heading-lg,.banner-section__content .body-lg{color:#F5F2EC}
+.contact-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:80px 100px}
+.testimonials{padding:80px 100px;text-align:center}
+.testimonials__track{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.newsletter{padding:70px 100px;text-align:center;background:rgba(236,215,208,.35)}
+.site-footer{background:#F5F2EC;padding:60px 100px 30px;border-top:1px solid #F0E8E0}
+.site-footer__top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.site-footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid #F0E8E0;flex-wrap:wrap}
+@media (max-width:1024px){.category-grid{grid-template-columns:repeat(3,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}.site-footer__top{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.site-header__toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:0;border:0}.site-header__toggle span{display:block;width:22px;height:2px;background:#2F1A0D}.site-header__desktop-nav,.site-header__account{display:none}.site-header.is-open .mobile-nav{display:flex;flex-direction:column}.home-hero,.split-section,.contact-section,.testimonials__track{grid-template-columns:1fr;display:flex;flex-direction:column}.heading-xl{font-size:42px}.heading-lg{font-size:34px}.home-bestsellers,.contact-section,.testimonials,.newsletter,.site-footer{padding-left:16px;padding-right:16px}}
+@media (max-width:640px){.category-grid{grid-template-columns:repeat(2,1fr)}.product-grid,.site-footer__top{grid-template-columns:1fr}}
+</style>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} alton-site">
     {.section website}
@@ -25,3 +95,4 @@
     {squarespace-scripts}
   </body>
 </html>
+

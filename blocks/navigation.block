@@ -1,7 +1,10 @@
 <nav class="site-nav" aria-label="Primary">
   {.repeated section items}
-    <a href="{.section collection}{fullUrl}{.or}{.section externalLink}{externalLink}{.end}{.end}" class="{.section active}is-active{.end}">
-      {title}
-    </a>
+    {.section collection}
+      <a href="{fullUrl}"{.section active} class="is-active"{.end}>{title}</a>
+    {.end}
+    {.section externalLink}
+      <a href="{externalLink}">{title}</a>
+    {.end}
   {.end}
 </nav>
