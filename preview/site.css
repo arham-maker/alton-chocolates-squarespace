@@ -413,6 +413,10 @@ h6 {
   position: fixed;
   inset: 0;
   z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
 .alton-search__backdrop {
@@ -424,8 +428,9 @@ h6 {
 .alton-search__panel {
   position: relative;
   z-index: 1;
+  width: min(720px, 100%);
   max-width: 720px;
-  margin: 8vh auto 0;
+  margin: 0;
   background: #F5F2EC;
   padding: 40px 36px 48px;
   box-shadow: 0 20px 60px rgba(47, 26, 13, 0.18);
@@ -472,6 +477,7 @@ h6 {
 
 .alton-search__hint {
   margin: 18px 0 0;
+  text-align: center;
 }
 
 .alton-search__results {
