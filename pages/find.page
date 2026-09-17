@@ -1,0 +1,27 @@
+<!-- Branded search page — works with Alton catalog + Squarespace /search -->
+
+<section class="search-page section" aria-labelledby="search-page-heading">
+  <div class="section-header">
+    <p class="label">Find something sweet</p>
+    <h1 id="search-page-heading" class="heading-lg">Search</h1>
+  </div>
+
+  <form class="alton-search__form alton-search__form--page" data-search-form action="/search" method="get" role="search">
+    <label class="sr-only" for="search-page-input">Search</label>
+    <input
+      id="search-page-input"
+      class="alton-search__input"
+      data-search-input
+      type="search"
+      name="q"
+      placeholder="Search bonbons, gifts, pages…"
+      autocomplete="off"
+      enterkeyhint="search"
+    >
+    <button type="submit" class="btn btn--terracotta">Search</button>
+  </form>
+
+  <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Try “bonbon”, “caramel”, “gift”, or “story”</p>
+  <div class="alton-search__results alton-search__results--page" data-search-results aria-live="polite"></div>
+  <p class="alton-search__empty body-lg" data-search-empty hidden style="text-align:center;">No matches. Browse the <a href="/shop">Shop</a> or <a href="/gifts">Gifts</a>.</p>
+</section>

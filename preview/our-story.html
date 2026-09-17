@@ -18,9 +18,10 @@
 
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
-      <a class="site-header__search" href="#" aria-label="Search">
-        <img src="../assets/icons/search.svg" alt="" width="20" height="20"><span>Search</span>
-      </a>
+      <button type="button" class="site-header__search" data-search-open aria-label="Open search" aria-expanded="false" aria-controls="alton-search">
+        <img src="../assets/icons/search.svg" alt="" width="20" height="20">
+        <span>Search</span>
+      </button>
       <div class="site-header__brand">
         <a class="site-header__logo" href="index.html" aria-label="Alton Chocolates">
           <img src="../assets/icons/logo.svg" alt="Alton Chocolates" width="155" height="47">
@@ -41,6 +42,27 @@
       <a href="shop.html">Shop</a><a href="build-box.html">Build Box</a><a href="gifts.html">Gifts</a><a href="our-story.html">Our Story</a>
     </nav>
   </header>
+
+    <div class="alton-search" id="alton-search" data-search-panel hidden>
+      <div class="alton-search__backdrop" data-search-close tabindex="-1" aria-hidden="true"></div>
+      <div class="alton-search__panel" role="dialog" aria-modal="true" aria-labelledby="alton-search-title">
+        <div class="alton-search__top">
+          <h2 id="alton-search-title" class="heading-lg">Search</h2>
+          <button type="button" class="alton-search__close" data-search-close aria-label="Close search">
+            <img src="../assets/icons/cancel.svg" alt="" width="20" height="20">
+          </button>
+        </div>
+        <form class="alton-search__form" data-search-form action="search.html" method="get" role="search">
+          <label class="sr-only" for="alton-search-input">Search chocolates</label>
+          <input id="alton-search-input" class="alton-search__input" data-search-input type="search" name="q" placeholder="Search bonbons, gifts, pages..." autocomplete="off">
+          <button type="submit" class="btn btn--terracotta">Search</button>
+        </form>
+        <p class="alton-search__hint label" data-search-hint>Try bonbon, caramel, gift, or story</p>
+        <div class="alton-search__results" data-search-results aria-live="polite"></div>
+        <p class="alton-search__empty body-lg" data-search-empty hidden>No matches. Browse the <a href="shop.html">Shop</a> or <a href="gifts.html">Gifts</a>.</p>
+      </div>
+    </div>
+
 
   <main class="alton-main">
 

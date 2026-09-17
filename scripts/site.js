@@ -346,11 +346,175 @@
 
         window.location.href = mailto;
         form.reset();
-        if (messageField && (product || subject)) {
-          // keep product context after reset if still on same page
-        }
       });
     });
+  }
+
+  var SEARCH_INDEX = [
+    { title: "Salted Caramel", type: "Shop", meta: "$28", url: "/shop#products", tags: "bonbon caramel" },
+    { title: "Raspberry Chocolate", type: "Shop", meta: "$12", url: "/shop#products", tags: "bonbon raspberry" },
+    { title: "Passion Fruit Ganache", type: "Shop", meta: "$16", url: "/shop#products", tags: "bonbon ganache" },
+    { title: "Pistachio Praline", type: "Shop", meta: "$14", url: "/shop#products", tags: "bonbon pistachio" },
+    { title: "Hazelnut Praline", type: "Shop", meta: "$28", url: "/shop#products", tags: "bonbon hazelnut" },
+    { title: "Coconut Ganache", type: "Shop", meta: "$12", url: "/shop#products", tags: "bonbon coconut" },
+    { title: "Blueberry Vanilla Ganache", type: "Shop", meta: "$16", url: "/shop#products", tags: "bonbon blueberry" },
+    { title: "Mint Dark Chocolate", type: "Shop", meta: "$14", url: "/shop#products", tags: "bonbon mint dark" },
+    { title: "Bonbon Collection", type: "Bestsellers", meta: "$28", url: "/#bestsellers-heading", tags: "bonbon box" },
+    { title: "Chocolate Bar", type: "Bestsellers", meta: "$12", url: "/shop#products", tags: "bars bar" },
+    { title: "Sea Salt Caramels", type: "Bestsellers", meta: "$16", url: "/shop#products", tags: "caramels" },
+    { title: "Chocolate Cookies", type: "Bestsellers", meta: "$14", url: "/shop#products", tags: "cookies" },
+    { title: "Signature Bonbon Box", type: "Gifts", meta: "$48", url: "/gifts", tags: "gift bonbon" },
+    { title: "Chocolate Bark Box", type: "Gifts", meta: "$29", url: "/gifts", tags: "gift bark" },
+    { title: "Sea Salt Caramels Gift", type: "Gifts", meta: "$34", url: "/gifts", tags: "gift caramel" },
+    { title: "Artisan Chocolate Bars", type: "Gifts", meta: "$18", url: "/gifts", tags: "gift bars" },
+    { title: "Toffee Collections", type: "Gifts", meta: "$28", url: "/gifts", tags: "gift toffee" },
+    { title: "Chocolate Chip Cookies", type: "Gifts", meta: "$34", url: "/gifts", tags: "gift cookies" },
+    { title: "Corporate Gifting", type: "Gifts", meta: "", url: "/gifts", tags: "business corporate" },
+    { title: "Build Your Box", type: "Page", meta: "", url: "/build-box", tags: "custom box build" },
+    { title: "Our Story", type: "Page", meta: "", url: "/our-story", tags: "about story" },
+    { title: "Shop", type: "Page", meta: "", url: "/shop", tags: "all chocolates" },
+    { title: "Gifts", type: "Page", meta: "", url: "/gifts", tags: "presents" },
+    { title: "Contact Us", type: "Page", meta: "", url: "/contact", tags: "support help email phone" }
+  ];
+
+  function searchCatalog(query) {
+    var q = String(query || "").trim().toLowerCase();
+    if (!q) return [];
+    var terms = q.split(/\s+/).filter(Boolean);
+    return SEARCH_INDEX.filter(function (item) {
+      var hay = (item.title + " " + item.type + " " + (item.tags || "") + " " + (item.meta || "")).toLowerCase();
+      return terms.every(function (t) { return hay.indexOf(t) !== -1; });
+    }).slice(0, 12);
+  }
+
+  function renderSearchResults(root, query) {
+    if (!root) return;
+    var resultsEl = root.querySelector("[data-search-results]");
+    var emptyEl = root.querySelector("[data-search-empty]");
+    var hintEl = root.querySelector("[data-search-hint]");
+    if (!resultsEl) return;
+
+    var items = searchCatalog(query);
+    resultsEl.innerHTML = "";
+
+    if (!String(query || "").trim()) {
+      if (emptyEl) emptyEl.hidden = true;
+      if (hintEl) hintEl.hidden = false;
+      return;
+    }
+
+    if (hintEl) hintEl.hidden = true;
+
+    if (!items.length) {
+      if (emptyEl) emptyEl.hidden = false;
+      return;
+    }
+
+    if (emptyEl) emptyEl.hidden = true;
+    items.forEach(function (item) {
+      var a = document.createElement("a");
+      a.className = "alton-search__item";
+      a.href = item.url;
+      a.innerHTML =
+        '<div><p class="alton-search__item-title">' +
+        item.title +
+        '</p><span class="label" style="letter-spacing:0.12em;">' +
+        item.type +
+        "</span></div>" +
+        (item.meta
+          ? '<span class="alton-search__item-meta">' + item.meta + "</span>"
+          : "");
+      resultsEl.appendChild(a);
+    });
+  }
+
+  function initSearch() {
+    var panel = document.querySelector("[data-search-panel]");
+    var openBtns = document.querySelectorAll("[data-search-open]");
+    var closeBtns = document.querySelectorAll("[data-search-close]");
+
+    function openSearch() {
+      if (!panel) return;
+      panel.hidden = false;
+      document.documentElement.style.overflow = "hidden";
+      openBtns.forEach(function (btn) {
+        btn.setAttribute("aria-expanded", "true");
+      });
+      var input = panel.querySelector("[data-search-input]");
+      if (input) {
+        setTimeout(function () { input.focus(); }, 10);
+      }
+    }
+
+    function closeSearch() {
+      if (!panel) return;
+      panel.hidden = true;
+      document.documentElement.style.overflow = "";
+      openBtns.forEach(function (btn) {
+        btn.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    openBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openSearch();
+      });
+    });
+
+    closeBtns.forEach(function (btn) {
+      btn.addEventListener("click", closeSearch);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && panel && !panel.hidden) closeSearch();
+    });
+
+    document.querySelectorAll("[data-search-form]").forEach(function (form) {
+      var root =
+        form.closest("[data-search-panel]") ||
+        form.closest(".search-page") ||
+        form.parentElement;
+      var input = form.querySelector("[data-search-input]");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var q = input ? input.value : "";
+        renderSearchResults(root, q);
+        if (panel && !panel.hidden && input) input.focus();
+      });
+
+      if (input) {
+        input.addEventListener("input", function () {
+          renderSearchResults(root, input.value);
+        });
+      }
+    });
+
+    // If landed on /search?q= or /search page with query, run catalog search UI
+    var pageParams = new URLSearchParams(window.location.search);
+    var initialQ = pageParams.get("q") || pageParams.get("query") || "";
+    var searchPage = document.querySelector(".search-page");
+    if (searchPage && initialQ) {
+      var pageInput = searchPage.querySelector("[data-search-input]");
+      if (pageInput) pageInput.value = initialQ;
+      renderSearchResults(searchPage, initialQ);
+    }
+
+    // Enhance Squarespace system search page when present
+    if (/\/search\/?$/i.test(window.location.pathname) && initialQ) {
+      var host = document.querySelector(".alton-main") || document.body;
+      if (host && !document.querySelector(".search-page")) {
+        var box = document.createElement("section");
+        box.className = "search-page section";
+        box.innerHTML =
+          '<div class="section-header"><p class="label">Alton catalog</p><h2 class="heading-lg">Matching treats</h2></div>' +
+          '<div class="alton-search__results alton-search__results--page" data-search-results></div>' +
+          '<p class="alton-search__empty body-lg" data-search-empty hidden style="text-align:center;">No catalog matches.</p>';
+        host.insertBefore(box, host.firstChild);
+        renderSearchResults(box, initialQ);
+      }
+    }
   }
 
   ready(function () {
@@ -361,5 +525,6 @@
     initTestimonials();
     initSqsFormSlots();
     initForms();
+    initSearch();
   });
 })();
