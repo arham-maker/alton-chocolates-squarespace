@@ -551,25 +551,79 @@
 
   function initOrderButtons() {
     initOrderModal();
+
+    function readOrderFromCard(card) {
+      var title =
+        card.getAttribute("data-title") ||
+        (card.querySelector(".product-title")
+          ? card.querySelector(".product-title").textContent.trim()
+          : "Item");
+      var priceAttr = card.getAttribute("data-price");
+      var price = parseFloat(priceAttr);
+      if (isNaN(price)) {
+        var priceEl = card.querySelector(".product-card__price");
+        price = priceEl
+          ? parseFloat(String(priceEl.textContent).replace(/[^0-9.]/g, "")) || 0
+          : 0;
+      }
+      var qtyEl = card.querySelector("[data-qty-value]");
+      var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
+      if (qty < 1) qty = 1;
+      return {
+        title: title,
+        price: price,
+        qty: qty,
+        total: (price * qty).toFixed(2)
+      };
+    }
+
+    function openFromCard(card) {
+      if (!card) return;
+      openOrderModal(readOrderFromCard(card));
+    }
+
+    // Order Now buttons
     document.querySelectorAll("[data-shop-order]").forEach(function (btn) {
       if (btn.dataset.boundOrder === "1") return;
       btn.dataset.boundOrder = "1";
-      btn.addEventListener("click", function () {
-        var card = btn.closest("[data-shop-product], [data-gift-card]");
-        if (!card) return;
-        var title = card.getAttribute("data-title") || "Item";
-        var price = parseFloat(card.getAttribute("data-price")) || 0;
-        var qtyEl = card.querySelector("[data-qty-value]");
-        var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
-        if (qty < 1) qty = 1;
-        openOrderModal({
-          title: title,
-          price: price,
-          qty: qty,
-          total: (price * qty).toFixed(2)
-        });
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openFromCard(btn.closest("[data-shop-product], [data-gift-card], .product-card"));
       });
     });
+
+    // Whole product card click (image / title / price) opens order modal
+    document
+      .querySelectorAll("[data-shop-product], [data-gift-card], .product-card[data-orderable]")
+      .forEach(function (card) {
+        if (card.dataset.boundCardOrder === "1") return;
+        card.dataset.boundCardOrder = "1";
+        card.classList.add("product-card--orderable");
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+
+        card.addEventListener("click", function (e) {
+          // allow qty +/- without opening modal
+          if (
+            e.target.closest(
+              "[data-qty], [data-qty-minus], [data-qty-plus], a, button:not([data-shop-order])"
+            )
+          ) {
+            // Order Now is handled above; other buttons/links skip
+            if (!e.target.closest("[data-shop-order]")) return;
+          }
+          e.preventDefault();
+          openFromCard(card);
+        });
+
+        card.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openFromCard(card);
+          }
+        });
+      });
   }
 
   function openOrderModal(order) {

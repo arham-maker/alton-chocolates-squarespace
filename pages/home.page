@@ -71,8 +71,8 @@
   </div>
 
   <div class="product-grid">
-    <article class="product-card">
-      <a class="product-card__image" href="/shop"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></a>
+    <article class="product-card" data-orderable data-shop-product data-title="Bonbon Collection" data-price="28">
+      <div class="product-card__image"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Bonbon Collection</h3>
         <p class="product-card__price">$28</p>
@@ -84,10 +84,11 @@
           <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
           <span class="product-card__count">(45)</span>
         </div>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
       </div>
     </article>
-    <article class="product-card">
-      <a class="product-card__image" href="/shop"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></a>
+    <article class="product-card" data-orderable data-shop-product data-title="Chocolate Bar" data-price="12">
+      <div class="product-card__image"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Chocolate Bar</h3>
         <p class="product-card__price">$12</p>
@@ -99,10 +100,11 @@
           <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
           <span class="product-card__count">(57)</span>
         </div>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
       </div>
     </article>
-    <article class="product-card">
-      <a class="product-card__image" href="/shop"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></a>
+    <article class="product-card" data-orderable data-shop-product data-title="Sea Salt Caramels" data-price="16">
+      <div class="product-card__image"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Sea Salt Caramels</h3>
         <p class="product-card__price">$16</p>
@@ -114,10 +116,11 @@
           <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
           <span class="product-card__count">(36)</span>
         </div>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
       </div>
     </article>
-    <article class="product-card">
-      <a class="product-card__image" href="/shop"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></a>
+    <article class="product-card" data-orderable data-shop-product data-title="Chocolate Cookies" data-price="14">
+      <div class="product-card__image"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Chocolate Cookies</h3>
         <p class="product-card__price">$14</p>
@@ -129,6 +132,7 @@
           <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
           <span class="product-card__count">(25)</span>
         </div>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
       </div>
     </article>
   </div>
