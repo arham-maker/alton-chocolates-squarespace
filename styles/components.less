@@ -390,8 +390,8 @@
 
 .contact-form,
 .alton-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
 
@@ -399,6 +399,30 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.form-field--full,
+.form-actions,
+.form-status,
+.alton-form .full {
+  grid-column: 1 / -1;
+}
+
+.form-status {
+  margin: 0;
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #626145;
+}
+
+.form-status.is-success { color: #626145; }
+.form-status.is-error { color: #A9705E; }
+
+.sqs-form-slot:empty { display: none; }
+
+.contact-section__form.has-sqs-form [data-alton-form="contact"],
+.newsletter__inner.has-sqs-form [data-alton-form="newsletter"] {
+  display: none !important;
 }
 
 .form-field label {

@@ -13,28 +13,42 @@
 
     <div>
       <h2 class="site-footer__col-title">Shop</h2>
-      <div class="site-footer__links">
+      <nav class="site-footer__links" aria-label="Shop links">
+        <a href="/shop">All Chocolates</a>
+        <a href="/shop#products">Bonbons</a>
+        <a href="/shop#products">Barks</a>
+        <a href="/shop#products">Bars</a>
+        <a href="/shop#products">Caramels</a>
+        <a href="/shop#products">Toffee</a>
+        <a href="/shop#products">Cookies</a>
         <squarespace:navigation navigationId="footerShop" template="footer-nav" />
-      </div>
+      </nav>
     </div>
 
     <div>
       <h2 class="site-footer__col-title">Other</h2>
-      <div class="site-footer__links">
+      <nav class="site-footer__links" aria-label="Other links">
+        <a href="/our-story">Our Story</a>
+        <a href="/build-box">Build a Box</a>
+        <a href="/gifts">Gift</a>
+        <a href="/gifts#premium-gifts-heading">Gallery</a>
         <squarespace:navigation navigationId="footerOther" template="footer-nav" />
-      </div>
+      </nav>
     </div>
 
     <div>
       <h2 class="site-footer__col-title">Help</h2>
-      <div class="site-footer__links">
+      <nav class="site-footer__links" aria-label="Help links">
+        <a href="/contact">Contact Support</a>
+        <a href="/#newsletter">Membership</a>
+        <a href="/contact">FAQ’s</a>
         <squarespace:navigation navigationId="footerHelp" template="footer-nav" />
-      </div>
+      </nav>
     </div>
   </div>
 
   <div class="site-footer__bottom">
-    <p class="site-footer__copy">© 2026 Alton Chocolates. All rights reserved.</p>
+    <p class="site-footer__copy">© 2026 Alton Chocolates. All Right Reserved</p>
     <div class="site-footer__meta">
       <div class="site-footer__social">
         <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
@@ -45,6 +59,8 @@
         </a>
       </div>
       <div class="site-footer__legal">
+        <a href="/contact">Privacy</a>
+        <a href="/contact">Terms</a>
         <squarespace:navigation navigationId="footerLegal" template="footer-nav" />
       </div>
     </div>

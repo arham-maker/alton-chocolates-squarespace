@@ -1,11 +1,17 @@
-<section class="newsletter" aria-labelledby="newsletter-heading">
+<section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
   <div class="newsletter__inner">
     <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
-    <p class="label">
-      <squarespace:block-field id="newsletterCopy" columns="12" label="Newsletter Copy" />
-    </p>
-    <div class="newsletter-form-wrap">
-      <squarespace:block-field id="newsletterForm" columns="12" label="Newsletter Block" />
+    <p class="label">Sample text goes here</p>
+
+    <form class="newsletter-form" data-alton-form="newsletter" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
+      <label for="newsletter-email" class="sr-only">Email Address</label>
+      <input id="newsletter-email" name="email" type="email" placeholder="Email Address" required autocomplete="email">
+      <button type="submit" class="btn btn--olive">Subscribe</button>
+      <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="sqs-form-slot newsletter-form-wrap" data-sqs-form-slot>
+      <squarespace:block-field id="newsletterForm" columns="12" label="Optional: replace fallback with Squarespace Newsletter / Form Block" />
     </div>
   </div>
 </section>

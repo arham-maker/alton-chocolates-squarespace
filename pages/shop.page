@@ -35,7 +35,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Salted Caramel</h3>
         <p class="product-card__price">$28</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Salted%20Caramel">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -43,7 +43,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Raspberry Chocolate</h3>
         <p class="product-card__price">$12</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Raspberry%20Chocolate">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -51,7 +51,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Passion Fruit Ganache</h3>
         <p class="product-card__price">$16</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Passion%20Fruit%20Ganache">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -59,7 +59,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Pistachio Praline</h3>
         <p class="product-card__price">$14</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Pistachio%20Praline">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -67,7 +67,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Hazelnut Praline</h3>
         <p class="product-card__price">$28</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Hazelnut%20Praline">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -75,7 +75,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Coconut Ganache</h3>
         <p class="product-card__price">$12</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Coconut%20Ganache">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -83,7 +83,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Blueberry Vanilla Ganache</h3>
         <p class="product-card__price">$16</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Blueberry%20Vanilla%20Ganache">View Details</a>
       </div>
     </article>
     <article class="product-card">
@@ -91,7 +91,7 @@
       <div class="product-card__meta">
         <h3 class="product-title">Mint Dark Chocolate</h3>
         <p class="product-card__price">$14</p>
-        <a class="product-card__link" href="/shop">View Details</a>
+        <a class="product-card__link" href="/contact?product=Mint%20Dark%20Chocolate">View Details</a>
       </div>
     </article>
   </div>

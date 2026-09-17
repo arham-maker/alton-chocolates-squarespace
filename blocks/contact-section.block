@@ -2,15 +2,49 @@
   <div class="contact-section__info">
     <p class="label">Get in touch</p>
     <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
-    <div class="body-lg">
-      <squarespace:block-field id="contactIntro" columns="12" label="Contact Introduction" />
-    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Ac pharetra consectetur tincidunt euismod vitae pharetra ut varius tortor. Aliquam ornare id lacus nam laoreet viverra sit imperdiet.</p>
     <div class="contact-details">
-      <squarespace:block-field id="contactDetails" columns="12" label="Phone & Email" />
+      <a href="tel:+17156977741">
+        <img src="/assets/icons/phone.svg" alt="" width="22" height="22">
+        715-697-7741
+      </a>
+      <a href="mailto:galton4@gmail.com">
+        <img src="/assets/icons/email.svg" alt="" width="22" height="22">
+        galton4@gmail.com
+      </a>
     </div>
     <img class="contact-section__art" src="/assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
   </div>
+
   <div class="contact-section__form">
-    <squarespace:block-field id="contactForm" columns="12" label="Contact Form Block" />
+    <form class="alton-form contact-form" data-alton-form="contact" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
+      <div class="form-field">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Name">
+      </div>
+      <div class="form-field">
+        <label for="contact-phone">Phone Number</label>
+        <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number">
+      </div>
+      <div class="form-field form-field--full">
+        <label for="contact-email">Email Address</label>
+        <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="Email address">
+      </div>
+      <div class="form-field form-field--full">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="5" required placeholder="Message"></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn--olive">
+          Send Message
+          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </button>
+      </div>
+      <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="sqs-form-slot" data-sqs-form-slot>
+      <squarespace:block-field id="contactForm" columns="12" label="Optional: replace fallback with Squarespace Form Block" />
+    </div>
   </div>
 </section>

@@ -162,26 +162,56 @@
     
 
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">
-      <div class="contact-section__info">
-        <p class="label">Get in touch</p>
-        <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
-        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. We'd love to hear from you about custom orders, corporate gifting, or anything else.</p>
-        <div class="contact-details">
-          <a href="tel:+15551234567"><img src="../assets/icons/phone.svg" alt="" width="22" height="22"> (555) 123-4567</a>
-          <a href="mailto:hello@altonchocolates.com"><img src="../assets/icons/email.svg" alt="" width="22" height="22"> hello@altonchocolates.com</a>
-        </div>
-        <img class="contact-section__art" src="../assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
+  <div class="contact-section__info">
+    <p class="label">Get in touch</p>
+    <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Ac pharetra consectetur tincidunt euismod vitae pharetra ut varius tortor. Aliquam ornare id lacus nam laoreet viverra sit imperdiet.</p>
+    <div class="contact-details">
+      <a href="tel:+17156977741">
+        <img src="../assets/icons/phone.svg" alt="" width="22" height="22">
+        715-697-7741
+      </a>
+      <a href="mailto:galton4@gmail.com">
+        <img src="../assets/icons/email.svg" alt="" width="22" height="22">
+        galton4@gmail.com
+      </a>
+    </div>
+    <img class="contact-section__art" src="../assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
+  </div>
+
+  <div class="contact-section__form">
+    <form class="alton-form contact-form" data-alton-form="contact" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
+      <div class="form-field">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Name">
       </div>
-      <div class="contact-section__form">
-        <form class="alton-form contact-form" action="#" method="post">
-          <div class="form-field"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" required autocomplete="name"></div>
-          <div class="form-field"><label for="contact-phone">Phone</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="form-field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" required autocomplete="email"></div>
-          <div class="form-field"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" required></textarea></div>
-          <div class="form-actions"><button type="submit" class="btn btn--olive">Send Message</button></div>
-        </form>
+      <div class="form-field">
+        <label for="contact-phone">Phone Number</label>
+        <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number">
       </div>
-    </section>
+      <div class="form-field form-field--full">
+        <label for="contact-email">Email Address</label>
+        <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="Email address">
+      </div>
+      <div class="form-field form-field--full">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="5" required placeholder="Message"></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn--olive">
+          Send Message
+          <img src="../assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </button>
+      </div>
+      <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="sqs-form-slot" data-sqs-form-slot>
+      
+    </div>
+  </div>
+</section>
+
 
     <section class="testimonials" aria-labelledby="testimonials-heading" data-testimonials>
       <p class="label">Kind words from our clients</p>
@@ -196,16 +226,23 @@
     </section>
 
     <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
-      <div class="newsletter__inner">
-        <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
-        <p class="label">Subscribe for seasonal releases, gift guides, and sweet news.</p>
-        <form class="newsletter-form" action="#" method="post">
-          <label for="newsletter-email" class="sr-only">Email address</label>
-          <input id="newsletter-email" name="email" type="email" placeholder="Your email" required autocomplete="email">
-          <button type="submit" class="btn btn--terracotta">Subscribe</button>
-        </form>
-      </div>
-    </section>
+  <div class="newsletter__inner">
+    <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
+    <p class="label">Sample text goes here</p>
+
+    <form class="newsletter-form" data-alton-form="newsletter" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
+      <label for="newsletter-email" class="sr-only">Email Address</label>
+      <input id="newsletter-email" name="email" type="email" placeholder="Email Address" required autocomplete="email">
+      <button type="submit" class="btn btn--olive">Subscribe</button>
+      <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="sqs-form-slot newsletter-form-wrap" data-sqs-form-slot>
+      <squarespace:block-field id="newsletterForm" columns="12" label="Optional: replace fallback with Squarespace Newsletter / Form Block" />
+    </div>
+  </div>
+</section>
+
 
   </main>
 

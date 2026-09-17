@@ -988,8 +988,8 @@ h6 {
 
 .contact-form,
 .alton-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
 
@@ -997,6 +997,38 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.form-field--full,
+.form-actions,
+.form-status,
+.alton-form .full {
+  grid-column: 1 / -1;
+}
+
+.form-status {
+  margin: 0;
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #626145;
+}
+
+.form-status.is-success {
+  color: #626145;
+}
+
+.form-status.is-error {
+  color: #A9705E;
+}
+
+.sqs-form-slot:empty,
+.sqs-form-slot:not(:has(.sqs-block)):not(:has(form)):not(:has(.form-wrapper)) {
+  display: none;
+}
+
+.contact-section__form.has-sqs-form [data-alton-form="contact"],
+.newsletter__inner.has-sqs-form [data-alton-form="newsletter"] {
+  display: none !important;
 }
 
 .form-field label {
@@ -1824,6 +1856,11 @@ h6 {
 
   .newsletter-form input {
     border-right: 1px solid #F0E8E0;
+  }
+
+  .contact-form,
+  .alton-form {
+    grid-template-columns: 1fr;
   }
 
   .section-header--row {

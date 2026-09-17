@@ -269,11 +269,97 @@
     if (next) next.addEventListener("click", function () { scrollByCard(1); });
   }
 
+  function initSqsFormSlots() {
+    document.querySelectorAll("[data-sqs-form-slot]").forEach(function (slot) {
+      var hasReal =
+        slot.querySelector(".sqs-block, .form-wrapper, form, .newsletter-block, .sqs-block-form") !==
+        null;
+      if (!hasReal) return;
+      var wrap =
+        slot.closest(".contact-section__form") ||
+        slot.closest(".newsletter__inner");
+      if (wrap) wrap.classList.add("has-sqs-form");
+    });
+  }
+
+  function setFormStatus(form, message, type) {
+    var status = form.querySelector("[data-form-status]");
+    if (!status) return;
+    status.hidden = false;
+    status.textContent = message;
+    status.classList.remove("is-success", "is-error");
+    if (type) status.classList.add(type);
+  }
+
+  function initForms() {
+    var contactEmail = "galton4@gmail.com";
+
+    // Prefill contact from ?product= / ?subject=
+    var params = new URLSearchParams(window.location.search);
+    var product = params.get("product");
+    var subject = params.get("subject");
+    var messageField = document.querySelector("#contact-message");
+    if (messageField && (product || subject)) {
+      var bits = [];
+      if (product) bits.push("I'm interested in: " + product);
+      if (subject) bits.push(subject);
+      messageField.value = bits.join("\n");
+    }
+
+    document.querySelectorAll("[data-alton-form]").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        var kind = form.getAttribute("data-alton-form") || "contact";
+        var data = new FormData(form);
+        var lines = [];
+        data.forEach(function (value, key) {
+          if (String(value).trim()) lines.push(key + ": " + value);
+        });
+
+        var mailSubject =
+          kind === "newsletter"
+            ? "Alton Chocolates newsletter signup"
+            : "Alton Chocolates contact form";
+        if (product) mailSubject += " — " + product;
+
+        var body = lines.join("\n");
+        var mailto =
+          "mailto:" +
+          encodeURIComponent(contactEmail) +
+          "?subject=" +
+          encodeURIComponent(mailSubject) +
+          "&body=" +
+          encodeURIComponent(body);
+
+        setFormStatus(
+          form,
+          kind === "newsletter"
+            ? "Thanks — your email app will open to confirm subscription."
+            : "Thanks — your email app will open to send this message.",
+          "is-success"
+        );
+
+        window.location.href = mailto;
+        form.reset();
+        if (messageField && (product || subject)) {
+          // keep product context after reset if still on same page
+        }
+      });
+    });
+  }
+
   ready(function () {
     initAnnouncement();
     initMobileNav();
     initBuildBox();
     initGiftQty();
     initTestimonials();
+    initSqsFormSlots();
+    initForms();
   });
 })();
