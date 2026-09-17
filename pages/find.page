@@ -21,7 +21,7 @@
     <button type="submit" class="btn btn--terracotta">Search</button>
   </form>
 
-  <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Try “bonbon”, “caramel”, “gift”, or “story”</p>
+  <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Search you quiery with space</p>
   <div class="alton-search__results alton-search__results--page" data-search-results aria-live="polite"></div>
   <p class="alton-search__empty body-lg" data-search-empty hidden style="text-align:center;">No matches. Browse the <a href="/shop">Shop</a> or <a href="/gifts">Gifts</a>.</p>
 </section>
