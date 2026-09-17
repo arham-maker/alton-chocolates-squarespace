@@ -1,19 +1,14 @@
-{.section website}
-
 <footer class="site-footer" role="contentinfo">
   <div class="site-footer__top">
     <div class="site-footer__brand">
       <a href="/" class="site-footer__brand-logo-link" aria-label="{siteTitle}">
         {.section logoImage}
-          <img class="site-footer__brand-logo" src="{logoImage.assetUrl}?format=300w" alt="{siteTitle}">
+          <img class="site-footer__brand-logo" src="{assetUrl}?format=300w" alt="{siteTitle}">
         {.or}
           <img class="site-footer__brand-logo" src="/assets/icons/logo.svg" alt="{siteTitle}" width="180" height="54">
         {.end}
       </a>
-      <div class="site-footer__brand-text">
-        <p class="site-footer__brand-fallback">Sample text goes here</p>
-        <squarespace:block-field id="footerBrandText" columns="12" label="Footer Brand Text" />
-      </div>
+      <p class="site-footer__brand-text">Sample text goes here</p>
     </div>
 
     <div>
@@ -39,10 +34,7 @@
   </div>
 
   <div class="site-footer__bottom">
-    <p class="site-footer__copy">
-      <span class="site-footer__copy-fallback">© 2026 Alton Chocolates. All rights reserved.</span>
-      <squarespace:block-field id="footerCopyright" columns="12" label="Copyright Text" />
-    </p>
+    <p class="site-footer__copy">© 2026 Alton Chocolates. All rights reserved.</p>
     <div class="site-footer__meta">
       <div class="site-footer__social">
         <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
@@ -51,7 +43,6 @@
         <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
           <img src="/assets/icons/instagram.svg" alt="" width="20" height="20">
         </a>
-        <squarespace:block-field id="footerSocial" columns="12" label="Social Links Override" />
       </div>
       <div class="site-footer__legal">
         <squarespace:navigation navigationId="footerLegal" template="footer-nav" />
@@ -59,5 +50,3 @@
     </div>
   </div>
 </footer>
-
-{.end}

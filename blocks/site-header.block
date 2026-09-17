@@ -1,9 +1,4 @@
-{.section website}
-
 <aside class="announcement-bar" data-announcement role="region" aria-label="Site announcement">
-  <div class="announcement-bar__editable">
-    <squarespace:block-field id="announcementText" columns="12" label="Announcement Bar Text" />
-  </div>
   <p class="announcement-bar__fallback">Free shipping on orders over $75/-</p>
   <button type="button" class="announcement-bar__close" data-announcement-close aria-label="Dismiss announcement">
     <img src="/assets/icons/cancel.svg" alt="" width="20" height="20">
@@ -20,7 +15,7 @@
     <div class="site-header__brand">
       <a class="site-header__logo" href="/" aria-label="{siteTitle}">
         {.section logoImage}
-          <img src="{logoImage.assetUrl}?format=300w" alt="{siteTitle}">
+          <img src="{assetUrl}?format=300w" alt="{siteTitle}">
         {.or}
           <img src="/assets/icons/logo.svg" alt="{siteTitle}" width="155" height="47">
         {.end}
@@ -46,5 +41,3 @@
     <squarespace:navigation navigationId="mainNav" template="navigation" />
   </div>
 </header>
-
-{.end}
