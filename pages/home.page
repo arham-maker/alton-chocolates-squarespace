@@ -10,11 +10,13 @@
       <p class="label">Sample text goes here</p>
       <h1 id="home-hero-heading" class="heading-xl">Chocolate,<br>Composed.</h1>
     </div>
-    <div class="body-lg">
-      <squarespace:block-field id="homeHeroCopy" columns="12" label="Hero Paragraph" />
-    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
     <div>
-      <squarespace:block-field id="homeHeroCta" columns="12" label="Hero CTA" />
+      <a class="btn btn--terracotta" href="/shop">
+        Shop Bonbons
+        <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+      </a>
+      <squarespace:block-field id="homeHeroCta" columns="12" label="Hero CTA Override" />
     </div>
   </div>
 </section>
