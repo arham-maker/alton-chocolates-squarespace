@@ -225,19 +225,21 @@
     var cards = document.querySelectorAll("[data-gift-card]");
     if (!pills.length || !cards.length) return;
 
-    function applyGiftFilter(key) {
+    var state = { price: "under-50", occasion: "" };
+
+    function applyFilters() {
       var max = null;
-      if (key === "under-25") max = 25;
-      else if (key === "under-50") max = 50;
-      else if (key === "under-75") max = 75;
+      if (state.price === "under-25") max = 25;
+      else if (state.price === "under-50") max = 50;
+      else if (state.price === "under-75") max = 75;
 
       cards.forEach(function (card) {
-        if (max == null) {
-          card.style.display = "";
-          return;
-        }
         var price = parseFloat(card.getAttribute("data-price")) || 0;
-        card.style.display = price <= max ? "" : "none";
+        var occ = (card.getAttribute("data-occasion") || "").toLowerCase();
+        var priceOk = max == null || price <= max;
+        var occOk = !state.occasion || occ.indexOf(state.occasion) !== -1;
+        card.hidden = !(priceOk && occOk);
+        card.style.display = "";
       });
     }
 
@@ -246,22 +248,37 @@
         var key = pill.getAttribute("data-gift-filter") || "";
         var isPrice = key.indexOf("under-") === 0;
         if (isPrice) {
+          state.price = key;
           pills.forEach(function (p) {
             if ((p.getAttribute("data-gift-filter") || "").indexOf("under-") === 0) {
-              p.classList.remove("is-active");
+              p.classList.toggle("is-active", p === pill);
             }
           });
-          pill.classList.add("is-active");
-          applyGiftFilter(key);
         } else {
+          // toggle occasion (click again to clear)
+          state.occasion = state.occasion === key ? "" : key;
           pills.forEach(function (p) {
             var k = p.getAttribute("data-gift-filter") || "";
-            if (k.indexOf("under-") !== 0) p.classList.remove("is-active");
+            if (k.indexOf("under-") !== 0) {
+              p.classList.toggle("is-active", k === state.occasion);
+            }
           });
-          pill.classList.add("is-active");
         }
+        applyFilters();
       });
     });
+
+    // honor default active price pill
+    var activePrice = document.querySelector(
+      '[data-gift-filter].is-active[data-gift-filter^="under-"], [data-gift-filter^="under-"].is-active'
+    );
+    if (!activePrice) {
+      activePrice = document.querySelector('[data-gift-filter="under-50"]');
+    }
+    if (activePrice) {
+      state.price = activePrice.getAttribute("data-gift-filter") || "under-50";
+    }
+    applyFilters();
   }
 
   function initTestimonials() {
@@ -452,11 +469,16 @@
     });
 
     initQtyControls(document.querySelector("[data-shop-products]"));
-    initOrderModal();
+    initOrderButtons();
+  }
 
+  function initOrderButtons() {
+    initOrderModal();
     document.querySelectorAll("[data-shop-order]").forEach(function (btn) {
+      if (btn.dataset.boundOrder === "1") return;
+      btn.dataset.boundOrder = "1";
       btn.addEventListener("click", function () {
-        var card = btn.closest("[data-shop-product]");
+        var card = btn.closest("[data-shop-product], [data-gift-card]");
         if (!card) return;
         var title = card.getAttribute("data-title") || "Item";
         var price = parseFloat(card.getAttribute("data-price")) || 0;
@@ -612,7 +634,9 @@
         var mailSubject =
           kind === "newsletter"
             ? "Alton Chocolates newsletter signup"
-            : "Alton Chocolates contact form";
+            : kind === "buildbox"
+              ? "Alton Chocolates build-a-box order"
+              : "Alton Chocolates contact form";
         if (product) mailSubject += " — " + product;
 
         var body = lines.join("\n");
@@ -627,11 +651,50 @@
         var thanksMsg =
           kind === "newsletter"
             ? "You are subscribed. Welcome to Alton Chocolates."
-            : "Thank you! Your message was sent. We will reply soon.";
+            : kind === "buildbox"
+              ? "Thank you! Your custom box order was received. We will confirm soon."
+              : "Thank you! Your message was sent. We will reply soon.";
 
         showThanks(thanksMsg);
         form.reset();
 
+        setTimeout(function () {
+          window.location.href = mailto;
+        }, 900);
+      });
+    });
+
+    // Build-a-box checkout form (uses data-buildbox-form)
+    document.querySelectorAll("[data-buildbox-form]").forEach(function (form) {
+      if (form.dataset.boundBuild === "1") return;
+      form.dataset.boundBuild = "1";
+      form.setAttribute("data-alton-form", "buildbox");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        var data = new FormData(form);
+        var lines = ["Build-a-Box order"];
+        var subtotal = document.querySelector("[data-order-subtotal]");
+        var total = document.querySelector("[data-order-total]");
+        var boxName = document.querySelector("[data-order-box-name]");
+        if (boxName) lines.push("Box: " + boxName.textContent.trim());
+        if (subtotal) lines.push("Subtotal: " + subtotal.textContent.trim());
+        if (total) lines.push("Total: " + total.textContent.trim());
+        data.forEach(function (value, key) {
+          if (String(value).trim()) lines.push(key + ": " + value);
+        });
+        var mailto =
+          "mailto:" +
+          encodeURIComponent(contactEmail) +
+          "?subject=" +
+          encodeURIComponent("Alton Chocolates build-a-box order") +
+          "&body=" +
+          encodeURIComponent(lines.join("\n"));
+        showThanks("Thank you! Your custom box order was received. We will confirm soon.");
+        form.reset();
         setTimeout(function () {
           window.location.href = mailto;
         }, 900);
@@ -815,6 +878,7 @@
     initSqsFormSlots();
     initThanks();
     initShop();
+    initOrderButtons();
     initForms();
     initSearch();
   });
