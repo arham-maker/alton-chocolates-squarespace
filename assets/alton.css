@@ -42,7 +42,17 @@ html,body{margin:0!important;padding:0!important;background:#F5F2EC!important;co
 .category-card__label{font-family:"Poppins",sans-serif!important;font-weight:600!important;font-size:14px!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:#5D5958!important}
 .section-header,.section-header--center{text-align:center!important}
 .section-header__desc,.section-header .body-lg{max-width:520px!important;margin:16px auto 0!important;text-align:center!important}
-.product-card__meta{background:#fff!important;padding:20px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:10px!important;text-align:left!important}
+.product-card__meta{background:#fff!important;padding:20px!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:12px!important;text-align:left!important;flex:1 1 auto!important;width:100%!important;box-sizing:border-box!important}
+.product-card__meta .product-title{min-height:52px!important;margin:0!important}
+.product-card__order{width:100%!important;margin-top:auto!important}
+.qty-control{display:inline-flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;border:1px solid #F0E8E0!important;padding:8px 12px!important;width:118px!important;box-sizing:border-box!important;margin-top:0!important}
+.qty-control button{background:transparent!important;border:0!important;outline:none!important;box-shadow:none!important;padding:0!important;width:20px!important;height:20px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.alton-order[hidden]{display:none!important}
+.alton-order{position:fixed!important;inset:0!important;z-index:10900!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:24px!important}
+.alton-order__backdrop{position:absolute!important;inset:0!important;background:rgba(47,26,13,.5)!important}
+.alton-order__panel{position:relative!important;z-index:1!important;width:min(560px,100%)!important;max-height:90vh!important;overflow:auto!important;background:#F5F2EC!important;padding:36px 32px 40px!important}
+.alton-order__form{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px 16px!important}
+.alton-order__form .form-field--full,.alton-order__form .form-actions{grid-column:1/-1!important}
 .alton-thanks[hidden]{display:none!important}
 .alton-thanks{position:fixed!important;inset:0!important;z-index:11000!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:24px!important}
 .alton-thanks__backdrop{position:absolute!important;inset:0!important;background:rgba(47,26,13,.5)!important}
@@ -924,12 +934,14 @@ input.sqs-search-page-input {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px 20px;
+  align-items: stretch;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  height: 100%;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -951,14 +963,23 @@ input.sqs-search-page-input {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: stretch;
+  gap: 12px;
   text-align: left;
+  flex: 1 1 auto;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+.product-card__meta .product-title {
+  min-height: 52px;
+  margin: 0;
 }
 
 .product-card__order {
   width: 100%;
-  margin-top: 4px;
+  margin-top: auto;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -970,6 +991,89 @@ input.sqs-search-page-input {
 
 .alton-thanks[hidden] {
   display: none !important;
+}
+
+.alton-order[hidden] {
+  display: none !important;
+}
+
+.alton-order {
+  position: fixed;
+  inset: 0;
+  z-index: 10900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.alton-order__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 26, 13, 0.5);
+}
+
+.alton-order__panel {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #F5F2EC;
+  padding: 36px 32px 40px;
+  box-shadow: 0 24px 80px rgba(47, 26, 13, 0.25);
+}
+
+.alton-order__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.alton-order__top .heading-lg {
+  font-size: 36px;
+  margin: 0;
+}
+
+.alton-order__close {
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.alton-order__summary {
+  margin: 0 0 24px;
+  color: #5D5958;
+}
+
+.alton-order__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 16px;
+}
+
+.alton-order__form .form-field--full,
+.alton-order__form .form-actions {
+  grid-column: 1 / -1;
+}
+
+.alton-order__form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.alton-order__form .form-actions .btn {
+  min-width: 180px;
+}
+
+@media (max-width: 640px) {
+  .alton-order__form {
+    grid-template-columns: 1fr;
+  }
 }
 
 .alton-thanks {
@@ -1104,15 +1208,21 @@ input.sqs-search-page-input {
 .qty-control {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
   border: 1px solid #F0E8E0;
   padding: 8px 12px;
-  margin-top: 8px;
+  margin-top: 0;
+  width: 118px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .qty-control button {
   background: transparent;
   border: 0;
+  outline: none;
+  box-shadow: none;
   padding: 0;
   cursor: pointer;
   width: 20px;
@@ -1120,17 +1230,26 @@ input.sqs-search-page-input {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.qty-control button:focus,
+.qty-control button:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 .qty-control button img {
   width: 16px;
   height: 16px;
+  display: block;
 }
 
 .qty-control__value {
-  min-width: 20px;
+  min-width: 24px;
   text-align: center;
   font-weight: 500;
+  flex: 1;
 }
 
 .split-section {

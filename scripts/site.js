@@ -443,6 +443,7 @@
     });
 
     initQtyControls(document.querySelector("[data-shop-products]"));
+    initOrderModal();
 
     document.querySelectorAll("[data-shop-order]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -453,28 +454,120 @@
         var qtyEl = card.querySelector("[data-qty-value]");
         var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
         if (qty < 1) qty = 1;
-        var total = (price * qty).toFixed(2);
-        var summary =
-          "Order received: " +
+        openOrderModal({
+          title: title,
+          price: price,
+          qty: qty,
+          total: (price * qty).toFixed(2)
+        });
+      });
+    });
+  }
+
+  function openOrderModal(order) {
+    var modal = document.querySelector("[data-order-modal]");
+    if (!modal) return;
+    var summary = modal.querySelector("[data-order-summary]");
+    var form = modal.querySelector("[data-order-form]");
+    if (summary) {
+      summary.textContent =
+        order.qty +
+        " × " +
+        order.title +
+        " — $" +
+        order.total +
+        " total";
+    }
+    if (form) {
+      form.reset();
+      var set = function (sel, val) {
+        var el = form.querySelector(sel);
+        if (el) el.value = val;
+      };
+      set("[data-order-product]", order.title);
+      set("[data-order-qty]", String(order.qty));
+      set("[data-order-unit]", String(order.price));
+      set("[data-order-total]", String(order.total));
+      var status = form.querySelector("[data-form-status]");
+      if (status) {
+        status.hidden = true;
+        status.textContent = "";
+      }
+    }
+    modal.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    var first = modal.querySelector("#order-name");
+    if (first) setTimeout(function () { first.focus(); }, 50);
+  }
+
+  function closeOrderModal() {
+    var modal = document.querySelector("[data-order-modal]");
+    if (!modal) return;
+    modal.hidden = true;
+    document.documentElement.style.overflow = "";
+  }
+
+  function initOrderModal() {
+    var modal = document.querySelector("[data-order-modal]");
+    if (!modal || modal.getAttribute("data-ready")) return;
+    modal.setAttribute("data-ready", "1");
+
+    modal.querySelectorAll("[data-order-close]").forEach(function (el) {
+      el.addEventListener("click", closeOrderModal);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal && !modal.hidden) closeOrderModal();
+    });
+
+    var form = modal.querySelector("[data-order-form]");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var data = new FormData(form);
+      var product = String(data.get("product") || "Item");
+      var qty = String(data.get("qty") || "1");
+      var total = String(data.get("total") || "0");
+      var lines = [
+        "New Alton Chocolates order",
+        "Product: " + product,
+        "Quantity: " + qty,
+        "Unit price: $" + String(data.get("unit_price") || ""),
+        "Total: $" + total,
+        "",
+        "Customer details:",
+        "Name: " + String(data.get("name") || ""),
+        "Email: " + String(data.get("email") || ""),
+        "Phone: " + String(data.get("phone") || ""),
+        "Address: " + String(data.get("address") || ""),
+        "Notes: " + String(data.get("notes") || "")
+      ];
+
+      var mailto =
+        "mailto:galton4@gmail.com?subject=" +
+        encodeURIComponent("Alton order — " + product) +
+        "&body=" +
+        encodeURIComponent(lines.join("\n"));
+
+      closeOrderModal();
+      showThanks(
+        "Order submitted for " +
           qty +
           " × " +
-          title +
+          product +
           " ($" +
           total +
-          "). We will confirm by email shortly.";
-        showThanks(summary);
-
-        var mailto =
-          "mailto:galton4@gmail.com?subject=" +
-          encodeURIComponent("Alton order — " + title) +
-          "&body=" +
-          encodeURIComponent(
-            "Product: " + title + "\nQty: " + qty + "\nTotal: $" + total
-          );
-        setTimeout(function () {
-          window.location.href = mailto;
-        }, 900);
-      });
+          "). We will confirm by email shortly."
+      );
+      setTimeout(function () {
+        window.location.href = mailto;
+      }, 700);
     });
   }
 

@@ -556,7 +556,51 @@
 
 </div>
 
-  <div class="alton-thanks" id="alton-thanks" data-thanks hidden>
+  
+    <div class="alton-order" id="alton-order" data-order-modal hidden>
+      <div class="alton-order__backdrop" data-order-close tabindex="-1" aria-hidden="true"></div>
+      <div class="alton-order__panel" role="dialog" aria-modal="true" aria-labelledby="alton-order-title">
+        <div class="alton-order__top">
+          <h2 id="alton-order-title" class="heading-lg">Place Your Order</h2>
+          <button type="button" class="alton-order__close" data-order-close aria-label="Close order form">
+            <img src="../assets/icons/cancel.svg" alt="" width="20" height="20">
+          </button>
+        </div>
+        <p class="alton-order__summary body-lg" data-order-summary></p>
+        <form class="alton-order__form" data-order-form novalidate>
+          <input type="hidden" name="product" data-order-product>
+          <input type="hidden" name="qty" data-order-qty>
+          <input type="hidden" name="unit_price" data-order-unit>
+          <input type="hidden" name="total" data-order-total>
+          <div class="form-field">
+            <label for="order-name">Full name</label>
+            <input id="order-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label for="order-email">Email</label>
+            <input id="order-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com">
+          </div>
+          <div class="form-field">
+            <label for="order-phone">Phone</label>
+            <input id="order-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Phone number">
+          </div>
+          <div class="form-field form-field--full">
+            <label for="order-address">Delivery address</label>
+            <textarea id="order-address" name="address" required autocomplete="street-address" placeholder="Street, city, postal code" rows="3"></textarea>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="order-notes">Order notes <span>(optional)</span></label>
+            <textarea id="order-notes" name="notes" placeholder="Allergies, gift message, preferred delivery time" rows="3"></textarea>
+          </div>
+          <div class="form-actions form-field--full">
+            <button type="submit" class="btn btn--terracotta">Submit Order</button>
+          </div>
+          <p class="form-status" data-form-status hidden></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="alton-thanks" id="alton-thanks" data-thanks hidden>
     <div class="alton-thanks__backdrop" data-thanks-close></div>
     <div class="alton-thanks__card" role="alertdialog" aria-modal="true" aria-labelledby="alton-thanks-title">
       <div class="alton-thanks__icon" aria-hidden="true">
