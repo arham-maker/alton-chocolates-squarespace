@@ -44,171 +44,256 @@
 
   <main class="alton-main">
 
-    <section class="gifts-hero" aria-labelledby="gifts-hero-heading">
-      <div class="gifts-hero__content">
-        <p class="label">Handcrafted chocolates</p>
-        <h1 id="gifts-hero-heading" class="heading-lg">Thoughtful Gifts<br>for Every Moment</h1>
-        <p class="body-lg">From celebration boxes to corporate thank-yous, every gift is packed with care and finished with a personal touch.</p>
-      </div>
-      <div class="gifts-hero__media">
-        <img src="../assets/images/gifts-hero.png" alt="Gourmet chocolate with caramel filling" loading="eager">
-      </div>
-    </section>
+    
+<!-- Gifts page — Figma 537:259 / Gift.pdf -->
 
-    <section class="gifts-collections" aria-labelledby="gift-collections-heading">
-      <div class="gifts-collections__intro">
-        <h2 id="gift-collections-heading" class="heading-lg">Our Most Loved Gift Collections</h2>
-        <p class="body-lg" style="margin-top: 16px;">Curated assortments for birthdays, holidays, and everything in between.</p>
-      </div>
-      <div class="gifts-collections__grid">
-        <article class="gift-collection-card">
-          <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-1.png" alt="Signature Bonbon Box" loading="lazy"></div>
-          <div class="gift-collection-card__body"><h3 class="product-title">Signature Bonbon Box</h3><p class="product-card__price">$48</p></div>
-        </article>
-        <article class="gift-collection-card">
-          <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-2.png" alt="Classic Assortment" loading="lazy"></div>
-          <div class="gift-collection-card__body"><h3 class="product-title">Classic Assortment</h3><p class="product-card__price">$58</p></div>
-        </article>
-        <article class="gift-collection-card">
-          <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-3.png" alt="Holiday Collection" loading="lazy"></div>
-          <div class="gift-collection-card__body"><h3 class="product-title">Holiday Collection</h3><p class="product-card__price">$68</p></div>
-        </article>
-        <article class="gift-collection-card">
-          <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-4.png" alt="Celebration Box" loading="lazy"></div>
-          <div class="gift-collection-card__body"><h3 class="product-title">Celebration Box</h3><p class="product-card__price">$72</p></div>
-        </article>
-        <article class="gift-collection-card">
-          <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-5.png" alt="Thank You Set" loading="lazy"></div>
-          <div class="gift-collection-card__body"><h3 class="product-title">Thank You Set</h3><p class="product-card__price">$42</p></div>
-        </article>
-        <article class="gift-collection-card">
-          <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-6.png" alt="Corporate Favorites" loading="lazy"></div>
-          <div class="gift-collection-card__body"><h3 class="product-title">Corporate Favorites</h3><p class="product-card__price">$96</p></div>
-        </article>
-      </div>
-    </section>
+<section class="gifts-hero" aria-labelledby="gifts-hero-heading">
+  <div class="gifts-hero__content">
+    <p class="label">Handcrafted chocolates</p>
+    <h1 id="gifts-hero-heading" class="heading-lg">Thoughtful Gifts<br>for Every Moment</h1>
+    <p class="body-lg">From handcrafted bonbons to rich caramels and indulgent chocolate bars, our collections are made to turn everyday moments into something truly special.</p>
+  </div>
+  <div class="gifts-hero__media">
+    <img src="../assets/images/gifts-hero.png" alt="Gourmet chocolate with caramel filling" loading="eager">
+  </div>
+</section>
 
-    <section class="gifts-catalog" aria-labelledby="premium-gifts-heading">
-      <h2 id="premium-gifts-heading" class="heading-lg">All Our Premium Gifts</h2>
-      <div class="filter-pills" style="margin-top: 28px;" aria-label="Price filters">
-        <span class="label" style="width: 100%; margin-bottom: 4px;">Price</span>
-        <button type="button" class="filter-pill" data-gift-filter="under-20">Under $20</button>
-        <button type="button" class="filter-pill is-active" data-gift-filter="under-50">Under $50</button>
-        <button type="button" class="filter-pill" data-gift-filter="under-75">Under $75</button>
+<section class="gifts-collections" aria-labelledby="gift-collections-heading">
+  <div class="gifts-collections__intro">
+    <h2 id="gift-collections-heading" class="heading-lg">Our Most Loved Gift Collections</h2>
+    <p class="body-lg" style="margin-top: 16px;">Explore thoughtful gift boxes by category, from handcrafted bonbons and chocolate bars to barks, caramels, toffees, and cookies.</p>
+  </div>
+  <div class="gifts-collections__grid">
+    <article class="gift-collection-card">
+      <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-1.png" alt="Signature Bonbon Box" loading="lazy"></div>
+      <div class="gift-collection-card__body">
+        <h3 class="product-title">Signature Bonbon Box</h3>
+        <p class="product-card__price">$48</p>
       </div>
-      <div class="filter-pills" aria-label="Occasion filters">
-        <span class="label" style="width: 100%; margin-bottom: 4px;">Occasions</span>
-        <button type="button" class="filter-pill" data-gift-filter="birthday">Birthday</button>
-        <button type="button" class="filter-pill" data-gift-filter="thank-you">Thank You</button>
-        <button type="button" class="filter-pill" data-gift-filter="celebration">Celebration</button>
-        <button type="button" class="filter-pill" data-gift-filter="holiday">Holiday</button>
+    </article>
+    <article class="gift-collection-card">
+      <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-2.png" alt="Chocolate Bark Box" loading="lazy"></div>
+      <div class="gift-collection-card__body">
+        <h3 class="product-title">Chocolate Bark Box</h3>
+        <p class="product-card__price">$29</p>
       </div>
-      <div class="product-grid">
-        <article class="product-card" data-gift-card data-price="28">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-1.png" alt="Petite Bonbon Set" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Petite Bonbon Set</h3><p class="product-card__price">$28</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="36">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-2.png" alt="Caramel Duo" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Caramel Duo</h3><p class="product-card__price">$36</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="42">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-3.png" alt="Bark & Bar Bundle" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Bark & Bar Bundle</h3><p class="product-card__price">$42</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="48">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-4.png" alt="Weekend Indulgence" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Weekend Indulgence</h3><p class="product-card__price">$48</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="54">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-5.png" alt="Hostess Box" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Hostess Box</h3><p class="product-card__price">$54</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="62">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-6.png" alt="Grand Assortment" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Grand Assortment</h3><p class="product-card__price">$62</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="38">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-7.png" alt="Cookie & Toffee Tin" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Cookie & Toffee Tin</h3><p class="product-card__price">$38</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card" data-gift-card data-price="44">
-          <div class="product-card__image"><img src="../assets/images/gift-prod-8.png" alt="Dark & Milk Duo" loading="lazy"></div>
-          <div class="product-card__meta">
-            <h3 class="product-title">Dark & Milk Duo</h3><p class="product-card__price">$44</p>
-            <div class="qty-control" data-qty>
-              <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
-              <span class="qty-control__value" data-qty-value>1</span>
-              <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
-            </div>
-          </div>
-        </article>
+    </article>
+    <article class="gift-collection-card">
+      <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-3.png" alt="Sea Salt Caramels" loading="lazy"></div>
+      <div class="gift-collection-card__body">
+        <h3 class="product-title">Sea Salt Caramels</h3>
+        <p class="product-card__price">$34</p>
       </div>
-    </section>
+    </article>
+    <article class="gift-collection-card">
+      <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-4.png" alt="Artisan Chocolate Bars" loading="lazy"></div>
+      <div class="gift-collection-card__body">
+        <h3 class="product-title">Artisan Chocolate Bars</h3>
+        <p class="product-card__price">$18</p>
+      </div>
+    </article>
+    <article class="gift-collection-card">
+      <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-5.png" alt="Toffee Collections" loading="lazy"></div>
+      <div class="gift-collection-card__body">
+        <h3 class="product-title">Toffee Collections</h3>
+        <p class="product-card__price">$28</p>
+      </div>
+    </article>
+    <article class="gift-collection-card">
+      <div class="gift-collection-card__image"><img src="../assets/images/gift-coll-6.png" alt="Chocolate Chip Cookies" loading="lazy"></div>
+      <div class="gift-collection-card__body">
+        <h3 class="product-title">Chocolate Chip Cookies</h3>
+        <p class="product-card__price">$34</p>
+      </div>
+    </article>
+  </div>
+  <div style="margin-top: 30px;">
+    <squarespace:block-field id="giftsCollections" columns="12" label="Gift Collections Summary / Products" />
+  </div>
+</section>
 
-    <section class="corporate-cta" aria-labelledby="corporate-heading">
-      <div class="corporate-cta__media">
-        <img src="../assets/images/corporate-gifting.png" alt="Corporate gift box with red ribbon" loading="lazy">
+<section class="gifts-catalog" aria-labelledby="premium-gifts-heading">
+  <h2 id="premium-gifts-heading" class="heading-lg">All Our Premium Gifts</h2>
+
+  <div class="filter-pills" style="margin-top: 28px;" aria-label="Price filters">
+    <span class="label" style="width: 100%; margin-bottom: 4px;">Price</span>
+    <button type="button" class="filter-pill" data-gift-filter="under-25">Under 25$</button>
+    <button type="button" class="filter-pill is-active" data-gift-filter="under-50">Under 50$</button>
+    <button type="button" class="filter-pill" data-gift-filter="under-75">Under 75$</button>
+  </div>
+  <div class="filter-pills" aria-label="Occasion filters">
+    <span class="label" style="width: 100%; margin-bottom: 4px;">Occasion</span>
+    <button type="button" class="filter-pill" data-gift-filter="birthday">Birthday</button>
+    <button type="button" class="filter-pill" data-gift-filter="thank-you">Thank You</button>
+    <button type="button" class="filter-pill" data-gift-filter="celebration">Celebration</button>
+    <button type="button" class="filter-pill" data-gift-filter="holiday">Holiday</button>
+  </div>
+
+  <div class="product-grid">
+    <article class="product-card" data-gift-card data-price="32">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-1.png" alt="Signature Bonbon Collection" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Signature Bonbon Collection</h3>
+        <p class="product-card__price">$32</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>1</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
       </div>
-      <div class="corporate-cta__content">
-        <p class="label">For Business</p>
-        <h2 id="corporate-heading" class="heading-lg">Corporate Gifting</h2>
-        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl. Custom branding and bulk orders available.</p>
-        <a class="btn btn--terracotta" href="#contact">
-          Learn More
-          <img src="../assets/icons/arrow-right.svg" alt="" width="24" height="24">
-        </a>
+    </article>
+    <article class="product-card" data-gift-card data-price="26">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-2.png" alt="Artisan Chocolate Bark Collection" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Artisan Chocolate Bark Collection</h3>
+        <p class="product-card__price">$26</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>1</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
       </div>
-    </section>
+    </article>
+    <article class="product-card" data-gift-card data-price="24">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-3.png" alt="Sea Salt Chocolate Bar Set" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Sea Salt Chocolate Bar Set</h3>
+        <p class="product-card__price">$24</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="28">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-4.png" alt="Classic English Toffee" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Classic English Toffee</h3>
+        <p class="product-card__price">$28</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="28">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-5.png" alt="Sea Salt Caramel Gift Box" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Sea Salt Caramel Gift Box</h3>
+        <p class="product-card__price">$28</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="24">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-6.png" alt="Chocolate Cookie Collection" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Chocolate Cookie Collection</h3>
+        <p class="product-card__price">$24</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="34">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-7.png" alt="Dark Chocolate Bonbon Box" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Dark Chocolate Bonbon Box</h3>
+        <p class="product-card__price">$34</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="28">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-8.png" alt="Dark &amp; White Bark Assortment" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Dark &amp; White Bark Assortment</h3>
+        <p class="product-card__price">$28</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="28">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-1.png" alt="Hazelnut Crunch Bar Set" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Hazelnut Crunch Bar Set</h3>
+        <p class="product-card__price">$28</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="32">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-2.png" alt="Vanilla Bean Toffee Collection" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Vanilla Bean Toffee Collection</h3>
+        <p class="product-card__price">$32</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="32">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-3.png" alt="Caramel Assortment Box" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Caramel Assortment Box</h3>
+        <p class="product-card__price">$32</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card" data-gift-card data-price="22">
+      <div class="product-card__image"><img src="../assets/images/gift-prod-4.png" alt="Double Chocolate Cookie Box" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Double Chocolate Cookie Box</h3>
+        <p class="product-card__price">$22</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+</section>
+
+<section class="corporate-cta" aria-labelledby="corporate-heading">
+  <div class="corporate-cta__media">
+    <img src="../assets/images/corporate-gifting.png" alt="Corporate gift box with red ribbon" loading="lazy">
+  </div>
+  <div class="corporate-cta__content">
+    <p class="label">For Business</p>
+    <h2 id="corporate-heading" class="heading-lg">Corporate Gifting</h2>
+    <p class="body-lg">Thoughtful gifts to strengthen relationships and show appreciation.</p>
+    <a class="btn btn--terracotta" href="#contact">
+      Learn More
+      <img src="../assets/icons/arrow-right.svg" alt="" width="24" height="24">
+    </a>
+  </div>
+</section>
+
+    
 
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">
       <div class="contact-section__info">

@@ -211,6 +211,48 @@
 
   function initGiftQty() {
     initQtyControls(document);
+
+    var pills = document.querySelectorAll("[data-gift-filter]");
+    var cards = document.querySelectorAll("[data-gift-card]");
+    if (!pills.length || !cards.length) return;
+
+    function applyGiftFilter(key) {
+      var max = null;
+      if (key === "under-25") max = 25;
+      else if (key === "under-50") max = 50;
+      else if (key === "under-75") max = 75;
+
+      cards.forEach(function (card) {
+        if (max == null) {
+          card.style.display = "";
+          return;
+        }
+        var price = parseFloat(card.getAttribute("data-price")) || 0;
+        card.style.display = price <= max ? "" : "none";
+      });
+    }
+
+    pills.forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        var key = pill.getAttribute("data-gift-filter") || "";
+        var isPrice = key.indexOf("under-") === 0;
+        if (isPrice) {
+          pills.forEach(function (p) {
+            if ((p.getAttribute("data-gift-filter") || "").indexOf("under-") === 0) {
+              p.classList.remove("is-active");
+            }
+          });
+          pill.classList.add("is-active");
+          applyGiftFilter(key);
+        } else {
+          pills.forEach(function (p) {
+            var k = p.getAttribute("data-gift-filter") || "";
+            if (k.indexOf("under-") !== 0) p.classList.remove("is-active");
+          });
+          pill.classList.add("is-active");
+        }
+      });
+    });
   }
 
   function initTestimonials() {

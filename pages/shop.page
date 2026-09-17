@@ -1,10 +1,11 @@
-<!-- Shop page — Figma 511:2 -->
+<!-- Shop page — Figma 511:2 / Shop.pdf -->
 
 <section class="shop-hero" aria-labelledby="shop-hero-heading">
   <div class="shop-hero__content">
     <h1 id="shop-hero-heading" class="heading-lg">New Bonbons<br>Have Arrived</h1>
-    <div class="body-lg">
-      <squarespace:block-field id="shopHeroCopy" columns="12" label="Shop Hero Copy" />
+    <p class="body-lg">Our latest collection of handcrafted bonbons is here. Discover delicate shells, rich fillings, and new flavors made to be savored.</p>
+    <div class="sr-only" aria-hidden="true">
+      <squarespace:block-field id="shopHeroCopy" columns="12" label="Shop Hero Copy (optional override)" />
     </div>
   </div>
   <div class="shop-hero__media">
@@ -15,12 +16,10 @@
 <section class="shop-categories" aria-labelledby="categories-heading">
   <div class="section-header">
     <h2 id="categories-heading" class="heading-lg">Categories</h2>
-    <p class="body-lg" style="max-width: 520px; margin: 16px auto 0;">
-      <squarespace:block-field id="shopCategoriesIntro" columns="12" label="Categories Intro" />
-    </p>
+    <p class="body-lg" style="max-width: 520px; margin: 16px auto 0;">Explore our collection of handcrafted chocolates and sweet treats.</p>
   </div>
   <div class="category-grid">
-    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bonbons.png" alt="Bonbons" loading="lazy"></div><span class="category-card__label">Bonbons</span></a>
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bonbons.png" alt="Bonbons" loading="lazy"></div><span class="category-card__label">Bonbon</span></a>
     <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bars.png" alt="Bars" loading="lazy"></div><span class="category-card__label">Bars</span></a>
     <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bark.png" alt="Bark" loading="lazy"></div><span class="category-card__label">Bark</span></a>
     <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-caramels.png" alt="Caramels" loading="lazy"></div><span class="category-card__label">Caramels</span></a>
@@ -29,16 +28,13 @@
   </div>
 </section>
 
-<section class="shop-products" id="products" aria-labelledby="shop-products-heading">
-  <div class="section-header">
-    <h2 id="shop-products-heading" class="heading-lg">All Chocolates</h2>
-  </div>
+<section class="shop-products" id="products" aria-label="Shop products">
   <div class="product-grid">
     <article class="product-card">
       <div class="product-card__image"><img src="/assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Salted Caramel</h3>
-        <p class="product-card__price">$26</p>
+        <p class="product-card__price">$28</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -46,7 +42,7 @@
       <div class="product-card__image"><img src="/assets/images/shop-product-2.png" alt="Raspberry Chocolate" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Raspberry Chocolate</h3>
-        <p class="product-card__price">$26</p>
+        <p class="product-card__price">$12</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -54,7 +50,7 @@
       <div class="product-card__image"><img src="/assets/images/shop-product-3.png" alt="Passion Fruit Ganache" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Passion Fruit Ganache</h3>
-        <p class="product-card__price">$28</p>
+        <p class="product-card__price">$16</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -62,7 +58,7 @@
       <div class="product-card__image"><img src="/assets/images/shop-product-4.png" alt="Pistachio Praline" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Pistachio Praline</h3>
-        <p class="product-card__price">$28</p>
+        <p class="product-card__price">$14</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -70,7 +66,7 @@
       <div class="product-card__image"><img src="/assets/images/shop-product-5.png" alt="Hazelnut Praline" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Hazelnut Praline</h3>
-        <p class="product-card__price">$26</p>
+        <p class="product-card__price">$28</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -78,15 +74,15 @@
       <div class="product-card__image"><img src="/assets/images/shop-product-6.png" alt="Coconut Ganache" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Coconut Ganache</h3>
-        <p class="product-card__price">$26</p>
+        <p class="product-card__price">$12</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
     <article class="product-card">
-      <div class="product-card__image"><img src="/assets/images/shop-product-7.png" alt="Blueberry Vanilla" loading="lazy"></div>
+      <div class="product-card__image"><img src="/assets/images/shop-product-7.png" alt="Blueberry Vanilla Ganache" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Blueberry Vanilla</h3>
-        <p class="product-card__price">$28</p>
+        <h3 class="product-title">Blueberry Vanilla Ganache</h3>
+        <p class="product-card__price">$16</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -94,7 +90,7 @@
       <div class="product-card__image"><img src="/assets/images/shop-product-8.png" alt="Mint Dark Chocolate" loading="lazy"></div>
       <div class="product-card__meta">
         <h3 class="product-title">Mint Dark Chocolate</h3>
-        <p class="product-card__price">$26</p>
+        <p class="product-card__price">$14</p>
         <a class="product-card__link" href="/shop">View Details</a>
       </div>
     </article>
@@ -114,8 +110,7 @@
       <img src="/assets/images/shop-moment-1.png" alt="Pink bonbons" loading="lazy">
     </div>
     <div class="shop-moments__item shop-moments__item--text">
-      <h3 class="heading-md">Crafted in small batches</h3>
-      <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+      <p class="body-lg">Discover our collection of handcrafted bonbons, each created to offer a different kind of chocolate experience. From the bright, delicate sweetness of raspberry ganache to the buttery richness of salted caramel, every piece is made with carefully selected ingredients and finished in a smooth, delicate chocolate shell.</p>
     </div>
     <div class="shop-moments__item">
       <img src="/assets/images/shop-moment-2.png" alt="Caramel brownies" loading="lazy">
@@ -124,8 +119,7 @@
       <img src="/assets/images/shop-moment-3.png" alt="Chocolate cookie" loading="lazy">
     </div>
     <div class="shop-moments__item shop-moments__item--text">
-      <h3 class="heading-md">Flavor first</h3>
-      <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+      <p class="body-lg">Explore roasted pistachio praline, creamy hazelnut gianduja, and other irresistible combinations designed to melt slowly and leave you wanting just one more. Whether you're treating yourself or sharing a box with someone special, these are chocolates made to be savored, one beautiful bite at a time.</p>
     </div>
     <div class="shop-moments__item">
       <img src="/assets/images/shop-moment-4.png" alt="Assorted bonbons" loading="lazy">
