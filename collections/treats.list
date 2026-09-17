@@ -1,0 +1,25 @@
+<section class="section buildbox-step">
+  <h1 class="heading-lg" style="margin-bottom: 40px;">{collection.title}</h1>
+  <div class="buildbox-treats-grid">
+    {.repeated section items}
+      <article class="treat-card" data-treat data-price="{.section variants.0.priceMoney}{value}{.or}3{.end}" data-title="{title}">
+        <div class="treat-card__image">
+          {.section mainImage}
+            <img src="{assetUrl}?format=500w" alt="{title}" loading="lazy">
+          {.end}
+        </div>
+        <h3 class="product-title">{title}</h3>
+        <p class="product-card__price">$3</p>
+        <div class="qty-control" data-qty>
+          <button type="button" data-qty-minus aria-label="Decrease quantity">
+            <img src="/assets/icons/minus.svg" alt="" width="16" height="16">
+          </button>
+          <span class="qty-control__value" data-qty-value>0</span>
+          <button type="button" data-qty-plus aria-label="Increase quantity">
+            <img src="/assets/icons/plus.svg" alt="" width="16" height="16">
+          </button>
+        </div>
+      </article>
+    {.end}
+  </div>
+</section>

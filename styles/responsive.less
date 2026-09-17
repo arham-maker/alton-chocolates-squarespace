@@ -1,0 +1,297 @@
+@media (max-width: 1200px) {
+  .site-header,
+  .home-bestsellers,
+  .contact-section,
+  .testimonials,
+  .newsletter,
+  .site-footer,
+  .shop-categories,
+  .shop-products,
+  .shop-moments,
+  .buildbox-hero,
+  .buildbox-step,
+  .gifts-collections,
+  .gifts-catalog,
+  .story-features {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .home-hero__content,
+  .shop-hero__content,
+  .gifts-hero__content,
+  .story-hero__content,
+  .split-section__content,
+  .corporate-cta__content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .banner-section__content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .banner-section__side {
+    display: none;
+  }
+
+  .heading-xl {
+    font-size: 64px;
+  }
+
+  .heading-lg {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-grid,
+  .buildbox-treats-grid,
+  .gifts-collections__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shop-moments__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .shop-moments__item--tall {
+    grid-row: auto;
+  }
+
+  .buildbox-sizes,
+  .buildbox-checkout,
+  .story-triptych {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .story-features {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .story-feature {
+    border-right: 0;
+    border-bottom: 1px solid @border;
+    padding: 0 0 24px;
+  }
+
+  .story-feature:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .site-header__desktop-nav {
+    display: none;
+  }
+
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-header__account {
+    display: none;
+  }
+
+  .site-header__search span {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0 20px;
+    border-top: 1px solid @border;
+    margin-top: 16px;
+  }
+
+  .site-header.is-open .mobile-nav {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 14px 0;
+    font-family: @font-sans;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: @primary;
+    border-bottom: 1px solid @border;
+  }
+
+  .home-hero,
+  .shop-hero,
+  .gifts-hero,
+  .story-hero,
+  .split-section,
+  .corporate-cta {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .home-hero {
+    display: block;
+    min-height: 520px;
+  }
+
+  .contact-section,
+  .testimonials__track {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials__nav {
+    display: none;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input {
+    border-right: 1px solid @border;
+  }
+
+  .section-header--row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-header--row .section-header__center {
+    position: static;
+    transform: none;
+  }
+
+  .section-header--row .btn--text {
+    align-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .announcement-bar {
+    padding: 12px 40px;
+  }
+
+  .announcement-bar__close {
+    right: 16px;
+  }
+
+  .site-header {
+    padding: 20px 16px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+    padding: 30px 16px;
+  }
+
+  .category-card__image {
+    width: 110px;
+    height: 110px;
+  }
+
+  .product-grid,
+  .buildbox-treats-grid,
+  .gifts-collections__grid,
+  .shop-moments__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer,
+  .home-bestsellers,
+  .contact-section,
+  .testimonials,
+  .newsletter,
+  .shop-categories,
+  .shop-products,
+  .shop-moments,
+  .buildbox-hero,
+  .buildbox-step,
+  .gifts-collections,
+  .gifts-catalog,
+  .story-features {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .home-hero__content,
+  .shop-hero__content,
+  .gifts-hero__content,
+  .story-hero__content,
+  .split-section__content,
+  .corporate-cta__content,
+  .banner-section__content {
+    padding: 40px 16px;
+  }
+
+  .heading-xl {
+    font-size: 42px;
+  }
+
+  .heading-lg {
+    font-size: 34px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    width: 100%;
+  }
+
+  .btn--text {
+    width: auto;
+  }
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buildbox-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buildbox-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .feature-icons {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .heading-xl {
+    font-size: 36px;
+  }
+
+  .heading-lg {
+    font-size: 30px;
+  }
+
+  .announcement-bar__text {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+}

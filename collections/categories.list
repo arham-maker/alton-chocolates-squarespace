@@ -1,0 +1,6 @@
+<section class="section shop-categories">
+  <div class="section-header">
+    <h1 class="heading-lg">{collection.title}</h1>
+  </div>
+  {@|apply categories.block}
+</section>

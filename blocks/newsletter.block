@@ -1,0 +1,11 @@
+<section class="newsletter" aria-labelledby="newsletter-heading">
+  <div class="newsletter__inner">
+    <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
+    <p class="label">
+      <squarespace:block-field id="newsletterCopy" columns="12" label="Newsletter Copy" />
+    </p>
+    <div class="newsletter-form-wrap">
+      <squarespace:block-field id="newsletterForm" columns="12" label="Newsletter Block" />
+    </div>
+  </div>
+</section>

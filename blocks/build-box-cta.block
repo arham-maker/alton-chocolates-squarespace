@@ -1,0 +1,17 @@
+<section class="split-section" aria-labelledby="build-box-heading">
+  <div class="split-section__media">
+    <squarespace:block-field id="buildBoxImage" columns="12" label="Build Box Image" />
+  </div>
+  <div class="split-section__content split-section__content--blush">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="build-box-heading" class="heading-lg">Build Your Box</h2>
+    </div>
+    <div class="body-lg">
+      <squarespace:block-field id="buildBoxCopy" columns="12" label="Build Box Copy" />
+    </div>
+    <div>
+      <squarespace:block-field id="buildBoxCta" columns="12" label="Build Box CTA" />
+    </div>
+  </div>
+</section>

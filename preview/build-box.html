@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Box — Alton Chocolates</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="alton-site">
+
+  <aside class="announcement-bar" data-announcement role="region" aria-label="Site announcement">
+    <p class="announcement-bar__text">free shipping on orders over $75/-</p>
+    <button type="button" class="announcement-bar__close" data-announcement-close aria-label="Dismiss announcement">
+      <img src="../assets/icons/cancel.svg" alt="" width="20" height="20">
+    </button>
+  </aside>
+
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-header__search" href="#" aria-label="Search">
+        <img src="../assets/icons/search.svg" alt="" width="20" height="20"><span>Search</span>
+      </a>
+      <div class="site-header__brand">
+        <a class="site-header__logo" href="index.html" aria-label="Alton Chocolates">
+          <img src="../assets/icons/logo.svg" alt="Alton Chocolates" width="155" height="47">
+        </a>
+        <nav class="site-nav site-header__desktop-nav" aria-label="Primary">
+          <a href="shop.html">Shop</a>
+          <a href="build-box.html" class="is-active">Build Box</a>
+          <a href="gifts.html">Gifts</a>
+          <a href="our-story.html">Our Story</a>
+        </nav>
+      </div>
+      <div class="site-header__actions">
+        <a class="site-header__account" href="#" aria-label="Account"><img src="../assets/icons/person.svg" alt="" width="20" height="20"></a>
+        <button type="button" class="site-header__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" data-mobile-nav hidden aria-label="Mobile">
+      <a href="shop.html">Shop</a><a href="build-box.html">Build Box</a><a href="gifts.html">Gifts</a><a href="our-story.html">Our Story</a>
+    </nav>
+  </header>
+
+  <main class="alton-main">
+
+    <section class="buildbox-hero" aria-labelledby="buildbox-hero-heading">
+      <div class="buildbox-hero__content">
+        <p class="label">Made by us, inspired by you</p>
+        <h1 id="buildbox-hero-heading" class="heading-lg">Build Your Perfect Box</h1>
+        <p class="body-lg">Choose your box size, pick your favorite treats, and we'll hand-pack every selection with care.</p>
+      </div>
+      <div class="buildbox-hero__media">
+        <img src="../assets/images/buildbox-hero.png" alt="Open premium chocolate box" loading="eager">
+      </div>
+    </section>
+
+    <section class="buildbox-step" aria-labelledby="step1-heading" data-buildbox>
+      <h2 id="step1-heading" class="buildbox-step__title">1. How Many Treats?</h2>
+      <div class="buildbox-sizes">
+        <div class="buildbox-size-list" role="listbox" aria-label="Box size">
+          <button type="button" class="buildbox-size" data-box-size data-box-name="Small Treat Box" data-box-price="58" data-box-min="6" data-box-max="9" role="option" aria-selected="false">
+            <div class="buildbox-size__info"><h3>Small Treat Box</h3><p>Choose 6–9 treats</p></div>
+            <span class="buildbox-size__price">From $58</span>
+          </button>
+          <button type="button" class="buildbox-size" data-box-size data-box-name="Classic Treat Box" data-box-price="68" data-box-min="12" data-box-max="18" role="option" aria-selected="false">
+            <div class="buildbox-size__info"><h3>Classic Treat Box</h3><p>Choose 12–18 treats</p></div>
+            <span class="buildbox-size__price">From $68</span>
+          </button>
+          <button type="button" class="buildbox-size is-selected" data-box-size data-box-name="Sharing Treat Box" data-box-price="78" data-box-min="24" data-box-max="36" role="option" aria-selected="true">
+            <div class="buildbox-size__info"><h3>Sharing Treat Box</h3><p>Choose 24–36 treats</p></div>
+            <span class="buildbox-size__price">From $78</span>
+          </button>
+        </div>
+        <div class="buildbox-preview-grid" aria-hidden="true">
+          <img src="../assets/images/treat-preview-1.png" alt="">
+          <img src="../assets/images/treat-preview-2.png" alt="">
+          <img src="../assets/images/treat-preview-3.png" alt="">
+          <img src="../assets/images/treat-preview-4.png" alt="">
+          <img src="../assets/images/treat-preview-5.png" alt="">
+          <img src="../assets/images/treat-preview-6.png" alt="">
+          <img src="../assets/images/cat-bonbons.png" alt="">
+          <img src="../assets/images/cat-bars.png" alt="">
+          <img src="../assets/images/cat-bark.png" alt="">
+          <img src="../assets/images/cat-caramels.png" alt="">
+          <img src="../assets/images/cat-toffee.png" alt="">
+          <img src="../assets/images/cat-cookies.png" alt="">
+          <img src="../assets/images/shop-product-1.png" alt="">
+          <img src="../assets/images/shop-product-2.png" alt="">
+          <img src="../assets/images/shop-product-3.png" alt="">
+          <img src="../assets/images/shop-product-4.png" alt="">
+          <img src="../assets/images/shop-product-5.png" alt="">
+          <img src="../assets/images/shop-product-6.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="buildbox-step" aria-labelledby="step2-heading">
+      <h2 id="step2-heading" class="buildbox-step__title">
+        2. Choose Your Treats
+        <span class="label" data-treat-status style="margin-left: auto; letter-spacing: 0.1em;">0 selected</span>
+      </h2>
+      <div class="filter-pills" role="tablist" aria-label="Treat filters">
+        <button type="button" class="filter-pill is-active" data-filter="all">All</button>
+        <button type="button" class="filter-pill" data-filter="bonbons">Bonbons</button>
+        <button type="button" class="filter-pill" data-filter="bars">Bars</button>
+        <button type="button" class="filter-pill" data-filter="barks">Barks</button>
+        <button type="button" class="filter-pill" data-filter="caramels">Caramels</button>
+        <button type="button" class="filter-pill" data-filter="toffees">Toffees</button>
+        <button type="button" class="filter-pill" data-filter="cookies">Cookies</button>
+      </div>
+      <div class="buildbox-treats-grid">
+        <article class="treat-card" data-treat data-category="caramels" data-title="Salted Caramel" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
+          <h3 class="product-title">Salted Caramel</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Raspberry Chocolate" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-2.png" alt="Raspberry Chocolate" loading="lazy"></div>
+          <h3 class="product-title">Raspberry Chocolate</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Passion Fruit Ganache" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-3.png" alt="Passion Fruit Ganache" loading="lazy"></div>
+          <h3 class="product-title">Passion Fruit Ganache</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Pistachio Praline" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-4.png" alt="Pistachio Praline" loading="lazy"></div>
+          <h3 class="product-title">Pistachio Praline</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Hazelnut Praline" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-5.png" alt="Hazelnut Praline" loading="lazy"></div>
+          <h3 class="product-title">Hazelnut Praline</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Coconut Ganache" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-6.png" alt="Coconut Ganache" loading="lazy"></div>
+          <h3 class="product-title">Coconut Ganache</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Blueberry Vanilla" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-7.png" alt="Blueberry Vanilla" loading="lazy"></div>
+          <h3 class="product-title">Blueberry Vanilla</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bars" data-title="Mint Dark Chocolate" data-price="3">
+          <div class="treat-card__image"><img src="../assets/images/shop-product-8.png" alt="Mint Dark Chocolate" loading="lazy"></div>
+          <h3 class="product-title">Mint Dark Chocolate</h3><p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="../assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="../assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="buildbox-step" aria-labelledby="step3-heading">
+      <h2 id="step3-heading" class="buildbox-step__title">3. Complete Your Order</h2>
+      <div class="buildbox-checkout">
+        <form class="alton-form buildbox-form-grid" id="buildBoxOrderForm" data-buildbox-form action="#" method="post">
+          <div class="form-field full"><label for="bb-email">Email</label><input id="bb-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="form-field"><label for="bb-phone">Phone</label><input id="bb-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="form-field"><label for="bb-first">First Name</label><input id="bb-first" name="firstName" type="text" required autocomplete="given-name"></div>
+          <div class="form-field"><label for="bb-last">Last Name</label><input id="bb-last" name="lastName" type="text" required autocomplete="family-name"></div>
+          <div class="form-field full"><label for="bb-address">Address</label><input id="bb-address" name="address" type="text" required autocomplete="street-address"></div>
+          <div class="form-field"><label for="bb-city">City</label><input id="bb-city" name="city" type="text" required autocomplete="address-level2"></div>
+          <div class="form-field"><label for="bb-state">State</label><input id="bb-state" name="state" type="text" required autocomplete="address-level1"></div>
+          <div class="form-field"><label for="bb-zip">Zip</label><input id="bb-zip" name="zip" type="text" required autocomplete="postal-code"></div>
+          <div class="form-field full"><label for="bb-message">Message</label><textarea id="bb-message" name="message" rows="4"></textarea></div>
+        </form>
+        <aside class="buildbox-order" aria-label="Order summary">
+          <div class="buildbox-order__image"><img src="../assets/images/buildbox-summary.png" alt="Selected treat box" loading="lazy"></div>
+          <h3 class="product-title" data-order-box-name>Sharing Treat Box</h3>
+          <div class="buildbox-order__list" data-order-list><p class="body-lg" style="font-size: 14px;">No treats selected yet.</p></div>
+          <div class="buildbox-order__totals">
+            <div class="buildbox-order__row"><span>Subtotal</span><span data-order-subtotal>$78.00</span></div>
+            <div class="buildbox-order__row"><span>Tax</span><span data-order-tax>$0.00</span></div>
+            <div class="buildbox-order__row total"><span>Total</span><span data-order-total>$78.00</span></div>
+          </div>
+          <button type="button" class="btn btn--olive" style="width: 100%;" data-continue-payment>
+            Continue to Payment
+            <img src="../assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="split-section" aria-labelledby="bb-details-heading">
+      <div class="split-section__media"><img src="../assets/images/details-craft.png" alt="Crafting details" loading="lazy"></div>
+      <div class="split-section__content split-section__content--cream">
+        <h2 id="bb-details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
+        <div class="feature-icons">
+          <div class="feature-icon"><img src="../assets/icons/leaf.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+          <div class="feature-icon"><img src="../assets/icons/heart.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+          <div class="feature-icon"><img src="../assets/icons/plant.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+        </div>
+        <a class="btn btn--text" href="our-story.html">Why Alton <img src="../assets/icons/arrow-right-dark.svg" alt="" width="24" height="24"></a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-section__info">
+        <p class="label">Get in touch</p>
+        <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. We'd love to hear from you about custom orders, corporate gifting, or anything else.</p>
+        <div class="contact-details">
+          <a href="tel:+15551234567"><img src="../assets/icons/phone.svg" alt="" width="22" height="22"> (555) 123-4567</a>
+          <a href="mailto:hello@altonchocolates.com"><img src="../assets/icons/email.svg" alt="" width="22" height="22"> hello@altonchocolates.com</a>
+        </div>
+        <img class="contact-section__art" src="../assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
+      </div>
+      <div class="contact-section__form">
+        <form class="alton-form contact-form" action="#" method="post">
+          <div class="form-field"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="form-field"><label for="contact-phone">Phone</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="form-field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="form-field"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" required></textarea></div>
+          <div class="form-actions"><button type="submit" class="btn btn--olive">Send Message</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonials-heading" data-testimonials>
+      <p class="label">Kind words from our clients</p>
+      <h2 id="testimonials-heading" class="heading-lg">Testimonials</h2>
+      <div class="testimonials__track" data-testimonials-track>
+        <button type="button" class="testimonials__nav testimonials__nav--prev" data-testimonials-prev aria-label="Previous"><img src="../assets/icons/arrow-left.svg" alt="" width="20" height="20"></button>
+        <article class="testimonial-card"><p class="testimonial-card__quote">Sample text goes here</p><p class="testimonial-card__name">— Jamie L.</p></article>
+        <article class="testimonial-card"><p class="testimonial-card__quote">Sample text goes here</p><p class="testimonial-card__name">— Morgan S.</p></article>
+        <article class="testimonial-card"><p class="testimonial-card__quote">Sample text goes here</p><p class="testimonial-card__name">— Riley T.</p></article>
+        <button type="button" class="testimonials__nav testimonials__nav--next" data-testimonials-next aria-label="Next"><img src="../assets/icons/chevron-right.svg" alt="" width="20" height="20"></button>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
+      <div class="newsletter__inner">
+        <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
+        <p class="label">Subscribe for seasonal releases, gift guides, and sweet news.</p>
+        <form class="newsletter-form" action="#" method="post">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="Your email" required autocomplete="email">
+          <button type="submit" class="btn btn--terracotta">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a href="index.html" aria-label="Alton Chocolates"><img class="site-footer__brand-logo" src="../assets/icons/logo.svg" alt="Alton Chocolates" width="180" height="54"></a>
+        <p class="site-footer__brand-text">Handcrafted chocolates for everyday indulgence and thoughtful gifting.</p>
+      </div>
+      <div><h2 class="site-footer__col-title">Shop</h2><nav class="site-footer__links" aria-label="Shop links"><a href="shop.html">All Chocolates</a><a href="build-box.html">Build Your Box</a><a href="gifts.html">Gift Collections</a></nav></div>
+      <div><h2 class="site-footer__col-title">Other</h2><nav class="site-footer__links" aria-label="Other links"><a href="our-story.html">Our Story</a><a href="gifts.html">Corporate Gifting</a><a href="#newsletter">Stay in Touch</a></nav></div>
+      <div><h2 class="site-footer__col-title">Help</h2><nav class="site-footer__links" aria-label="Help links"><a href="#contact">Contact</a><a href="#">Shipping Info</a><a href="#">FAQ</a></nav></div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">© 2026 Alton Chocolates</p>
+      <div class="site-footer__meta">
+        <div class="site-footer__social"><a href="#" aria-label="Facebook"><img src="../assets/icons/facebook.svg" alt="" width="20" height="20"></a><a href="#" aria-label="Instagram"><img src="../assets/icons/instagram.svg" alt="" width="20" height="20"></a></div>
+        <nav class="site-footer__legal" aria-label="Legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script src="../scripts/site.js"></script>
+</body>
+</html>

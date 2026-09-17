@@ -1,0 +1,21 @@
+<section class="section shop-products">
+  <div class="section-header">
+    <p class="label">Shop</p>
+    <h1 class="heading-lg">{collection.title}</h1>
+  </div>
+  <div class="product-grid">
+    {.repeated section items}
+      {@|apply product-card.block}
+    {.end}
+  </div>
+</section>
+{.section pagination}
+  <nav class="pagination" aria-label="Pagination">
+    {.section prevPage}
+      <a href="{previousUrl}">Previous</a>
+    {.end}
+    {.section nextPage}
+      <a href="{nextUrl}">Next</a>
+    {.end}
+  </nav>
+{.end}

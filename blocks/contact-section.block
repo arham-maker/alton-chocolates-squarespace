@@ -1,0 +1,16 @@
+<section class="contact-section" id="contact" aria-labelledby="contact-heading">
+  <div class="contact-section__info">
+    <p class="label">Get in touch</p>
+    <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
+    <div class="body-lg">
+      <squarespace:block-field id="contactIntro" columns="12" label="Contact Introduction" />
+    </div>
+    <div class="contact-details">
+      <squarespace:block-field id="contactDetails" columns="12" label="Phone & Email" />
+    </div>
+    <img class="contact-section__art" src="/assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
+  </div>
+  <div class="contact-section__form">
+    <squarespace:block-field id="contactForm" columns="12" label="Contact Form Block" />
+  </div>
+</section>

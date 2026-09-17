@@ -1,0 +1,14 @@
+<section class="category-grid" aria-label="Product categories">
+  {.section collection}
+    {.repeated section items}
+      <a class="category-card" href="{fullUrl}">
+        <div class="category-card__image">
+          {.section mainImage}
+            <img src="{assetUrl}?format=500w" alt="{title}" loading="lazy" width="150" height="150">
+          {.end}
+        </div>
+        <span class="category-card__label">{title}</span>
+      </a>
+    {.end}
+  {.end}
+</section>

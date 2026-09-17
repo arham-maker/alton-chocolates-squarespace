@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.squarespace/
+preview/site.css.map

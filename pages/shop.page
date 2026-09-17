@@ -1,0 +1,155 @@
+<!-- Shop page — Figma 511:2 -->
+
+<section class="shop-hero" aria-labelledby="shop-hero-heading">
+  <div class="shop-hero__content">
+    <h1 id="shop-hero-heading" class="heading-lg">New Bonbons<br>Have Arrived</h1>
+    <div class="body-lg">
+      <squarespace:block-field id="shopHeroCopy" columns="12" label="Shop Hero Copy" />
+    </div>
+  </div>
+  <div class="shop-hero__media">
+    <img src="/assets/images/shop-hero.png" alt="Gift box of assorted bonbons" loading="eager">
+  </div>
+</section>
+
+<section class="shop-categories" aria-labelledby="categories-heading">
+  <div class="section-header">
+    <h2 id="categories-heading" class="heading-lg">Categories</h2>
+    <p class="body-lg" style="max-width: 520px; margin: 16px auto 0;">
+      <squarespace:block-field id="shopCategoriesIntro" columns="12" label="Categories Intro" />
+    </p>
+  </div>
+  <div class="category-grid">
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bonbons.png" alt="Bonbons" loading="lazy"></div><span class="category-card__label">Bonbons</span></a>
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bars.png" alt="Bars" loading="lazy"></div><span class="category-card__label">Bars</span></a>
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-bark.png" alt="Bark" loading="lazy"></div><span class="category-card__label">Bark</span></a>
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-caramels.png" alt="Caramels" loading="lazy"></div><span class="category-card__label">Caramels</span></a>
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-toffee.png" alt="Toffee" loading="lazy"></div><span class="category-card__label">Toffee</span></a>
+    <a class="category-card" href="#products"><div class="category-card__image"><img src="/assets/images/cat-cookies.png" alt="Cookies" loading="lazy"></div><span class="category-card__label">Cookies</span></a>
+  </div>
+</section>
+
+<section class="shop-products" id="products" aria-labelledby="shop-products-heading">
+  <div class="section-header">
+    <h2 id="shop-products-heading" class="heading-lg">All Chocolates</h2>
+  </div>
+  <div class="product-grid">
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Salted Caramel</h3>
+        <p class="product-card__price">$26</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-2.png" alt="Raspberry Chocolate" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Raspberry Chocolate</h3>
+        <p class="product-card__price">$26</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-3.png" alt="Passion Fruit Ganache" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Passion Fruit Ganache</h3>
+        <p class="product-card__price">$28</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-4.png" alt="Pistachio Praline" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Pistachio Praline</h3>
+        <p class="product-card__price">$28</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-5.png" alt="Hazelnut Praline" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Hazelnut Praline</h3>
+        <p class="product-card__price">$26</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-6.png" alt="Coconut Ganache" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Coconut Ganache</h3>
+        <p class="product-card__price">$26</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-7.png" alt="Blueberry Vanilla" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Blueberry Vanilla</h3>
+        <p class="product-card__price">$28</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__image"><img src="/assets/images/shop-product-8.png" alt="Mint Dark Chocolate" loading="lazy"></div>
+      <div class="product-card__meta">
+        <h3 class="product-title">Mint Dark Chocolate</h3>
+        <p class="product-card__price">$26</p>
+        <a class="product-card__link" href="/shop">View Details</a>
+      </div>
+    </article>
+  </div>
+  <div style="margin-top: 40px;">
+    <squarespace:block-field id="shopProducts" columns="12" label="Products Collection / Summary Block" />
+  </div>
+</section>
+
+<section class="shop-moments" aria-labelledby="moments-heading">
+  <div class="section-header">
+    <p class="label">Our Favorites</p>
+    <h2 id="moments-heading" class="heading-lg">Made for the Moment</h2>
+  </div>
+  <div class="shop-moments__grid">
+    <div class="shop-moments__item shop-moments__item--tall">
+      <img src="/assets/images/shop-moment-1.png" alt="Pink bonbons" loading="lazy">
+    </div>
+    <div class="shop-moments__item shop-moments__item--text">
+      <h3 class="heading-md">Crafted in small batches</h3>
+      <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+    </div>
+    <div class="shop-moments__item">
+      <img src="/assets/images/shop-moment-2.png" alt="Caramel brownies" loading="lazy">
+    </div>
+    <div class="shop-moments__item">
+      <img src="/assets/images/shop-moment-3.png" alt="Chocolate cookie" loading="lazy">
+    </div>
+    <div class="shop-moments__item shop-moments__item--text">
+      <h3 class="heading-md">Flavor first</h3>
+      <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+    </div>
+    <div class="shop-moments__item">
+      <img src="/assets/images/shop-moment-4.png" alt="Assorted bonbons" loading="lazy">
+    </div>
+  </div>
+  <squarespace:block-field id="shopMoments" columns="12" label="Moments Gallery / Content" />
+</section>
+
+<section class="split-section" aria-labelledby="shop-build-heading">
+  <div class="split-section__media">
+    <img src="/assets/images/build-box-cta.png" alt="Build your box" loading="lazy">
+  </div>
+  <div class="split-section__content split-section__content--blush">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="shop-build-heading" class="heading-lg">Build Your Box</h2>
+    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+    <a class="btn btn--terracotta" href="/build-box">
+      Start Building
+      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+    </a>
+  </div>
+</section>
+
+{@|apply contact-section.block}
+{@|apply newsletter.block}

@@ -1,0 +1,242 @@
+<!-- Homepage — Alton Chocolates (Figma 505:3) -->
+
+<section class="home-hero" aria-labelledby="home-hero-heading">
+  <div class="home-hero__media" aria-hidden="true">
+    <img src="/assets/images/hero-home.png" alt="">
+    <div class="home-hero__overlay"></div>
+  </div>
+  <div class="home-hero__content fade-up">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h1 id="home-hero-heading" class="heading-xl">Chocolate,<br>Composed.</h1>
+    </div>
+    <div class="body-lg">
+      <squarespace:block-field id="homeHeroCopy" columns="12" label="Hero Paragraph" />
+    </div>
+    <div>
+      <squarespace:block-field id="homeHeroCta" columns="12" label="Hero CTA" />
+    </div>
+  </div>
+</section>
+
+<!-- Editable hero media override (Image Block) -->
+<div class="sr-only" aria-hidden="true">
+  <squarespace:block-field id="homeHeroImage" columns="12" label="Hero Image (optional override — set as background in Site Styles or replace asset)" />
+</div>
+
+<section class="section" aria-label="Shop by category">
+  <div class="category-grid">
+    <a class="category-card" href="/shop?category=bonbons">
+      <div class="category-card__image"><img src="/assets/images/cat-bonbons.png" alt="Bonbons" width="150" height="150" loading="lazy"></div>
+      <span class="category-card__label">Bonbon</span>
+    </a>
+    <a class="category-card" href="/shop?category=bars">
+      <div class="category-card__image"><img src="/assets/images/cat-bars.png" alt="Bars" width="150" height="150" loading="lazy"></div>
+      <span class="category-card__label">Bars</span>
+    </a>
+    <a class="category-card" href="/shop?category=bark">
+      <div class="category-card__image"><img src="/assets/images/cat-bark.png" alt="Bark" width="150" height="150" loading="lazy"></div>
+      <span class="category-card__label">Bark</span>
+    </a>
+    <a class="category-card" href="/shop?category=caramels">
+      <div class="category-card__image"><img src="/assets/images/cat-caramels.png" alt="Caramels" width="150" height="150" loading="lazy"></div>
+      <span class="category-card__label">Caramels</span>
+    </a>
+    <a class="category-card" href="/shop?category=toffee">
+      <div class="category-card__image"><img src="/assets/images/cat-toffee.png" alt="Toffee" width="150" height="150" loading="lazy"></div>
+      <span class="category-card__label">Toffee</span>
+    </a>
+    <a class="category-card" href="/shop?category=cookies">
+      <div class="category-card__image"><img src="/assets/images/cat-cookies.png" alt="Cookies" width="150" height="150" loading="lazy"></div>
+      <span class="category-card__label">Cookies</span>
+    </a>
+  </div>
+  <div class="container" style="padding-bottom: 20px;">
+    <squarespace:block-field id="homeCategoriesOverride" columns="12" label="Categories Collection / Summary (optional)" />
+  </div>
+</section>
+
+<section class="home-bestsellers" aria-labelledby="bestsellers-heading">
+  <div class="section-header section-header--row">
+    <div class="section-header__center">
+      <p class="label">Sample text goes here</p>
+      <h2 id="bestsellers-heading" class="heading-lg">Bestsellers</h2>
+    </div>
+    <a class="btn btn--text" href="/shop">
+      Shop All
+      <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
+    </a>
+  </div>
+
+  <div class="product-grid">
+    <article class="product-card">
+      <a class="product-card__image" href="/shop"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title">Bonbon Collection</h3>
+        <p class="product-card__price">$28</p>
+        <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+          <span class="product-card__count">(45)</span>
+        </div>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/shop"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title">Chocolate Bar</h3>
+        <p class="product-card__price">$12</p>
+        <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+          <span class="product-card__count">(57)</span>
+        </div>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/shop"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title">Sea Salt Caramels</h3>
+        <p class="product-card__price">$16</p>
+        <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+          <span class="product-card__count">(36)</span>
+        </div>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/shop"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title">Chocolate Cookies</h3>
+        <p class="product-card__price">$14</p>
+        <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+          <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+          <span class="product-card__count">(25)</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div style="margin-top: 30px;">
+    <squarespace:block-field id="homeBestsellers" columns="12" label="Bestsellers Summary / Products Block" />
+  </div>
+</section>
+
+<section class="split-section" aria-labelledby="home-build-heading">
+  <div class="split-section__media">
+    <img src="/assets/images/build-box-cta.png" alt="Assorted chocolate box" loading="lazy">
+  </div>
+  <div class="split-section__content split-section__content--blush">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="home-build-heading" class="heading-lg">Build Your Box</h2>
+    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+    <a class="btn btn--terracotta" href="/build-box">
+      Start Building
+      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+    </a>
+    <squarespace:block-field id="homeBuildBox" columns="12" label="Build Box Section (editable)" />
+  </div>
+</section>
+
+<section class="banner-section" aria-labelledby="sweeter-heading">
+  <div class="banner-section__bg">
+    <img src="/assets/images/banner-sweeter.png" alt="" loading="lazy">
+  </div>
+  <div class="banner-section__overlay"></div>
+  <div class="banner-section__content">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="sweeter-heading" class="heading-lg">A Sweeter<br>Tomorrow</h2>
+    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur.</p>
+    <a class="btn btn--olive" href="/our-story">
+      Our Story
+      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+    </a>
+    <squarespace:block-field id="homeBanner" columns="12" label="Banner Content Override" />
+  </div>
+  <div class="banner-section__side" aria-hidden="true">
+    <span>Sample text goes here</span>
+    <span>Sample text goes here</span>
+    <span>Sample text goes here</span>
+  </div>
+</section>
+
+<section class="split-section" aria-labelledby="details-heading">
+  <div class="split-section__media">
+    <img src="/assets/images/details-craft.png" alt="Hand decorating a bonbon" loading="lazy">
+  </div>
+  <div class="split-section__content split-section__content--cream">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
+    </div>
+    <div class="feature-icons">
+      <div class="feature-icon">
+        <img src="/assets/icons/leaf.svg" alt="" width="32" height="32">
+        <span>Sample<br>Text</span>
+      </div>
+      <div class="feature-icon">
+        <img src="/assets/icons/heart.svg" alt="" width="32" height="32">
+        <span>Sample<br>Text</span>
+      </div>
+      <div class="feature-icon">
+        <img src="/assets/icons/plant.svg" alt="" width="32" height="32">
+        <span>Sample<br>Text</span>
+      </div>
+    </div>
+    <a class="btn btn--text" href="/gifts">
+      Gift Someone
+      <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
+    </a>
+    <squarespace:block-field id="homeDetails" columns="12" label="Details Section Editable Content" />
+  </div>
+</section>
+
+{@|apply contact-section.block}
+
+<section class="testimonials" aria-labelledby="home-testimonials-heading" data-testimonials>
+  <p class="label">Kind words from our clients</p>
+  <h2 id="home-testimonials-heading" class="heading-lg">Testimonials</h2>
+  <div class="testimonials__track" data-testimonials-track>
+    <button type="button" class="testimonials__nav testimonials__nav--prev" data-testimonials-prev aria-label="Previous">
+      <img src="/assets/icons/arrow-left.svg" alt="" width="20" height="20">
+    </button>
+    <article class="testimonial-card">
+      <p class="testimonial-card__quote">Sample text goes here</p>
+      <p class="testimonial-card__name">— Jamie L.</p>
+    </article>
+    <article class="testimonial-card">
+      <p class="testimonial-card__quote">Sample text goes here</p>
+      <p class="testimonial-card__name">— Morgan S.</p>
+    </article>
+    <article class="testimonial-card">
+      <p class="testimonial-card__quote">Sample text goes here</p>
+      <p class="testimonial-card__name">— Riley T.</p>
+    </article>
+    <button type="button" class="testimonials__nav testimonials__nav--next" data-testimonials-next aria-label="Next">
+      <img src="/assets/icons/chevron-right.svg" alt="" width="20" height="20">
+    </button>
+  </div>
+  <div style="margin-top: 30px;">
+    <squarespace:block-field id="homeTestimonials" columns="12" label="Testimonials Summary Block" />
+  </div>
+</section>
+
+{@|apply newsletter.block}

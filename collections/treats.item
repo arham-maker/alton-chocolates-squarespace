@@ -1,0 +1,7 @@
+<article class="container" style="padding: 60px 20px;">
+  <h1 class="heading-lg">{title}</h1>
+  {.section mainImage}
+    <img src="{assetUrl}?format=1000w" alt="{title}" style="margin: 24px 0; max-width: 480px;">
+  {.end}
+  <div class="body-lg">{body}</div>
+</article>

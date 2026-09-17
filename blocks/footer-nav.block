@@ -1,0 +1,3 @@
+{.repeated section items}
+  <a href="{collection.fullUrl}">{title}</a>
+{.end}

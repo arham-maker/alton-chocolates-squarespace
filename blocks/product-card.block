@@ -1,0 +1,27 @@
+<article class="product-card">
+  <a class="product-card__image" href="{fullUrl}">
+    {.section mainImage}
+      <img src="{assetUrl}?format=750w" alt="{title}" loading="lazy">
+    {.or}
+      <img src="/assets/images/product-bonbon.png" alt="{title}" loading="lazy">
+    {.end}
+  </a>
+  <div class="product-card__meta">
+    <h3 class="product-title"><a href="{fullUrl}">{title}</a></h3>
+    {.section variants.0.priceMoney}
+      <p class="product-card__price">{currencyString}{value}</p>
+    {.or}
+      {.section excerpt}
+        <p class="product-card__price">{excerpt}</p>
+      {.end}
+    {.end}
+    <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
+      <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+      <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+      <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+      <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+      <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+      <span class="product-card__count">({.section tags}{@}{.or}45{.end})</span>
+    </div>
+  </div>
+</article>

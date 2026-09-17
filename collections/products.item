@@ -1,0 +1,19 @@
+<article class="product-detail container" style="padding: 60px 20px;">
+  <div class="split-section" style="min-height: auto;">
+    <div class="split-section__media">
+      {.section mainImage}
+        <img src="{assetUrl}?format=1500w" alt="{title}">
+      {.end}
+    </div>
+    <div class="split-section__content split-section__content--cream">
+      <h1 class="heading-lg">{title}</h1>
+      {.section variants.0.priceMoney}
+        <p class="product-card__price">{currencyString}{value}</p>
+      {.end}
+      <div class="body-lg">{body}</div>
+      <div class="product-detail__actions">
+        {productCheckout}
+      </div>
+    </div>
+  </div>
+</article>

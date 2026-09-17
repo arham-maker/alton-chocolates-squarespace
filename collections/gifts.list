@@ -1,0 +1,10 @@
+<section class="section gifts-catalog">
+  <div class="section-header">
+    <h1 class="heading-lg">{collection.title}</h1>
+  </div>
+  <div class="product-grid">
+    {.repeated section items}
+      {@|apply product-card.block}
+    {.end}
+  </div>
+</section>

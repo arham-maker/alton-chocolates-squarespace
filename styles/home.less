@@ -1,0 +1,43 @@
+.home-hero {
+  position: relative;
+  min-height: 568px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.home-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(89.83deg, rgba(239, 232, 224, 0.5) 21%, rgba(239, 232, 224, 0) 72%);
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 725px;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.home-bestsellers {
+  padding: 50px @page-pad 70px;
+}
+
+.home-bestsellers .section-header--row {
+  margin-bottom: 50px;
+  min-height: 110px;
+}

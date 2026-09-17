@@ -1,0 +1,4 @@
+<article class="container" style="padding: 80px 20px; text-align: center; max-width: 720px; margin: 0 auto;">
+  <p class="testimonial-card__quote" style="font-size: 28px;">{.section body}{@body|strip-html}{.or}{@excerpt}{.end}</p>
+  <p class="testimonial-card__name" style="margin-top: 24px;">— {title}</p>
+</article>

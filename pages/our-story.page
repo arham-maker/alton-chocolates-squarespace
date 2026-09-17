@@ -1,0 +1,120 @@
+<!-- Our Story page — Figma 538:890 -->
+
+<section class="story-hero" aria-labelledby="story-hero-heading">
+  <div class="story-hero__content">
+    <div>
+      <h1 id="story-hero-heading" class="heading-lg">
+        <squarespace:block-field id="storyHeroHeading" columns="12" label="Story Hero Heading" />
+      </h1>
+      <div class="body-lg" style="margin-top: 24px;">
+        <squarespace:block-field id="storyHeroCopy" columns="12" label="Story Hero Copy" />
+      </div>
+    </div>
+    <div class="body-lg">
+      <squarespace:block-field id="storyHeroSecondary" columns="12" label="Story Hero Secondary Paragraph" />
+    </div>
+  </div>
+  <div class="story-hero__media">
+    <img src="/assets/images/story-hero.png" alt="Pastry chef decorating bonbons" loading="eager">
+  </div>
+</section>
+
+<section class="story-features" aria-label="Brand pillars">
+  <article class="story-feature">
+    <h3>Lorem Ipsum</h3>
+    <div class="body-lg">
+      <squarespace:block-field id="storyFeature1" columns="12" label="Feature Column 1" />
+    </div>
+  </article>
+  <article class="story-feature">
+    <h3>Lorem Ipsum</h3>
+    <div class="body-lg">
+      <squarespace:block-field id="storyFeature2" columns="12" label="Feature Column 2" />
+    </div>
+  </article>
+  <article class="story-feature">
+    <h3>Lorem Ipsum</h3>
+    <div class="body-lg">
+      <squarespace:block-field id="storyFeature3" columns="12" label="Feature Column 3" />
+    </div>
+  </article>
+</section>
+
+<section class="story-triptych" aria-label="Our craft">
+  <div class="story-triptych__text">
+    <h2 class="heading-md">Lorem Ipsum</h2>
+    <div class="body-lg">
+      <squarespace:block-field id="storyTriptychLeft" columns="12" label="Triptych Left Text" />
+    </div>
+  </div>
+  <div class="story-triptych__media">
+    <img src="/assets/images/story-pour.png" alt="Pouring tempered chocolate" loading="lazy">
+  </div>
+  <div class="story-triptych__text">
+    <h2 class="heading-md">Lorem Ipsum</h2>
+    <div class="body-lg">
+      <squarespace:block-field id="storyTriptychRight" columns="12" label="Triptych Right Text" />
+    </div>
+  </div>
+</section>
+
+<section class="split-section" aria-labelledby="story-build-heading">
+  <div class="split-section__media">
+    <img src="/assets/images/build-box-cta.png" alt="Assorted truffle box" loading="lazy">
+  </div>
+  <div class="split-section__content split-section__content--blush">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="story-build-heading" class="heading-lg">Build Your Box</h2>
+    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+    <a class="btn btn--terracotta" href="/build-box">
+      Start Building
+      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+    </a>
+  </div>
+</section>
+
+<section class="banner-section" aria-labelledby="story-banner-heading">
+  <div class="banner-section__bg">
+    <img src="/assets/images/banner-sweeter.png" alt="" loading="lazy">
+  </div>
+  <div class="banner-section__overlay"></div>
+  <div class="banner-section__content">
+    <div>
+      <p class="label">Sample text goes here</p>
+      <h2 id="story-banner-heading" class="heading-lg">A Sweeter<br>Tomorrow</h2>
+    </div>
+    <p class="body-lg">Lorem ipsum dolor sit amet consectetur.</p>
+    <a class="btn btn--olive" href="/our-story">
+      Our Story
+      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+    </a>
+  </div>
+  <div class="banner-section__side" aria-hidden="true">
+    <span>Sample text goes here</span>
+    <span>Sample text goes here</span>
+    <span>Sample text goes here</span>
+  </div>
+</section>
+
+<section class="split-section" aria-labelledby="story-details-heading">
+  <div class="split-section__media">
+    <img src="/assets/images/details-craft.png" alt="Detail work on white chocolate" loading="lazy">
+  </div>
+  <div class="split-section__content split-section__content--cream">
+    <h2 id="story-details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
+    <div class="feature-icons">
+      <div class="feature-icon"><img src="/assets/icons/leaf.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+      <div class="feature-icon"><img src="/assets/icons/heart.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+      <div class="feature-icon"><img src="/assets/icons/plant.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+    </div>
+    <a class="btn btn--text" href="/gifts">
+      Gift Someone
+      <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
+    </a>
+  </div>
+</section>
+
+{@|apply contact-section.block}
+{@|apply newsletter.block}

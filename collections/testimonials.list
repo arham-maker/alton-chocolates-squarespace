@@ -1,0 +1,12 @@
+<section class="testimonials" aria-labelledby="testimonials-heading">
+  <p class="label">Kind words from our clients</p>
+  <h1 id="testimonials-heading" class="heading-lg">{collection.title}</h1>
+  <div class="testimonials__track">
+    {.repeated section items}
+      <article class="testimonial-card">
+        <p class="testimonial-card__quote">{.section excerpt}{@excerpt}{.or}{@body|strip-html}{.end}</p>
+        <p class="testimonial-card__name">— {title}</p>
+      </article>
+    {.end}
+  </div>
+</section>
