@@ -1872,11 +1872,16 @@ h6 {
 
   .contact-section,
   .testimonials__track {
-    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .testimonials__nav {
-    display: none;
+  .testimonial-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .testimonials__slider {
+    grid-template-columns: 44px 1fr 44px;
+    gap: 10px;
   }
 
   .newsletter-form {

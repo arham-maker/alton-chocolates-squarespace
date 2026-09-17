@@ -258,15 +258,17 @@
   function initTestimonials() {
     document.querySelectorAll("[data-testimonials]").forEach(function (section) {
       var track = section.querySelector("[data-testimonials-track]");
+      var viewport = section.querySelector(".testimonials__viewport");
       var prev = section.querySelector("[data-testimonials-prev]");
       var next = section.querySelector("[data-testimonials-next]");
-      if (!track) return;
+      if (!track || !viewport) return;
 
       var cards = Array.prototype.slice.call(track.querySelectorAll(".testimonial-card"));
       if (!cards.length) return;
 
       var index = 0;
       var timer = null;
+      var gap = 40;
 
       function perView() {
         if (window.matchMedia("(max-width: 640px)").matches) return 1;
@@ -278,6 +280,18 @@
         return Math.max(0, cards.length - perView());
       }
 
+      function layout() {
+        var styles = window.getComputedStyle(track);
+        gap = parseFloat(styles.columnGap || styles.gap) || 40;
+        var view = perView();
+        var width = viewport.getBoundingClientRect().width;
+        var cardWidth = Math.max(0, (width - gap * (view - 1)) / view);
+        cards.forEach(function (card) {
+          card.style.flex = "0 0 " + cardWidth + "px";
+          card.style.maxWidth = cardWidth + "px";
+        });
+      }
+
       function goTo(nextIndex, animate) {
         var max = maxIndex();
         if (nextIndex < 0) nextIndex = max;
@@ -285,31 +299,31 @@
         index = nextIndex;
 
         var card = cards[0];
-        var styles = window.getComputedStyle(track);
-        var gap = parseFloat(styles.columnGap || styles.gap) || 40;
         var step = card.getBoundingClientRect().width + gap;
         track.style.transition = animate === false ? "none" : "transform 0.45s ease";
         track.style.transform = "translate3d(" + -(index * step) + "px, 0, 0)";
       }
 
       function refresh() {
+        layout();
         goTo(Math.min(index, maxIndex()), false);
       }
 
       if (prev) {
-        prev.addEventListener("click", function () {
+        prev.addEventListener("click", function (e) {
+          e.preventDefault();
           goTo(index - 1);
           restartAuto();
         });
       }
       if (next) {
-        next.addEventListener("click", function () {
+        next.addEventListener("click", function (e) {
+          e.preventDefault();
           goTo(index + 1);
           restartAuto();
         });
       }
 
-      // swipe support
       var startX = 0;
       var dragging = false;
       track.addEventListener("touchstart", function (e) {
