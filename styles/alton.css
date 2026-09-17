@@ -35,10 +35,18 @@ html,body{margin:0!important;padding:0!important;background:#F5F2EC!important;co
 .btn--olive{background:#626145!important;color:#F5F2EC!important}
 .btn--text{background:transparent!important;color:#2F1A0D!important;padding:10px 0!important;border-bottom:1px solid #2F1A0D!important}
 .category-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:24px!important;max-width:1240px!important;margin:0 auto!important;padding:50px 20px!important;width:100%!important;box-sizing:border-box!important}
-.category-card{display:flex!important;flex-direction:column!important;align-items:center!important;gap:20px!important;text-align:center!important;text-decoration:none!important}
-.category-card__image{width:150px!important;height:150px!important;border-radius:50%!important;overflow:hidden!important;background:#ECD7D0!important}
-.category-card__image img{width:100%!important;height:100%!important;object-fit:cover!important}
+.category-card{display:flex!important;flex-direction:column!important;align-items:center!important;gap:20px!important;text-align:center!important;text-decoration:none!important;background:transparent!important;border:0!important;padding:0!important;cursor:pointer!important;font:inherit!important;color:inherit!important}
+.category-card__image{width:150px!important;height:150px!important;border-radius:50%!important;overflow:hidden!important;background:#ECD7D0!important;box-shadow:0 0 0 0 transparent!important;transition:box-shadow .25s ease,transform .25s ease!important}
+.category-card.is-active .category-card__image{box-shadow:0 0 0 6px rgba(98,97,69,.35)!important;transform:scale(1.03)!important}
+.category-card__image img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
 .category-card__label{font-family:"Poppins",sans-serif!important;font-weight:600!important;font-size:14px!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:#5D5958!important}
+.section-header,.section-header--center{text-align:center!important}
+.section-header__desc,.section-header .body-lg{max-width:520px!important;margin:16px auto 0!important;text-align:center!important}
+.product-card__meta{background:#fff!important;padding:20px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:10px!important;text-align:left!important}
+.alton-thanks[hidden]{display:none!important}
+.alton-thanks{position:fixed!important;inset:0!important;z-index:11000!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:24px!important}
+.alton-thanks__backdrop{position:absolute!important;inset:0!important;background:rgba(47,26,13,.5)!important}
+.alton-thanks__card{position:relative!important;z-index:1!important;width:min(440px,100%)!important;background:#F5F2EC!important;padding:48px 36px 40px!important;text-align:center!important}
 .home-bestsellers{padding:50px 100px 70px!important}
 .section-header--row{display:flex!important;align-items:flex-end!important;justify-content:space-between!important;position:relative!important;min-height:110px!important;margin-bottom:50px!important}
 .section-header__center{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;text-align:center!important}
@@ -811,6 +819,23 @@ input.sqs-search-page-input {
   margin-bottom: 40px;
 }
 
+.section-header--center {
+  text-align: center;
+}
+
+.section-header__desc,
+.section-header .body-lg {
+  max-width: 520px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+
+.shop-hero__desc {
+  text-align: left;
+  max-width: 520px;
+  margin: 0;
+}
+
 .section-header--row {
   display: flex;
   align-items: flex-end;
@@ -842,6 +867,12 @@ input.sqs-search-page-input {
   align-items: center;
   gap: 20px;
   text-align: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
 }
 
 .category-card__image {
@@ -850,12 +881,24 @@ input.sqs-search-page-input {
   border-radius: 50%;
   overflow: hidden;
   background: #ECD7D0;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.category-card.is-active .category-card__image {
+  box-shadow: 0 0 0 6px rgba(98, 97, 69, 0.35);
+  transform: scale(1.03);
+}
+
+.category-card.is-active .category-card__label {
+  color: #2F1A0D;
 }
 
 .category-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .category-card__label {
@@ -877,6 +920,120 @@ input.sqs-search-page-input {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card[hidden] {
+  display: none !important;
+}
+
+.product-card.is-entering {
+  animation: altonFadeUp 0.35s ease both;
+}
+
+@keyframes altonFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card__meta {
+  background: #FFFFFF;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.product-card__order {
+  width: 100%;
+  margin-top: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.shop-empty {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.alton-thanks[hidden] {
+  display: none !important;
+}
+
+.alton-thanks {
+  position: fixed;
+  inset: 0;
+  z-index: 11000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.alton-thanks__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 26, 13, 0.5);
+  animation: altonFadeIn 0.3s ease;
+}
+
+.alton-thanks__card {
+  position: relative;
+  z-index: 1;
+  width: min(440px, 100%);
+  background: #F5F2EC;
+  padding: 48px 36px 40px;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(47, 26, 13, 0.25);
+  animation: altonPopIn 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+
+.alton-thanks__card .heading-lg {
+  font-size: 42px;
+  margin: 16px 0 12px;
+}
+
+.alton-thanks__card .body-lg {
+  margin: 0 0 28px;
+}
+
+.alton-thanks__icon {
+  display: flex;
+  justify-content: center;
+}
+
+.alton-thanks__circle {
+  stroke: #626145;
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: altonStroke 0.6s ease forwards;
+}
+
+.alton-thanks__tick {
+  stroke: #626145;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: altonStroke 0.35s 0.45s ease forwards;
+}
+
+@keyframes altonStroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes altonFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes altonPopIn {
+  from { opacity: 0; transform: scale(0.86) translateY(16px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .product-card__image {

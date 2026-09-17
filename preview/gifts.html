@@ -422,6 +422,22 @@
   </footer>
 
 </div>
-<script src="../scripts/site.js"></script>
+
+  <div class="alton-thanks" id="alton-thanks" data-thanks hidden>
+    <div class="alton-thanks__backdrop" data-thanks-close></div>
+    <div class="alton-thanks__card" role="alertdialog" aria-modal="true" aria-labelledby="alton-thanks-title">
+      <div class="alton-thanks__icon" aria-hidden="true">
+        <svg class="alton-thanks__check" viewBox="0 0 52 52" width="72" height="72">
+          <circle class="alton-thanks__circle" cx="26" cy="26" r="24" fill="none"/>
+          <path class="alton-thanks__tick" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <h2 id="alton-thanks-title" class="heading-lg">Thank You</h2>
+      <p class="body-lg" data-thanks-message>Your message has been received. We will get back to you soon.</p>
+      <button type="button" class="btn btn--olive" data-thanks-close>Continue</button>
+    </div>
+  </div>
+
+  <script src="../scripts/site.js"></script>
 </body>
 </html>

@@ -291,10 +291,112 @@
     if (type) status.classList.add(type);
   }
 
+  function showThanks(message) {
+    var modal = document.querySelector("[data-thanks]");
+    if (!modal) return;
+    var msg = modal.querySelector("[data-thanks-message]");
+    if (msg && message) msg.textContent = message;
+    modal.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    // restart check animation
+    var svg = modal.querySelector(".alton-thanks__check");
+    if (svg) {
+      var clone = svg.cloneNode(true);
+      svg.parentNode.replaceChild(clone, svg);
+    }
+  }
+
+  function hideThanks() {
+    var modal = document.querySelector("[data-thanks]");
+    if (!modal) return;
+    modal.hidden = true;
+    document.documentElement.style.overflow = "";
+  }
+
+  function initThanks() {
+    document.querySelectorAll("[data-thanks-close]").forEach(function (btn) {
+      btn.addEventListener("click", hideThanks);
+    });
+    document.addEventListener("keydown", function (e) {
+      var modal = document.querySelector("[data-thanks]");
+      if (e.key === "Escape" && modal && !modal.hidden) hideThanks();
+    });
+  }
+
+  function initShop() {
+    var tabs = document.querySelectorAll("[data-shop-tab]");
+    var products = document.querySelectorAll("[data-shop-product]");
+    var empty = document.querySelector("[data-shop-empty]");
+    if (!tabs.length || !products.length) return;
+
+    function showCategory(cat) {
+      var visible = 0;
+      products.forEach(function (card) {
+        var match = card.getAttribute("data-category") === cat;
+        card.hidden = !match;
+        card.classList.remove("is-entering");
+        if (match) {
+          visible += 1;
+          // reflow for animation
+          void card.offsetWidth;
+          card.classList.add("is-entering");
+        }
+      });
+      if (empty) empty.hidden = visible > 0;
+      var grid = document.querySelector("[data-shop-products]");
+      if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var cat = tab.getAttribute("data-shop-tab");
+        tabs.forEach(function (t) {
+          t.classList.toggle("is-active", t === tab);
+          t.setAttribute("aria-selected", t === tab ? "true" : "false");
+        });
+        showCategory(cat);
+      });
+    });
+
+    initQtyControls(document.querySelector("[data-shop-products]"));
+
+    document.querySelectorAll("[data-shop-order]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var card = btn.closest("[data-shop-product]");
+        if (!card) return;
+        var title = card.getAttribute("data-title") || "Item";
+        var price = parseFloat(card.getAttribute("data-price")) || 0;
+        var qtyEl = card.querySelector("[data-qty-value]");
+        var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
+        if (qty < 1) qty = 1;
+        var total = (price * qty).toFixed(2);
+        var summary =
+          "Order received: " +
+          qty +
+          " × " +
+          title +
+          " ($" +
+          total +
+          "). We will confirm by email shortly.";
+        showThanks(summary);
+
+        var mailto =
+          "mailto:galton4@gmail.com?subject=" +
+          encodeURIComponent("Alton order — " + title) +
+          "&body=" +
+          encodeURIComponent(
+            "Product: " + title + "\nQty: " + qty + "\nTotal: $" + total
+          );
+        setTimeout(function () {
+          window.location.href = mailto;
+        }, 900);
+      });
+    });
+  }
+
   function initForms() {
     var contactEmail = "galton4@gmail.com";
 
-    // Prefill contact from ?product= / ?subject=
     var params = new URLSearchParams(window.location.search);
     var product = params.get("product");
     var subject = params.get("subject");
@@ -336,16 +438,17 @@
           "&body=" +
           encodeURIComponent(body);
 
-        setFormStatus(
-          form,
+        var thanksMsg =
           kind === "newsletter"
-            ? "Thanks — your email app will open to confirm subscription."
-            : "Thanks — your email app will open to send this message.",
-          "is-success"
-        );
+            ? "You are subscribed. Welcome to Alton Chocolates."
+            : "Thank you! Your message was sent. We will reply soon.";
 
-        window.location.href = mailto;
+        showThanks(thanksMsg);
         form.reset();
+
+        setTimeout(function () {
+          window.location.href = mailto;
+        }, 900);
       });
     });
   }
@@ -524,6 +627,8 @@
     initGiftQty();
     initTestimonials();
     initSqsFormSlots();
+    initThanks();
+    initShop();
     initForms();
     initSearch();
   });
