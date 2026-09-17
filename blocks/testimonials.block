@@ -9,45 +9,30 @@
 
     <div class="testimonials__viewport">
       <div class="testimonials__track" data-testimonials-track>
-        {.section collection}
-          {.repeated section items}
-            <article class="testimonial-card">
-              <p class="testimonial-card__quote">
-                {.section body}
-                  {@|strip-html}
-                {.or}
-                  {.section excerpt}{excerpt}{.end}
-                {.end}
-              </p>
-              <p class="testimonial-card__name">— {title}</p>
-            </article>
-          {.end}
-        {.or}
-          <article class="testimonial-card">
-            <p class="testimonial-card__quote">“Sample text goes here”</p>
-            <p class="testimonial-card__name">— Jamie L.</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-card__quote">“Sample text goes here”</p>
-            <p class="testimonial-card__name">— Morgan S.</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-card__quote">“Sample text goes here”</p>
-            <p class="testimonial-card__name">— Riley T.</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-card__quote">“Every box feels like a celebration.”</p>
-            <p class="testimonial-card__name">— Avery K.</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-card__quote">“The bonbons are pure artistry.”</p>
-            <p class="testimonial-card__name">— Sam P.</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-card__quote">“Our go-to gift for every occasion.”</p>
-            <p class="testimonial-card__name">— Jordan M.</p>
-          </article>
-        {.end}
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">“Every box feels like a celebration. The flavors are delicate, rich, and unforgettable.”</p>
+          <p class="testimonial-card__name">— Jamie L.</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">“Alton chocolates made our wedding favors the talk of the evening.”</p>
+          <p class="testimonial-card__name">— Morgan S.</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">“The bonbons are pure artistry. Beautiful shells and incredible fillings.”</p>
+          <p class="testimonial-card__name">— Riley T.</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">“Our go-to gift for every occasion. Always arrives looking perfect.”</p>
+          <p class="testimonial-card__name">— Avery K.</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">“From salted caramel to pistachio praline, every piece is a delight.”</p>
+          <p class="testimonial-card__name">— Sam P.</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">“Thoughtful packaging and flavors that feel truly handcrafted.”</p>
+          <p class="testimonial-card__name">— Jordan M.</p>
+        </article>
       </div>
     </div>
 

@@ -289,6 +289,61 @@
       var next = section.querySelector("[data-testimonials-next]");
       if (!track || !viewport) return;
 
+      // Drop empty cards (e.g. collection products with no quote text)
+      Array.prototype.slice
+        .call(track.querySelectorAll(".testimonial-card"))
+        .forEach(function (card) {
+          var quote = card.querySelector(".testimonial-card__quote");
+          var text = quote ? String(quote.textContent || "").replace(/\s+/g, " ").trim() : "";
+          if (!text || text === "—" || text.length < 3) {
+            card.parentNode.removeChild(card);
+          }
+        });
+
+      var defaults = [
+        {
+          q: "“Every box feels like a celebration. The flavors are delicate, rich, and unforgettable.”",
+          n: "— Jamie L."
+        },
+        {
+          q: "“Alton chocolates made our wedding favors the talk of the evening.”",
+          n: "— Morgan S."
+        },
+        {
+          q: "“The bonbons are pure artistry. Beautiful shells and incredible fillings.”",
+          n: "— Riley T."
+        },
+        {
+          q: "“Our go-to gift for every occasion. Always arrives looking perfect.”",
+          n: "— Avery K."
+        },
+        {
+          q: "“From salted caramel to pistachio praline, every piece is a delight.”",
+          n: "— Sam P."
+        },
+        {
+          q: "“Thoughtful packaging and flavors that feel truly handcrafted.”",
+          n: "— Jordan M."
+        }
+      ];
+
+      if (!track.querySelectorAll(".testimonial-card").length) {
+        track.innerHTML = defaults
+          .map(function (item) {
+            return (
+              '<article class="testimonial-card">' +
+              '<p class="testimonial-card__quote">' +
+              item.q +
+              "</p>" +
+              '<p class="testimonial-card__name">' +
+              item.n +
+              "</p>" +
+              "</article>"
+            );
+          })
+          .join("");
+      }
+
       var cards = Array.prototype.slice.call(track.querySelectorAll(".testimonial-card"));
       if (!cards.length) return;
 
@@ -310,11 +365,18 @@
         var styles = window.getComputedStyle(track);
         gap = parseFloat(styles.columnGap || styles.gap) || 40;
         var view = perView();
-        var width = viewport.getBoundingClientRect().width;
-        var cardWidth = Math.max(0, (width - gap * (view - 1)) / view);
+        var width =
+          viewport.getBoundingClientRect().width ||
+          viewport.clientWidth ||
+          section.clientWidth ||
+          900;
+        if (width < 80) width = 900;
+        var cardWidth = Math.max(180, (width - gap * (view - 1)) / view);
         cards.forEach(function (card) {
           card.style.flex = "0 0 " + cardWidth + "px";
+          card.style.width = cardWidth + "px";
           card.style.maxWidth = cardWidth + "px";
+          card.style.minWidth = cardWidth + "px";
         });
       }
 
@@ -325,7 +387,7 @@
         index = nextIndex;
 
         var card = cards[0];
-        var step = card.getBoundingClientRect().width + gap;
+        var step = (card.getBoundingClientRect().width || card.offsetWidth || 280) + gap;
         track.style.transition = animate === false ? "none" : "transform 0.45s ease";
         track.style.transform = "translate3d(" + -(index * step) + "px, 0, 0)";
       }
@@ -352,19 +414,27 @@
 
       var startX = 0;
       var dragging = false;
-      track.addEventListener("touchstart", function (e) {
-        if (!e.touches.length) return;
-        startX = e.touches[0].clientX;
-        dragging = true;
-        restartAuto();
-      }, { passive: true });
-      track.addEventListener("touchend", function (e) {
-        if (!dragging || !e.changedTouches.length) return;
-        var dx = e.changedTouches[0].clientX - startX;
-        dragging = false;
-        if (Math.abs(dx) < 40) return;
-        goTo(index + (dx < 0 ? 1 : -1));
-      }, { passive: true });
+      track.addEventListener(
+        "touchstart",
+        function (e) {
+          if (!e.touches.length) return;
+          startX = e.touches[0].clientX;
+          dragging = true;
+          restartAuto();
+        },
+        { passive: true }
+      );
+      track.addEventListener(
+        "touchend",
+        function (e) {
+          if (!dragging || !e.changedTouches.length) return;
+          var dx = e.changedTouches[0].clientX - startX;
+          dragging = false;
+          if (Math.abs(dx) < 40) return;
+          goTo(index + (dx < 0 ? 1 : -1));
+        },
+        { passive: true }
+      );
 
       function restartAuto() {
         if (timer) clearInterval(timer);
@@ -374,7 +444,14 @@
       }
 
       window.addEventListener("resize", refresh);
+      // layout after paint so viewport has real width
       refresh();
+      if (window.requestAnimationFrame) {
+        window.requestAnimationFrame(function () {
+          refresh();
+        });
+      }
+      setTimeout(refresh, 100);
       restartAuto();
     });
   }
