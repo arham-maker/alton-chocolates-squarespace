@@ -1,13 +1,6 @@
 <section class="testimonials" aria-labelledby="testimonials-heading" data-testimonials>
-  <div class="alton-editable alton-editable--center" data-alton-editable>
-    <div class="alton-editable__fallback">
-      <p class="label">Kind words from our clients</p>
-      <h2 id="testimonials-heading" class="heading-lg">Testimonials</h2>
-    </div>
-    <div class="alton-editable__cms">
-      <squarespace:block-field id="testimonialsHeadingEdit" columns="12" label="EDIT: Testimonials heading &amp; intro" />
-    </div>
-  </div>
+  <p class="label">Kind words from our clients</p>
+  <h2 id="testimonials-heading" class="heading-lg">Testimonials</h2>
 
   <div class="testimonials__slider">
     <button type="button" class="testimonials__nav testimonials__nav--prev" data-testimonials-prev aria-label="Previous testimonials">
@@ -17,27 +10,27 @@
     <div class="testimonials__viewport">
       <div class="testimonials__track" data-testimonials-track>
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">“Every box feels like a celebration. The flavors are delicate, rich, and unforgettable.”</p>
+          <p class="testimonial-card__quote">"Every box feels like a celebration. The flavors are delicate, rich, and unforgettable."</p>
           <p class="testimonial-card__name">— Jamie L.</p>
         </article>
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">“Alton chocolates made our wedding favors the talk of the evening.”</p>
+          <p class="testimonial-card__quote">"Alton chocolates made our wedding favors the talk of the evening."</p>
           <p class="testimonial-card__name">— Morgan S.</p>
         </article>
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">“The bonbons are pure artistry. Beautiful shells and incredible fillings.”</p>
+          <p class="testimonial-card__quote">"The bonbons are pure artistry. Beautiful shells and incredible fillings."</p>
           <p class="testimonial-card__name">— Riley T.</p>
         </article>
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">“Our go-to gift for every occasion. Always arrives looking perfect.”</p>
+          <p class="testimonial-card__quote">"Our go-to gift for every occasion. Always arrives looking perfect."</p>
           <p class="testimonial-card__name">— Avery K.</p>
         </article>
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">“From salted caramel to pistachio praline, every piece is a delight.”</p>
+          <p class="testimonial-card__quote">"From salted caramel to pistachio praline, every piece is a delight."</p>
           <p class="testimonial-card__name">— Sam P.</p>
         </article>
         <article class="testimonial-card">
-          <p class="testimonial-card__quote">“Thoughtful packaging and flavors that feel truly handcrafted.”</p>
+          <p class="testimonial-card__quote">"Thoughtful packaging and flavors that feel truly handcrafted."</p>
           <p class="testimonial-card__name">— Jordan M.</p>
         </article>
       </div>
@@ -46,13 +39,5 @@
     <button type="button" class="testimonials__nav testimonials__nav--next" data-testimonials-next aria-label="Next testimonials">
       <img src="/assets/icons/arrow-right-dark.svg" alt="" width="20" height="20">
     </button>
-  </div>
-
-  <div class="alton-cms-panel alton-cms-panel--tight">
-    <div class="alton-editable alton-editable--center" data-alton-editable>
-      <div class="alton-editable__cms">
-        <squarespace:block-field id="testimonialsExtra" columns="12" label="EDIT: Extra testimonial quotes (Text Blocks)" />
-      </div>
-    </div>
   </div>
 </section>
