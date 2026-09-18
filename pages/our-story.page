@@ -2,11 +2,18 @@
 
 <section class="story-hero" aria-labelledby="story-hero-heading">
   <div class="story-hero__content">
-    <div>
-      <h1 id="story-hero-heading" class="heading-lg">Lorem Ipsum<br>Dolor Sit Amet.</h1>
-      <p class="body-lg" style="margin-top: 24px;">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <h1 id="story-hero-heading" class="heading-lg">Lorem Ipsum<br>Dolor Sit Amet.</h1>
+          <p class="body-lg" style="margin-top: 24px;">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+        </div>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="storyHeroEdit" columns="12" label="EDIT: Our Story hero heading &amp; text" />
+      </div>
     </div>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
   </div>
   <div class="story-hero__media">
     <img src="/assets/images/story-hero.png" alt="Pastry chef decorating bonbons" loading="eager">
@@ -14,6 +21,11 @@
 </section>
 
 <section class="story-features" aria-label="Brand pillars">
+  <div class="alton-editable alton-editable--center" data-alton-editable style="grid-column: 1 / -1; margin-bottom: 20px;">
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyFeaturesEdit" columns="12" label="EDIT: Story features / pillars (add Text blocks)" />
+    </div>
+  </div>
   <article class="story-feature">
     <h3>Lorem Ipsum</h3>
     <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>

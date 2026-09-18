@@ -2,9 +2,16 @@
 
 <section class="gifts-hero" aria-labelledby="gifts-hero-heading">
   <div class="gifts-hero__content">
-    <p class="label">Handcrafted chocolates</p>
-    <h1 id="gifts-hero-heading" class="heading-lg">Thoughtful Gifts<br>for Every Moment</h1>
-    <p class="body-lg">From handcrafted bonbons to rich caramels and indulgent chocolate bars, our collections are made to turn everyday moments into something truly special.</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="label">Handcrafted chocolates</p>
+        <h1 id="gifts-hero-heading" class="heading-lg">Thoughtful Gifts<br>for Every Moment</h1>
+        <p class="body-lg">From handcrafted bonbons to rich caramels and indulgent chocolate bars, our collections are made to turn everyday moments into something truly special.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="giftsHeroEdit" columns="12" label="EDIT: Gifts hero — label, heading &amp; text" />
+      </div>
+    </div>
   </div>
   <div class="gifts-hero__media">
     <img src="/assets/images/gifts-hero.png" alt="Gourmet chocolate with caramel filling" loading="eager">
@@ -13,8 +20,15 @@
 
 <section class="gifts-collections" aria-labelledby="gift-collections-heading">
   <div class="gifts-collections__intro">
-    <h2 id="gift-collections-heading" class="heading-lg">Our Most Loved Gift Collections</h2>
-    <p class="body-lg" style="margin-top: 16px;">Explore thoughtful gift boxes by category, from handcrafted bonbons and chocolate bars to barks, caramels, toffees, and cookies.</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h2 id="gift-collections-heading" class="heading-lg">Our Most Loved Gift Collections</h2>
+        <p class="body-lg" style="margin-top: 16px;">Explore thoughtful gift boxes by category, from handcrafted bonbons and chocolate bars to barks, caramels, toffees, and cookies.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="giftsCollectionsHeading" columns="12" label="EDIT: Gift collections heading &amp; text" />
+      </div>
+    </div>
   </div>
   <div class="gifts-collections__grid">
     <article class="gift-collection-card">
@@ -250,13 +264,20 @@
     <img src="/assets/images/corporate-gifting.png" alt="Corporate gift box with red ribbon" loading="lazy">
   </div>
   <div class="corporate-cta__content">
-    <p class="label">For Business</p>
-    <h2 id="corporate-heading" class="heading-lg">Corporate Gifting</h2>
-    <p class="body-lg">Thoughtful gifts to strengthen relationships and show appreciation.</p>
-    <a class="btn btn--terracotta" href="/contact">
-      Learn More
-      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-    </a>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="label">For Business</p>
+        <h2 id="corporate-heading" class="heading-lg">Corporate Gifting</h2>
+        <p class="body-lg">Thoughtful gifts to strengthen relationships and show appreciation.</p>
+        <a class="btn btn--terracotta" href="/contact">
+          Learn More
+          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="giftsCorporateEdit" columns="12" label="EDIT: Corporate gifting heading, text &amp; button" />
+      </div>
+    </div>
   </div>
 </section>
 

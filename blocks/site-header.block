@@ -1,4 +1,7 @@
 <aside class="announcement-bar" data-announcement role="region" aria-label="Site announcement">
+  <div class="announcement-bar__editable">
+    <squarespace:block-field id="siteAnnouncement" columns="12" label="EDIT: Announcement bar text (Text Block)" />
+  </div>
   <p class="announcement-bar__fallback">Free shipping on orders over $75/-</p>
   <button type="button" class="announcement-bar__close" data-announcement-close aria-label="Dismiss announcement">
     <img src="/assets/icons/cancel.svg" alt="" width="20" height="20">

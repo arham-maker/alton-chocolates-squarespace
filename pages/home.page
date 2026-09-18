@@ -6,24 +6,33 @@
     <div class="home-hero__overlay"></div>
   </div>
   <div class="home-hero__content fade-up">
-    <div>
-      <p class="label">Sample text goes here</p>
-      <h1 id="home-hero-heading" class="heading-xl">Chocolate,<br>Composed.</h1>
-    </div>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
-    <div>
-      <a class="btn btn--terracotta" href="/shop">
-        Shop Bonbons
-        <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-      </a>
-      <squarespace:block-field id="homeHeroCta" columns="12" label="Hero CTA Override" />
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <p class="label">Sample text goes here</p>
+          <h1 id="home-hero-heading" class="heading-xl">Chocolate,<br>Composed.</h1>
+        </div>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+        <div>
+          <a class="btn btn--terracotta" href="/shop">
+            Shop Bonbons
+            <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </a>
+        </div>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="homeHeroEdit" columns="12" label="EDIT: Home hero — label, heading, text &amp; button" />
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Editable hero media override (Image Block) -->
-<div class="sr-only" aria-hidden="true">
-  <squarespace:block-field id="homeHeroImage" columns="12" label="Hero Image (optional override — set as background in Site Styles or replace asset)" />
+<div class="alton-cms-panel alton-cms-panel--tight">
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="homeHeroImage" columns="12" label="EDIT: Optional hero image (Image Block)" />
+    </div>
+  </div>
 </div>
 
 <section class="section" aria-label="Shop by category">
@@ -61,13 +70,27 @@
 <section class="home-bestsellers" aria-labelledby="bestsellers-heading">
   <div class="section-header section-header--row">
     <div class="section-header__center">
-      <p class="label">Sample text goes here</p>
-      <h2 id="bestsellers-heading" class="heading-lg">Bestsellers</h2>
+      <div class="alton-editable alton-editable--center" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <p class="label">Sample text goes here</p>
+          <h2 id="bestsellers-heading" class="heading-lg">Bestsellers</h2>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="homeBestsellersHeading" columns="12" label="EDIT: Bestsellers heading &amp; label" />
+        </div>
+      </div>
     </div>
-    <a class="btn btn--text" href="/shop">
-      Shop All
-      <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
-    </a>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <a class="btn btn--text" href="/shop">
+          Shop All
+          <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="homeBestsellersCta" columns="12" label="EDIT: Bestsellers button (Button Block)" />
+      </div>
+    </div>
   </div>
 
   <div class="product-grid">

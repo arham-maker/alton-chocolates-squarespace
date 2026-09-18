@@ -2,18 +2,37 @@
 
 <section class="shop-hero" aria-labelledby="shop-hero-heading">
   <div class="shop-hero__content">
-    <h1 id="shop-hero-heading" class="heading-lg">New Bonbons<br>Have Arrived</h1>
-    <p class="body-lg shop-hero__desc">Our latest collection of handcrafted bonbons is here. Discover delicate shells, rich fillings, and new flavors made to be savored.</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h1 id="shop-hero-heading" class="heading-lg">New Bonbons<br>Have Arrived</h1>
+        <p class="body-lg shop-hero__desc">Our latest collection of handcrafted bonbons is here. Discover delicate shells, rich fillings, and new flavors made to be savored.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="shopHeroEdit" columns="12" label="EDIT: Shop hero heading &amp; description" />
+      </div>
+    </div>
   </div>
   <div class="shop-hero__media">
     <img src="/assets/images/shop-hero.png" alt="Gift box of assorted bonbons" loading="eager">
+    <div class="alton-editable" data-alton-editable style="margin-top:12px;">
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="shopHeroImage" columns="12" label="EDIT: Shop hero image (optional Image Block)" />
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="shop-categories" aria-labelledby="categories-heading">
   <div class="section-header section-header--center">
-    <h2 id="categories-heading" class="heading-lg">Categories</h2>
-    <p class="body-lg section-header__desc">Explore our collection of handcrafted chocolates and sweet treats.</p>
+    <div class="alton-editable alton-editable--center" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h2 id="categories-heading" class="heading-lg">Categories</h2>
+        <p class="body-lg section-header__desc">Explore our collection of handcrafted chocolates and sweet treats.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="shopCategoriesHeading" columns="12" label="EDIT: Categories heading &amp; text" />
+      </div>
+    </div>
   </div>
   <div class="category-grid" role="tablist" aria-label="Product categories" data-shop-tabs>
     <button type="button" class="category-card is-active" role="tab" aria-selected="true" data-shop-tab="bonbons">
@@ -320,17 +339,32 @@
     <img src="/assets/images/build-box-cta.png" alt="Build your box" loading="lazy">
   </div>
   <div class="split-section__content split-section__content--blush">
-    <div>
-      <p class="label">Sample text goes here</p>
-      <h2 id="shop-build-heading" class="heading-lg">Build Your Box</h2>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <p class="label">Sample text goes here</p>
+          <h2 id="shop-build-heading" class="heading-lg">Build Your Box</h2>
+        </div>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+        <a class="btn btn--terracotta" href="/build-box">
+          Start Building
+          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="shopBuildBoxEdit" columns="12" label="EDIT: Build Your Box heading, text &amp; button" />
+      </div>
     </div>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
-    <a class="btn btn--terracotta" href="/build-box">
-      Start Building
-      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-    </a>
   </div>
 </section>
+
+<div class="alton-cms-panel">
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="shopExtraContent" columns="12" label="EDIT: Extra Shop content (add any Text / Image / Button blocks)" />
+    </div>
+  </div>
+</div>
 
 {@|apply contact-section.block}
 {@|apply testimonials.block}

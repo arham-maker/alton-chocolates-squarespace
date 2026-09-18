@@ -1,8 +1,15 @@
 <section class="contact-section" id="contact" aria-labelledby="contact-heading">
   <div class="contact-section__info">
-    <p class="label">Get in touch</p>
-    <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Ac pharetra consectetur tincidunt euismod vitae pharetra ut varius tortor. Aliquam ornare id lacus nam laoreet viverra sit imperdiet.</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="label">Get in touch</p>
+        <h2 id="contact-heading" class="heading-lg">Get in Touch</h2>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Ac pharetra consectetur tincidunt euismod vitae pharetra ut varius tortor. Aliquam ornare id lacus nam laoreet viverra sit imperdiet.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="contactSectionHeading" columns="12" label="EDIT: Get in Touch heading &amp; text" />
+      </div>
+    </div>
     <div class="contact-details">
       <a href="tel:+17156977741">
         <img src="/assets/icons/phone.svg" alt="" width="22" height="22">
@@ -12,6 +19,11 @@
         <img src="/assets/icons/email.svg" alt="" width="22" height="22">
         galton4@gmail.com
       </a>
+    </div>
+    <div class="alton-editable" data-alton-editable style="margin-top:16px;">
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="contactDetailsEdit" columns="12" label="EDIT: Phone / email / extra contact details" />
+      </div>
     </div>
     <img class="contact-section__art" src="/assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
   </div>

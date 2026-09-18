@@ -1,7 +1,14 @@
 <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
   <div class="newsletter__inner">
-    <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
-    <p class="label">Sample text goes here</p>
+    <div class="alton-editable alton-editable--center" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h2 id="newsletter-heading" class="heading-lg">Stay in Touch</h2>
+        <p class="label">Sample text goes here</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="newsletterHeadingEdit" columns="12" label="EDIT: Newsletter heading &amp; text" />
+      </div>
+    </div>
 
     <form class="newsletter-form" data-alton-form="newsletter" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
       <label for="newsletter-email" class="sr-only">Email Address</label>
@@ -11,7 +18,7 @@
     </form>
 
     <div class="sqs-form-slot newsletter-form-wrap" data-sqs-form-slot>
-      <squarespace:block-field id="newsletterForm" columns="12" label="Optional: replace fallback with Squarespace Newsletter / Form Block" />
+      <squarespace:block-field id="newsletterForm" columns="12" label="EDIT: Optional Squarespace Newsletter / Form Block" />
     </div>
   </div>
 </section>

@@ -456,6 +456,30 @@
     });
   }
 
+  function initEditableSlots() {
+    document.querySelectorAll("[data-alton-editable]").forEach(function (slot) {
+      var cms = slot.querySelector(".alton-editable__cms");
+      if (!cms) return;
+      var has =
+        cms.querySelector(
+          ".sqs-block, .sqs-block-html, .sqs-block-button, .sqs-block-image, .sqs-block-markdown"
+        ) !== null;
+      if (has) slot.classList.add("has-cms");
+    });
+
+    var announce = document.querySelector("[data-announcement]");
+    if (announce) {
+      var edit = announce.querySelector(".announcement-bar__editable");
+      if (
+        edit &&
+        edit.querySelector(".sqs-block, .sqs-block-html, p") &&
+        String(edit.textContent || "").replace(/\s+/g, " ").trim().length > 2
+      ) {
+        announce.classList.add("has-cms-announcement");
+      }
+    }
+  }
+
   function initSqsFormSlots() {
     document.querySelectorAll("[data-sqs-form-slot]").forEach(function (slot) {
       var hasReal =
@@ -1006,6 +1030,7 @@
     initBuildBox();
     initGiftQty();
     initTestimonials();
+    initEditableSlots();
     initSqsFormSlots();
     initThanks();
     initShop();

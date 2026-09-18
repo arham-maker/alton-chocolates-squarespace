@@ -2,10 +2,15 @@
 
 <section class="buildbox-hero" aria-labelledby="buildbox-hero-heading">
   <div class="buildbox-hero__content">
-    <p class="label">Made by us, inspired by you</p>
-    <h1 id="buildbox-hero-heading" class="heading-lg">Build Your Perfect Box</h1>
-    <div class="body-lg">
-      <squarespace:block-field id="buildBoxHeroCopy" columns="12" label="Build Box Hero Copy" />
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="label">Made by us, inspired by you</p>
+        <h1 id="buildbox-hero-heading" class="heading-lg">Build Your Perfect Box</h1>
+        <p class="body-lg">Choose your size, pick your treats, and we will pack a box made for you.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="buildBoxHeroEdit" columns="12" label="EDIT: Build Box hero — label, heading, text &amp; button" />
+      </div>
     </div>
   </div>
   <div class="buildbox-hero__media">
