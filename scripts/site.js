@@ -373,11 +373,17 @@
         if (width < 80) width = 900;
         var cardWidth = Math.max(180, (width - gap * (view - 1)) / view);
         cards.forEach(function (card) {
-          card.style.flex = "0 0 " + cardWidth + "px";
-          card.style.width = cardWidth + "px";
-          card.style.maxWidth = cardWidth + "px";
-          card.style.minWidth = cardWidth + "px";
+          card.style.setProperty("flex", "0 0 " + cardWidth + "px", "important");
+          card.style.setProperty("width", cardWidth + "px", "important");
+          card.style.setProperty("max-width", cardWidth + "px", "important");
+          card.style.setProperty("min-width", Math.max(180, cardWidth) + "px", "important");
+          card.style.setProperty("opacity", "1", "important");
+          card.style.setProperty("visibility", "visible", "important");
         });
+        track.style.setProperty("display", "flex", "important");
+        track.style.setProperty("transform", track.style.transform || "translate3d(0,0,0)");
+        viewport.style.setProperty("overflow", "hidden", "important");
+        viewport.style.setProperty("min-height", "160px", "important");
       }
 
       function goTo(nextIndex, animate) {
