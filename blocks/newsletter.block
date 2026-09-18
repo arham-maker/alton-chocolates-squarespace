@@ -10,15 +10,18 @@
       </div>
     </div>
 
-    <form class="newsletter-form" data-alton-form="newsletter" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
-      <label for="newsletter-email" class="sr-only">Email Address</label>
-      <input id="newsletter-email" name="email" type="email" placeholder="Email Address" required autocomplete="email">
-      <button type="submit" class="btn btn--olive">Subscribe</button>
-      <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
-    </form>
-
-    <div class="sqs-form-slot newsletter-form-wrap" data-sqs-form-slot>
-      <squarespace:block-field id="newsletterForm" columns="12" label="EDIT: Optional Squarespace Newsletter / Form Block" />
+    <div class="alton-editable alton-editable--center" data-alton-editable data-sqs-form-slot>
+      <div class="alton-editable__fallback">
+        <form class="newsletter-form" data-alton-form="newsletter" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
+          <label for="newsletter-email" class="sr-only">Email Address</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="Email Address" required autocomplete="email">
+          <button type="submit" class="btn btn--olive">Subscribe</button>
+          <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="alton-editable__cms newsletter-form-wrap sqs-form-slot">
+        <squarespace:block-field id="newsletterForm" columns="12" label="EDIT: Newsletter form — add Squarespace Newsletter/Form Block" />
+      </div>
     </div>
   </div>
 </section>

@@ -10,53 +10,67 @@
         <squarespace:block-field id="contactSectionHeading" columns="12" label="EDIT: Get in Touch heading &amp; text" />
       </div>
     </div>
-    <div class="contact-details">
-      <a href="tel:+17156977741">
-        <img src="/assets/icons/phone.svg" alt="" width="22" height="22">
-        715-697-7741
-      </a>
-      <a href="mailto:galton4@gmail.com">
-        <img src="/assets/icons/email.svg" alt="" width="22" height="22">
-        galton4@gmail.com
-      </a>
-    </div>
-    <div class="alton-editable" data-alton-editable style="margin-top:16px;">
+
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div class="contact-details">
+          <a href="tel:+17156977741">
+            <img src="/assets/icons/phone.svg" alt="" width="22" height="22">
+            715-697-7741
+          </a>
+          <a href="mailto:galton4@gmail.com">
+            <img src="/assets/icons/email.svg" alt="" width="22" height="22">
+            galton4@gmail.com
+          </a>
+        </div>
+      </div>
       <div class="alton-editable__cms">
-        <squarespace:block-field id="contactDetailsEdit" columns="12" label="EDIT: Phone / email / extra contact details" />
+        <squarespace:block-field id="contactDetailsEdit" columns="12" label="EDIT: Phone / email / contact details (Text Block)" />
       </div>
     </div>
-    <img class="contact-section__art" src="/assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
+
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <img class="contact-section__art" src="/assets/images/chocolate-illustration.png" alt="" width="120" height="80" loading="lazy">
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="contactArtImage" columns="12" label="EDIT: Contact illustration (Image Block)" />
+      </div>
+    </div>
   </div>
 
   <div class="contact-section__form">
-    <form class="alton-form contact-form" data-alton-form="contact" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
-      <div class="form-field">
-        <label for="contact-name">Name</label>
-        <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Name">
+    <div class="alton-editable" data-alton-editable data-sqs-form-slot>
+      <div class="alton-editable__fallback">
+        <form class="alton-form contact-form" data-alton-form="contact" action="mailto:galton4@gmail.com" method="post" enctype="text/plain">
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Name">
+          </div>
+          <div class="form-field">
+            <label for="contact-phone">Phone Number</label>
+            <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number">
+          </div>
+          <div class="form-field form-field--full">
+            <label for="contact-email">Email Address</label>
+            <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="Email address">
+          </div>
+          <div class="form-field form-field--full">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required placeholder="Message"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn--olive">
+              Send Message
+              <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+            </button>
+          </div>
+          <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <div class="form-field">
-        <label for="contact-phone">Phone Number</label>
-        <input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number">
+      <div class="alton-editable__cms sqs-form-slot">
+        <squarespace:block-field id="contactForm" columns="12" label="EDIT: Contact form — add Squarespace Form Block (hides fallback)" />
       </div>
-      <div class="form-field form-field--full">
-        <label for="contact-email">Email Address</label>
-        <input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="Email address">
-      </div>
-      <div class="form-field form-field--full">
-        <label for="contact-message">Message</label>
-        <textarea id="contact-message" name="message" rows="5" required placeholder="Message"></textarea>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="btn btn--olive">
-          Send Message
-          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-        </button>
-      </div>
-      <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
-    </form>
-
-    <div class="sqs-form-slot" data-sqs-form-slot>
-      <squarespace:block-field id="contactForm" columns="12" label="Optional: replace fallback with Squarespace Form Block" />
     </div>
   </div>
 </section>

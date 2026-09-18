@@ -468,7 +468,7 @@
       if (!cms) return;
       var has =
         cms.querySelector(
-          ".sqs-block, .sqs-block-html, .sqs-block-button, .sqs-block-image, .sqs-block-markdown"
+          ".sqs-block, .sqs-block-html, .sqs-block-button, .sqs-block-image, .sqs-block-markdown, .sqs-block-summary-v2, .sqs-block-product, .sqs-block-form, .sqs-block-newsletter, .sqs-block-quote, .sqs-block-gallery"
         ) !== null;
       if (has) slot.classList.add("has-cms");
     });

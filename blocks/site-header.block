@@ -10,10 +10,17 @@
 
 <header class="site-header" data-site-header>
   <div class="site-header__inner">
-    <button type="button" class="site-header__search" data-search-open aria-label="Open search" aria-expanded="false" aria-controls="alton-search">
-      <img src="/assets/icons/search.svg" alt="" width="20" height="20">
-      <span>Search</span>
-    </button>
+    <div class="alton-editable site-header__search-wrap" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <button type="button" class="site-header__search" data-search-open aria-label="Open search" aria-expanded="false" aria-controls="alton-search">
+          <img src="/assets/icons/search.svg" alt="" width="20" height="20">
+          <span>Search</span>
+        </button>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="headerSearchLabel" columns="12" label="EDIT: Header Search label (Text / Button)" />
+      </div>
+    </div>
 
     <div class="site-header__brand">
       <a class="site-header__logo" href="/" aria-label="{siteTitle}">
@@ -49,7 +56,14 @@
   <div class="alton-search__backdrop" data-search-close tabindex="-1" aria-hidden="true"></div>
   <div class="alton-search__panel" role="dialog" aria-modal="true" aria-labelledby="alton-search-title">
     <div class="alton-search__top">
-      <h2 id="alton-search-title" class="heading-lg">Search</h2>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <h2 id="alton-search-title" class="heading-lg">Search</h2>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="searchModalTitle" columns="12" label="EDIT: Search modal title" />
+        </div>
+      </div>
       <button type="button" class="alton-search__close" data-search-close aria-label="Close search">
         <img src="/assets/icons/cancel.svg" alt="" width="20" height="20">
       </button>
@@ -66,12 +80,31 @@
         placeholder="Search bonbons, gifts, pages…"
         autocomplete="off"
         enterkeyhint="search"
+        data-search-placeholder
       >
-      <button type="submit" class="btn btn--terracotta">Search</button>
+      <button type="submit" class="btn btn--terracotta" data-search-submit>Search</button>
     </form>
 
-    <p class="alton-search__hint label" data-search-hint>Search you quiery with space</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="alton-search__hint label" data-search-hint>Search you quiery with space</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="searchModalHint" columns="12" label="EDIT: Search hint text" />
+      </div>
+    </div>
+
     <div class="alton-search__results" data-search-results aria-live="polite"></div>
     <p class="alton-search__empty body-lg" data-search-empty hidden>No matches. Browse the <a href="/shop">Shop</a> or <a href="/gifts">Gifts</a>.</p>
+
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="searchModalEmpty" columns="12" label="EDIT: Optional search empty-state override" />
+      </div>
+    </div>
+
+    <div class="alton-cms-panel alton-cms-panel--tight">
+      <squarespace:block-field id="searchModalExtra" columns="12" label="EDIT: Extra search modal content (optional)" />
+    </div>
   </div>
 </div>

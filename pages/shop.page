@@ -12,12 +12,12 @@
       </div>
     </div>
   </div>
-  <div class="shop-hero__media">
-    <img src="/assets/images/shop-hero.png" alt="Gift box of assorted bonbons" loading="eager">
-    <div class="alton-editable" data-alton-editable style="margin-top:12px;">
-      <div class="alton-editable__cms">
-        <squarespace:block-field id="shopHeroImage" columns="12" label="EDIT: Shop hero image (optional Image Block)" />
-      </div>
+  <div class="shop-hero__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/shop-hero.png" alt="Gift box of assorted bonbons" loading="eager">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="shopHeroImage" columns="12" label="EDIT: Shop hero image (Image Block)" />
     </div>
   </div>
 </section>
@@ -34,35 +34,44 @@
       </div>
     </div>
   </div>
-  <div class="category-grid" role="tablist" aria-label="Product categories" data-shop-tabs>
-    <button type="button" class="category-card is-active" role="tab" aria-selected="true" data-shop-tab="bonbons">
-      <span class="category-card__image"><img src="/assets/images/cat-bonbons.png" alt="" width="150" height="150"></span>
-      <span class="category-card__label">Bonbon</span>
-    </button>
-    <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="bars">
-      <span class="category-card__image"><img src="/assets/images/cat-bars.png" alt="" width="150" height="150"></span>
-      <span class="category-card__label">Bars</span>
-    </button>
-    <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="bark">
-      <span class="category-card__image"><img src="/assets/images/cat-bark.png" alt="" width="150" height="150"></span>
-      <span class="category-card__label">Bark</span>
-    </button>
-    <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="caramels">
-      <span class="category-card__image"><img src="/assets/images/cat-caramels.png" alt="" width="150" height="150"></span>
-      <span class="category-card__label">Caramels</span>
-    </button>
-    <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="toffee">
-      <span class="category-card__image"><img src="/assets/images/cat-toffee.png" alt="" width="150" height="150"></span>
-      <span class="category-card__label">Toffee</span>
-    </button>
-    <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="cookies">
-      <span class="category-card__image"><img src="/assets/images/cat-cookies.png" alt="" width="150" height="150"></span>
-      <span class="category-card__label">Cookies</span>
-    </button>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <div class="category-grid" role="tablist" aria-label="Product categories" data-shop-tabs>
+        <button type="button" class="category-card is-active" role="tab" aria-selected="true" data-shop-tab="bonbons">
+          <span class="category-card__image"><img src="/assets/images/cat-bonbons.png" alt="" width="150" height="150"></span>
+          <span class="category-card__label">Bonbon</span>
+        </button>
+        <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="bars">
+          <span class="category-card__image"><img src="/assets/images/cat-bars.png" alt="" width="150" height="150"></span>
+          <span class="category-card__label">Bars</span>
+        </button>
+        <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="bark">
+          <span class="category-card__image"><img src="/assets/images/cat-bark.png" alt="" width="150" height="150"></span>
+          <span class="category-card__label">Bark</span>
+        </button>
+        <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="caramels">
+          <span class="category-card__image"><img src="/assets/images/cat-caramels.png" alt="" width="150" height="150"></span>
+          <span class="category-card__label">Caramels</span>
+        </button>
+        <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="toffee">
+          <span class="category-card__image"><img src="/assets/images/cat-toffee.png" alt="" width="150" height="150"></span>
+          <span class="category-card__label">Toffee</span>
+        </button>
+        <button type="button" class="category-card" role="tab" aria-selected="false" data-shop-tab="cookies">
+          <span class="category-card__image"><img src="/assets/images/cat-cookies.png" alt="" width="150" height="150"></span>
+          <span class="category-card__label">Cookies</span>
+        </button>
+      </div>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="shopCategoriesGrid" columns="12" label="EDIT: Shop category tabs — add Products / Summary / Gallery blocks" />
+    </div>
   </div>
 </section>
 
 <section class="shop-products" id="products" aria-label="Shop products" data-shop-products>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
   <div class="product-grid">
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Salted Caramel" data-price="28">
       <div class="product-card__image"><img src="/assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
@@ -305,38 +314,62 @@
     </article>
   </div>
   <p class="shop-empty body-lg" data-shop-empty hidden>No products in this category yet.</p>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="shopProductsGrid" columns="12" label="EDIT: Shop products — add Products / Summary / Gallery blocks" />
+    </div>
+  </div>
 </section>
 
 <section class="shop-moments" aria-labelledby="moments-heading">
   <div class="section-header section-header--center">
-    <p class="label">Our Favorites</p>
-    <h2 id="moments-heading" class="heading-lg">Made for the Moment</h2>
+    <div class="alton-editable alton-editable--center" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="label">Our Favorites</p>
+        <h2 id="moments-heading" class="heading-lg">Made for the Moment</h2>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="shopMomentsHeading" columns="12" label="EDIT: Made for the Moment heading &amp; label" />
+      </div>
+    </div>
   </div>
-  <div class="shop-moments__grid">
-    <div class="shop-moments__item shop-moments__item--tall">
-      <img src="/assets/images/shop-moment-1.png" alt="Pink bonbons" loading="lazy">
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <div class="shop-moments__grid">
+        <div class="shop-moments__item shop-moments__item--tall">
+          <img src="/assets/images/shop-moment-1.png" alt="Pink bonbons" loading="lazy">
+        </div>
+        <div class="shop-moments__item shop-moments__item--text">
+          <p class="body-lg">Discover our collection of handcrafted bonbons, each created to offer a different kind of chocolate experience. From the bright, delicate sweetness of raspberry ganache to the buttery richness of salted caramel, every piece is made with carefully selected ingredients and finished in a smooth, delicate chocolate shell.</p>
+        </div>
+        <div class="shop-moments__item">
+          <img src="/assets/images/shop-moment-2.png" alt="Caramel brownies" loading="lazy">
+        </div>
+        <div class="shop-moments__item">
+          <img src="/assets/images/shop-moment-3.png" alt="Chocolate cookie" loading="lazy">
+        </div>
+        <div class="shop-moments__item shop-moments__item--text">
+          <p class="body-lg">Explore roasted pistachio praline, creamy hazelnut gianduja, and other irresistible combinations designed to melt slowly and leave you wanting just one more. Whether you're treating yourself or sharing a box with someone special, these are chocolates made to be savored, one beautiful bite at a time.</p>
+        </div>
+        <div class="shop-moments__item">
+          <img src="/assets/images/shop-moment-4.png" alt="Assorted bonbons" loading="lazy">
+        </div>
+      </div>
     </div>
-    <div class="shop-moments__item shop-moments__item--text">
-      <p class="body-lg">Discover our collection of handcrafted bonbons, each created to offer a different kind of chocolate experience. From the bright, delicate sweetness of raspberry ganache to the buttery richness of salted caramel, every piece is made with carefully selected ingredients and finished in a smooth, delicate chocolate shell.</p>
-    </div>
-    <div class="shop-moments__item">
-      <img src="/assets/images/shop-moment-2.png" alt="Caramel brownies" loading="lazy">
-    </div>
-    <div class="shop-moments__item">
-      <img src="/assets/images/shop-moment-3.png" alt="Chocolate cookie" loading="lazy">
-    </div>
-    <div class="shop-moments__item shop-moments__item--text">
-      <p class="body-lg">Explore roasted pistachio praline, creamy hazelnut gianduja, and other irresistible combinations designed to melt slowly and leave you wanting just one more. Whether you're treating yourself or sharing a box with someone special, these are chocolates made to be savored, one beautiful bite at a time.</p>
-    </div>
-    <div class="shop-moments__item">
-      <img src="/assets/images/shop-moment-4.png" alt="Assorted bonbons" loading="lazy">
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="shopMomentsGrid" columns="12" label="EDIT: Moments grid — add Image / Text / Gallery blocks" />
     </div>
   </div>
 </section>
 
 <section class="split-section" aria-labelledby="shop-build-heading">
-  <div class="split-section__media">
-    <img src="/assets/images/build-box-cta.png" alt="Build your box" loading="lazy">
+  <div class="split-section__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/build-box-cta.png" alt="Build your box" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="shopBuildBoxImage" columns="12" label="EDIT: Build Your Box image (Image Block)" />
+    </div>
   </div>
   <div class="split-section__content split-section__content--blush">
     <div class="alton-editable" data-alton-editable>

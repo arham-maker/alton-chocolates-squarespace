@@ -15,120 +15,194 @@
       </div>
     </div>
   </div>
-  <div class="story-hero__media">
-    <img src="/assets/images/story-hero.png" alt="Pastry chef decorating bonbons" loading="eager">
+  <div class="story-hero__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/story-hero.png" alt="Pastry chef decorating bonbons" loading="eager">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyHeroImage" columns="12" label="EDIT: Our Story hero image (Image Block)" />
+    </div>
   </div>
 </section>
 
 <section class="story-features" aria-label="Brand pillars">
-  <div class="alton-editable alton-editable--center" data-alton-editable style="grid-column: 1 / -1; margin-bottom: 20px;">
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <article class="story-feature">
+        <h3>Lorem Ipsum</h3>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>
+      </article>
+      <article class="story-feature">
+        <h3>Lorem Ipsum</h3>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>
+      </article>
+      <article class="story-feature">
+        <h3>Lorem Ipsum</h3>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>
+      </article>
+    </div>
     <div class="alton-editable__cms">
-      <squarespace:block-field id="storyFeaturesEdit" columns="12" label="EDIT: Story features / pillars (add Text blocks)" />
+      <squarespace:block-field id="storyFeaturesEdit" columns="12" label="EDIT: Story pillars — add Text blocks for each feature" />
     </div>
   </div>
-  <article class="story-feature">
-    <h3>Lorem Ipsum</h3>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>
-  </article>
-  <article class="story-feature">
-    <h3>Lorem Ipsum</h3>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>
-  </article>
-  <article class="story-feature">
-    <h3>Lorem Ipsum</h3>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae.</p>
-  </article>
 </section>
 
 <section class="story-triptych" aria-label="Our craft">
-  <div class="story-triptych__text">
-    <h2 class="heading-md">Lorem Ipsum<br>Dolor Sit Amet.</h2>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <div class="story-triptych__text">
+        <h2 class="heading-md">Lorem Ipsum<br>Dolor Sit Amet.</h2>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+      </div>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyTriptychLeft" columns="12" label="EDIT: Triptych left text" />
+    </div>
   </div>
-  <div class="story-triptych__media">
-    <img src="/assets/images/story-pour.png" alt="Pouring tempered chocolate" loading="lazy">
+  <div class="story-triptych__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/story-pour.png" alt="Pouring tempered chocolate" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyTriptychImage" columns="12" label="EDIT: Triptych center image (Image Block)" />
+    </div>
   </div>
-  <div class="story-triptych__text">
-    <h2 class="heading-md">Lorem Ipsum<br>Dolor Sit Amet.</h2>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <div class="story-triptych__text">
+        <h2 class="heading-md">Lorem Ipsum<br>Dolor Sit Amet.</h2>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Pellentesque volutpat egestas potenti tortor. Magna mattis vitae at nulla aliquet vitae. Nunc id dui nulla facilisis.</p>
+      </div>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyTriptychRight" columns="12" label="EDIT: Triptych right text" />
+    </div>
   </div>
 </section>
 
 <section class="split-section" aria-labelledby="story-build-heading">
-  <div class="split-section__media">
-    <img src="/assets/images/build-box-cta.png" alt="Assorted truffle box" loading="lazy">
+  <div class="split-section__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/build-box-cta.png" alt="Assorted truffle box" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyBuildBoxImage" columns="12" label="EDIT: Build Your Box image (Image Block)" />
+    </div>
   </div>
   <div class="split-section__content split-section__content--blush">
-    <div>
-      <p class="label">Sample text goes here</p>
-      <h2 id="story-build-heading" class="heading-lg">Build Your Box</h2>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <p class="label">Sample text goes here</p>
+          <h2 id="story-build-heading" class="heading-lg">Build Your Box</h2>
+        </div>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+        <a class="btn btn--terracotta" href="/build-box">
+          Start Building
+          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="storyBuildBoxCopy" columns="12" label="EDIT: Build Your Box — label, heading, text &amp; button" />
+      </div>
     </div>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
-    <a class="btn btn--terracotta" href="/build-box">
-      Start Building
-      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-    </a>
   </div>
 </section>
 
 <section class="banner-section" aria-labelledby="story-banner-heading">
-  <div class="banner-section__bg">
-    <img src="/assets/images/banner-sweeter.png" alt="" loading="lazy">
+  <div class="banner-section__bg alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/banner-sweeter.png" alt="" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyBannerImage" columns="12" label="EDIT: Banner background image (Image Block)" />
+    </div>
   </div>
   <div class="banner-section__overlay"></div>
   <div class="banner-section__content">
-    <div>
-      <p class="label">Sample text goes here</p>
-      <h2 id="story-banner-heading" class="heading-lg">A Sweeter<br>Tomorrow</h2>
+    <div class="alton-editable alton-editable--on-dark" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <p class="label">Sample text goes here</p>
+          <h2 id="story-banner-heading" class="heading-lg">A Sweeter<br>Tomorrow</h2>
+        </div>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur.</p>
+        <a class="btn btn--olive" href="/our-story">
+          Our Story
+          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="storyBannerCopy" columns="12" label="EDIT: Banner — label, heading, text &amp; button" />
+      </div>
     </div>
-    <p class="body-lg">Lorem ipsum dolor sit amet consectetur.</p>
-    <a class="btn btn--olive" href="/our-story">
-      Our Story
-      <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-    </a>
   </div>
-  <div class="banner-section__side" aria-hidden="true">
-    <span>Sample text goes here</span>
-    <span>Sample text goes here</span>
-    <span>Sample text goes here</span>
+  <div class="banner-section__side alton-editable alton-editable--on-dark" data-alton-editable aria-hidden="true">
+    <div class="alton-editable__fallback">
+      <span>Sample text goes here</span>
+      <span>Sample text goes here</span>
+      <span>Sample text goes here</span>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyBannerSide" columns="12" label="EDIT: Banner side text" />
+    </div>
   </div>
 </section>
 
 <section class="split-section" aria-labelledby="story-details-heading">
-  <div class="split-section__media">
-    <img src="/assets/images/details-craft.png" alt="Decorating a bonbon" loading="lazy">
+  <div class="split-section__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/details-craft.png" alt="Decorating a bonbon" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyDetailsImage" columns="12" label="EDIT: Details section image (Image Block)" />
+    </div>
   </div>
   <div class="split-section__content split-section__content--cream">
-    <div>
-      <p class="label">Sample text goes here</p>
-      <h2 id="story-details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <p class="label">Sample text goes here</p>
+          <h2 id="story-details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
+        </div>
+        <div class="feature-icons">
+          <div class="feature-icon">
+            <img src="/assets/icons/leaf.svg" alt="" width="32" height="32">
+            <span>Sample<br>Text</span>
+          </div>
+          <div class="feature-icon">
+            <img src="/assets/icons/heart.svg" alt="" width="32" height="32">
+            <span>Sample<br>Text</span>
+          </div>
+          <div class="feature-icon">
+            <img src="/assets/icons/plant.svg" alt="" width="32" height="32">
+            <span>Sample<br>Text</span>
+          </div>
+        </div>
+        <a class="btn btn--text" href="/gifts">
+          Gift Someone
+          <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="storyDetailsCopy" columns="12" label="EDIT: Details section — heading, icons text &amp; button" />
+      </div>
     </div>
-    <div class="feature-icons">
-      <div class="feature-icon">
-        <img src="/assets/icons/leaf.svg" alt="" width="32" height="32">
-        <span>Sample<br>Text</span>
-      </div>
-      <div class="feature-icon">
-        <img src="/assets/icons/heart.svg" alt="" width="32" height="32">
-        <span>Sample<br>Text</span>
-      </div>
-      <div class="feature-icon">
-        <img src="/assets/icons/plant.svg" alt="" width="32" height="32">
-        <span>Sample<br>Text</span>
-      </div>
-    </div>
-    <a class="btn btn--text" href="/gifts">
-      Gift Someone
-      <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24">
-    </a>
   </div>
 </section>
 
 {@|apply contact-section.block}
 
 <section class="testimonials" aria-labelledby="story-testimonials-heading" data-testimonials>
-  <p class="label">Kind words from our clients</p>
-  <h2 id="story-testimonials-heading" class="heading-lg">Testimonials</h2>
+  <div class="alton-editable alton-editable--center" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <p class="label">Kind words from our clients</p>
+      <h2 id="story-testimonials-heading" class="heading-lg">Testimonials</h2>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="storyTestimonialsHeading" columns="12" label="EDIT: Story page testimonials label &amp; heading" />
+    </div>
+  </div>
 
   <div class="testimonials__slider">
     <button type="button" class="testimonials__nav testimonials__nav--prev" data-testimonials-prev aria-label="Previous testimonials">
@@ -136,31 +210,38 @@
     </button>
 
     <div class="testimonials__viewport">
-      <div class="testimonials__track" data-testimonials-track>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Every box feels like a celebration. The flavors are delicate, rich, and unforgettable."</p>
-          <p class="testimonial-card__name">— Jamie L.</p>
-        </article>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Alton chocolates made our wedding favors the talk of the evening."</p>
-          <p class="testimonial-card__name">— Morgan S.</p>
-        </article>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"The bonbons are pure artistry. Beautiful shells and incredible fillings."</p>
-          <p class="testimonial-card__name">— Riley T.</p>
-        </article>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Our go-to gift for every occasion. Always arrives looking perfect."</p>
-          <p class="testimonial-card__name">— Avery K.</p>
-        </article>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"From salted caramel to pistachio praline, every piece is a delight."</p>
-          <p class="testimonial-card__name">— Sam P.</p>
-        </article>
-        <article class="testimonial-card">
-          <p class="testimonial-card__quote">"Thoughtful packaging and flavors that feel truly handcrafted."</p>
-          <p class="testimonial-card__name">— Jordan M.</p>
-        </article>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <div class="testimonials__track" data-testimonials-track>
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">"Every box feels like a celebration. The flavors are delicate, rich, and unforgettable."</p>
+              <p class="testimonial-card__name">— Jamie L.</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">"Alton chocolates made our wedding favors the talk of the evening."</p>
+              <p class="testimonial-card__name">— Morgan S.</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">"The bonbons are pure artistry. Beautiful shells and incredible fillings."</p>
+              <p class="testimonial-card__name">— Riley T.</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">"Our go-to gift for every occasion. Always arrives looking perfect."</p>
+              <p class="testimonial-card__name">— Avery K.</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">"From salted caramel to pistachio praline, every piece is a delight."</p>
+              <p class="testimonial-card__name">— Sam P.</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">"Thoughtful packaging and flavors that feel truly handcrafted."</p>
+              <p class="testimonial-card__name">— Jordan M.</p>
+            </article>
+          </div>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="storyTestimonialsQuotes" columns="12" label="EDIT: Story testimonials quotes (Text / Summary / Quote blocks)" />
+        </div>
       </div>
     </div>
 

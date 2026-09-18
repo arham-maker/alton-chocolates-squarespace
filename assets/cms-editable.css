@@ -98,6 +98,205 @@
   object-fit: cover !important;
 }
 
+/* Hero / split media slots — CMS image fills container */
+.alton-editable--media {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 0 !important;
+}
+
+.alton-editable--media .alton-editable__fallback,
+.alton-editable--media .alton-editable__cms {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.alton-editable--media .alton-editable__fallback img,
+.alton-editable--media .alton-editable__cms .sqs-block-image,
+.alton-editable--media .alton-editable__cms .sqs-block-image .sqs-image,
+.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.alton-editable--media .alton-editable__cms .sqs-block-image .thumb-image {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: inherit !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.home-hero__media.alton-editable--media,
+.home-hero__media.alton-editable--media .alton-editable__fallback,
+.home-hero__media.alton-editable--media .alton-editable__cms,
+.home-hero__media.alton-editable--media .sqs-block-image,
+.home-hero__media.alton-editable--media .sqs-block-image img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.home-hero__media.alton-editable--media .home-hero__overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.split-section__media.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.banner-section__bg.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.shop-hero__media.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.gifts-hero__media.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.buildbox-hero__media.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.story-hero__media.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.corporate-cta__media.alton-editable--media .alton-editable__cms .sqs-block-image img,
+.story-triptych__media.alton-editable--media .alton-editable__cms .sqs-block-image img {
+  min-height: 396px !important;
+}
+
+/* Summary / Products / Gallery blocks inside editable slots */
+.alton-editable__cms .sqs-block-summary-v2,
+.alton-editable__cms .sqs-block-product,
+.alton-editable__cms .sqs-block-products,
+.alton-editable__cms .products-block,
+.alton-editable__cms .summary-item-list,
+.alton-editable__cms .sqs-gallery-container {
+  width: 100% !important;
+}
+
+.alton-editable__cms .summary-item-list,
+.alton-editable__cms .ProductList-grid,
+.alton-editable__cms .products.collection-content-wrapper .list-grid,
+.alton-editable__cms .sqs-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 30px 20px !important;
+}
+
+.alton-editable__cms .summary-item,
+.alton-editable__cms .product,
+.alton-editable__cms .ProductList-item,
+.alton-editable__cms .summary-thumbnail-container img,
+.alton-editable__cms .ProductList-item img {
+  width: 100% !important;
+}
+
+.alton-editable__cms .summary-title,
+.alton-editable__cms .ProductList-title,
+.alton-editable__cms .product-title {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #2F1A0D !important;
+}
+
+.alton-editable__cms .summary-price,
+.alton-editable__cms .product-price,
+.alton-editable__cms .ProductList-price {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  color: #2F1A0D !important;
+}
+
+/* Header search stays left / auto width */
+.site-header__search-wrap {
+  width: auto !important;
+  max-width: max-content !important;
+  flex: 0 0 auto !important;
+}
+
+.site-header__search-wrap.alton-editable {
+  width: auto !important;
+}
+
+/* Footer editable link lists match .site-footer__links */
+.site-footer .alton-editable__cms .sqs-block-html ul,
+.site-footer .alton-editable__cms .sqs-block-html ol,
+.site-footer .alton-editable__cms ul,
+.site-footer .alton-editable__cms .sqs-block-button-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-footer .alton-editable__cms .sqs-block-html a,
+.site-footer .alton-editable__cms a,
+.site-footer .alton-editable__cms .sqs-block-button-element {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  color: #5D5958 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: inline !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+/* Modal editable headings inherit .heading-lg */
+.alton-order .alton-editable .sqs-block-html h1,
+.alton-order .alton-editable .sqs-block-html h2,
+.alton-order .alton-editable h1,
+.alton-order .alton-editable h2,
+.alton-search .alton-editable .sqs-block-html h1,
+.alton-search .alton-editable .sqs-block-html h2,
+.alton-search .alton-editable h1,
+.alton-search .alton-editable h2,
+.alton-thanks .alton-editable .sqs-block-html h1,
+.alton-thanks .alton-editable .sqs-block-html h2,
+.alton-thanks .alton-editable h1,
+.alton-thanks .alton-editable h2,
+[data-modal] .alton-editable .sqs-block-html h1,
+[data-modal] .alton-editable .sqs-block-html h2,
+.modal .alton-editable .sqs-block-html h1,
+.modal .alton-editable .sqs-block-html h2 {
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 58px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+  color: #2F1A0D !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .alton-order .alton-editable .sqs-block-html h1,
+  .alton-order .alton-editable .sqs-block-html h2,
+  .alton-order .alton-editable h1,
+  .alton-order .alton-editable h2,
+  .alton-search .alton-editable .sqs-block-html h1,
+  .alton-search .alton-editable .sqs-block-html h2,
+  .alton-search .alton-editable h1,
+  .alton-search .alton-editable h2,
+  .alton-thanks .alton-editable .sqs-block-html h1,
+  .alton-thanks .alton-editable .sqs-block-html h2,
+  .alton-thanks .alton-editable h1,
+  .alton-thanks .alton-editable h2 {
+    font-size: 46px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .alton-order .alton-editable .sqs-block-html h1,
+  .alton-order .alton-editable .sqs-block-html h2,
+  .alton-order .alton-editable h1,
+  .alton-order .alton-editable h2,
+  .alton-search .alton-editable .sqs-block-html h1,
+  .alton-search .alton-editable .sqs-block-html h2,
+  .alton-search .alton-editable h1,
+  .alton-search .alton-editable h2,
+  .alton-thanks .alton-editable .sqs-block-html h1,
+  .alton-thanks .alton-editable .sqs-block-html h2,
+  .alton-thanks .alton-editable h1,
+  .alton-thanks .alton-editable h2 {
+    font-size: 34px !important;
+  }
+}
+
 .alton-editable--center {
   text-align: center !important;
 }
@@ -109,8 +308,32 @@
 .alton-editable--on-dark h1,
 .alton-editable--on-dark h2,
 .alton-editable--on-dark p,
-.alton-editable--on-dark .sqs-block-html p {
+.alton-editable--on-dark .sqs-block-html p,
+.alton-editable--on-dark .sqs-block-html h1,
+.alton-editable--on-dark .sqs-block-html h2 {
   color: #F5F2EC !important;
+}
+
+/* Story pillars: keep 3-col grid when fallback is active */
+.story-features > .alton-editable {
+  display: contents;
+}
+
+.story-features > .alton-editable > .alton-editable__fallback {
+  display: contents;
+}
+
+.story-features > .alton-editable:has(.alton-editable__cms .sqs-block),
+.story-features > .alton-editable.has-cms {
+  display: block;
+  grid-column: 1 / -1;
+}
+
+.story-features > .alton-editable:has(.alton-editable__cms .sqs-block) > .alton-editable__cms,
+.story-features > .alton-editable.has-cms > .alton-editable__cms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
 }
 
 .alton-cms-panel {

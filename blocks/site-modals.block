@@ -1,0 +1,103 @@
+<!-- Global order + thanks modals — copy editable in Squarespace -->
+
+<div class="alton-order" id="alton-order" data-order-modal hidden>
+  <div class="alton-order__backdrop" data-order-close tabindex="-1" aria-hidden="true"></div>
+  <div class="alton-order__panel" role="dialog" aria-modal="true" aria-labelledby="alton-order-title">
+    <div class="alton-order__top">
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <h2 id="alton-order-title" class="heading-lg">Place Your Order</h2>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="orderModalTitle" columns="12" label="EDIT: Order modal title" />
+        </div>
+      </div>
+      <button type="button" class="alton-order__close" data-order-close aria-label="Close order form">
+        <img src="/assets/icons/cancel.svg" alt="" width="20" height="20">
+      </button>
+    </div>
+
+    <p class="alton-order__summary body-lg" data-order-summary hidden></p>
+    <div class="alton-order__cart" data-order-cart aria-live="polite"></div>
+    <p class="alton-order__grand body-lg" data-order-grand></p>
+
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="alton-order__hint label">Want more items? Close this form, add another product, then submit.</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="orderModalHint" columns="12" label="EDIT: Order modal hint" />
+      </div>
+    </div>
+
+    <form class="alton-order__form" data-order-form novalidate>
+      <input type="hidden" name="product" data-order-product>
+      <input type="hidden" name="qty" data-order-qty>
+      <input type="hidden" name="unit_price" data-order-unit>
+      <input type="hidden" name="total" data-order-total>
+      <input type="hidden" name="order_lines" data-order-lines>
+      <div class="form-field">
+        <label for="order-name">Full name</label>
+        <input id="order-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+      </div>
+      <div class="form-field">
+        <label for="order-email">Email</label>
+        <input id="order-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com">
+      </div>
+      <div class="form-field">
+        <label for="order-phone">Phone</label>
+        <input id="order-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Phone number">
+      </div>
+      <div class="form-field form-field--full">
+        <label for="order-address">Delivery address</label>
+        <textarea id="order-address" name="address" required autocomplete="street-address" placeholder="Street, city, postal code" rows="3"></textarea>
+      </div>
+      <div class="form-field form-field--full">
+        <label for="order-notes">Order notes <span>(optional)</span></label>
+        <textarea id="order-notes" name="notes" placeholder="Allergies, gift message, preferred delivery time" rows="3"></textarea>
+      </div>
+      <div class="form-actions form-field--full">
+        <button type="submit" class="btn btn--terracotta">Submit Order</button>
+      </div>
+      <p class="form-status" data-form-status hidden></p>
+    </form>
+
+    <div class="alton-editable" data-alton-editable style="margin-top:16px;">
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="orderModalExtra" columns="12" label="EDIT: Extra order modal notes / help text" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alton-thanks" id="alton-thanks" data-thanks hidden>
+  <div class="alton-thanks__backdrop" data-thanks-close></div>
+  <div class="alton-thanks__card" role="alertdialog" aria-modal="true" aria-labelledby="alton-thanks-title">
+    <div class="alton-thanks__icon" aria-hidden="true">
+      <svg class="alton-thanks__check" viewBox="0 0 52 52" width="72" height="72">
+        <circle class="alton-thanks__circle" cx="26" cy="26" r="24" fill="none"/>
+        <path class="alton-thanks__tick" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+      </svg>
+    </div>
+    <div class="alton-editable alton-editable--center" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h2 id="alton-thanks-title" class="heading-lg">Thank You</h2>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="thanksModalTitle" columns="12" label="EDIT: Thank You title" />
+      </div>
+    </div>
+    <p class="body-lg" data-thanks-message>Your message has been received. We will get back to you soon.</p>
+    <div class="alton-editable alton-editable--center" data-alton-editable>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="thanksModalMessage" columns="12" label="EDIT: Default thank-you message (JS may override)" />
+      </div>
+    </div>
+    <button type="button" class="btn btn--olive" data-thanks-close>Continue</button>
+    <div class="alton-editable alton-editable--center" data-alton-editable style="margin-top:12px;">
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="thanksModalButton" columns="12" label="EDIT: Optional custom Continue button (Button Block)" />
+      </div>
+    </div>
+  </div>
+</div>

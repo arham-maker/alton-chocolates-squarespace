@@ -1,17 +1,28 @@
 <section class="split-section" aria-labelledby="build-box-heading">
-  <div class="split-section__media">
-    <squarespace:block-field id="buildBoxImage" columns="12" label="Build Box Image" />
+  <div class="split-section__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/build-box-cta.png" alt="Assorted chocolate box" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxCtaImage" columns="12" label="EDIT: Build Box CTA image (Image Block)" />
+    </div>
   </div>
   <div class="split-section__content split-section__content--blush">
-    <div>
-      <p class="label">Sample text goes here</p>
-      <h2 id="build-box-heading" class="heading-lg">Build Your Box</h2>
-    </div>
-    <div class="body-lg">
-      <squarespace:block-field id="buildBoxCopy" columns="12" label="Build Box Copy" />
-    </div>
-    <div>
-      <squarespace:block-field id="buildBoxCta" columns="12" label="Build Box CTA" />
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div>
+          <p class="label">Sample text goes here</p>
+          <h2 id="build-box-heading" class="heading-lg">Build Your Box</h2>
+        </div>
+        <p class="body-lg">Lorem ipsum dolor sit amet consectetur. Feugiat non vitae neque nisl.</p>
+        <a class="btn btn--terracotta" href="/build-box">
+          Start Building
+          <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+        </a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="buildBoxCtaCopy" columns="12" label="EDIT: Build Box CTA — label, heading, text &amp; button" />
+      </div>
     </div>
   </div>
 </section>

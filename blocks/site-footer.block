@@ -8,59 +8,116 @@
           <img class="site-footer__brand-logo" src="/assets/icons/logo.svg" alt="{siteTitle}" width="180" height="54">
         {.end}
       </a>
-      <p class="site-footer__brand-text">Sample text goes here</p>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <p class="site-footer__brand-text">Sample text goes here</p>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="footerBrandText" columns="12" label="EDIT: Footer brand blurb (Text Block)" />
+        </div>
+      </div>
     </div>
 
     <div>
-      <h2 class="site-footer__col-title">Shop</h2>
-      <nav class="site-footer__links" aria-label="Shop links">
-        <a href="/shop">All Chocolates</a>
-        <a href="/shop#products">Bonbons</a>
-        <a href="/shop#products">Barks</a>
-        <a href="/shop#products">Bars</a>
-        <a href="/shop#products">Caramels</a>
-        <a href="/shop#products">Toffee</a>
-        <a href="/shop#products">Cookies</a>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <h2 class="site-footer__col-title">Shop</h2>
+          <nav class="site-footer__links" aria-label="Shop links">
+            <a href="/shop">All Chocolates</a>
+            <a href="/shop#products">Bonbons</a>
+            <a href="/shop#products">Barks</a>
+            <a href="/shop#products">Bars</a>
+            <a href="/shop#products">Caramels</a>
+            <a href="/shop#products">Toffee</a>
+            <a href="/shop#products">Cookies</a>
+          </nav>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="footerShopLinks" columns="12" label="EDIT: Footer Shop column (Text links or Button)" />
+        </div>
+      </div>
+      <nav class="site-footer__links" aria-label="Shop links CMS">
         <squarespace:navigation navigationId="footerShop" template="footer-nav" />
       </nav>
     </div>
 
     <div>
-      <h2 class="site-footer__col-title">Other</h2>
-      <nav class="site-footer__links" aria-label="Other links">
-        <a href="/our-story">Our Story</a>
-        <a href="/build-box">Build a Box</a>
-        <a href="/gifts">Gift</a>
-        <a href="/gifts#premium-gifts-heading">Gallery</a>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <h2 class="site-footer__col-title">Other</h2>
+          <nav class="site-footer__links" aria-label="Other links">
+            <a href="/our-story">Our Story</a>
+            <a href="/build-box">Build a Box</a>
+            <a href="/gifts">Gift</a>
+            <a href="/gifts#premium-gifts-heading">Gallery</a>
+          </nav>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="footerOtherLinks" columns="12" label="EDIT: Footer Other column" />
+        </div>
+      </div>
+      <nav class="site-footer__links" aria-label="Other links CMS">
         <squarespace:navigation navigationId="footerOther" template="footer-nav" />
       </nav>
     </div>
 
     <div>
-      <h2 class="site-footer__col-title">Help</h2>
-      <nav class="site-footer__links" aria-label="Help links">
-        <a href="/contact">Contact Support</a>
-        <a href="/#newsletter">Membership</a>
-        <a href="/contact">FAQ’s</a>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <h2 class="site-footer__col-title">Help</h2>
+          <nav class="site-footer__links" aria-label="Help links">
+            <a href="/contact">Contact Support</a>
+            <a href="/#newsletter">Membership</a>
+            <a href="/contact">FAQ’s</a>
+          </nav>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="footerHelpLinks" columns="12" label="EDIT: Footer Help column" />
+        </div>
+      </div>
+      <nav class="site-footer__links" aria-label="Help links CMS">
         <squarespace:navigation navigationId="footerHelp" template="footer-nav" />
       </nav>
     </div>
   </div>
 
   <div class="site-footer__bottom">
-    <p class="site-footer__copy">© 2026 Alton Chocolates. All Right Reserved</p>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="site-footer__copy">© 2026 Alton Chocolates. All Right Reserved</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="footerCopyright" columns="12" label="EDIT: Footer copyright (Text Block)" />
+      </div>
+    </div>
     <div class="site-footer__meta">
-      <div class="site-footer__social">
-        <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/icons/facebook.svg" alt="" width="20" height="20">
-        </a>
-        <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/icons/instagram.svg" alt="" width="20" height="20">
-        </a>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <div class="site-footer__social">
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/icons/facebook.svg" alt="" width="20" height="20">
+            </a>
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/icons/instagram.svg" alt="" width="20" height="20">
+            </a>
+          </div>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="footerSocial" columns="12" label="EDIT: Social links (Text / Button / Icon blocks)" />
+        </div>
+      </div>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <div class="site-footer__legal">
+            <a href="/contact">Privacy</a>
+            <a href="/contact">Terms</a>
+          </div>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="footerLegalLinks" columns="12" label="EDIT: Privacy / Terms links" />
+        </div>
       </div>
       <div class="site-footer__legal">
-        <a href="/contact">Privacy</a>
-        <a href="/contact">Terms</a>
         <squarespace:navigation navigationId="footerLegal" template="footer-nav" />
       </div>
     </div>

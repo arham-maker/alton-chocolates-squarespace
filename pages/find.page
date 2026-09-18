@@ -2,26 +2,56 @@
 
 <section class="search-page section" aria-labelledby="search-page-heading">
   <div class="section-header">
-    <p class="label">Find something sweet</p>
-    <h1 id="search-page-heading" class="heading-lg">Search</h1>
+    <div class="alton-editable alton-editable--center" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <p class="label">Find something sweet</p>
+        <h1 id="search-page-heading" class="heading-lg">Search</h1>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="findPageHeading" columns="12" label="EDIT: Search page label &amp; heading" />
+      </div>
+    </div>
   </div>
 
-  <form class="alton-search__form alton-search__form--page" data-search-form action="/search" method="get" role="search">
-    <label class="sr-only" for="search-page-input">Search</label>
-    <input
-      id="search-page-input"
-      class="alton-search__input"
-      data-search-input
-      type="search"
-      name="q"
-      placeholder="Search bonbons, gifts, pages…"
-      autocomplete="off"
-      enterkeyhint="search"
-    >
-    <button type="submit" class="btn btn--terracotta">Search</button>
-  </form>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <form class="alton-search__form alton-search__form--page" data-search-form action="/search" method="get" role="search">
+        <label class="sr-only" for="search-page-input">Search</label>
+        <input
+          id="search-page-input"
+          class="alton-search__input"
+          data-search-input
+          type="search"
+          name="q"
+          placeholder="Search bonbons, gifts, pages…"
+          autocomplete="off"
+          enterkeyhint="search"
+        >
+        <button type="submit" class="btn btn--terracotta">Search</button>
+      </form>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="findPageFormLabels" columns="12" label="EDIT: Search form labels / placeholder / button (Text / Button)" />
+    </div>
+  </div>
 
-  <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Search you quiery with space</p>
+  <div class="alton-editable alton-editable--center" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Search you quiery with space</p>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="findPageHint" columns="12" label="EDIT: Search hint text" />
+    </div>
+  </div>
+
   <div class="alton-search__results alton-search__results--page" data-search-results aria-live="polite"></div>
-  <p class="alton-search__empty body-lg" data-search-empty hidden style="text-align:center;">No matches. Browse the <a href="/shop">Shop</a> or <a href="/gifts">Gifts</a>.</p>
+
+  <div class="alton-editable alton-editable--center" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <p class="alton-search__empty body-lg" data-search-empty hidden style="text-align:center;">No matches. Browse the <a href="/shop">Shop</a> or <a href="/gifts">Gifts</a>.</p>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="findPageEmpty" columns="12" label="EDIT: Search empty-state message" />
+    </div>
+  </div>
 </section>

@@ -22,6 +22,11 @@
 
 <div class="alton-cms-panel">
   <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <p class="body-lg" style="text-align:center;color:var(--color-muted);">
+        Add a map, store hours, or extra contact details here via the editor.
+      </p>
+    </div>
     <div class="alton-editable__cms">
       <squarespace:block-field id="contactExtraContent" columns="12" label="EDIT: Extra Contact content (map, hours, Text / Button blocks)" />
     </div>

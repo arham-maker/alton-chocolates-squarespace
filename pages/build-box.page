@@ -13,64 +13,87 @@
       </div>
     </div>
   </div>
-  <div class="buildbox-hero__media">
-    <img src="/assets/images/buildbox-hero.png" alt="Open premium chocolate box" loading="eager">
+  <div class="buildbox-hero__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/buildbox-hero.png" alt="Open premium chocolate box" loading="eager">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxHeroImage" columns="12" label="EDIT: Build Box hero image (Image Block)" />
+    </div>
   </div>
 </section>
 
 <section class="buildbox-step" aria-labelledby="step1-heading" data-buildbox>
-  <h2 id="step1-heading" class="buildbox-step__title">1. How Many Treats?</h2>
-  <div class="buildbox-sizes">
-    <div class="buildbox-size-list" role="listbox" aria-label="Box size">
-      <button type="button" class="buildbox-size" data-box-size data-box-name="Small Treat Box" data-box-price="58" data-box-min="6" data-box-max="9" role="option" aria-selected="false">
-        <div class="buildbox-size__info">
-          <h3>Small Treat Box</h3>
-          <p>Choose 6–9 treats</p>
-        </div>
-        <span class="buildbox-size__price">From $58</span>
-      </button>
-      <button type="button" class="buildbox-size" data-box-size data-box-name="Classic Treat Box" data-box-price="68" data-box-min="12" data-box-max="18" role="option" aria-selected="false">
-        <div class="buildbox-size__info">
-          <h3>Classic Treat Box</h3>
-          <p>Choose 12–18 treats</p>
-        </div>
-        <span class="buildbox-size__price">From $68</span>
-      </button>
-      <button type="button" class="buildbox-size is-selected" data-box-size data-box-name="Sharing Treat Box" data-box-price="78" data-box-min="24" data-box-max="36" role="option" aria-selected="true">
-        <div class="buildbox-size__info">
-          <h3>Sharing Treat Box</h3>
-          <p>Choose 24–36 treats</p>
-        </div>
-        <span class="buildbox-size__price">From $78</span>
-      </button>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <h2 id="step1-heading" class="buildbox-step__title">1. How Many Treats?</h2>
     </div>
-    <div class="buildbox-preview-grid" aria-hidden="true">
-      <img src="/assets/images/treat-preview-1.png" alt="">
-      <img src="/assets/images/treat-preview-2.png" alt="">
-      <img src="/assets/images/treat-preview-3.png" alt="">
-      <img src="/assets/images/treat-preview-4.png" alt="">
-      <img src="/assets/images/treat-preview-5.png" alt="">
-      <img src="/assets/images/treat-preview-6.png" alt="">
-      <img src="/assets/images/cat-bonbons.png" alt="">
-      <img src="/assets/images/cat-bars.png" alt="">
-      <img src="/assets/images/cat-bark.png" alt="">
-      <img src="/assets/images/cat-caramels.png" alt="">
-      <img src="/assets/images/cat-toffee.png" alt="">
-      <img src="/assets/images/cat-cookies.png" alt="">
-      <img src="/assets/images/shop-product-1.png" alt="">
-      <img src="/assets/images/shop-product-2.png" alt="">
-      <img src="/assets/images/shop-product-3.png" alt="">
-      <img src="/assets/images/shop-product-4.png" alt="">
-      <img src="/assets/images/shop-product-5.png" alt="">
-      <img src="/assets/images/shop-product-6.png" alt="">
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxStep1Title" columns="12" label="EDIT: Step 1 title" />
     </div>
   </div>
-  <squarespace:block-field id="buildBoxSizes" columns="12" label="Box Size Options (editable notes)" />
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <div class="buildbox-sizes">
+        <div class="buildbox-size-list" role="listbox" aria-label="Box size">
+          <button type="button" class="buildbox-size" data-box-size data-box-name="Small Treat Box" data-box-price="58" data-box-min="6" data-box-max="9" role="option" aria-selected="false">
+            <div class="buildbox-size__info">
+              <h3>Small Treat Box</h3>
+              <p>Choose 6–9 treats</p>
+            </div>
+            <span class="buildbox-size__price">From $58</span>
+          </button>
+          <button type="button" class="buildbox-size" data-box-size data-box-name="Classic Treat Box" data-box-price="68" data-box-min="12" data-box-max="18" role="option" aria-selected="false">
+            <div class="buildbox-size__info">
+              <h3>Classic Treat Box</h3>
+              <p>Choose 12–18 treats</p>
+            </div>
+            <span class="buildbox-size__price">From $68</span>
+          </button>
+          <button type="button" class="buildbox-size is-selected" data-box-size data-box-name="Sharing Treat Box" data-box-price="78" data-box-min="24" data-box-max="36" role="option" aria-selected="true">
+            <div class="buildbox-size__info">
+              <h3>Sharing Treat Box</h3>
+              <p>Choose 24–36 treats</p>
+            </div>
+            <span class="buildbox-size__price">From $78</span>
+          </button>
+        </div>
+        <div class="buildbox-preview-grid" aria-hidden="true">
+          <img src="/assets/images/treat-preview-1.png" alt="">
+          <img src="/assets/images/treat-preview-2.png" alt="">
+          <img src="/assets/images/treat-preview-3.png" alt="">
+          <img src="/assets/images/treat-preview-4.png" alt="">
+          <img src="/assets/images/treat-preview-5.png" alt="">
+          <img src="/assets/images/treat-preview-6.png" alt="">
+          <img src="/assets/images/cat-bonbons.png" alt="">
+          <img src="/assets/images/cat-bars.png" alt="">
+          <img src="/assets/images/cat-bark.png" alt="">
+          <img src="/assets/images/cat-caramels.png" alt="">
+          <img src="/assets/images/cat-toffee.png" alt="">
+          <img src="/assets/images/cat-cookies.png" alt="">
+          <img src="/assets/images/shop-product-1.png" alt="">
+          <img src="/assets/images/shop-product-2.png" alt="">
+          <img src="/assets/images/shop-product-3.png" alt="">
+          <img src="/assets/images/shop-product-4.png" alt="">
+          <img src="/assets/images/shop-product-5.png" alt="">
+          <img src="/assets/images/shop-product-6.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxSizesGrid" columns="12" label="EDIT: Box sizes — add Text / Products / Summary blocks (keeps coded sizes until CMS filled)" />
+    </div>
+  </div>
 </section>
 
 <section class="buildbox-step" aria-labelledby="step2-heading">
   <h2 id="step2-heading" class="buildbox-step__title">
-    2. Choose Your Treats
+    <div class="alton-editable" data-alton-editable style="flex:1;">
+      <div class="alton-editable__fallback">2. Choose Your Treats</div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="buildBoxStep2Title" columns="12" label="EDIT: Step 2 title" />
+      </div>
+    </div>
     <span class="label" data-treat-status style="margin-left: auto; letter-spacing: 0.1em;">0 selected</span>
   </h2>
 
@@ -84,174 +107,237 @@
     <button type="button" class="filter-pill" data-filter="cookies">Cookies</button>
   </div>
 
-  <div class="buildbox-treats-grid" data-treats-grid>
-    <article class="treat-card" data-treat data-category="caramels" data-title="Salted Caramel" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
-      <h3 class="product-title">Salted Caramel</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <div class="buildbox-treats-grid" data-treats-grid>
+        <article class="treat-card" data-treat data-category="caramels" data-title="Salted Caramel" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
+          <h3 class="product-title">Salted Caramel</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Raspberry Chocolate" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-2.png" alt="Raspberry Chocolate" loading="lazy"></div>
+          <h3 class="product-title">Raspberry Chocolate</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Passion Fruit Ganache" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-3.png" alt="Passion Fruit Ganache" loading="lazy"></div>
+          <h3 class="product-title">Passion Fruit Ganache</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Pistachio Praline" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-4.png" alt="Pistachio Praline" loading="lazy"></div>
+          <h3 class="product-title">Pistachio Praline</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Hazelnut Praline" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-5.png" alt="Hazelnut Praline" loading="lazy"></div>
+          <h3 class="product-title">Hazelnut Praline</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Coconut Ganache" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-6.png" alt="Coconut Ganache" loading="lazy"></div>
+          <h3 class="product-title">Coconut Ganache</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bonbons" data-title="Blueberry Vanilla" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-7.png" alt="Blueberry Vanilla" loading="lazy"></div>
+          <h3 class="product-title">Blueberry Vanilla</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
+        <article class="treat-card" data-treat data-category="bars" data-title="Mint Dark Chocolate" data-price="3">
+          <div class="treat-card__image"><img src="/assets/images/shop-product-8.png" alt="Mint Dark Chocolate" loading="lazy"></div>
+          <h3 class="product-title">Mint Dark Chocolate</h3>
+          <p class="product-card__price">$3</p>
+          <div class="qty-control" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+            <span class="qty-control__value" data-qty-value>0</span>
+            <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+          </div>
+        </article>
       </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bonbons" data-title="Raspberry Chocolate" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-2.png" alt="Raspberry Chocolate" loading="lazy"></div>
-      <h3 class="product-title">Raspberry Chocolate</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bonbons" data-title="Passion Fruit Ganache" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-3.png" alt="Passion Fruit Ganache" loading="lazy"></div>
-      <h3 class="product-title">Passion Fruit Ganache</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bonbons" data-title="Pistachio Praline" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-4.png" alt="Pistachio Praline" loading="lazy"></div>
-      <h3 class="product-title">Pistachio Praline</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bonbons" data-title="Hazelnut Praline" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-5.png" alt="Hazelnut Praline" loading="lazy"></div>
-      <h3 class="product-title">Hazelnut Praline</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bonbons" data-title="Coconut Ganache" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-6.png" alt="Coconut Ganache" loading="lazy"></div>
-      <h3 class="product-title">Coconut Ganache</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bonbons" data-title="Blueberry Vanilla" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-7.png" alt="Blueberry Vanilla" loading="lazy"></div>
-      <h3 class="product-title">Blueberry Vanilla</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-    <article class="treat-card" data-treat data-category="bars" data-title="Mint Dark Chocolate" data-price="3">
-      <div class="treat-card__image"><img src="/assets/images/shop-product-8.png" alt="Mint Dark Chocolate" loading="lazy"></div>
-      <h3 class="product-title">Mint Dark Chocolate</h3>
-      <p class="product-card__price">$3</p>
-      <div class="qty-control" data-qty>
-        <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
-        <span class="qty-control__value" data-qty-value>0</span>
-        <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
-      </div>
-    </article>
-  </div>
-  <div style="margin-top: 30px;">
-    <squarespace:block-field id="buildBoxTreats" columns="12" label="Treats Collection / Summary" />
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxTreatsGrid" columns="12" label="EDIT: Treats grid — add Products / Summary / Gallery blocks" />
+    </div>
   </div>
 </section>
 
 <section class="buildbox-step" aria-labelledby="step3-heading">
-  <h2 id="step3-heading" class="buildbox-step__title">3. Complete Your Order</h2>
+  <div class="alton-editable" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <h2 id="step3-heading" class="buildbox-step__title">3. Complete Your Order</h2>
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxStep3Title" columns="12" label="EDIT: Step 3 title" />
+    </div>
+  </div>
   <div class="buildbox-checkout">
     <form class="alton-form buildbox-form-grid" data-buildbox-form action="#" method="post">
-      <div class="form-field full">
-        <label for="bb-email">Email</label>
-        <input id="bb-email" name="email" type="email" required autocomplete="email">
-      </div>
-      <div class="form-field">
-        <label for="bb-phone">Phone</label>
-        <input id="bb-phone" name="phone" type="tel" autocomplete="tel">
-      </div>
-      <div class="form-field">
-        <label for="bb-first">First Name</label>
-        <input id="bb-first" name="firstName" type="text" required autocomplete="given-name">
-      </div>
-      <div class="form-field">
-        <label for="bb-last">Last Name</label>
-        <input id="bb-last" name="lastName" type="text" required autocomplete="family-name">
-      </div>
-      <div class="form-field full">
-        <label for="bb-address">Address</label>
-        <input id="bb-address" name="address" type="text" required autocomplete="street-address">
-      </div>
-      <div class="form-field">
-        <label for="bb-city">City</label>
-        <input id="bb-city" name="city" type="text" required autocomplete="address-level2">
-      </div>
-      <div class="form-field">
-        <label for="bb-state">State</label>
-        <input id="bb-state" name="state" type="text" required autocomplete="address-level1">
-      </div>
-      <div class="form-field">
-        <label for="bb-zip">Zip</label>
-        <input id="bb-zip" name="zip" type="text" required autocomplete="postal-code">
-      </div>
-      <div class="form-field full">
-        <label for="bb-message">Message</label>
-        <textarea id="bb-message" name="message" rows="4"></textarea>
-      </div>
-      <p class="body-lg full" style="font-size: 14px; color: var(--color-muted);">
-        Replace this form with a Squarespace Form Block below for production submissions, or connect Build Box to Commerce Product Options.
-      </p>
-      <div class="full">
-        <squarespace:block-field id="buildBoxOrderForm" columns="12" label="Order Form Block (Squarespace Form)" />
+      <div class="alton-editable" data-alton-editable style="grid-column: 1 / -1;">
+        <div class="alton-editable__fallback">
+          <div class="form-field full">
+            <label for="bb-email">Email</label>
+            <input id="bb-email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="bb-phone">Phone</label>
+            <input id="bb-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="bb-first">First Name</label>
+            <input id="bb-first" name="firstName" type="text" required autocomplete="given-name">
+          </div>
+          <div class="form-field">
+            <label for="bb-last">Last Name</label>
+            <input id="bb-last" name="lastName" type="text" required autocomplete="family-name">
+          </div>
+          <div class="form-field full">
+            <label for="bb-address">Address</label>
+            <input id="bb-address" name="address" type="text" required autocomplete="street-address">
+          </div>
+          <div class="form-field">
+            <label for="bb-city">City</label>
+            <input id="bb-city" name="city" type="text" required autocomplete="address-level2">
+          </div>
+          <div class="form-field">
+            <label for="bb-state">State</label>
+            <input id="bb-state" name="state" type="text" required autocomplete="address-level1">
+          </div>
+          <div class="form-field">
+            <label for="bb-zip">Zip</label>
+            <input id="bb-zip" name="zip" type="text" required autocomplete="postal-code">
+          </div>
+          <div class="form-field full">
+            <label for="bb-message">Message</label>
+            <textarea id="bb-message" name="message" rows="4"></textarea>
+          </div>
+          <p class="body-lg full" style="font-size: 14px; color: var(--color-muted);">
+            Replace this form with a Squarespace Form Block below for production submissions, or connect Build Box to Commerce Product Options.
+          </p>
+        </div>
+        <div class="alton-editable__cms" data-sqs-form-slot>
+          <squarespace:block-field id="buildBoxOrderForm" columns="12" label="EDIT: Order form — add Squarespace Form Block (hides fallback)" />
+        </div>
       </div>
     </form>
 
     <aside class="buildbox-order" aria-label="Order summary">
-      <div class="buildbox-order__image">
-        <img src="/assets/images/buildbox-summary.png" alt="Selected treat box" loading="lazy">
+      <div class="buildbox-order__image alton-editable alton-editable--media" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <img src="/assets/images/buildbox-summary.png" alt="Selected treat box" loading="lazy">
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="buildBoxSummaryImage" columns="12" label="EDIT: Order summary image (Image Block)" />
+        </div>
       </div>
       <h3 class="product-title" data-order-box-name>Sharing Treat Box</h3>
       <div class="buildbox-order__list" data-order-list>
         <p class="body-lg" style="font-size: 14px;">No treats selected yet.</p>
       </div>
       <div class="buildbox-order__totals">
-        <div class="buildbox-order__row"><span>Subtotal</span><span data-order-subtotal>$78.00</span></div>
-        <div class="buildbox-order__row"><span>Tax</span><span data-order-tax>$0.00</span></div>
-        <div class="buildbox-order__row total"><span>Total</span><span data-order-total>$78.00</span></div>
+        <div class="buildbox-order__row">
+          <div class="alton-editable" data-alton-editable style="width:auto;">
+            <div class="alton-editable__fallback"><span>Subtotal</span></div>
+            <div class="alton-editable__cms">
+              <squarespace:block-field id="buildBoxLabelSubtotal" columns="12" label="EDIT: Subtotal label" />
+            </div>
+          </div>
+          <span data-order-subtotal>$78.00</span>
+        </div>
+        <div class="buildbox-order__row">
+          <div class="alton-editable" data-alton-editable style="width:auto;">
+            <div class="alton-editable__fallback"><span>Tax</span></div>
+            <div class="alton-editable__cms">
+              <squarespace:block-field id="buildBoxLabelTax" columns="12" label="EDIT: Tax label" />
+            </div>
+          </div>
+          <span data-order-tax>$0.00</span>
+        </div>
+        <div class="buildbox-order__row total">
+          <div class="alton-editable" data-alton-editable style="width:auto;">
+            <div class="alton-editable__fallback"><span>Total</span></div>
+            <div class="alton-editable__cms">
+              <squarespace:block-field id="buildBoxLabelTotal" columns="12" label="EDIT: Total label" />
+            </div>
+          </div>
+          <span data-order-total>$78.00</span>
+        </div>
       </div>
-      <button type="button" class="btn btn--olive" style="width: 100%;" data-continue-payment>
-        Continue to Payment
-        <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
-      </button>
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <button type="button" class="btn btn--olive" style="width: 100%;" data-continue-payment>
+            Continue to Payment
+            <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="buildBoxPaymentButton" columns="12" label="EDIT: Continue to Payment button (Button Block)" />
+        </div>
+      </div>
     </aside>
   </div>
 </section>
 
 <section class="split-section" aria-labelledby="bb-details-heading">
-  <div class="split-section__media">
-    <img src="/assets/images/details-craft.png" alt="Crafting details" loading="lazy">
+  <div class="split-section__media alton-editable alton-editable--media" data-alton-editable>
+    <div class="alton-editable__fallback">
+      <img src="/assets/images/details-craft.png" alt="Crafting details" loading="lazy">
+    </div>
+    <div class="alton-editable__cms">
+      <squarespace:block-field id="buildBoxDetailsImage" columns="12" label="EDIT: Bottom details image (Image Block)" />
+    </div>
   </div>
   <div class="split-section__content split-section__content--cream">
-    <h2 id="bb-details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
-    <div class="feature-icons">
-      <div class="feature-icon"><img src="/assets/icons/leaf.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
-      <div class="feature-icon"><img src="/assets/icons/heart.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
-      <div class="feature-icon"><img src="/assets/icons/plant.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h2 id="bb-details-heading" class="heading-lg">Details Make<br>A Sweeter World</h2>
+        <div class="feature-icons">
+          <div class="feature-icon"><img src="/assets/icons/leaf.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+          <div class="feature-icon"><img src="/assets/icons/heart.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+          <div class="feature-icon"><img src="/assets/icons/plant.svg" alt="" width="32" height="32"><span>Sample<br>Text</span></div>
+        </div>
+        <a class="btn btn--text" href="/our-story">Why Alton <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24"></a>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="buildBoxDetailsCopy" columns="12" label="EDIT: Bottom details — heading, icons text &amp; button" />
+      </div>
     </div>
-    <a class="btn btn--text" href="/our-story">Why Alton <img src="/assets/icons/arrow-right-dark.svg" alt="" width="24" height="24"></a>
   </div>
 </section>
 
