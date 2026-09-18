@@ -352,14 +352,21 @@ h6 {
 }
 
 .alton-search__input {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
   background: @white;
   border: 1px solid @border;
   padding: 14px 16px;
   font-family: @font-sans;
   font-size: 16px;
   color: @primary;
+}
+
+.alton-search__form .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .alton-search__hint {
@@ -1942,6 +1949,80 @@ h6 {
 
   .section-header--row .btn--text {
     align-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .alton-search,
+  .alton-order,
+  .alton-thanks {
+    padding: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .alton-search__panel,
+  .alton-order__panel,
+  .alton-thanks__card {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: calc(100vh - 24px) !important;
+    margin: auto 0 !important;
+    padding: 24px 18px 28px !important;
+    box-sizing: border-box !important;
+  }
+
+  .alton-search__top .heading-lg,
+  .alton-order__top .heading-lg,
+  .alton-thanks__card .heading-lg {
+    font-size: 34px !important;
+  }
+
+  .alton-search__form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .alton-search__input {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .alton-search__form .btn {
+    width: 100% !important;
+    flex: none !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    justify-content: center !important;
+  }
+
+  .alton-search__item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .alton-order__form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .alton-order__form .form-actions {
+    justify-content: stretch !important;
+  }
+
+  .alton-order__form .form-actions .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .alton-order__hint {
+    font-size: 12px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .alton-thanks__card {
+    padding: 36px 20px 28px !important;
   }
 }
 
