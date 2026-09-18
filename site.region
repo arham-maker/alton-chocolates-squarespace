@@ -26,7 +26,7 @@ html,body\{margin:0!important;padding:0!important;background:#F5F2EC!important;c
 .alton-search\{position:fixed!important;inset:0!important;z-index:10000!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:24px!important\}
 .alton-search__backdrop\{position:absolute!important;inset:0!important;background:rgba(47,26,13,.45)!important\}
 .alton-search__panel\{position:relative!important;z-index:1!important;width:min(720px,100%)!important;max-width:720px!important;margin:0!important;background:#F5F2EC!important;padding:40px 36px 48px!important;max-height:84vh!important;overflow:auto!important\}
-.alton-search__hint\{text-align:center!important;margin:18px 0 0!important\}
+.alton-search__hint\{text-align:center!important;margin:20px 0 0!important\}
 .alton-search__form\{display:flex!important;gap:12px!important;align-items:stretch!important\}
 .alton-search__input\{flex:1!important;min-width:0!important;background:#fff!important;border:1px solid #F0E8E0!important;padding:14px 16px!important;font-size:16px!important;color:#2F1A0D!important;font-family:"Poppins",sans-serif!important\}
 .alton-search__item\{display:flex!important;justify-content:space-between!important;gap:16px!important;padding:18px 0!important;border-bottom:1px solid #F0E8E0!important;text-decoration:none!important\}
