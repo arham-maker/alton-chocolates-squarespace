@@ -579,8 +579,149 @@
     initOrderButtons();
   }
 
+  var orderCart = [];
+
+  function loadOrderCart() {
+    try {
+      var raw = sessionStorage.getItem("alton-order-cart");
+      orderCart = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(orderCart)) orderCart = [];
+    } catch (e) {
+      orderCart = [];
+    }
+  }
+
+  function saveOrderCart() {
+    try {
+      sessionStorage.setItem("alton-order-cart", JSON.stringify(orderCart));
+    } catch (e) {}
+  }
+
+  function clearOrderCart() {
+    orderCart = [];
+    saveOrderCart();
+  }
+
+  function cartGrandTotal() {
+    return orderCart.reduce(function (sum, item) {
+      return sum + item.price * item.qty;
+    }, 0);
+  }
+
+  function addToOrderCart(item) {
+    var qty = Math.max(1, Math.min(99, parseInt(item.qty, 10) || 1));
+    var price = parseFloat(item.price) || 0;
+    var title = String(item.title || "Item").trim();
+    var existing = null;
+    for (var i = 0; i < orderCart.length; i++) {
+      if (orderCart[i].title === title && orderCart[i].price === price) {
+        existing = orderCart[i];
+        break;
+      }
+    }
+    if (existing) {
+      existing.qty = Math.min(99, existing.qty + qty);
+    } else {
+      orderCart.push({ title: title, price: price, qty: qty });
+    }
+    saveOrderCart();
+  }
+
+  function removeFromOrderCart(index) {
+    if (index < 0 || index >= orderCart.length) return;
+    orderCart.splice(index, 1);
+    saveOrderCart();
+    renderOrderCart();
+    if (!orderCart.length) closeOrderModal();
+  }
+
+  function renderOrderCart() {
+    var modal = document.querySelector("[data-order-modal]");
+    if (!modal) return;
+    var list = modal.querySelector("[data-order-cart]");
+    var grand = modal.querySelector("[data-order-grand]");
+    var form = modal.querySelector("[data-order-form]");
+    if (!list) return;
+
+    if (!orderCart.length) {
+      list.innerHTML = '<p class="body-lg">Your order is empty.</p>';
+      if (grand) grand.textContent = "";
+      return;
+    }
+
+    list.innerHTML = orderCart
+      .map(function (item, idx) {
+        var line = (item.price * item.qty).toFixed(2);
+        return (
+          '<div class="alton-order__line" data-cart-index="' +
+          idx +
+          '">' +
+          '<div class="alton-order__line-main">' +
+          "<strong>" +
+          item.qty +
+          " × " +
+          item.title +
+          "</strong>" +
+          "<span>$" +
+          line +
+          "</span>" +
+          "</div>" +
+          '<button type="button" class="alton-order__line-remove" data-cart-remove="' +
+          idx +
+          '" aria-label="Remove ' +
+          item.title +
+          '">Remove</button>' +
+          "</div>"
+        );
+      })
+      .join("");
+
+    var total = cartGrandTotal().toFixed(2);
+    if (grand) grand.textContent = "Order total: $" + total;
+
+    if (form) {
+      var titles = orderCart
+        .map(function (i) {
+          return i.qty + "x " + i.title;
+        })
+        .join(", ");
+      var set = function (sel, val) {
+        var el = form.querySelector(sel);
+        if (el) el.value = val;
+      };
+      set("[data-order-product]", titles);
+      set(
+        "[data-order-qty]",
+        String(
+          orderCart.reduce(function (n, i) {
+            return n + i.qty;
+          }, 0)
+        )
+      );
+      set("[data-order-unit]", "");
+      set("[data-order-total]", total);
+      set(
+        "[data-order-lines]",
+        orderCart
+          .map(function (i) {
+            return i.qty + " × " + i.title + " @ $" + i.price.toFixed(2);
+          })
+          .join("\n")
+      );
+    }
+
+    list.querySelectorAll("[data-cart-remove]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        removeFromOrderCart(parseInt(btn.getAttribute("data-cart-remove"), 10));
+      });
+    });
+  }
+
   function initOrderButtons() {
     initOrderModal();
+    loadOrderCart();
 
     function readOrderFromCard(card) {
       var title =
@@ -599,93 +740,63 @@
       var qtyEl = card.querySelector("[data-qty-value]");
       var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
       if (qty < 1) qty = 1;
-      return {
-        title: title,
-        price: price,
-        qty: qty,
-        total: (price * qty).toFixed(2)
-      };
+      if (qty > 99) qty = 99;
+      return { title: title, price: price, qty: qty };
     }
 
-    function openFromCard(card) {
+    function orderFromCard(card) {
       if (!card) return;
-      openOrderModal(readOrderFromCard(card));
+      addToOrderCart(readOrderFromCard(card));
+      openOrderModal();
     }
 
-    // Order Now buttons
     document.querySelectorAll("[data-shop-order]").forEach(function (btn) {
       if (btn.dataset.boundOrder === "1") return;
       btn.dataset.boundOrder = "1";
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        openFromCard(btn.closest("[data-shop-product], [data-gift-card], .product-card"));
+        orderFromCard(
+          btn.closest("[data-shop-product], [data-gift-card], .product-card")
+        );
       });
     });
 
-    // Whole product card click (image / title / price) opens order modal
     document
       .querySelectorAll("[data-shop-product], [data-gift-card], .product-card[data-orderable]")
       .forEach(function (card) {
         if (card.dataset.boundCardOrder === "1") return;
         card.dataset.boundCardOrder = "1";
         card.classList.add("product-card--orderable");
-        card.setAttribute("role", "button");
-        card.setAttribute("tabindex", "0");
+        if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "0");
 
         card.addEventListener("click", function (e) {
-          // allow qty +/- without opening modal
           if (
             e.target.closest(
-              "[data-qty], [data-qty-minus], [data-qty-plus], a, button:not([data-shop-order])"
+              "[data-qty], [data-qty-minus], [data-qty-plus], a, button"
             )
           ) {
-            // Order Now is handled above; other buttons/links skip
-            if (!e.target.closest("[data-shop-order]")) return;
+            return;
           }
           e.preventDefault();
-          openFromCard(card);
+          orderFromCard(card);
         });
 
         card.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            openFromCard(card);
+            orderFromCard(card);
           }
         });
       });
   }
 
-  function openOrderModal(order) {
+  function openOrderModal() {
     var modal = document.querySelector("[data-order-modal]");
     if (!modal) return;
-    var summary = modal.querySelector("[data-order-summary]");
-    var form = modal.querySelector("[data-order-form]");
-    if (summary) {
-      summary.textContent =
-        order.qty +
-        " × " +
-        order.title +
-        " — $" +
-        order.total +
-        " total";
-    }
-    if (form) {
-      form.reset();
-      var set = function (sel, val) {
-        var el = form.querySelector(sel);
-        if (el) el.value = val;
-      };
-      set("[data-order-product]", order.title);
-      set("[data-order-qty]", String(order.qty));
-      set("[data-order-unit]", String(order.price));
-      set("[data-order-total]", String(order.total));
-      var status = form.querySelector("[data-form-status]");
-      if (status) {
-        status.hidden = true;
-        status.textContent = "";
-      }
-    }
+    loadOrderCart();
+    if (!orderCart.length) return;
+    renderOrderCart();
     modal.hidden = false;
     document.documentElement.style.overflow = "hidden";
     var first = modal.querySelector("#order-name");
@@ -703,6 +814,7 @@
     var modal = document.querySelector("[data-order-modal]");
     if (!modal || modal.getAttribute("data-ready")) return;
     modal.setAttribute("data-ready", "1");
+    loadOrderCart();
 
     modal.querySelectorAll("[data-order-close]").forEach(function (el) {
       el.addEventListener("click", closeOrderModal);
@@ -721,17 +833,33 @@
         form.reportValidity();
         return;
       }
+      loadOrderCart();
+      if (!orderCart.length) {
+        closeOrderModal();
+        return;
+      }
 
       var data = new FormData(form);
-      var product = String(data.get("product") || "Item");
-      var qty = String(data.get("qty") || "1");
-      var total = String(data.get("total") || "0");
+      var total = cartGrandTotal().toFixed(2);
+      var itemLines = orderCart.map(function (item) {
+        return (
+          "- " +
+          item.qty +
+          " × " +
+          item.title +
+          " @ $" +
+          item.price.toFixed(2) +
+          " = $" +
+          (item.price * item.qty).toFixed(2)
+        );
+      });
       var lines = [
         "New Alton Chocolates order",
-        "Product: " + product,
-        "Quantity: " + qty,
-        "Unit price: $" + String(data.get("unit_price") || ""),
-        "Total: $" + total,
+        "",
+        "Items:",
+        itemLines.join("\n"),
+        "",
+        "Order total: $" + total,
         "",
         "Customer details:",
         "Name: " + String(data.get("name") || ""),
@@ -741,19 +869,32 @@
         "Notes: " + String(data.get("notes") || "")
       ];
 
+      var subjectItems = orderCart
+        .map(function (i) {
+          return i.title;
+        })
+        .slice(0, 3)
+        .join(", ");
+      if (orderCart.length > 3) subjectItems += " + more";
+
       var mailto =
         "mailto:galton4@gmail.com?subject=" +
-        encodeURIComponent("Alton order — " + product) +
+        encodeURIComponent("Alton order — " + subjectItems) +
         "&body=" +
         encodeURIComponent(lines.join("\n"));
 
+      var count = orderCart.reduce(function (n, i) {
+        return n + i.qty;
+      }, 0);
+      clearOrderCart();
       closeOrderModal();
+      form.reset();
       showThanks(
-        "Order submitted for " +
-          qty +
-          " × " +
-          product +
-          " ($" +
+        "Order submitted (" +
+          count +
+          " item" +
+          (count === 1 ? "" : "s") +
+          ", $" +
           total +
           "). We will confirm by email shortly."
       );

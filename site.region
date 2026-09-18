@@ -144,12 +144,16 @@ html,body\{margin:0!important;padding:0!important;background:#F5F2EC!important;c
             <img src="/assets/icons/cancel.svg" alt="" width="20" height="20">
           </button>
         </div>
-        <p class="alton-order__summary body-lg" data-order-summary></p>
+        <p class="alton-order__summary body-lg" data-order-summary hidden></p>
+        <div class="alton-order__cart" data-order-cart aria-live="polite"></div>
+        <p class="alton-order__grand body-lg" data-order-grand></p>
+        <p class="alton-order__hint label">Want more items? Close this form, add another product, then submit.</p>
         <form class="alton-order__form" data-order-form novalidate>
           <input type="hidden" name="product" data-order-product>
           <input type="hidden" name="qty" data-order-qty>
           <input type="hidden" name="unit_price" data-order-unit>
           <input type="hidden" name="total" data-order-total>
+          <input type="hidden" name="order_lines" data-order-lines>
           <div class="form-field">
             <label for="order-name">Full name</label>
             <input id="order-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
