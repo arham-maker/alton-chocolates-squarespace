@@ -180,7 +180,7 @@
 
   .section-header--row {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
   }
 
@@ -189,8 +189,12 @@
     transform: none;
   }
 
+  .section-header--row > .alton-editable:not(.alton-editable--center),
+  .section-header--row > .btn--text,
   .section-header--row .btn--text {
-    align-self: center;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
   }
 }
 

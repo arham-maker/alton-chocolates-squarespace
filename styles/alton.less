@@ -702,6 +702,23 @@ h6 {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-header--row .section-header__center .alton-editable {
+  pointer-events: auto;
+}
+
+.section-header--row > .alton-editable:not(.alton-editable--center),
+.section-header--row > .btn--text {
+  width: auto !important;
+  max-width: max-content;
+  margin-left: auto;
+  flex: 0 0 auto;
+  text-align: right;
+  position: relative;
+  z-index: 1;
 }
 
 .category-grid {
@@ -1938,7 +1955,7 @@ h6 {
 
   .section-header--row {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
   }
 
@@ -1947,8 +1964,12 @@ h6 {
     transform: none;
   }
 
+  .section-header--row > .alton-editable:not(.alton-editable--center),
+  .section-header--row > .btn--text,
   .section-header--row .btn--text {
-    align-self: center;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
   }
 }
 

@@ -75,6 +75,23 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-header--row .section-header__center .alton-editable {
+  pointer-events: auto;
+}
+
+.section-header--row > .alton-editable:not(.alton-editable--center),
+.section-header--row > .btn--text {
+  width: auto !important;
+  max-width: max-content;
+  margin-left: auto;
+  flex: 0 0 auto;
+  text-align: right;
+  position: relative;
+  z-index: 1;
 }
 
 .category-grid {
