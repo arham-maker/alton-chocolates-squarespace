@@ -500,7 +500,7 @@ h6 {
 }
 
 .alton-search__hint {
-  margin: 20px 0 0;
+  margin: 20px 0 0 !important;
   text-align: center;
 }
 
