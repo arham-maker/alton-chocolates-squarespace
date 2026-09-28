@@ -337,7 +337,8 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
 .cart-page__clear img {
   width: 16px;
   height: 16px;
-  filter: invert(18%) sepia(84%) saturate(2878%) hue-rotate(346deg) brightness(90%) contrast(95%);
+  /* Escape CSS filter so Squarespace LESS does not treat saturate() as a LESS color fn */
+  filter: ~"invert(18%) sepia(84%) saturate(2878%) hue-rotate(346deg) brightness(90%) contrast(95%)";
 }
 
 .cart-layout,
