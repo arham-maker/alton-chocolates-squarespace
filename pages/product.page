@@ -1,0 +1,167 @@
+<!-- Product / Chocolate Details PDP -->
+
+<section class="pdp section" aria-labelledby="pdp-title" data-pdp data-pdp-title="Sea Salt Chocolate Bar" data-pdp-price="12" data-pdp-image="/assets/images/product-detail-bar.png" data-pdp-meta="Mostly Dark · 70g">
+  <nav class="pdp-breadcrumb label" aria-label="Breadcrumb">
+    <a href="/shop">Shop</a>
+    <span aria-hidden="true">/</span>
+    <a href="/shop">Bars</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Sea Salt Chocolate Bar</span>
+  </nav>
+
+  <div class="pdp-layout">
+    <div class="pdp-gallery">
+      <div class="pdp-gallery__main alton-editable alton-editable--media" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <img src="/assets/images/product-detail-bar.png" alt="Sea Salt Chocolate Bar" data-pdp-main-image loading="eager">
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="pdpMainImage" columns="12" label="EDIT: Product main image (Image Block)" />
+        </div>
+      </div>
+      <div class="pdp-gallery__thumbs" role="list">
+        <button type="button" class="pdp-gallery__thumb is-active" data-pdp-thumb="/assets/images/product-detail-bar.png" aria-label="View main image">
+          <img src="/assets/images/product-detail-bar.png" alt="">
+        </button>
+        <button type="button" class="pdp-gallery__thumb" data-pdp-thumb="/assets/images/product-detail-thumb.png" aria-label="View alternate image">
+          <img src="/assets/images/product-detail-thumb.png" alt="">
+        </button>
+        <button type="button" class="pdp-gallery__thumb" data-pdp-thumb="/assets/images/product-bar.png" aria-label="View bar image">
+          <img src="/assets/images/product-bar.png" alt="">
+        </button>
+        <button type="button" class="pdp-gallery__thumb" data-pdp-thumb="/assets/images/shop-product-1.png" aria-label="View lifestyle image">
+          <img src="/assets/images/shop-product-1.png" alt="">
+        </button>
+      </div>
+    </div>
+
+    <div class="pdp-info">
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <p class="label pdp-info__category">Chocolate Bars</p>
+          <h1 id="pdp-title" class="heading-md">Sea Salt Chocolate Bar</h1>
+          <div class="product-card__rating pdp-info__rating" aria-label="Rated 4.5 out of 5">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+            <span class="product-card__count">(57)</span>
+          </div>
+          <p class="product-card__price pdp-info__price">$12</p>
+          <p class="body-lg pdp-info__desc">A silky dark chocolate bar finished with flaky sea salt. Smooth, balanced, and made for savoring one square at a time.</p>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="pdpInfoEdit" columns="12" label="EDIT: Product category, title, rating, price &amp; description" />
+        </div>
+      </div>
+
+      <fieldset class="pdp-options">
+        <legend class="label">Chocolate Type</legend>
+        <div class="pdp-options__list" role="radiogroup" aria-label="Chocolate type">
+          <label class="pdp-options__option is-selected">
+            <input type="radio" name="chocolate_type" value="Mostly Dark" checked data-pdp-type>
+            Mostly Dark
+          </label>
+          <label class="pdp-options__option">
+            <input type="radio" name="chocolate_type" value="Milk" data-pdp-type>
+            Milk
+          </label>
+          <label class="pdp-options__option">
+            <input type="radio" name="chocolate_type" value="70% Dark" data-pdp-type>
+            70% Dark
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="pdp-actions">
+        <div class="qty-control" data-qty data-pdp-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>1</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+        <button type="button" class="btn btn--terracotta" data-pdp-add-cart>Add to Cart</button>
+        <a class="btn btn--olive" href="/build-box" data-pdp-build-box>Add to Build a Box</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pdp-details">
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div class="pdp-details__grid">
+          <article>
+            <h2 class="product-title">Details</h2>
+            <p class="body-lg">Single-origin cacao tempered in small batches. Net weight 70g. Best enjoyed within 3 months of purchase.</p>
+          </article>
+          <article>
+            <h2 class="product-title">Ingredients</h2>
+            <p class="body-lg">Cacao beans, cane sugar, cocoa butter, sea salt. May contain traces of milk and tree nuts.</p>
+          </article>
+          <article>
+            <h2 class="product-title">Allergens</h2>
+            <p class="body-lg">Produced in a facility that handles dairy, tree nuts, soy, and wheat.</p>
+          </article>
+          <article>
+            <h2 class="product-title">Shipping</h2>
+            <p class="body-lg">Ships in insulated packaging with cold packs when needed. Free shipping on orders over $75.</p>
+          </article>
+        </div>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="pdpDetailsEdit" columns="12" label="EDIT: Product details / ingredients / allergens / shipping" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pdp-bestsellers section" aria-labelledby="pdp-bestsellers-heading">
+  <div class="section-header section-header--row">
+    <div class="section-header__center">
+      <div class="alton-editable alton-editable--center" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <p class="label">You may also love</p>
+          <h2 id="pdp-bestsellers-heading" class="heading-lg">Bestsellers</h2>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="pdpBestsellersHeading" columns="12" label="EDIT: PDP bestsellers heading" />
+        </div>
+      </div>
+    </div>
+    <a class="btn btn--text" href="/shop">Shop All</a>
+  </div>
+  <div class="product-grid">
+    <article class="product-card">
+      <a class="product-card__image" href="/product"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/product">Bonbon Collection</a></h3>
+        <p class="product-card__price">$28</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/product"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/product">Chocolate Bar</a></h3>
+        <p class="product-card__price">$12</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/product"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/product">Sea Salt Caramels</a></h3>
+        <p class="product-card__price">$16</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/product"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/product">Chocolate Cookies</a></h3>
+        <p class="product-card__price">$14</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+{@|apply testimonials.block}
+{@|apply faq-section.block}
+{@|apply newsletter.block}

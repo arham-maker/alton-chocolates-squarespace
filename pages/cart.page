@@ -1,0 +1,55 @@
+<!-- Cart page — Figma commerce flow -->
+
+<section class="cart-page section" aria-labelledby="cart-heading" data-cart-page>
+  <div class="cart-page__header">
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <h1 id="cart-heading" class="heading-lg">Your Cart</h1>
+        <p class="label cart-page__count" data-cart-heading-count>(0 Products)</p>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="cartHeadingEdit" columns="12" label="EDIT: Cart heading" />
+      </div>
+    </div>
+    <button type="button" class="btn btn--text cart-page__clear" data-cart-clear>Clear All</button>
+  </div>
+
+  <div class="cart-layout">
+    <div class="cart-lines" data-cart-lines>
+      <p class="body-lg cart-lines__empty" data-cart-empty>Your cart is empty. <a href="/shop">Browse the shop</a> or <a href="/gifts">explore gifts</a>.</p>
+    </div>
+
+    <aside class="cart-summary" aria-labelledby="cart-summary-heading">
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <h2 id="cart-summary-heading" class="cart-summary__title">Order Summary</h2>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="cartSummaryHeading" columns="12" label="EDIT: Order summary heading" />
+        </div>
+      </div>
+
+      <div class="cart-summary__rows">
+        <div class="cart-summary__row">
+          <span>Subtotal</span>
+          <span data-cart-subtotal>$0.00</span>
+        </div>
+        <div class="cart-summary__row">
+          <span>Shipping</span>
+          <span data-cart-shipping>Calculated at checkout</span>
+        </div>
+        <div class="cart-summary__row cart-summary__row--total">
+          <span>Total</span>
+          <span data-cart-total>$0.00</span>
+        </div>
+      </div>
+
+      <a class="btn btn--terracotta cart-summary__cta" href="/checkout" data-cart-checkout>Proceed to Checkout</a>
+      <a class="btn btn--text cart-summary__continue" href="/shop">Continue Shopping</a>
+    </aside>
+  </div>
+</section>
+
+{@|apply faq-section.block}
+{@|apply contact-section.block}
+{@|apply newsletter.block}

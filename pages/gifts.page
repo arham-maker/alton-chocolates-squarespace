@@ -41,42 +41,42 @@
         <article class="gift-collection-card">
           <div class="gift-collection-card__image"><img src="/assets/images/gift-coll-1.png" alt="Signature Bonbon Box" loading="lazy"></div>
           <div class="gift-collection-card__body">
-            <h3 class="product-title">Signature Bonbon Box</h3>
+            <h3 class="product-title"><a href="/gift-details">Signature Bonbon Box</a></h3>
             <p class="product-card__price">$48</p>
           </div>
         </article>
         <article class="gift-collection-card">
           <div class="gift-collection-card__image"><img src="/assets/images/gift-coll-2.png" alt="Chocolate Bark Box" loading="lazy"></div>
           <div class="gift-collection-card__body">
-            <h3 class="product-title">Chocolate Bark Box</h3>
+            <h3 class="product-title"><a href="/gift-details">Chocolate Bark Box</a></h3>
             <p class="product-card__price">$29</p>
           </div>
         </article>
         <article class="gift-collection-card">
           <div class="gift-collection-card__image"><img src="/assets/images/gift-coll-3.png" alt="Sea Salt Caramels" loading="lazy"></div>
           <div class="gift-collection-card__body">
-            <h3 class="product-title">Sea Salt Caramels</h3>
+            <h3 class="product-title"><a href="/gift-details">Sea Salt Caramels</a></h3>
             <p class="product-card__price">$34</p>
           </div>
         </article>
         <article class="gift-collection-card">
           <div class="gift-collection-card__image"><img src="/assets/images/gift-coll-4.png" alt="Artisan Chocolate Bars" loading="lazy"></div>
           <div class="gift-collection-card__body">
-            <h3 class="product-title">Artisan Chocolate Bars</h3>
+            <h3 class="product-title"><a href="/gift-details">Artisan Chocolate Bars</a></h3>
             <p class="product-card__price">$18</p>
           </div>
         </article>
         <article class="gift-collection-card">
           <div class="gift-collection-card__image"><img src="/assets/images/gift-coll-5.png" alt="Toffee Collections" loading="lazy"></div>
           <div class="gift-collection-card__body">
-            <h3 class="product-title">Toffee Collections</h3>
+            <h3 class="product-title"><a href="/gift-details">Toffee Collections</a></h3>
             <p class="product-card__price">$28</p>
           </div>
         </article>
         <article class="gift-collection-card">
           <div class="gift-collection-card__image"><img src="/assets/images/gift-coll-6.png" alt="Chocolate Chip Cookies" loading="lazy"></div>
           <div class="gift-collection-card__body">
-            <h3 class="product-title">Chocolate Chip Cookies</h3>
+            <h3 class="product-title"><a href="/gift-details">Chocolate Chip Cookies</a></h3>
             <p class="product-card__price">$34</p>
           </div>
         </article>

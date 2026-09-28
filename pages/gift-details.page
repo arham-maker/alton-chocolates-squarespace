@@ -1,0 +1,167 @@
+<!-- Gift Details PDP -->
+
+<section class="pdp section" aria-labelledby="gift-pdp-title" data-pdp data-pdp-title="Signature Celebration Gift Box" data-pdp-price="48" data-pdp-image="/assets/images/gift-detail.png" data-pdp-meta="Mostly Dark · 12 pieces">
+  <nav class="pdp-breadcrumb label" aria-label="Breadcrumb">
+    <a href="/gifts">Gifts</a>
+    <span aria-hidden="true">/</span>
+    <a href="/gifts">Gift Boxes</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Signature Celebration Gift Box</span>
+  </nav>
+
+  <div class="pdp-layout">
+    <div class="pdp-gallery">
+      <div class="pdp-gallery__main alton-editable alton-editable--media" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <img src="/assets/images/gift-detail.png" alt="Signature Celebration Gift Box" data-pdp-main-image loading="eager">
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="giftPdpMainImage" columns="12" label="EDIT: Gift detail main image (Image Block)" />
+        </div>
+      </div>
+      <div class="pdp-gallery__thumbs" role="list">
+        <button type="button" class="pdp-gallery__thumb is-active" data-pdp-thumb="/assets/images/gift-detail.png" aria-label="View main image">
+          <img src="/assets/images/gift-detail.png" alt="">
+        </button>
+        <button type="button" class="pdp-gallery__thumb" data-pdp-thumb="/assets/images/cart-gift-box.png" aria-label="View gift box">
+          <img src="/assets/images/cart-gift-box.png" alt="">
+        </button>
+        <button type="button" class="pdp-gallery__thumb" data-pdp-thumb="/assets/images/gift-coll-1.png" aria-label="View collection image">
+          <img src="/assets/images/gift-coll-1.png" alt="">
+        </button>
+        <button type="button" class="pdp-gallery__thumb" data-pdp-thumb="/assets/images/product-bonbon.png" aria-label="View bonbon image">
+          <img src="/assets/images/product-bonbon.png" alt="">
+        </button>
+      </div>
+    </div>
+
+    <div class="pdp-info">
+      <div class="alton-editable" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <p class="label pdp-info__category">Gift Boxes</p>
+          <h1 id="gift-pdp-title" class="heading-md">Signature Celebration Gift Box</h1>
+          <div class="product-card__rating pdp-info__rating" aria-label="Rated 4.5 out of 5">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
+            <img src="/assets/icons/star-half.svg" alt="" width="24" height="24">
+            <span class="product-card__count">(45)</span>
+          </div>
+          <p class="product-card__price pdp-info__price">$48</p>
+          <p class="body-lg pdp-info__desc">Twelve handcrafted pieces in a ready-to-gift box — mostly dark chocolates chosen for celebrations, thank-yous, and everyday indulgence.</p>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="giftPdpInfoEdit" columns="12" label="EDIT: Gift category, title, rating, price &amp; description" />
+        </div>
+      </div>
+
+      <fieldset class="pdp-options">
+        <legend class="label">Box Style</legend>
+        <div class="pdp-options__list" role="radiogroup" aria-label="Box style">
+          <label class="pdp-options__option is-selected">
+            <input type="radio" name="box_style" value="Mostly Dark · 12 pieces" checked data-pdp-type>
+            Mostly Dark · 12 pieces
+          </label>
+          <label class="pdp-options__option">
+            <input type="radio" name="box_style" value="Assorted · 12 pieces" data-pdp-type>
+            Assorted · 12 pieces
+          </label>
+          <label class="pdp-options__option">
+            <input type="radio" name="box_style" value="Milk &amp; Dark · 16 pieces" data-pdp-type>
+            Milk &amp; Dark · 16 pieces
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="pdp-actions">
+        <div class="qty-control" data-qty data-pdp-qty>
+          <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
+          <span class="qty-control__value" data-qty-value>1</span>
+          <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
+        </div>
+        <button type="button" class="btn btn--terracotta" data-pdp-add-cart>Add to Cart</button>
+        <a class="btn btn--olive" href="/build-box" data-pdp-build-box>Add to Build a Box</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pdp-details">
+    <div class="alton-editable" data-alton-editable>
+      <div class="alton-editable__fallback">
+        <div class="pdp-details__grid">
+          <article>
+            <h2 class="product-title">Details</h2>
+            <p class="body-lg">Signature assortment of 12 bonbons and bars in ribbon-ready gift packaging. Ideal for birthdays, hostess gifts, and corporate thank-yous.</p>
+          </article>
+          <article>
+            <h2 class="product-title">Ingredients</h2>
+            <p class="body-lg">Cacao, cane sugar, cocoa butter, cream, fruit purées, nuts, and natural flavors. See insert for full piece list.</p>
+          </article>
+          <article>
+            <h2 class="product-title">Allergens</h2>
+            <p class="body-lg">Contains dairy and tree nuts. Produced in a facility that also handles soy and wheat.</p>
+          </article>
+          <article>
+            <h2 class="product-title">Shipping</h2>
+            <p class="body-lg">Gift boxes ship with care cards and optional message inserts. Free shipping on orders over $75.</p>
+          </article>
+        </div>
+      </div>
+      <div class="alton-editable__cms">
+        <squarespace:block-field id="giftPdpDetailsEdit" columns="12" label="EDIT: Gift details / ingredients / allergens / shipping" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pdp-bestsellers section" aria-labelledby="gift-bestsellers-heading">
+  <div class="section-header section-header--row">
+    <div class="section-header__center">
+      <div class="alton-editable alton-editable--center" data-alton-editable>
+        <div class="alton-editable__fallback">
+          <p class="label">More to gift</p>
+          <h2 id="gift-bestsellers-heading" class="heading-lg">Bestsellers</h2>
+        </div>
+        <div class="alton-editable__cms">
+          <squarespace:block-field id="giftBestsellersHeading" columns="12" label="EDIT: Gift PDP bestsellers heading" />
+        </div>
+      </div>
+    </div>
+    <a class="btn btn--text" href="/gifts">Shop Gifts</a>
+  </div>
+  <div class="product-grid">
+    <article class="product-card">
+      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-1.png" alt="Signature Bonbon Box" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/gift-details">Signature Bonbon Box</a></h3>
+        <p class="product-card__price">$48</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-2.png" alt="Chocolate Bark Box" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/gift-details">Chocolate Bark Box</a></h3>
+        <p class="product-card__price">$29</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-3.png" alt="Sea Salt Caramels" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/gift-details">Sea Salt Caramels</a></h3>
+        <p class="product-card__price">$34</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-4.png" alt="Artisan Chocolate Bars" loading="lazy"></a>
+      <div class="product-card__meta">
+        <h3 class="product-title"><a href="/gift-details">Artisan Chocolate Bars</a></h3>
+        <p class="product-card__price">$18</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+{@|apply testimonials.block}
+{@|apply faq-section.block}
+{@|apply newsletter.block}

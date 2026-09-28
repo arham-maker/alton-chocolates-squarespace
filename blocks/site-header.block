@@ -36,7 +36,11 @@
     </div>
 
     <div class="site-header__actions">
-      <a class="site-header__account" href="/account/login" aria-label="Account">
+      <a class="site-header__cart" href="/cart" aria-label="Cart">
+        <span>Cart</span>
+        <span class="site-header__cart-count" data-cart-count data-empty="1"></span>
+      </a>
+      <a class="site-header__account" href="/sign-in" aria-label="Account">
         <img src="/assets/icons/person.svg" alt="" width="20" height="20">
       </a>
       <button type="button" class="site-header__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
