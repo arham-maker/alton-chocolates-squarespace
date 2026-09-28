@@ -265,6 +265,22 @@ body.is-auth-page .site-footer {
   padding: 60px @page-pad 40px;
 }
 
+/* When Squarespace system /cart wins, we inject Alton cart and hide native empty UI */
+.alton-cart-bridge {
+  width: 100%;
+}
+
+html.alton-custom-cart .sqs-cart-container,
+html.alton-custom-cart .Cart,
+html.alton-custom-cart .empty-cart,
+html.alton-custom-cart .cart-empty,
+body.alton-custom-cart .sqs-cart-container,
+body.alton-custom-cart .Cart,
+body.alton-custom-cart .empty-cart,
+body.alton-custom-cart .cart-empty {
+  display: none !important;
+}
+
 .cart-page__header {
   display: flex;
   align-items: flex-end;

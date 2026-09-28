@@ -1512,9 +1512,96 @@
     return Math.round(subtotal * 0.05 * 100) / 100;
   }
 
+  function getAltonCartMarkup() {
+    return (
+      '<section class="cart-page section" aria-labelledby="cart-heading" data-cart-page data-cart-bridged="1">' +
+      '<div class="cart-page__header">' +
+      "<div>" +
+      '<h1 id="cart-heading" class="heading-lg">Your Cart</h1>' +
+      '<p class="label cart-page__count" data-cart-heading-count>(0 Products)</p>' +
+      "</div>" +
+      '<button type="button" class="btn btn--text cart-page__clear" data-cart-clear>Clear All</button>' +
+      "</div>" +
+      '<div class="cart-layout">' +
+      '<div class="cart-lines" data-cart-lines>' +
+      '<p class="body-lg cart-lines__empty" data-cart-empty>Your cart is empty. <a href="/shop">Browse the shop</a> or <a href="/gifts">explore gifts</a>.</p>' +
+      "</div>" +
+      '<aside class="cart-summary" aria-labelledby="cart-summary-heading">' +
+      '<h2 id="cart-summary-heading" class="cart-summary__title">Order Summary</h2>' +
+      '<div class="cart-summary__items" data-cart-summary-items></div>' +
+      '<div class="cart-summary__rows">' +
+      '<div class="cart-summary__row"><span>Subtotal</span><span data-cart-subtotal>$0.00</span></div>' +
+      '<div class="cart-summary__row"><span>Tax</span><span data-cart-tax>5%</span></div>' +
+      '<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span data-cart-total>$0.00</span></div>' +
+      "</div>" +
+      '<a class="btn btn--terracotta cart-summary__cta" href="/checkout" data-cart-checkout>Proceed to Checkout</a>' +
+      '<a class="btn btn--text cart-summary__continue" href="/shop">Continue Shopping</a>' +
+      "</aside></div></section>"
+    );
+  }
+
+  function isSquarespaceCartPath() {
+    var path = String(window.location.pathname || "").replace(/\/$/, "") || "/";
+    return /\/cart$/i.test(path) || /\/shopping-cart$/i.test(path);
+  }
+
+  function hideNativeSquarespaceCart(main) {
+    if (!main) return;
+    document.documentElement.classList.add("alton-custom-cart");
+    document.body.classList.add("alton-custom-cart");
+    try {
+      main
+        .querySelectorAll(
+          ".sqs-cart-container, .Cart, .cart-wrapper, .empty-cart, .cart-empty, [class*='cartEmpty'], [class*='Cart-empty']"
+        )
+        .forEach(function (el) {
+          el.setAttribute("hidden", "");
+          el.style.setProperty("display", "none", "important");
+        });
+    } catch (e) {}
+
+    Array.prototype.slice
+      .call(main.querySelectorAll("h1, h2, p, a, button, .sqs-block-button-element"))
+      .forEach(function (el) {
+        var t = String(el.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim()
+          .toLowerCase();
+        if (
+          t === "shopping cart" ||
+          t.indexOf("nothing in your shopping cart") !== -1 ||
+          t === "continue shopping"
+        ) {
+          var block =
+            el.closest(".sqs-block, .sqs-col, section, article, .row, .cart") || el;
+          block.setAttribute("hidden", "");
+          block.style.setProperty("display", "none", "important");
+        }
+      });
+  }
+
+  function mountAltonCartOnNativePage() {
+    if (!isSquarespaceCartPath()) return false;
+    if (document.querySelector("[data-cart-page]")) return false;
+
+    var main =
+      document.querySelector("main.alton-main, main#page, #page, .alton-main") ||
+      document.body;
+    hideNativeSquarespaceCart(main);
+
+    var bridge = document.createElement("div");
+    bridge.className = "alton-cart-bridge";
+    bridge.innerHTML = getAltonCartMarkup();
+    main.insertBefore(bridge, main.firstChild);
+    return true;
+  }
+
   function initCartPage() {
+    mountAltonCartOnNativePage();
     var root = document.querySelector("[data-cart-page]");
     if (!root) return;
+    if (root.getAttribute("data-cart-ready") === "1") return;
+    root.setAttribute("data-cart-ready", "1");
     loadOrderCart();
 
     var list = root.querySelector("[data-cart-lines]");
