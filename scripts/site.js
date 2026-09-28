@@ -574,11 +574,25 @@
     document.querySelectorAll("[data-alton-editable]").forEach(function (slot) {
       var cms = slot.querySelector(".alton-editable__cms");
       if (!cms) return;
-      var has =
-        cms.querySelector(
-          ".sqs-block, .sqs-block-html, .sqs-block-button, .sqs-block-image, .sqs-block-markdown, .sqs-block-summary-v2, .sqs-block-product, .sqs-block-form, .sqs-block-newsletter, .sqs-block-quote, .sqs-block-gallery"
-        ) !== null;
+      // Empty SQS spacers / empty html blocks should NOT hide the Alton fallback
+      var blocks = cms.querySelectorAll(
+        ".sqs-block, .sqs-block-html, .sqs-block-button, .sqs-block-image, .sqs-block-markdown, .sqs-block-summary-v2, .sqs-block-product, .sqs-block-form, .sqs-block-newsletter, .sqs-block-quote, .sqs-block-gallery"
+      );
+      var has = false;
+      Array.prototype.slice.call(blocks).forEach(function (block) {
+        if (block.classList.contains("sqs-block-spacer")) return;
+        var text = String(block.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim();
+        var hasMedia =
+          block.querySelector("img, iframe, video, .thumb-image, .sqs-image") !== null;
+        var hasForm =
+          block.querySelector("form, .form-wrapper, .sqs-form-content, .react-form-contents") !==
+          null;
+        if (hasMedia || hasForm || text.length > 1) has = true;
+      });
       if (has) slot.classList.add("has-cms");
+      else slot.classList.remove("has-cms");
     });
 
     var announce = document.querySelector("[data-announcement]");
@@ -596,10 +610,22 @@
 
   function initSqsFormSlots() {
     document.querySelectorAll("[data-sqs-form-slot]").forEach(function (slot) {
+      // Only count REAL Squarespace form blocks in the CMS pane — never the Alton fallback <form>
+      var cms = slot.querySelector(".alton-editable__cms") || slot;
       var hasReal =
-        slot.querySelector(".sqs-block, .form-wrapper, form, .newsletter-block, .sqs-block-form") !==
-        null;
-      if (!hasReal) return;
+        cms.querySelector(
+          ".sqs-block-form, .sqs-block-newsletter, .newsletter-block, .form-wrapper, .sqs-form-content, .react-form-contents"
+        ) !== null ||
+        (cms.querySelector(".sqs-block form, .sqs-block .form-wrapper") !== null);
+      if (!hasReal) {
+        slot.classList.remove("has-cms");
+        var wrapEmpty =
+          slot.closest(".contact-section__form") ||
+          slot.closest(".newsletter__inner");
+        if (wrapEmpty) wrapEmpty.classList.remove("has-sqs-form");
+        return;
+      }
+      slot.classList.add("has-cms");
       var wrap =
         slot.closest(".contact-section__form") ||
         slot.closest(".newsletter__inner");
