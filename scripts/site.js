@@ -802,7 +802,24 @@
     function orderFromCard(card) {
       if (!card) return;
       addToOrderCart(readOrderFromCard(card));
-      openOrderModal();
+      window.location.href = "/cart";
+    }
+
+    function goToProductPage(card) {
+      if (!card) return;
+      var href =
+        card.getAttribute("data-edit-url") ||
+        (card.querySelector('a[href*="/product"], a[href*="/gift-details"]')
+          ? card.querySelector('a[href*="/product"], a[href*="/gift-details"]').getAttribute("href")
+          : null);
+      if (!href) {
+        href =
+          card.hasAttribute("data-gift-card") ||
+          card.getAttribute("data-category") === "gifts"
+            ? "/gift-details"
+            : "/product";
+      }
+      window.location.href = href;
     }
 
     document.querySelectorAll("[data-shop-order]").forEach(function (btn) {
@@ -834,13 +851,13 @@
             return;
           }
           e.preventDefault();
-          orderFromCard(card);
+          goToProductPage(card);
         });
 
         card.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            orderFromCard(card);
+            goToProductPage(card);
           }
         });
       });
@@ -1385,6 +1402,16 @@
       if (subtotalEl) subtotalEl.textContent = money(subtotal);
       if (shippingEl) shippingEl.textContent = orderCart.length ? money(shipping) : "$0.00";
       if (totalEl) totalEl.textContent = money(subtotal + shipping);
+      var submitBtn = form ? form.querySelector('[type="submit"]') : null;
+      if (submitBtn) {
+        if (!orderCart.length) {
+          submitBtn.disabled = true;
+          submitBtn.setAttribute("aria-disabled", "true");
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute("aria-disabled");
+        }
+      }
       if (!itemsEl) return;
       if (!orderCart.length) {
         itemsEl.innerHTML = '<p class="body-lg">No items. <a href="/cart">Return to cart</a>.</p>';

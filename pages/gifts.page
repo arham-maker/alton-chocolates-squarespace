@@ -139,7 +139,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Artisan Chocolate Bark Collection" data-price="26" data-occasion="thank-you holiday celebration">
@@ -152,7 +152,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Sea Salt Chocolate Bar Set" data-price="24" data-occasion="thank-you birthday">
@@ -165,7 +165,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Classic English Toffee" data-price="28" data-occasion="holiday celebration thank-you">
@@ -178,7 +178,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Sea Salt Caramel Gift Box" data-price="28" data-occasion="birthday holiday celebration">
@@ -191,7 +191,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Chocolate Cookie Collection" data-price="24" data-occasion="birthday thank-you celebration">
@@ -204,7 +204,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Dark Chocolate Bonbon Box" data-price="34" data-occasion="celebration holiday birthday">
@@ -217,7 +217,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Dark & White Bark Assortment" data-price="28" data-occasion="holiday thank-you celebration">
@@ -230,7 +230,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Hazelnut Crunch Bar Set" data-price="28" data-occasion="thank-you birthday">
@@ -243,7 +243,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Vanilla Bean Toffee Collection" data-price="32" data-occasion="holiday celebration">
@@ -256,7 +256,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Caramel Assortment Box" data-price="32" data-occasion="birthday celebration holiday">
@@ -269,7 +269,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Double Chocolate Cookie Box" data-price="22" data-occasion="birthday thank-you">
@@ -282,7 +282,7 @@
           <span class="qty-control__value" data-qty-value>0</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+      <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
   </div>

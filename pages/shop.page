@@ -83,7 +83,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Raspberry Chocolate" data-price="12">
@@ -96,7 +96,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Passion Fruit Ganache" data-price="16">
@@ -109,7 +109,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Pistachio Praline" data-price="14">
@@ -122,7 +122,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Hazelnut Praline" data-price="28">
@@ -135,7 +135,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Coconut Ganache" data-price="12">
@@ -148,7 +148,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Blueberry Vanilla Ganache" data-price="16">
@@ -161,7 +161,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bonbons" data-title="Mint Dark Chocolate" data-price="14">
@@ -174,7 +174,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
 
@@ -188,7 +188,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bars" data-title="Sea Salt Chocolate Bar Set" data-price="24" hidden>
@@ -201,7 +201,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
 
@@ -215,7 +215,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="bark" data-title="Dark &amp; White Bark Assortment" data-price="28" hidden>
@@ -228,7 +228,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
 
@@ -242,7 +242,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="caramels" data-title="Sea Salt Caramel Gift Box" data-price="28" hidden>
@@ -255,7 +255,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
 
@@ -269,7 +269,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="toffee" data-title="Toffee Collections" data-price="28" hidden>
@@ -282,7 +282,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
 
@@ -296,7 +296,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
     <article class="product-card" data-shop-product data-category="cookies" data-title="Chocolate Cookie Collection" data-price="24" hidden>
@@ -309,7 +309,7 @@
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
-        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Order Now</button>
+        <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
   </div>
