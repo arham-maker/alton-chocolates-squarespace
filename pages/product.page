@@ -1,6 +1,6 @@
 <!-- Product / Chocolate Details PDP -->
 
-<section class="pdp section" aria-labelledby="pdp-title" data-pdp data-pdp-title="Sea Salt Chocolate Bar" data-pdp-price="12" data-pdp-image="/assets/images/product-detail-bar.png" data-pdp-meta="Mostly Dark · 70g">
+<section class="pdp section" aria-labelledby="pdp-title" data-pdp data-pdp-href="/product" data-pdp-title="Sea Salt Chocolate Bar" data-pdp-price="12" data-pdp-image="/assets/images/product-detail-bar.png" data-pdp-meta="Mostly Dark · 70g">
   <nav class="pdp-breadcrumb label" aria-label="Breadcrumb">
     <a href="/shop">Shop</a>
     <span aria-hidden="true">/</span>
@@ -75,7 +75,7 @@
       </fieldset>
 
       <div class="pdp-actions">
-        <div class="qty-control" data-qty data-pdp-qty>
+        <div class="qty-control" data-qty data-qty-min="1" data-pdp-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>

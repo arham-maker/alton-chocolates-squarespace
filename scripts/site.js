@@ -63,8 +63,13 @@
       var plus = control.querySelector("[data-qty-plus]");
       if (!valueEl || !minus || !plus) return;
 
+      var min = parseInt(control.getAttribute("data-qty-min"), 10);
+      if (isNaN(min) || min < 0) min = 0;
+
       function setValue(next) {
-        var n = Math.max(0, next);
+        var raw = parseInt(next, 10);
+        if (isNaN(raw)) raw = min;
+        var n = Math.max(min, raw);
         valueEl.textContent = String(n);
         control.dispatchEvent(
           new CustomEvent("qtychange", { bubbles: true, detail: { value: n } })
@@ -81,7 +86,9 @@
   }
 
   function money(n) {
-    return "$" + n.toFixed(2);
+    var val = Number(n);
+    if (!isFinite(val)) val = 0;
+    return "$" + val.toFixed(2);
   }
 
   function initBuildBox() {
@@ -605,7 +612,9 @@
 
   function cartGrandTotal() {
     return orderCart.reduce(function (sum, item) {
-      return sum + item.price * item.qty;
+      var price = parseFloat(item.price) || 0;
+      var qty = parseInt(item.qty, 10) || 0;
+      return sum + price * qty;
     }, 0);
   }
 
@@ -615,6 +624,7 @@
     var title = String(item.title || "Item").trim();
     var image = item.image ? String(item.image) : "";
     var meta = item.meta ? String(item.meta) : "";
+    var editUrl = item.editUrl ? String(item.editUrl) : "";
     var existing = null;
     for (var i = 0; i < orderCart.length; i++) {
       if (
@@ -630,10 +640,12 @@
       existing.qty = Math.min(99, existing.qty + qty);
       if (image && !existing.image) existing.image = image;
       if (meta && !existing.meta) existing.meta = meta;
+      if (editUrl && !existing.editUrl) existing.editUrl = editUrl;
     } else {
       var row = { title: title, price: price, qty: qty };
       if (image) row.image = image;
       if (meta) row.meta = meta;
+      if (editUrl) row.editUrl = editUrl;
       orderCart.push(row);
     }
     saveOrderCart();
@@ -661,8 +673,9 @@
   }
 
   function removeFromOrderCart(index) {
-    if (index < 0 || index >= orderCart.length) return;
-    orderCart.splice(index, 1);
+    var idx = parseInt(index, 10);
+    if (isNaN(idx) || idx < 0 || idx >= orderCart.length) return;
+    orderCart.splice(idx, 1);
     saveOrderCart();
     updateCartCountBadge();
     renderOrderCart();
@@ -777,7 +790,13 @@
       if (qty > 99) qty = 99;
       var imgEl = card.querySelector(".product-card__image img, .gift-collection-card__image img, img");
       var image = imgEl ? imgEl.getAttribute("src") || "" : "";
-      return { title: title, price: price, qty: qty, image: image };
+      var editUrl =
+        card.getAttribute("data-edit-url") ||
+        (card.hasAttribute("data-gift-card") ||
+        card.getAttribute("data-category") === "gifts"
+          ? "/gift-details"
+          : "/product");
+      return { title: title, price: price, qty: qty, image: image, editUrl: editUrl };
     }
 
     function orderFromCard(card) {
@@ -1272,7 +1291,10 @@
         .map(function (item, idx) {
           var img =
             item.image || "/assets/images/cart-gift-box.png";
-          var lineTotal = money(item.price * item.qty);
+          var lineTotal = money(
+            (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0)
+          );
+          var editHref = item.editUrl || "/product";
           return (
             '<article class="cart-line" data-cart-index="' +
             idx +
@@ -1296,7 +1318,9 @@
             lineTotal +
             "</span>" +
             '<div class="cart-line__actions">' +
-            '<a class="cart-line__btn" href="/product" aria-label="Edit ' +
+            '<a class="cart-line__btn" href="' +
+            escapeHtml(editHref) +
+            '" aria-label="Edit ' +
             escapeHtml(item.title) +
             '"><img src="/assets/icons/edit.svg" alt="" width="16" height="16"></a>' +
             '<button type="button" class="cart-line__btn" data-cart-remove="' +
@@ -1319,6 +1343,7 @@
 
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
+        loadOrderCart();
         if (!orderCart.length) return;
         if (!window.confirm("Clear all items from your cart?")) return;
         clearOrderCart();
@@ -1367,12 +1392,14 @@
       }
       itemsEl.innerHTML = orderCart
         .map(function (item) {
+          var line =
+            (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0);
           return (
             '<div class="checkout-summary__item"><span>' +
             escapeHtml(item.qty + " × " + item.title) +
             (item.meta ? " · " + escapeHtml(item.meta) : "") +
             "</span><span>" +
-            money(item.price * item.qty) +
+            money(line) +
             "</span></div>"
           );
         })
@@ -1520,6 +1547,8 @@
     });
 
     document.querySelectorAll("[data-auth-google]").forEach(function (btn) {
+      if (btn.dataset.boundAuthGoogle === "1") return;
+      btn.dataset.boundAuthGoogle = "1";
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         showThanks("Google sign-in is a demo button only — not connected.");
@@ -1534,6 +1563,8 @@
     initQtyControls(root);
 
     root.querySelectorAll("[data-pdp-thumb]").forEach(function (thumb) {
+      if (thumb.dataset.boundThumb === "1") return;
+      thumb.dataset.boundThumb = "1";
       thumb.addEventListener("click", function () {
         var src = thumb.getAttribute("data-pdp-thumb");
         var main = root.querySelector("[data-pdp-main-image]");
@@ -1545,6 +1576,8 @@
     });
 
     root.querySelectorAll("[data-pdp-type]").forEach(function (radio) {
+      if (radio.dataset.boundType === "1") return;
+      radio.dataset.boundType = "1";
       radio.addEventListener("change", function () {
         root.querySelectorAll(".pdp-options__option").forEach(function (opt) {
           opt.classList.toggle("is-selected", opt.querySelector("input") === radio);
@@ -1553,7 +1586,8 @@
     });
 
     var addBtn = root.querySelector("[data-pdp-add-cart]");
-    if (addBtn) {
+    if (addBtn && addBtn.dataset.boundAddCart !== "1") {
+      addBtn.dataset.boundAddCart = "1";
       addBtn.addEventListener("click", function () {
         var title =
           root.getAttribute("data-pdp-title") ||
@@ -1567,15 +1601,22 @@
         if (typeRadio) meta = typeRadio.value;
         var qtyEl = root.querySelector("[data-pdp-qty] [data-qty-value]");
         var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
+        if (qty < 1) qty = 1;
         var mainImg = root.querySelector("[data-pdp-main-image]");
         if (mainImg && mainImg.getAttribute("src")) image = mainImg.getAttribute("src");
+        var editUrl =
+          root.getAttribute("data-pdp-href") ||
+          (/gift-details/i.test(window.location.pathname)
+            ? "/gift-details"
+            : "/product");
 
         addToOrderCart({
           title: title,
           price: price,
           qty: qty,
           image: image,
-          meta: meta
+          meta: meta,
+          editUrl: editUrl
         });
         window.location.href = "/cart";
       });

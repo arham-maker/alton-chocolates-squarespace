@@ -132,7 +132,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Signature Bonbon Collection" data-price="32" data-occasion="birthday celebration thank-you">
       <div class="product-card__image"><img src="/assets/images/gift-prod-1.png" alt="Signature Bonbon Collection" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Signature Bonbon Collection</h3>
+        <h3 class="product-title"><a href="/gift-details">Signature Bonbon Collection</a></h3>
         <p class="product-card__price">$32</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -145,7 +145,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Artisan Chocolate Bark Collection" data-price="26" data-occasion="thank-you holiday celebration">
       <div class="product-card__image"><img src="/assets/images/gift-prod-2.png" alt="Artisan Chocolate Bark Collection" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Artisan Chocolate Bark Collection</h3>
+        <h3 class="product-title"><a href="/gift-details">Artisan Chocolate Bark Collection</a></h3>
         <p class="product-card__price">$26</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -158,7 +158,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Sea Salt Chocolate Bar Set" data-price="24" data-occasion="thank-you birthday">
       <div class="product-card__image"><img src="/assets/images/gift-prod-3.png" alt="Sea Salt Chocolate Bar Set" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Sea Salt Chocolate Bar Set</h3>
+        <h3 class="product-title"><a href="/gift-details">Sea Salt Chocolate Bar Set</a></h3>
         <p class="product-card__price">$24</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -171,7 +171,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Classic English Toffee" data-price="28" data-occasion="holiday celebration thank-you">
       <div class="product-card__image"><img src="/assets/images/gift-prod-4.png" alt="Classic English Toffee" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Classic English Toffee</h3>
+        <h3 class="product-title"><a href="/gift-details">Classic English Toffee</a></h3>
         <p class="product-card__price">$28</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -184,7 +184,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Sea Salt Caramel Gift Box" data-price="28" data-occasion="birthday holiday celebration">
       <div class="product-card__image"><img src="/assets/images/gift-prod-5.png" alt="Sea Salt Caramel Gift Box" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Sea Salt Caramel Gift Box</h3>
+        <h3 class="product-title"><a href="/gift-details">Sea Salt Caramel Gift Box</a></h3>
         <p class="product-card__price">$28</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -197,7 +197,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Chocolate Cookie Collection" data-price="24" data-occasion="birthday thank-you celebration">
       <div class="product-card__image"><img src="/assets/images/gift-prod-6.png" alt="Chocolate Cookie Collection" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Chocolate Cookie Collection</h3>
+        <h3 class="product-title"><a href="/gift-details">Chocolate Cookie Collection</a></h3>
         <p class="product-card__price">$24</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -210,7 +210,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Dark Chocolate Bonbon Box" data-price="34" data-occasion="celebration holiday birthday">
       <div class="product-card__image"><img src="/assets/images/gift-prod-7.png" alt="Dark Chocolate Bonbon Box" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Dark Chocolate Bonbon Box</h3>
+        <h3 class="product-title"><a href="/gift-details">Dark Chocolate Bonbon Box</a></h3>
         <p class="product-card__price">$34</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -223,7 +223,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Dark & White Bark Assortment" data-price="28" data-occasion="holiday thank-you celebration">
       <div class="product-card__image"><img src="/assets/images/gift-prod-8.png" alt="Dark &amp; White Bark Assortment" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Dark &amp; White Bark Assortment</h3>
+        <h3 class="product-title"><a href="/gift-details">Dark &amp; White Bark Assortment</a></h3>
         <p class="product-card__price">$28</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -236,7 +236,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Hazelnut Crunch Bar Set" data-price="28" data-occasion="thank-you birthday">
       <div class="product-card__image"><img src="/assets/images/gift-prod-1.png" alt="Hazelnut Crunch Bar Set" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Hazelnut Crunch Bar Set</h3>
+        <h3 class="product-title"><a href="/gift-details">Hazelnut Crunch Bar Set</a></h3>
         <p class="product-card__price">$28</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -249,7 +249,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Vanilla Bean Toffee Collection" data-price="32" data-occasion="holiday celebration">
       <div class="product-card__image"><img src="/assets/images/gift-prod-2.png" alt="Vanilla Bean Toffee Collection" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Vanilla Bean Toffee Collection</h3>
+        <h3 class="product-title"><a href="/gift-details">Vanilla Bean Toffee Collection</a></h3>
         <p class="product-card__price">$32</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -262,7 +262,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Caramel Assortment Box" data-price="32" data-occasion="birthday celebration holiday">
       <div class="product-card__image"><img src="/assets/images/gift-prod-3.png" alt="Caramel Assortment Box" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Caramel Assortment Box</h3>
+        <h3 class="product-title"><a href="/gift-details">Caramel Assortment Box</a></h3>
         <p class="product-card__price">$32</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
@@ -275,7 +275,7 @@
     <article class="product-card" data-gift-card data-shop-product data-category="gifts" data-title="Double Chocolate Cookie Box" data-price="22" data-occasion="birthday thank-you">
       <div class="product-card__image"><img src="/assets/images/gift-prod-4.png" alt="Double Chocolate Cookie Box" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title">Double Chocolate Cookie Box</h3>
+        <h3 class="product-title"><a href="/gift-details">Double Chocolate Cookie Box</a></h3>
         <p class="product-card__price">$22</p>
         <div class="qty-control" data-qty>
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>

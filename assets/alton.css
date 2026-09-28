@@ -3135,7 +3135,8 @@ body.is-auth-page .site-footer {
   line-height: 24px !important;
 }
 
-.auth-switch a {
+.auth-switch a,
+.alton-site .auth-switch a {
   font-weight: 600;
   text-decoration: underline !important;
   margin-left: 4px;
@@ -3215,7 +3216,8 @@ body.is-auth-page .site-footer {
   gap: 18px;
 }
 
-.cart-lines__empty a {
+.cart-lines__empty a,
+.alton-site .cart-lines__empty a {
   text-decoration: underline !important;
 }
 
@@ -3351,6 +3353,12 @@ body.is-auth-page .site-footer {
 .cart-summary__cta {
   width: 100%;
   text-align: center;
+}
+
+.cart-summary__cta[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .cart-summary__continue {
@@ -3495,7 +3503,8 @@ body.is-auth-page .site-footer {
   margin-bottom: 28px !important;
 }
 
-.pdp-breadcrumb a {
+.pdp-breadcrumb a,
+.alton-site .pdp-breadcrumb a {
   text-decoration: underline !important;
 }
 
@@ -3709,7 +3718,8 @@ body.is-auth-page .site-footer {
   color: #5D5958;
 }
 
-.faq-item__panel a {
+.faq-item__panel a,
+.alton-site .faq-item__panel a {
   text-decoration: underline !important;
 }
 
@@ -3743,8 +3753,9 @@ body.is-auth-page .site-footer {
 }
 
 @media (max-width: 900px) {
-  .site-header__cart span:not(.site-header__cart-count) {
-    display: none;
+  .site-header__cart {
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .cart-page,
