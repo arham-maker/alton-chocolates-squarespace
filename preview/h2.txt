@@ -1,0 +1,10 @@
+HTTP/1.1 404 Not Found
+Age: 0
+Content-Length: 1
+Content-Type: application/json
+Date: Thu, 17 Sep 2026 22:59:39 GMT
+Server: Squarespace
+Strict-Transport-Security: max-age=15552000
+X-Content-Type-Options: nosniff
+X-Contextid: PbmeK9MI/mMf8D5Dn
+

@@ -1,0 +1,16 @@
+HTTP/1.1 401 Unauthorized
+Age: 0
+Content-Type: text/html;charset=utf-8
+Date: Thu, 17 Sep 2026 22:59:34 GMT
+Etag: W/"b17f6e9e46041768f5db0613fe827c93"
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Server: Squarespace
+Set-Cookie: crumb=BQY/KnxdgBYXNTY2M2M5MTU4ZGYzYjM1OTRlMWI3MDEwYTU5YTU2;Secure;Path=/
+Strict-Transport-Security: max-age=15552000
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Contextid: lplYKVlR/LVFjH4sx
+X-Frame-Options: SAMEORIGIN
+X-Frame-Options: SAMEORIGIN
+Transfer-Encoding: chunked
+
