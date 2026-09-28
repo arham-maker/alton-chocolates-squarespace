@@ -2718,12 +2718,26 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   gap: 16px;
 }
 
+.checkout-form__grid--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 16px;
+}
+
+.checkout-form__grid .form-field--full {
+  grid-column: 1 / -1;
+}
+
 .checkout-gift {
   border: 1px solid @border;
   background: @white;
   padding: 24px;
-  margin: 8px 0 28px;
+  margin: 0;
   border-radius: 10px;
+}
+
+.checkout-gift.is-open {
+  background: #f3ebe4;
+  border-color: #e4d6cb;
 }
 
 .checkout-gift__toggle,

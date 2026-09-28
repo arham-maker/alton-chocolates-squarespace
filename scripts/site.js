@@ -99,6 +99,8 @@
   function money(n) {
     var val = Number(n);
     if (!isFinite(val)) val = 0;
+    // Whole dollars match Figma ($28); keep cents when needed ($28.50)
+    if (Math.abs(val - Math.round(val)) < 0.001) return "$" + Math.round(val);
     return "$" + val.toFixed(2);
   }
 
@@ -1543,8 +1545,8 @@
   function getAltonCheckoutMarkup() {
     return (
       '<section class="checkout-page section" aria-labelledby="checkout-heading" data-checkout-page data-checkout-bridged="1">' +
-      '<h1 id="checkout-heading" class="heading-lg">Checkout</h1>' +
-      '<p class="body-lg checkout-page__subtitle">Complete your information to place your order.</p>' +
+      '<div class="checkout-page__intro"><h1 id="checkout-heading" class="heading-lg">Checkout</h1>' +
+      '<p class="body-lg checkout-page__subtitle">Complete your information to place your order.</p></div>' +
       '<div class="checkout-layout">' +
       '<form class="checkout-form" data-checkout-form novalidate>' +
       '<fieldset class="checkout-step"><legend class="checkout-step__title"><span class="checkout-step__num">1</span> Contact and Address</legend>' +
@@ -1555,6 +1557,8 @@
       '<div class="form-field"><label for="checkout-last">Last Name</label><input id="checkout-last" name="last_name" type="text" autocomplete="family-name" required placeholder="Last name"></div>' +
       '<div class="form-field form-field--full"><label for="checkout-address">Address</label><input id="checkout-address" name="address" type="text" autocomplete="street-address" required placeholder="Street address"></div>' +
       '<div class="form-field form-field--full"><label for="checkout-apt">Apartment / Suite (optional)</label><input id="checkout-apt" name="apartment" type="text" autocomplete="address-line2" placeholder="Apartment, suite, etc."></div>' +
+      "</div>" +
+      '<div class="checkout-form__grid checkout-form__grid--3">' +
       '<div class="form-field"><label for="checkout-city">City</label><input id="checkout-city" name="city" type="text" autocomplete="address-level2" required placeholder="City"></div>' +
       '<div class="form-field"><label for="checkout-state">State</label><input id="checkout-state" name="state" type="text" autocomplete="address-level1" required placeholder="State"></div>' +
       '<div class="form-field"><label for="checkout-zip">ZIP Code</label><input id="checkout-zip" name="zip" type="text" autocomplete="postal-code" required placeholder="ZIP code"></div>' +
@@ -1563,9 +1567,9 @@
       '<label class="checkout-gift__toggle"><input type="checkbox" name="is_gift" value="yes" data-gift-toggle><span>This is a gift</span></label>' +
       '<div class="checkout-gift__fields" data-gift-fields hidden>' +
       '<div class="checkout-form__grid">' +
-      '<div class="form-field"><label for="gift-recipient">Recipient’s Name</label><input id="gift-recipient" name="gift_recipient" type="text" placeholder="To"></div>' +
+      '<div class="form-field"><label for="gift-recipient">Recipient’s Name</label><input id="gift-recipient" name="gift_recipient" type="text" placeholder="Recipient’s name"></div>' +
       '<div class="form-field"><label for="gift-from">From</label><input id="gift-from" name="gift_from" type="text" placeholder="From"></div>' +
-      '<div class="form-field form-field--full"><label for="gift-message">Message</label><textarea id="gift-message" name="gift_message" rows="3" placeholder="Write a short note"></textarea></div>' +
+      '<div class="form-field form-field--full"><label for="gift-message">Message</label><textarea id="gift-message" name="gift_message" rows="4" placeholder="Write a short note"></textarea></div>' +
       '<label class="checkout-gift__hide form-field--full"><input type="checkbox" name="hide_prices" value="yes"><span>Hide prices on packing slip</span></label>' +
       "</div></div></div>" +
       '<fieldset class="checkout-step"><legend class="checkout-step__title"><span class="checkout-step__num">2</span> Payment Method</legend>' +
@@ -1575,14 +1579,14 @@
       "</div>" +
       '<div class="checkout-card-fields" data-card-fields>' +
       '<div class="checkout-form__grid">' +
-      '<div class="form-field form-field--full"><label for="card-number">Card Number</label><input id="card-number" name="card_number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="xxxx xxxx xxxx xxxx"></div>' +
+      '<div class="form-field form-field--full"><label for="card-number">Card Number</label><input id="card-number" name="card_number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456"></div>' +
       '<div class="form-field form-field--full"><label for="card-name">Name on Card</label><input id="card-name" name="card_name" type="text" autocomplete="cc-name" placeholder="Name on card"></div>' +
       '<div class="form-field"><label for="card-exp">Expiration Date</label><input id="card-exp" name="card_exp" type="text" autocomplete="cc-exp" placeholder="MM / YY"></div>' +
-      '<div class="form-field"><label for="card-cvc">Security Code</label><input id="card-cvc" name="card_cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC"></div>' +
+      '<div class="form-field"><label for="card-cvc">Security Code</label><input id="card-cvc" name="card_cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123"></div>' +
       "</div>" +
       '<p class="label checkout-card-note">Demo checkout — card details are not processed. Orders are sent by email.</p>' +
       "</div></fieldset>" +
-      '<button type="submit" class="btn btn--terracotta checkout-form__submit">Place Order</button>' +
+      '<button type="submit" class="btn btn--terracotta checkout-form__submit">Place Order →</button>' +
       '<p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>' +
       "</form>" +
       '<aside class="cart-summary checkout-summary" aria-labelledby="checkout-summary-heading">' +
@@ -1590,9 +1594,9 @@
       '<a class="btn btn--text checkout-summary__edit" href="/cart">Edit Cart</a></div>' +
       '<div class="checkout-summary__items" data-checkout-items></div>' +
       '<div class="cart-summary__rows">' +
-      '<div class="cart-summary__row"><span>Subtotal</span><span data-checkout-subtotal>$0.00</span></div>' +
+      '<div class="cart-summary__row"><span>Subtotal</span><span data-checkout-subtotal>$0</span></div>' +
       '<div class="cart-summary__row"><span>Tax</span><span data-checkout-tax>5%</span></div>' +
-      '<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span data-checkout-total>$0.00</span></div>' +
+      '<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span data-checkout-total>$0</span></div>' +
       "</div></aside></div></section>"
     );
   }
@@ -1888,14 +1892,26 @@
       }
       itemsEl.innerHTML = orderCart
         .map(function (item) {
-          var line =
-            (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0);
+          var qty = parseInt(item.qty, 10) || 0;
+          var unit = parseFloat(item.price) || 0;
+          var img = item.image || "/assets/images/cart-gift-box.png";
+          var meta = item.meta ? escapeHtml(item.meta) : "";
           return (
-            '<div class="checkout-summary__item"><span>' +
-            escapeHtml(item.qty + " × " + item.title) +
-            (item.meta ? " · " + escapeHtml(item.meta) : "") +
-            "</span><span>" +
-            money(line) +
+            '<div class="checkout-summary__item">' +
+            '<div class="checkout-summary__thumb"><img src="' +
+            escapeHtml(img) +
+            '" alt="" loading="lazy"></div>' +
+            '<div class="checkout-summary__meta">' +
+            '<p class="checkout-summary__title">' +
+            escapeHtml(item.title) +
+            "</p>" +
+            (meta ? '<p class="checkout-summary__desc">' + meta + "</p>" : "") +
+            '<p class="checkout-summary__qty">Quantity: ' +
+            qty +
+            "</p>" +
+            "</div>" +
+            '<span class="checkout-summary__price">' +
+            money(unit) +
             "</span></div>"
           );
         })
@@ -1921,11 +1937,14 @@
     }
 
     if (giftToggle && giftFields) {
-      giftToggle.addEventListener("change", function () {
+      var giftPanel = root.querySelector("[data-gift-panel]");
+      function syncGiftPanel() {
         giftFields.hidden = !giftToggle.checked;
         setGiftRequired(giftToggle.checked);
-      });
-      setGiftRequired(giftToggle.checked);
+        if (giftPanel) giftPanel.classList.toggle("is-open", giftToggle.checked);
+      }
+      giftToggle.addEventListener("change", syncGiftPanel);
+      syncGiftPanel();
     }
 
     root.querySelectorAll("[data-pay-method]").forEach(function (radio) {

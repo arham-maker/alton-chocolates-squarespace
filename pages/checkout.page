@@ -1,7 +1,7 @@
 <!-- Checkout page — Figma 577:6 -->
 
 <section class="checkout-page section" aria-labelledby="checkout-heading" data-checkout-page>
-  <div class="alton-editable" data-alton-editable>
+  <div class="checkout-page__intro alton-editable" data-alton-editable>
     <div class="alton-editable__fallback">
       <h1 id="checkout-heading" class="heading-lg">Checkout</h1>
       <p class="body-lg checkout-page__subtitle">Complete your information to place your order.</p>
@@ -43,6 +43,8 @@
             <label for="checkout-apt">Apartment / Suite (optional)</label>
             <input id="checkout-apt" name="apartment" type="text" autocomplete="address-line2" placeholder="Apartment, suite, etc.">
           </div>
+        </div>
+        <div class="checkout-form__grid checkout-form__grid--3">
           <div class="form-field">
             <label for="checkout-city">City</label>
             <input id="checkout-city" name="city" type="text" autocomplete="address-level2" required placeholder="City">
@@ -67,7 +69,7 @@
           <div class="checkout-form__grid">
             <div class="form-field">
               <label for="gift-recipient">Recipient’s Name</label>
-              <input id="gift-recipient" name="gift_recipient" type="text" placeholder="To">
+              <input id="gift-recipient" name="gift_recipient" type="text" placeholder="Recipient’s name">
             </div>
             <div class="form-field">
               <label for="gift-from">From</label>
@@ -75,7 +77,7 @@
             </div>
             <div class="form-field form-field--full">
               <label for="gift-message">Message</label>
-              <textarea id="gift-message" name="gift_message" rows="3" placeholder="Write a short note"></textarea>
+              <textarea id="gift-message" name="gift_message" rows="4" placeholder="Write a short note"></textarea>
             </div>
             <label class="checkout-gift__hide form-field--full">
               <input type="checkbox" name="hide_prices" value="yes">
@@ -107,7 +109,7 @@
           <div class="checkout-form__grid">
             <div class="form-field form-field--full">
               <label for="card-number">Card Number</label>
-              <input id="card-number" name="card_number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="xxxx xxxx xxxx xxxx">
+              <input id="card-number" name="card_number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456">
             </div>
             <div class="form-field form-field--full">
               <label for="card-name">Name on Card</label>
@@ -119,14 +121,14 @@
             </div>
             <div class="form-field">
               <label for="card-cvc">Security Code</label>
-              <input id="card-cvc" name="card_cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC">
+              <input id="card-cvc" name="card_cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123">
             </div>
           </div>
           <p class="label checkout-card-note">Demo checkout — card details are not processed. Orders are sent by email.</p>
         </div>
       </fieldset>
 
-      <button type="submit" class="btn btn--terracotta checkout-form__submit">Place Order</button>
+      <button type="submit" class="btn btn--terracotta checkout-form__submit">Place Order →</button>
       <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>
     </form>
 
@@ -148,7 +150,7 @@
       <div class="cart-summary__rows">
         <div class="cart-summary__row">
           <span>Subtotal</span>
-          <span data-checkout-subtotal>$0.00</span>
+          <span data-checkout-subtotal>$0</span>
         </div>
         <div class="cart-summary__row">
           <span>Tax</span>
@@ -156,7 +158,7 @@
         </div>
         <div class="cart-summary__row cart-summary__row--total">
           <span>Total</span>
-          <span data-checkout-total>$0.00</span>
+          <span data-checkout-total>$0</span>
         </div>
       </div>
     </aside>
