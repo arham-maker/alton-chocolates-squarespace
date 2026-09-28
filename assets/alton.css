@@ -616,6 +616,22 @@ input.sqs-search-page-input {
   height: 20px;
 }
 
+.site-header__account.is-signed-in {
+  position: relative;
+}
+
+.site-header__account.is-signed-in::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #626145;
+  box-shadow: 0 0 0 2px #F5F2EC;
+}
+
 .announcement-bar__fallback {
   margin: 0;
 }

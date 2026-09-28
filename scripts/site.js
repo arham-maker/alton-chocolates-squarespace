@@ -2094,15 +2094,23 @@
     var session = getSession();
     document.querySelectorAll(".site-header__account, [data-account-link]").forEach(function (link) {
       if (session && session.email) {
-        link.setAttribute("href", "/");
-        link.setAttribute("aria-label", "Signed in as " + (session.name || session.email));
-        link.setAttribute("title", "Signed in as " + (session.name || session.email));
+        link.setAttribute("href", "#sign-out");
+        link.setAttribute("aria-label", "Sign out (" + (session.name || session.email) + ")");
+        link.setAttribute("title", "Signed in as " + (session.name || session.email) + " — click to sign out");
         link.classList.add("is-signed-in");
+        link.setAttribute("data-account-action", "signout");
+        if (link.hasAttribute("data-mobile-account") || link.classList.contains("mobile-nav__account")) {
+          link.textContent = "Sign Out";
+        }
       } else {
         link.setAttribute("href", "/sign-in");
         link.setAttribute("aria-label", "Account");
         link.removeAttribute("title");
         link.classList.remove("is-signed-in");
+        link.setAttribute("data-account-action", "signin");
+        if (link.hasAttribute("data-mobile-account") || link.classList.contains("mobile-nav__account")) {
+          link.textContent = "Account / Sign In";
+        }
       }
     });
   }
@@ -2112,6 +2120,42 @@
       document.body.classList.add("is-auth-page");
     }
     updateAccountLinks();
+
+    document.querySelectorAll("[data-account-link], .site-header__account").forEach(function (link) {
+      if (link.dataset.boundAccount === "1") return;
+      link.dataset.boundAccount = "1";
+      link.addEventListener("click", function (e) {
+        if (link.getAttribute("data-account-action") !== "signout") return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (!window.confirm("Sign out of your Alton account?")) return;
+        clearSession();
+        updateAccountLinks();
+        showThanks("You are signed out.");
+      });
+    });
+
+    // Already signed in on auth pages → offer continue or sign out
+    var authPage = document.querySelector("[data-auth-page]");
+    if (authPage && getSession() && getSession().email) {
+      var switchEl = authPage.querySelector(".auth-switch");
+      if (switchEl && !authPage.querySelector("[data-auth-signed-in]")) {
+        var note = document.createElement("p");
+        note.className = "auth-switch body-lg";
+        note.setAttribute("data-auth-signed-in", "1");
+        note.innerHTML =
+          "You are signed in as <strong></strong>. <a href=\"#\" data-auth-logout>Sign out</a> or <a href=\"/\">continue shopping</a>.";
+        note.querySelector("strong").textContent = getSession().name || getSession().email;
+        switchEl.parentNode.insertBefore(note, switchEl);
+        note.querySelector("[data-auth-logout]").addEventListener("click", function (e) {
+          e.preventDefault();
+          clearSession();
+          updateAccountLinks();
+          note.remove();
+          showThanks("You are signed out.");
+        });
+      }
+    }
 
     document.querySelectorAll("[data-auth-form]").forEach(function (form) {
       if (form.dataset.boundAuth === "1") return;

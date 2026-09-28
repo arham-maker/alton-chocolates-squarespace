@@ -450,6 +450,22 @@ h6 {
   height: 20px;
 }
 
+.site-header__account.is-signed-in {
+  position: relative;
+}
+
+.site-header__account.is-signed-in::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: @secondary;
+  box-shadow: 0 0 0 2px @bg;
+}
+
 .announcement-bar__fallback {
   margin: 0;
 }
