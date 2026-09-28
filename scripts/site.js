@@ -788,6 +788,14 @@
     var meta = item.meta ? String(item.meta) : "";
     var editUrl = item.editUrl ? String(item.editUrl) : "";
     var id = item.id ? String(item.id) : slugify(title);
+    var catalog = getCatalogItem(id);
+    var desc = item.desc
+      ? String(item.desc)
+      : catalog && catalog.desc
+        ? String(catalog.desc)
+        : "";
+    if (!meta && catalog && catalog.meta) meta = String(catalog.meta);
+    if (!image && catalog && catalog.image) image = String(catalog.image);
     var existing = null;
     for (var i = 0; i < orderCart.length; i++) {
       var sameId = id && orderCart[i].id && orderCart[i].id === id;
@@ -805,6 +813,7 @@
       existing.qty = Math.min(99, existing.qty + qty);
       if (image) existing.image = image;
       if (meta) existing.meta = meta;
+      if (desc) existing.desc = desc;
       if (editUrl) existing.editUrl = editUrl;
       if (id) existing.id = id;
       if (title) existing.title = title;
@@ -813,6 +822,7 @@
       var row = { id: id, title: title, price: price, qty: qty };
       if (image) row.image = image;
       if (meta) row.meta = meta;
+      if (desc) row.desc = desc;
       if (editUrl) row.editUrl = editUrl;
       orderCart.push(row);
     }
@@ -1544,7 +1554,7 @@
     return (
       '<section class="cart-page section" aria-labelledby="cart-heading" data-cart-page data-cart-bridged="1">' +
       '<div class="cart-page__header">' +
-      '<h1 id="cart-heading" class="heading-lg cart-page__title">Your Cart <span class="cart-page__count" data-cart-heading-count>(0 Products)</span></h1>' +
+      '<h1 id="cart-heading" class="heading-lg cart-page__title">Your Cart<span class="cart-page__count" data-cart-heading-count>(0 Products)</span></h1>' +
       '<button type="button" class="btn btn--text cart-page__clear" data-cart-clear>' +
       '<img src="/assets/icons/cancel.svg" alt="" width="16" height="16"><span>Clear All</span></button>' +
       "</div>" +
@@ -1931,22 +1941,21 @@
       if (checkoutBtn) checkoutBtn.removeAttribute("aria-disabled");
       list.innerHTML = orderCart
         .map(function (item, idx) {
-          var img = item.image || "/assets/images/cart-gift-box.png";
-          var lineTotal = money(
-            (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0)
-          );
+          var catalog = item.id ? getCatalogItem(item.id) : null;
+          var img = item.image || (catalog && catalog.image) || "/assets/images/cart-gift-box.png";
+          var unit = parseFloat(item.price) || 0;
+          var qty = parseInt(item.qty, 10) || 0;
+          var lineTotal = money(unit * qty);
           var editHref =
             item.editUrl ||
             (item.id
-              ? (/gift/i.test(item.editUrl || "") ||
-                (getCatalogItem(item.id) || {}).kind === "gift"
+              ? ((catalog && catalog.kind === "gift") || /gift/i.test(item.editUrl || "")
                   ? "/gift-details?id=" + encodeURIComponent(item.id)
                   : "/product?id=" + encodeURIComponent(item.id))
               : "/product");
-          var desc = item.desc
-            ? '<p class="cart-line__desc">' + escapeHtml(item.desc) + "</p>"
-            : "";
-          var qty = parseInt(item.qty, 10) || 0;
+          var descText = item.desc || (catalog && catalog.desc) || "";
+          var metaText = item.meta || (catalog && catalog.meta) || "";
+          if (metaText) metaText = String(metaText).replace(/\s*·\s*/g, " / ");
           return (
             '<article class="cart-line" data-cart-index="' +
             idx +
@@ -1954,22 +1963,22 @@
             '<div class="cart-line__image"><img src="' +
             escapeHtml(img) +
             '" alt="" loading="lazy"></div>' +
-            '<div class="cart-line__info">' +
+            '<div class="cart-line__body">' +
+            '<div class="cart-line__top">' +
             '<h3 class="cart-line__title">' +
             escapeHtml(item.title) +
             "</h3>" +
-            desc +
-            (item.meta
-              ? '<p class="cart-line__meta">' + escapeHtml(item.meta) + "</p>"
-              : "") +
-            '<p class="cart-line__meta">Quantity: ' +
-            qty +
-            "</p>" +
-            "</div>" +
-            '<div class="cart-line__side">' +
             '<span class="cart-line__price">' +
             lineTotal +
-            "</span>" +
+            "</span></div>" +
+            (descText
+              ? '<p class="cart-line__desc">' + escapeHtml(descText) + "</p>"
+              : "") +
+            (metaText
+              ? '<p class="cart-line__meta">' + escapeHtml(metaText) + "</p>"
+              : qty > 1
+                ? '<p class="cart-line__meta">Quantity: ' + qty + "</p>"
+                : "") +
             '<div class="cart-line__actions">' +
             '<a class="cart-line__btn" href="' +
             escapeHtml(editHref) +

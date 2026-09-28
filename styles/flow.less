@@ -311,9 +311,9 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
 .cart-page__title {
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .cart-page__count {
@@ -321,9 +321,10 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   color: @muted !important;
   font-family: @font-serif;
   font-weight: 400;
-  font-size: 0.55em;
+  font-size: 22px;
   letter-spacing: 0.04em;
   text-transform: none;
+  line-height: 1.2;
 }
 
 .cart-page__clear {
@@ -360,17 +361,18 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
 
 .cart-line {
   display: grid;
-  grid-template-columns: 110px 1fr auto;
-  gap: 20px;
-  padding: 20px;
-  background: @white;
-  border: 1px solid @border;
-  align-items: center;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid @border;
+  align-items: start;
 }
 
 .cart-line__image {
-  width: 110px;
-  height: 110px;
+  width: 140px;
+  height: 140px;
   overflow: hidden;
   background: #f8f6f2;
 }
@@ -381,11 +383,18 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   object-fit: cover;
 }
 
-.cart-line__info {
+.cart-line__body {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
   min-width: 0;
+}
+
+.cart-line__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .cart-line__title {
@@ -396,21 +405,23 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   text-transform: uppercase;
   color: @primary;
   margin: 0;
+  flex: 1 1 auto;
 }
 
-.cart-line__desc,
-.cart-line__meta {
+.cart-line__desc {
   font-size: 14px;
   line-height: 22px;
   color: @muted;
   margin: 0;
+  max-width: 52ch;
 }
 
-.cart-line__side {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
+.cart-line__meta {
+  font-size: 14px;
+  line-height: 22px;
+  color: @primary;
+  margin: 0;
+  font-weight: 500;
 }
 
 .cart-line__price {
@@ -418,11 +429,14 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   font-weight: 600;
   font-size: 18px;
   color: @primary;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .cart-line__actions {
   display: flex;
   gap: 10px;
+  margin-top: 6px;
 }
 
 .cart-line__btn {
@@ -440,7 +454,7 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   font-family: @font-sans;
   font-size: 14px;
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 8px 14px;
   text-decoration: none;
 }
 
@@ -452,6 +466,7 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
 .cart-summary {
   background: @white;
   border: 1px solid @border;
+  border-radius: 12px;
   padding: 28px 24px;
   position: sticky;
   top: 24px;
@@ -998,11 +1013,28 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   overflow: hidden;
 }
 
+.faq-section__intro {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.faq-section__art {
+  width: 140px;
+  height: auto;
+  margin-top: auto;
+  align-self: flex-start;
+  object-fit: contain;
+}
+
 .faq-section__inner {
   display: grid;
   grid-template-columns: minmax(240px, 1fr) minmax(280px, 1.05fr);
   gap: 30px;
-  align-items: center;
+  align-items: stretch;
   max-width: 1260px;
   margin: 0 auto;
 }
@@ -1027,7 +1059,7 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
 
 .faq-item {
   border: 0;
-  background: #F0E8E0;
+  background: @white;
   border-radius: 10px;
 }
 
@@ -1190,19 +1222,23 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   }
 
   .cart-line {
-    grid-template-columns: 84px 1fr;
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
+  }
+
+  .cart-line__image {
+    width: 96px;
+    height: 96px;
+  }
+
+  .cart-line__top {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .checkout-form__grid,
   .checkout-form__grid--3 {
     grid-template-columns: 1fr;
-  }
-
-  .cart-line__side {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .checkout-form__grid {

@@ -5,7 +5,8 @@
     <div class="alton-editable" data-alton-editable>
       <div class="alton-editable__fallback">
         <h1 id="cart-heading" class="heading-lg cart-page__title">
-          Your Cart <span class="cart-page__count" data-cart-heading-count>(0 Products)</span>
+          Your Cart
+          <span class="cart-page__count" data-cart-heading-count>(0 Products)</span>
         </h1>
       </div>
       <div class="alton-editable__cms">

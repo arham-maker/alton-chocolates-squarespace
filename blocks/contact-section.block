@@ -61,8 +61,7 @@
           </div>
           <div class="form-actions">
             <button type="submit" class="btn btn--olive">
-              Send Message
-              <img src="/assets/icons/arrow-right.svg" alt="" width="24" height="24">
+              Send Message →
             </button>
           </div>
           <p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>

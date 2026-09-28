@@ -10,6 +10,7 @@
           <squarespace:block-field id="faqHeadingEdit" columns="12" label="EDIT: FAQ heading &amp; intro copy" />
         </div>
       </div>
+      <img class="faq-section__art" src="/assets/images/product-cookies.png" alt="" width="140" height="100" loading="lazy">
     </div>
 
     <div class="faq-list" data-faq-list>
