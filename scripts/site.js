@@ -1005,7 +1005,8 @@
         qty: qty,
         image: image,
         editUrl: editUrl,
-        meta: catalog ? catalog.meta || "" : ""
+        meta: catalog ? catalog.meta || "" : "",
+        desc: catalog ? catalog.desc || "" : ""
       };
     }
 
@@ -2101,7 +2102,7 @@
             "</p>" +
             "</div>" +
             '<span class="checkout-summary__price">' +
-            money(unit) +
+            money(unit * qty) +
             "</span></div>"
           );
         })
@@ -2590,6 +2591,7 @@
           qty: qty,
           image: image,
           meta: meta,
+          desc: (getCatalogItem(pid) || {}).desc || root.getAttribute("data-pdp-desc") || "",
           editUrl: editUrl
         });
         window.location.href = "/cart";
