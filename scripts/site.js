@@ -1540,9 +1540,73 @@
     );
   }
 
+  function getAltonCheckoutMarkup() {
+    return (
+      '<section class="checkout-page section" aria-labelledby="checkout-heading" data-checkout-page data-checkout-bridged="1">' +
+      '<h1 id="checkout-heading" class="heading-lg">Checkout</h1>' +
+      '<p class="body-lg checkout-page__subtitle">Complete your information to place your order.</p>' +
+      '<div class="checkout-layout">' +
+      '<form class="checkout-form" data-checkout-form novalidate>' +
+      '<fieldset class="checkout-step"><legend class="checkout-step__title"><span class="checkout-step__num">1</span> Contact and Address</legend>' +
+      '<div class="checkout-form__grid">' +
+      '<div class="form-field"><label for="checkout-email">Email Address</label><input id="checkout-email" name="email" type="email" autocomplete="email" required placeholder="Email address"></div>' +
+      '<div class="form-field"><label for="checkout-phone">Phone Number</label><input id="checkout-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number"></div>' +
+      '<div class="form-field"><label for="checkout-first">First Name</label><input id="checkout-first" name="first_name" type="text" autocomplete="given-name" required placeholder="First name"></div>' +
+      '<div class="form-field"><label for="checkout-last">Last Name</label><input id="checkout-last" name="last_name" type="text" autocomplete="family-name" required placeholder="Last name"></div>' +
+      '<div class="form-field form-field--full"><label for="checkout-address">Address</label><input id="checkout-address" name="address" type="text" autocomplete="street-address" required placeholder="Street address"></div>' +
+      '<div class="form-field form-field--full"><label for="checkout-apt">Apartment / Suite (optional)</label><input id="checkout-apt" name="apartment" type="text" autocomplete="address-line2" placeholder="Apartment, suite, etc."></div>' +
+      '<div class="form-field"><label for="checkout-city">City</label><input id="checkout-city" name="city" type="text" autocomplete="address-level2" required placeholder="City"></div>' +
+      '<div class="form-field"><label for="checkout-state">State</label><input id="checkout-state" name="state" type="text" autocomplete="address-level1" required placeholder="State"></div>' +
+      '<div class="form-field"><label for="checkout-zip">ZIP Code</label><input id="checkout-zip" name="zip" type="text" autocomplete="postal-code" required placeholder="ZIP code"></div>' +
+      "</div></fieldset>" +
+      '<div class="checkout-gift" data-gift-panel>' +
+      '<label class="checkout-gift__toggle"><input type="checkbox" name="is_gift" value="yes" data-gift-toggle><span>This is a gift</span></label>' +
+      '<div class="checkout-gift__fields" data-gift-fields hidden>' +
+      '<div class="checkout-form__grid">' +
+      '<div class="form-field"><label for="gift-recipient">Recipient’s Name</label><input id="gift-recipient" name="gift_recipient" type="text" placeholder="To"></div>' +
+      '<div class="form-field"><label for="gift-from">From</label><input id="gift-from" name="gift_from" type="text" placeholder="From"></div>' +
+      '<div class="form-field form-field--full"><label for="gift-message">Message</label><textarea id="gift-message" name="gift_message" rows="3" placeholder="Write a short note"></textarea></div>' +
+      '<label class="checkout-gift__hide form-field--full"><input type="checkbox" name="hide_prices" value="yes"><span>Hide prices on packing slip</span></label>' +
+      "</div></div></div>" +
+      '<fieldset class="checkout-step"><legend class="checkout-step__title"><span class="checkout-step__num">2</span> Payment Method</legend>' +
+      '<div class="checkout-pay" role="radiogroup" aria-label="Payment method">' +
+      '<label class="checkout-pay__option is-selected"><input type="radio" name="payment" value="card" checked data-pay-method><img src="/assets/icons/mastercard.svg" alt="" width="36" height="24"><span>Credit or Debit Card</span></label>' +
+      '<label class="checkout-pay__option"><input type="radio" name="payment" value="paypal" data-pay-method><img src="/assets/icons/paypal.svg" alt="" width="36" height="24"><span>Pay with PayPal</span></label>' +
+      "</div>" +
+      '<div class="checkout-card-fields" data-card-fields>' +
+      '<div class="checkout-form__grid">' +
+      '<div class="form-field form-field--full"><label for="card-number">Card Number</label><input id="card-number" name="card_number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="xxxx xxxx xxxx xxxx"></div>' +
+      '<div class="form-field form-field--full"><label for="card-name">Name on Card</label><input id="card-name" name="card_name" type="text" autocomplete="cc-name" placeholder="Name on card"></div>' +
+      '<div class="form-field"><label for="card-exp">Expiration Date</label><input id="card-exp" name="card_exp" type="text" autocomplete="cc-exp" placeholder="MM / YY"></div>' +
+      '<div class="form-field"><label for="card-cvc">Security Code</label><input id="card-cvc" name="card_cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVC"></div>' +
+      "</div>" +
+      '<p class="label checkout-card-note">Demo checkout — card details are not processed. Orders are sent by email.</p>' +
+      "</div></fieldset>" +
+      '<button type="submit" class="btn btn--terracotta checkout-form__submit">Place Order</button>' +
+      '<p class="form-status" data-form-status hidden role="status" aria-live="polite"></p>' +
+      "</form>" +
+      '<aside class="cart-summary checkout-summary" aria-labelledby="checkout-summary-heading">' +
+      '<div class="checkout-summary__head"><h2 id="checkout-summary-heading" class="cart-summary__title">Order Summary</h2>' +
+      '<a class="btn btn--text checkout-summary__edit" href="/cart">Edit Cart</a></div>' +
+      '<div class="checkout-summary__items" data-checkout-items></div>' +
+      '<div class="cart-summary__rows">' +
+      '<div class="cart-summary__row"><span>Subtotal</span><span data-checkout-subtotal>$0.00</span></div>' +
+      '<div class="cart-summary__row"><span>Tax</span><span data-checkout-tax>5%</span></div>' +
+      '<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span data-checkout-total>$0.00</span></div>' +
+      "</div></aside></div></section>"
+    );
+  }
+
+  function sitePath() {
+    return String(window.location.pathname || "").replace(/\/$/, "") || "/";
+  }
+
   function isSquarespaceCartPath() {
-    var path = String(window.location.pathname || "").replace(/\/$/, "") || "/";
-    return /\/cart$/i.test(path) || /\/shopping-cart$/i.test(path);
+    return /\/cart$/i.test(sitePath()) || /\/shopping-cart$/i.test(sitePath());
+  }
+
+  function isAltonCheckoutPath() {
+    return /\/check-?out$/i.test(sitePath());
   }
 
   function hideNativeSquarespaceCart(main) {
@@ -1555,6 +1619,7 @@
           ".sqs-cart-container, .Cart, .cart-wrapper, .empty-cart, .cart-empty, [class*='cartEmpty'], [class*='Cart-empty']"
         )
         .forEach(function (el) {
+          if (el.closest("[data-cart-page], .alton-cart-bridge")) return;
           el.setAttribute("hidden", "");
           el.style.setProperty("display", "none", "important");
         });
@@ -1563,6 +1628,9 @@
     Array.prototype.slice
       .call(main.querySelectorAll("h1, h2, p, a, button, .sqs-block-button-element"))
       .forEach(function (el) {
+        if (el.closest("[data-cart-page], .alton-cart-bridge, [data-checkout-page], .alton-checkout-bridge")) {
+          return;
+        }
         var t = String(el.textContent || "")
           .replace(/\s+/g, " ")
           .trim()
@@ -1574,10 +1642,28 @@
         ) {
           var block =
             el.closest(".sqs-block, .sqs-col, section, article, .row, .cart") || el;
+          if (block.closest("[data-cart-page], .alton-cart-bridge")) return;
           block.setAttribute("hidden", "");
           block.style.setProperty("display", "none", "important");
         }
       });
+  }
+
+  function hideNativeSquarespaceCheckout(main) {
+    if (!main) return;
+    document.documentElement.classList.add("alton-custom-checkout");
+    document.body.classList.add("alton-custom-checkout");
+    try {
+      main
+        .querySelectorAll(
+          ".sqs-checkout, .sqs-checkout-page, .Checkout, .cart-checkout, .order-form-wrapper, #checkoutForm, [data-test='checkout-form']"
+        )
+        .forEach(function (el) {
+          if (el.closest("[data-checkout-page], .alton-checkout-bridge")) return;
+          el.setAttribute("hidden", "");
+          el.style.setProperty("display", "none", "important");
+        });
+    } catch (e) {}
   }
 
   function mountAltonCartOnNativePage() {
@@ -1594,6 +1680,26 @@
     bridge.innerHTML = getAltonCartMarkup();
     main.insertBefore(bridge, main.firstChild);
     return true;
+  }
+
+  function mountAltonCheckoutOnNativePage() {
+    if (!isAltonCheckoutPath()) return false;
+    if (document.querySelector("[data-checkout-page]")) return false;
+
+    var main =
+      document.querySelector("main.alton-main, main#page, #page, .alton-main") ||
+      document.body;
+    hideNativeSquarespaceCheckout(main);
+
+    var bridge = document.createElement("div");
+    bridge.className = "alton-checkout-bridge";
+    bridge.innerHTML = getAltonCheckoutMarkup();
+    main.insertBefore(bridge, main.firstChild);
+    return true;
+  }
+
+  function goToCheckout() {
+    window.location.assign("/checkout");
   }
 
   function initCartPage() {
@@ -1716,12 +1822,16 @@
     }
 
     if (checkoutBtn) {
+      checkoutBtn.setAttribute("href", "/checkout");
       checkoutBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         loadOrderCart();
         if (!orderCart.length) {
-          e.preventDefault();
           alert("Your cart is empty.");
+          return;
         }
+        goToCheckout();
       });
     }
 
@@ -1729,8 +1839,11 @@
   }
 
   function initCheckoutPage() {
+    mountAltonCheckoutOnNativePage();
     var root = document.querySelector("[data-checkout-page]");
     if (!root) return;
+    if (root.getAttribute("data-checkout-ready") === "1") return;
+    root.setAttribute("data-checkout-ready", "1");
     loadOrderCart();
 
     var itemsEl = root.querySelector("[data-checkout-items]");

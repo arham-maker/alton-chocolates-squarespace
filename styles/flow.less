@@ -266,7 +266,8 @@ body.is-auth-page .site-footer {
 }
 
 /* When Squarespace system /cart wins, we inject Alton cart and hide native empty UI */
-.alton-cart-bridge {
+.alton-cart-bridge,
+.alton-checkout-bridge {
   width: 100%;
 }
 
@@ -278,6 +279,15 @@ body.alton-custom-cart .sqs-cart-container,
 body.alton-custom-cart .Cart,
 body.alton-custom-cart .empty-cart,
 body.alton-custom-cart .cart-empty {
+  display: none !important;
+}
+
+html.alton-custom-checkout .sqs-checkout,
+html.alton-custom-checkout .Checkout,
+html.alton-custom-checkout [class*="sqs-checkout"],
+body.alton-custom-checkout .sqs-checkout,
+body.alton-custom-checkout .Checkout,
+body.alton-custom-checkout [class*="sqs-checkout"] {
   display: none !important;
 }
 
@@ -456,7 +466,6 @@ body.alton-custom-cart .cart-empty {
 
 .cart-summary__cta[aria-disabled="true"] {
   opacity: 0.45;
-  pointer-events: none;
   cursor: not-allowed;
 }
 
