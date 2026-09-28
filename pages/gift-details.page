@@ -1,6 +1,6 @@
 <!-- Gift Details PDP -->
 
-<section class="pdp section" aria-labelledby="gift-pdp-title" data-pdp data-pdp-href="/gift-details" data-pdp-title="Signature Celebration Gift Box" data-pdp-price="48" data-pdp-image="/assets/images/gift-detail.png" data-pdp-meta="Mostly Dark · 12 pieces">
+<section class="pdp section" aria-labelledby="gift-pdp-title" data-pdp data-pdp-id="signature-celebration-gift-box" data-pdp-href="/gift-details?id=signature-celebration-gift-box" data-pdp-title="Signature Celebration Gift Box" data-pdp-price="48" data-pdp-image="/assets/images/gift-detail.png" data-pdp-meta="Mostly Dark · 12 pieces">
   <nav class="pdp-breadcrumb label" aria-label="Breadcrumb">
     <a href="/gifts">Gifts</a>
     <span aria-hidden="true">/</span>
@@ -132,30 +132,30 @@
   </div>
   <div class="product-grid">
     <article class="product-card">
-      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-1.png" alt="Signature Bonbon Box" loading="lazy"></a>
+      <a class="product-card__image" href="/gift-details?id=signature-bonbon-box"><img src="/assets/images/gift-coll-1.png" alt="Signature Bonbon Box" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/gift-details">Signature Bonbon Box</a></h3>
+        <h3 class="product-title"><a href="/gift-details?id=signature-bonbon-box">Signature Bonbon Box</a></h3>
         <p class="product-card__price">$48</p>
       </div>
     </article>
     <article class="product-card">
-      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-2.png" alt="Chocolate Bark Box" loading="lazy"></a>
+      <a class="product-card__image" href="/gift-details?id=chocolate-bark-box"><img src="/assets/images/gift-coll-2.png" alt="Chocolate Bark Box" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/gift-details">Chocolate Bark Box</a></h3>
+        <h3 class="product-title"><a href="/gift-details?id=chocolate-bark-box">Chocolate Bark Box</a></h3>
         <p class="product-card__price">$29</p>
       </div>
     </article>
     <article class="product-card">
-      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-3.png" alt="Sea Salt Caramels" loading="lazy"></a>
+      <a class="product-card__image" href="/gift-details?id=sea-salt-caramels-gift"><img src="/assets/images/gift-coll-3.png" alt="Sea Salt Caramels" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/gift-details">Sea Salt Caramels</a></h3>
+        <h3 class="product-title"><a href="/gift-details?id=sea-salt-caramels-gift">Sea Salt Caramels</a></h3>
         <p class="product-card__price">$34</p>
       </div>
     </article>
     <article class="product-card">
-      <a class="product-card__image" href="/gift-details"><img src="/assets/images/gift-coll-4.png" alt="Artisan Chocolate Bars" loading="lazy"></a>
+      <a class="product-card__image" href="/gift-details?id=artisan-chocolate-bars"><img src="/assets/images/gift-coll-4.png" alt="Artisan Chocolate Bars" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/gift-details">Artisan Chocolate Bars</a></h3>
+        <h3 class="product-title"><a href="/gift-details?id=artisan-chocolate-bars">Artisan Chocolate Bars</a></h3>
         <p class="product-card__price">$18</p>
       </div>
     </article>

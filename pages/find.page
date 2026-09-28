@@ -37,7 +37,7 @@
 
   <div class="alton-editable alton-editable--center" data-alton-editable>
     <div class="alton-editable__fallback">
-      <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Search you quiery with space</p>
+      <p class="alton-search__hint label" data-search-hint style="text-align:center;margin-top:20px;">Search your query — use spaces between words</p>
     </div>
     <div class="alton-editable__cms">
       <squarespace:block-field id="findPageHint" columns="12" label="EDIT: Search hint text" />

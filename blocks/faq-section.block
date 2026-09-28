@@ -9,58 +9,56 @@
     </div>
   </div>
 
-  <div class="alton-editable" data-alton-editable>
-    <div class="alton-editable__fallback">
-      <div class="faq-list">
-        <div class="faq-item" data-faq-item>
-          <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
-            <span>How long does shipping take?</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__panel" data-faq-panel hidden>
-            <p class="body-lg">Most orders ship within 1–2 business days and arrive in 3–5 business days depending on your location. Overnight options are available at checkout when offered.</p>
-          </div>
-        </div>
-        <div class="faq-item" data-faq-item>
-          <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
-            <span>Do you offer gift wrapping?</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__panel" data-faq-panel hidden>
-            <p class="body-lg">Yes. Select gift options at checkout to add a personalized message, recipient details, and optionally hide prices on the packing slip.</p>
-          </div>
-        </div>
-        <div class="faq-item" data-faq-item>
-          <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
-            <span>What is your return policy?</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__panel" data-faq-panel hidden>
-            <p class="body-lg">Because our chocolates are perishable and handcrafted, we cannot accept returns of opened items. Contact us within 48 hours if your order arrives damaged and we will make it right.</p>
-          </div>
-        </div>
-        <div class="faq-item" data-faq-item>
-          <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
-            <span>Are your chocolates made in a nut-free facility?</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__panel" data-faq-panel hidden>
-            <p class="body-lg">Our kitchen handles tree nuts, dairy, soy, and wheat. Please review allergen details on each product page and contact us with specific questions before ordering.</p>
-          </div>
-        </div>
-        <div class="faq-item" data-faq-item>
-          <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
-            <span>Can I customize a gift box?</span>
-            <span class="faq-item__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-item__panel" data-faq-panel hidden>
-            <p class="body-lg">Absolutely. Visit our <a href="/build-box">Build a Box</a> page to choose your box size and fill it with your favorite treats.</p>
-          </div>
-        </div>
+  <div class="faq-list" data-faq-list>
+    <div class="faq-item" data-faq-item>
+      <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
+        <span>How long does shipping take?</span>
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel hidden>
+        <p class="body-lg">Most orders ship within 1–2 business days and arrive in 3–5 business days depending on your location. Overnight options are available at checkout when offered.</p>
       </div>
     </div>
+    <div class="faq-item" data-faq-item>
+      <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
+        <span>Do you offer gift wrapping?</span>
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel hidden>
+        <p class="body-lg">Yes. Select gift options at checkout to add a personalized message, recipient details, and optionally hide prices on the packing slip.</p>
+      </div>
+    </div>
+    <div class="faq-item" data-faq-item>
+      <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
+        <span>What is your return policy?</span>
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel hidden>
+        <p class="body-lg">Because our chocolates are perishable and handcrafted, we cannot accept returns of opened items. Contact us within 48 hours if your order arrives damaged and we will make it right.</p>
+      </div>
+    </div>
+    <div class="faq-item" data-faq-item>
+      <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
+        <span>Are your chocolates made in a nut-free facility?</span>
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel hidden>
+        <p class="body-lg">Our kitchen handles tree nuts, dairy, soy, and wheat. Please review allergen details on each product page and contact us with specific questions before ordering.</p>
+      </div>
+    </div>
+    <div class="faq-item" data-faq-item>
+      <button type="button" class="faq-item__trigger" data-faq-trigger aria-expanded="false">
+        <span>Can I customize a gift box?</span>
+        <span class="faq-item__icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-item__panel" data-faq-panel hidden>
+        <p class="body-lg">Absolutely. Visit our <a href="/build-box">Build a Box</a> page to choose your box size and fill it with your favorite treats.</p>
+      </div>
+    </div>
+  </div>
+  <div class="alton-editable alton-editable--cms-only" data-alton-editable>
     <div class="alton-editable__cms">
-      <squarespace:block-field id="faqItemsEdit" columns="12" label="EDIT: FAQ items (Accordion / Text blocks)" />
+      <squarespace:block-field id="faqItemsEdit" columns="12" label="EDIT: Optional extra FAQ items (Text blocks)" />
     </div>
   </div>
 </section>

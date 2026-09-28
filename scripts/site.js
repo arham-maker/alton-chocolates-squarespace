@@ -45,10 +45,21 @@
     var mobileNav = document.querySelector("[data-mobile-nav]");
     if (!header || !toggle || !mobileNav) return;
 
+    if (!mobileNav.querySelector("[data-mobile-account]")) {
+      var account = document.createElement("a");
+      account.href = "/sign-in";
+      account.className = "mobile-nav__account";
+      account.setAttribute("data-mobile-account", "");
+      account.setAttribute("data-account-link", "");
+      account.textContent = "Account / Sign In";
+      mobileNav.appendChild(account);
+    }
+
     toggle.addEventListener("click", function () {
       var open = header.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       mobileNav.hidden = !open;
+      if (open) mobileNav.removeAttribute("hidden");
     });
   }
 
@@ -90,6 +101,90 @@
     if (!isFinite(val)) val = 0;
     return "$" + val.toFixed(2);
   }
+
+  function slugify(str) {
+    return String(str || "")
+      .toLowerCase()
+      .replace(/&amp;/g, "and")
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  var PRODUCT_CATALOG = {
+    "salted-caramel": { title: "Salted Caramel", price: 28, image: "/assets/images/shop-product-1.png", category: "Bonbons", kind: "product", desc: "A classic salted caramel finished in silky chocolate.", meta: "Bonbon" },
+    "raspberry-chocolate": { title: "Raspberry Chocolate", price: 12, image: "/assets/images/shop-product-2.png", category: "Bonbons", kind: "product", desc: "Bright raspberry ganache in a delicate chocolate shell.", meta: "Bonbon" },
+    "passion-fruit-ganache": { title: "Passion Fruit Ganache", price: 16, image: "/assets/images/shop-product-3.png", category: "Bonbons", kind: "product", desc: "Tangy passion fruit ganache balanced with dark chocolate.", meta: "Bonbon" },
+    "pistachio-praline": { title: "Pistachio Praline", price: 14, image: "/assets/images/shop-product-4.png", category: "Bonbons", kind: "product", desc: "Roasted pistachio praline with a crisp chocolate shell.", meta: "Bonbon" },
+    "hazelnut-praline": { title: "Hazelnut Praline", price: 28, image: "/assets/images/shop-product-5.png", category: "Bonbons", kind: "product", desc: "Smooth hazelnut praline for a rich, nutty finish.", meta: "Bonbon" },
+    "coconut-ganache": { title: "Coconut Ganache", price: 12, image: "/assets/images/shop-product-6.png", category: "Bonbons", kind: "product", desc: "Creamy coconut ganache wrapped in milk chocolate.", meta: "Bonbon" },
+    "blueberry-vanilla-ganache": { title: "Blueberry Vanilla Ganache", price: 16, image: "/assets/images/shop-product-7.png", category: "Bonbons", kind: "product", desc: "Blueberry and vanilla ganache in a soft shell.", meta: "Bonbon" },
+    "mint-dark-chocolate": { title: "Mint Dark Chocolate", price: 14, image: "/assets/images/shop-product-8.png", category: "Bonbons", kind: "product", desc: "Cool mint meets deep dark chocolate.", meta: "Bonbon" },
+    "artisan-chocolate-bar": { title: "Artisan Chocolate Bar", price: 12, image: "/assets/images/product-bar.png", category: "Chocolate Bars", kind: "product", desc: "A smooth artisan chocolate bar for everyday savoring.", meta: "Bar · 70g" },
+    "sea-salt-chocolate-bar-set": { title: "Sea Salt Chocolate Bar Set", price: 24, image: "/assets/images/gift-prod-3.png", category: "Chocolate Bars", kind: "product", desc: "A set of sea salt bars ready for gifting or sharing.", meta: "Bar set" },
+    "chocolate-bark-box": { title: "Chocolate Bark Box", price: 29, image: "/assets/images/gift-coll-2.png", category: "Bark", kind: "gift", desc: "Crisp chocolate bark pieces in a ready-to-gift box.", meta: "Bark box" },
+    "dark-and-white-bark-assortment": { title: "Dark & White Bark Assortment", price: 28, image: "/assets/images/gift-prod-8.png", category: "Bark", kind: "gift", desc: "An assortment of dark and white chocolate bark.", meta: "Bark" },
+    "sea-salt-caramels": { title: "Sea Salt Caramels", price: 16, image: "/assets/images/product-caramels.png", category: "Caramels", kind: "product", desc: "Soft caramels finished with flaky sea salt.", meta: "Caramels" },
+    "sea-salt-caramel-gift-box": { title: "Sea Salt Caramel Gift Box", price: 28, image: "/assets/images/gift-prod-5.png", category: "Caramels", kind: "gift", desc: "Sea salt caramels presented in gift-ready packaging.", meta: "Gift box" },
+    "bonbon-collection": { title: "Bonbon Collection", price: 28, image: "/assets/images/product-bonbon.png", category: "Bonbons", kind: "product", desc: "A curated collection of handcrafted bonbons.", meta: "Collection" },
+    "chocolate-bar": { title: "Chocolate Bar", price: 12, image: "/assets/images/product-bar.png", category: "Chocolate Bars", kind: "product", desc: "Classic Alton chocolate bar.", meta: "Bar · 70g" },
+    "chocolate-cookies": { title: "Chocolate Cookies", price: 14, image: "/assets/images/product-cookies.png", category: "Cookies", kind: "product", desc: "Rich chocolate cookies baked in small batches.", meta: "Cookies" },
+    "sea-salt-chocolate-bar": { title: "Sea Salt Chocolate Bar", price: 12, image: "/assets/images/product-detail-bar.png", category: "Chocolate Bars", kind: "product", desc: "A silky dark chocolate bar finished with flaky sea salt. Smooth, balanced, and made for savoring one square at a time.", meta: "Mostly Dark · 70g" },
+    "signature-celebration-gift-box": { title: "Signature Celebration Gift Box", price: 48, image: "/assets/images/gift-detail.png", category: "Gift Boxes", kind: "gift", desc: "Twelve handcrafted pieces in a ready-to-gift box — mostly dark chocolates chosen for celebrations, thank-yous, and everyday indulgence.", meta: "Mostly Dark · 12 pieces" },
+    "signature-bonbon-box": { title: "Signature Bonbon Box", price: 48, image: "/assets/images/gift-coll-1.png", category: "Gift Boxes", kind: "gift", desc: "Our signature bonbon assortment in ribbon-ready packaging.", meta: "12 pieces" },
+    "sea-salt-caramels-gift": { title: "Sea Salt Caramels", price: 34, image: "/assets/images/gift-coll-3.png", category: "Gift Boxes", kind: "gift", desc: "Soft sea salt caramels presented as a premium gift.", meta: "Gift" },
+    "artisan-chocolate-bars": { title: "Artisan Chocolate Bars", price: 18, image: "/assets/images/gift-coll-4.png", category: "Gift Boxes", kind: "gift", desc: "A selection of artisan chocolate bars for gifting.", meta: "Bars" },
+    "toffee-collections": { title: "Toffee Collections", price: 28, image: "/assets/images/gift-coll-5.png", category: "Gift Boxes", kind: "gift", desc: "Buttery toffee collections ready to gift.", meta: "Toffee" },
+    "chocolate-chip-cookies": { title: "Chocolate Chip Cookies", price: 34, image: "/assets/images/gift-coll-6.png", category: "Gift Boxes", kind: "gift", desc: "Chocolate chip cookies in gift packaging.", meta: "Cookies" },
+    "signature-bonbon-collection": { title: "Signature Bonbon Collection", price: 32, image: "/assets/images/gift-prod-1.png", category: "Gift Boxes", kind: "gift", desc: "Signature bonbons for birthdays and celebrations.", meta: "Collection" },
+    "artisan-chocolate-bark-collection": { title: "Artisan Chocolate Bark Collection", price: 26, image: "/assets/images/gift-prod-2.png", category: "Gift Boxes", kind: "gift", desc: "Artisan bark assortment for thank-yous and holidays.", meta: "Bark" },
+    "classic-english-toffee": { title: "Classic English Toffee", price: 28, image: "/assets/images/gift-prod-4.png", category: "Gift Boxes", kind: "gift", desc: "Classic English toffee with a chocolate finish.", meta: "Toffee" },
+    "chocolate-cookie-collection": { title: "Chocolate Cookie Collection", price: 24, image: "/assets/images/gift-prod-6.png", category: "Gift Boxes", kind: "gift", desc: "A collection of chocolate cookies for sharing.", meta: "Cookies" },
+    "dark-chocolate-bonbon-box": { title: "Dark Chocolate Bonbon Box", price: 34, image: "/assets/images/gift-prod-7.png", category: "Gift Boxes", kind: "gift", desc: "Mostly dark bonbons in a celebration-ready box.", meta: "Bonbons" },
+    "hazelnut-crunch-bar-set": { title: "Hazelnut Crunch Bar Set", price: 28, image: "/assets/images/gift-prod-1.png", category: "Gift Boxes", kind: "gift", desc: "Hazelnut crunch bars packaged as a set.", meta: "Bars" },
+    "vanilla-bean-toffee-collection": { title: "Vanilla Bean Toffee Collection", price: 32, image: "/assets/images/gift-prod-2.png", category: "Gift Boxes", kind: "gift", desc: "Vanilla bean toffee for holidays and celebrations.", meta: "Toffee" },
+    "caramel-assortment-box": { title: "Caramel Assortment Box", price: 32, image: "/assets/images/gift-prod-3.png", category: "Gift Boxes", kind: "gift", desc: "An assortment of soft caramels in gift packaging.", meta: "Caramels" },
+    "double-chocolate-cookie-box": { title: "Double Chocolate Cookie Box", price: 22, image: "/assets/images/gift-prod-4.png", category: "Gift Boxes", kind: "gift", desc: "Double chocolate cookies boxed for gifting.", meta: "Cookies" }
+  };
+
+  function getCatalogItem(id) {
+    if (!id) return null;
+    return PRODUCT_CATALOG[String(id)] || null;
+  }
+
+  function cartStorageGet(key) {
+    try {
+      var raw = localStorage.getItem(key);
+      if (raw != null) return raw;
+    } catch (e) {}
+    try {
+      return sessionStorage.getItem(key);
+    } catch (e2) {}
+    return null;
+  }
+
+  function cartStorageSet(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {}
+    try {
+      sessionStorage.removeItem(key);
+    } catch (e2) {}
+  }
+
+  function openMailto(mailto) {
+    try {
+      var a = document.createElement("a");
+      a.href = mailto;
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } catch (e) {
+      window.location.href = mailto;
+    }
+  }
+
 
   function initBuildBox() {
     var root = document.querySelector("[data-buildbox]");
@@ -216,8 +311,12 @@
           alert("Please select no more than " + state.max + " treats.");
           return;
         }
-        var formField = document.querySelector("#buildBoxOrderForm, [data-buildbox-form]");
-        if (formField) formField.scrollIntoView({ behavior: "smooth", block: "start" });
+        var formField = document.querySelector("[data-buildbox-form]");
+        if (formField) {
+          formField.scrollIntoView({ behavior: "smooth", block: "start" });
+          var first = formField.querySelector("input, textarea");
+          if (first) setTimeout(function () { first.focus(); }, 400);
+        }
       });
     }
 
@@ -571,16 +670,45 @@
       if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
+    function activateCategory(cat, scroll) {
+      if (!cat) return;
+      var match = null;
+      tabs.forEach(function (t) {
+        var on = t.getAttribute("data-shop-tab") === cat;
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        if (on) match = t;
+      });
+      if (!match) return;
+      // temporarily disable scroll on deep-link
+      if (scroll === false) {
+        var grid = document.querySelector("[data-shop-products]");
+        var orig = grid && grid.scrollIntoView;
+        if (grid) grid.scrollIntoView = function () {};
+        showCategory(cat);
+        if (grid && orig) grid.scrollIntoView = orig;
+      } else {
+        showCategory(cat);
+      }
+    }
+
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
         var cat = tab.getAttribute("data-shop-tab");
-        tabs.forEach(function (t) {
-          t.classList.toggle("is-active", t === tab);
-          t.setAttribute("aria-selected", t === tab ? "true" : "false");
-        });
-        showCategory(cat);
+        activateCategory(cat, true);
+        try {
+          var url = new URL(window.location.href);
+          url.searchParams.set("category", cat);
+          window.history.replaceState({}, "", url.pathname + "?" + url.searchParams.toString() + url.hash);
+        } catch (e) {}
       });
     });
+
+    var params = new URLSearchParams(window.location.search);
+    var deepCat = params.get("category") || params.get("tab") || "";
+    if (deepCat) {
+      activateCategory(deepCat, false);
+    }
 
     initQtyControls(document.querySelector("[data-shop-products]"));
     initOrderButtons();
@@ -590,9 +718,15 @@
 
   function loadOrderCart() {
     try {
-      var raw = sessionStorage.getItem("alton-order-cart");
+      var raw = cartStorageGet("alton-order-cart");
       orderCart = raw ? JSON.parse(raw) : [];
       if (!Array.isArray(orderCart)) orderCart = [];
+      // migrate sessionStorage cart into localStorage when present
+      try {
+        if (raw && !localStorage.getItem("alton-order-cart")) {
+          localStorage.setItem("alton-order-cart", raw);
+        }
+      } catch (e2) {}
     } catch (e) {
       orderCart = [];
     }
@@ -600,7 +734,7 @@
 
   function saveOrderCart() {
     try {
-      sessionStorage.setItem("alton-order-cart", JSON.stringify(orderCart));
+      cartStorageSet("alton-order-cart", JSON.stringify(orderCart));
     } catch (e) {}
   }
 
@@ -625,28 +759,47 @@
     var image = item.image ? String(item.image) : "";
     var meta = item.meta ? String(item.meta) : "";
     var editUrl = item.editUrl ? String(item.editUrl) : "";
+    var id = item.id ? String(item.id) : slugify(title);
     var existing = null;
     for (var i = 0; i < orderCart.length; i++) {
-      if (
+      var sameId = id && orderCart[i].id && orderCart[i].id === id;
+      var sameLegacy =
+        !id &&
         orderCart[i].title === title &&
         orderCart[i].price === price &&
-        String(orderCart[i].meta || "") === meta
-      ) {
+        String(orderCart[i].meta || "") === meta;
+      if (sameId || sameLegacy) {
         existing = orderCart[i];
         break;
       }
     }
     if (existing) {
       existing.qty = Math.min(99, existing.qty + qty);
-      if (image && !existing.image) existing.image = image;
-      if (meta && !existing.meta) existing.meta = meta;
-      if (editUrl && !existing.editUrl) existing.editUrl = editUrl;
+      if (image) existing.image = image;
+      if (meta) existing.meta = meta;
+      if (editUrl) existing.editUrl = editUrl;
+      if (id) existing.id = id;
+      if (title) existing.title = title;
+      existing.price = price;
     } else {
-      var row = { title: title, price: price, qty: qty };
+      var row = { id: id, title: title, price: price, qty: qty };
       if (image) row.image = image;
       if (meta) row.meta = meta;
       if (editUrl) row.editUrl = editUrl;
       orderCart.push(row);
+    }
+    saveOrderCart();
+    updateCartCountBadge();
+  }
+
+  function setOrderCartQty(index, qty) {
+    var idx = parseInt(index, 10);
+    if (isNaN(idx) || idx < 0 || idx >= orderCart.length) return;
+    var next = Math.max(0, Math.min(99, parseInt(qty, 10) || 0));
+    if (next < 1) {
+      orderCart.splice(idx, 1);
+    } else {
+      orderCart[idx].qty = next;
     }
     saveOrderCart();
     updateCartCountBadge();
@@ -707,7 +860,7 @@
           "<strong>" +
           item.qty +
           " × " +
-          item.title +
+          escapeHtml(item.title) +
           "</strong>" +
           "<span>$" +
           line +
@@ -716,7 +869,7 @@
           '<button type="button" class="alton-order__line-remove" data-cart-remove="' +
           idx +
           '" aria-label="Remove ' +
-          item.title +
+          escapeHtml(item.title) +
           '">Remove</button>' +
           "</div>"
         );
@@ -776,6 +929,10 @@
         (card.querySelector(".product-title")
           ? card.querySelector(".product-title").textContent.trim()
           : "Item");
+      var id =
+        card.getAttribute("data-product-id") ||
+        card.getAttribute("data-id") ||
+        slugify(title);
       var priceAttr = card.getAttribute("data-price");
       var price = parseFloat(priceAttr);
       if (isNaN(price)) {
@@ -784,19 +941,34 @@
           ? parseFloat(String(priceEl.textContent).replace(/[^0-9.]/g, "")) || 0
           : 0;
       }
+      var catalog = getCatalogItem(id);
+      if (catalog && (!price || isNaN(price))) price = catalog.price;
+      if (catalog && (!title || title === "Item")) title = catalog.title;
       var qtyEl = card.querySelector("[data-qty-value]");
       var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
       if (qty < 1) qty = 1;
       if (qty > 99) qty = 99;
       var imgEl = card.querySelector(".product-card__image img, .gift-collection-card__image img, img");
       var image = imgEl ? imgEl.getAttribute("src") || "" : "";
+      if (!image && catalog) image = catalog.image || "";
+      var isGift =
+        card.hasAttribute("data-gift-card") ||
+        card.getAttribute("data-category") === "gifts" ||
+        card.classList.contains("gift-collection-card") ||
+        (catalog && catalog.kind === "gift");
+      var base = isGift ? "/gift-details" : "/product";
       var editUrl =
         card.getAttribute("data-edit-url") ||
-        (card.hasAttribute("data-gift-card") ||
-        card.getAttribute("data-category") === "gifts"
-          ? "/gift-details"
-          : "/product");
-      return { title: title, price: price, qty: qty, image: image, editUrl: editUrl };
+        base + "?id=" + encodeURIComponent(id);
+      return {
+        id: id,
+        title: title,
+        price: price,
+        qty: qty,
+        image: image,
+        editUrl: editUrl,
+        meta: catalog ? catalog.meta || "" : ""
+      };
     }
 
     function orderFromCard(card) {
@@ -807,18 +979,16 @@
 
     function goToProductPage(card) {
       if (!card) return;
+      var data = readOrderFromCard(card);
+      try {
+        sessionStorage.setItem("alton-pdp-preview", JSON.stringify(data));
+      } catch (e) {}
       var href =
         card.getAttribute("data-edit-url") ||
         (card.querySelector('a[href*="/product"], a[href*="/gift-details"]')
           ? card.querySelector('a[href*="/product"], a[href*="/gift-details"]').getAttribute("href")
-          : null);
-      if (!href) {
-        href =
-          card.hasAttribute("data-gift-card") ||
-          card.getAttribute("data-category") === "gifts"
-            ? "/gift-details"
-            : "/product";
-      }
+          : null) ||
+        data.editUrl;
       window.location.href = href;
     }
 
@@ -835,7 +1005,9 @@
     });
 
     document
-      .querySelectorAll("[data-shop-product], [data-gift-card], .product-card[data-orderable]")
+      .querySelectorAll(
+        "[data-shop-product], [data-gift-card], .product-card[data-orderable], .gift-collection-card"
+      )
       .forEach(function (card) {
         if (card.dataset.boundCardOrder === "1") return;
         card.dataset.boundCardOrder = "1";
@@ -958,7 +1130,6 @@
       var count = orderCart.reduce(function (n, i) {
         return n + i.qty;
       }, 0);
-      clearOrderCart();
       closeOrderModal();
       form.reset();
       showThanks(
@@ -970,9 +1141,17 @@
           total +
           "). We will confirm by email shortly."
       );
-      setTimeout(function () {
-        window.location.href = mailto;
-      }, 700);
+      openMailto(mailto);
+      clearOrderCart();
+    });
+
+    document.querySelectorAll("[data-order-open]").forEach(function (btn) {
+      if (btn.dataset.boundOrderOpen === "1") return;
+      btn.dataset.boundOrderOpen = "1";
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openOrderModal();
+      });
     });
   }
 
@@ -1029,12 +1208,10 @@
               ? "Thank you! Your custom box order was received. We will confirm soon."
               : "Thank you! Your message was sent. We will reply soon.";
 
+        setFormStatus(form, thanksMsg, "is-success");
         showThanks(thanksMsg);
+        openMailto(mailto);
         form.reset();
-
-        setTimeout(function () {
-          window.location.href = mailto;
-        }, 900);
       });
     });
 
@@ -1055,6 +1232,21 @@
         var total = document.querySelector("[data-order-total]");
         var boxName = document.querySelector("[data-order-box-name]");
         if (boxName) lines.push("Box: " + boxName.textContent.trim());
+        lines.push("Selected treats:");
+        document.querySelectorAll("[data-treat]").forEach(function (card) {
+          var val = card.querySelector("[data-qty-value]");
+          var qty = val ? parseInt(val.textContent, 10) || 0 : 0;
+          if (qty > 0) {
+            lines.push(
+              "- " +
+                qty +
+                " × " +
+                (card.dataset.title || "Treat") +
+                " @ $" +
+                (parseFloat(card.dataset.price) || 0).toFixed(2)
+            );
+          }
+        });
         if (subtotal) lines.push("Subtotal: " + subtotal.textContent.trim());
         if (total) lines.push("Total: " + total.textContent.trim());
         data.forEach(function (value, key) {
@@ -1068,16 +1260,14 @@
           "&body=" +
           encodeURIComponent(lines.join("\n"));
         showThanks("Thank you! Your custom box order was received. We will confirm soon.");
+        openMailto(mailto);
         form.reset();
-        setTimeout(function () {
-          window.location.href = mailto;
-        }, 900);
       });
     });
   }
 
   var SEARCH_INDEX = [
-    { title: "Salted Caramel", type: "Shop", meta: "$28", url: "/shop#products", tags: "bonbon caramel" },
+    { title: "Salted Caramel", type: "Shop", meta: "$28", url: "/product?id=salted-caramel", tags: "bonbon caramel" },
     { title: "Raspberry Chocolate", type: "Shop", meta: "$12", url: "/shop#products", tags: "bonbon raspberry" },
     { title: "Passion Fruit Ganache", type: "Shop", meta: "$16", url: "/shop#products", tags: "bonbon ganache" },
     { title: "Pistachio Praline", type: "Shop", meta: "$14", url: "/shop#products", tags: "bonbon pistachio" },
@@ -1085,11 +1275,11 @@
     { title: "Coconut Ganache", type: "Shop", meta: "$12", url: "/shop#products", tags: "bonbon coconut" },
     { title: "Blueberry Vanilla Ganache", type: "Shop", meta: "$16", url: "/shop#products", tags: "bonbon blueberry" },
     { title: "Mint Dark Chocolate", type: "Shop", meta: "$14", url: "/shop#products", tags: "bonbon mint dark" },
-    { title: "Bonbon Collection", type: "Bestsellers", meta: "$28", url: "/#bestsellers-heading", tags: "bonbon box" },
+    { title: "Bonbon Collection", type: "Bestsellers", meta: "$28", url: "/product?id=bonbon-collection", tags: "bonbon box" },
     { title: "Chocolate Bar", type: "Bestsellers", meta: "$12", url: "/shop#products", tags: "bars bar" },
     { title: "Sea Salt Caramels", type: "Bestsellers", meta: "$16", url: "/shop#products", tags: "caramels" },
     { title: "Chocolate Cookies", type: "Bestsellers", meta: "$14", url: "/shop#products", tags: "cookies" },
-    { title: "Signature Bonbon Box", type: "Gifts", meta: "$48", url: "/gifts", tags: "gift bonbon" },
+    { title: "Signature Bonbon Box", type: "Gifts", meta: "$48", url: "/gift-details?id=signature-bonbon-box", tags: "gift bonbon" },
     { title: "Chocolate Bark Box", type: "Gifts", meta: "$29", url: "/gifts", tags: "gift bark" },
     { title: "Sea Salt Caramels Gift", type: "Gifts", meta: "$34", url: "/gifts", tags: "gift caramel" },
     { title: "Artisan Chocolate Bars", type: "Gifts", meta: "$18", url: "/gifts", tags: "gift bars" },
@@ -1105,8 +1295,8 @@
     { title: "Sign Up", type: "Page", meta: "", url: "/sign-up", tags: "account register" },
     { title: "Cart", type: "Page", meta: "", url: "/cart", tags: "bag checkout" },
     { title: "Checkout", type: "Page", meta: "", url: "/checkout", tags: "order payment" },
-    { title: "Sea Salt Chocolate Bar", type: "Shop", meta: "$12", url: "/product", tags: "bars product detail" },
-    { title: "Signature Celebration Gift Box", type: "Gifts", meta: "$48", url: "/gift-details", tags: "gift details box" }
+    { title: "Sea Salt Chocolate Bar", type: "Shop", meta: "$12", url: "/product?id=sea-salt-chocolate-bar", tags: "bars product detail" },
+    { title: "Signature Celebration Gift Box", type: "Gifts", meta: "$48", url: "/gift-details?id=signature-celebration-gift-box", tags: "gift details box" }
   ];
 
   function searchCatalog(query) {
@@ -1249,6 +1439,40 @@
     }
   }
 
+
+  function initProductLinks() {
+    document
+      .querySelectorAll(
+        "[data-shop-product], [data-gift-card], .product-card[data-orderable], .gift-collection-card"
+      )
+      .forEach(function (card) {
+        var titleEl = card.querySelector(".product-title");
+        var title =
+          card.getAttribute("data-title") ||
+          (titleEl ? titleEl.textContent.trim() : "");
+        if (!title) return;
+        var id = card.getAttribute("data-product-id") || slugify(title);
+        card.setAttribute("data-product-id", id);
+        if (!card.getAttribute("data-title")) card.setAttribute("data-title", title);
+        var isGift =
+          card.hasAttribute("data-gift-card") ||
+          card.classList.contains("gift-collection-card") ||
+          card.getAttribute("data-category") === "gifts" ||
+          ((getCatalogItem(id) || {}).kind === "gift");
+        var base = isGift ? "/gift-details" : "/product";
+        var href = base + "?id=" + encodeURIComponent(id);
+        card.setAttribute("data-edit-url", href);
+        card.querySelectorAll('a[href="/product"], a[href="/gift-details"], a[href^="/product?"], a[href^="/gift-details?"]').forEach(function (a) {
+          a.setAttribute("href", href);
+        });
+        var priceEl = card.querySelector(".product-card__price");
+        if (priceEl && !card.getAttribute("data-price")) {
+          var p = parseFloat(String(priceEl.textContent).replace(/[^0-9.]/g, ""));
+          if (!isNaN(p)) card.setAttribute("data-price", String(p));
+        }
+      });
+  }
+
   function initFaq() {
     document.querySelectorAll("[data-faq]").forEach(function (section) {
       section.querySelectorAll("[data-faq-item]").forEach(function (item) {
@@ -1311,7 +1535,13 @@
           var lineTotal = money(
             (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0)
           );
-          var editHref = item.editUrl || "/product";
+          var editHref =
+            item.editUrl ||
+            (item.id
+              ? (/gift/i.test(item.editUrl || "") || (getCatalogItem(item.id) || {}).kind === "gift"
+                  ? "/gift-details?id=" + encodeURIComponent(item.id)
+                  : "/product?id=" + encodeURIComponent(item.id))
+              : "/product");
           return (
             '<article class="cart-line" data-cart-index="' +
             idx +
@@ -1326,9 +1556,15 @@
             (item.meta
               ? '<p class="cart-line__meta">' + escapeHtml(item.meta) + "</p>"
               : "") +
-            '<p class="cart-line__desc">Qty: ' +
+            '<div class="qty-control cart-line__qty" data-qty data-qty-min="1" data-cart-qty="' +
+            idx +
+            '">' +
+            '<button type="button" data-qty-minus aria-label="Decrease quantity"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>' +
+            '<span class="qty-control__value" data-qty-value>' +
             item.qty +
-            "</p>" +
+            "</span>" +
+            '<button type="button" data-qty-plus aria-label="Increase quantity"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>' +
+            "</div>" +
             "</div>" +
             '<div class="cart-line__side">' +
             '<span class="cart-line__price">' +
@@ -1349,6 +1585,15 @@
           );
         })
         .join("");
+
+      initQtyControls(list);
+      list.querySelectorAll("[data-cart-qty]").forEach(function (control) {
+        control.addEventListener("qtychange", function (e) {
+          var idx = parseInt(control.getAttribute("data-cart-qty"), 10);
+          setOrderCartQty(idx, e.detail && e.detail.value);
+          render();
+        });
+      });
 
       list.querySelectorAll("[data-cart-remove]").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -1398,9 +1643,15 @@
     function renderSummary() {
       loadOrderCart();
       var subtotal = cartGrandTotal();
-      var shipping = orderCart.length ? 0 : 0;
+      var shipping = orderCart.length ? (subtotal >= 75 ? 0 : 8) : 0;
       if (subtotalEl) subtotalEl.textContent = money(subtotal);
-      if (shippingEl) shippingEl.textContent = orderCart.length ? money(shipping) : "$0.00";
+      if (shippingEl) {
+        shippingEl.textContent = !orderCart.length
+          ? "$0.00"
+          : shipping === 0
+            ? "Free"
+            : money(shipping);
+      }
       if (totalEl) totalEl.textContent = money(subtotal + shipping);
       var submitBtn = form ? form.querySelector('[type="submit"]') : null;
       if (submitBtn) {
@@ -1433,10 +1684,30 @@
         .join("");
     }
 
+    function setGiftRequired(on) {
+      ["gift_recipient", "gift_from"].forEach(function (name) {
+        var el = form && form.querySelector('[name="' + name + '"]');
+        if (!el) return;
+        if (on) el.setAttribute("required", "");
+        else el.removeAttribute("required");
+      });
+    }
+
+    function setCardRequired(on) {
+      ["card_name", "card_number", "card_exp", "card_cvc"].forEach(function (name) {
+        var el = form && form.querySelector('[name="' + name + '"]');
+        if (!el) return;
+        if (on) el.setAttribute("required", "");
+        else el.removeAttribute("required");
+      });
+    }
+
     if (giftToggle && giftFields) {
       giftToggle.addEventListener("change", function () {
         giftFields.hidden = !giftToggle.checked;
+        setGiftRequired(giftToggle.checked);
       });
+      setGiftRequired(giftToggle.checked);
     }
 
     root.querySelectorAll("[data-pay-method]").forEach(function (radio) {
@@ -1445,8 +1716,11 @@
           opt.classList.toggle("is-selected", opt.querySelector("input") === radio);
         });
         if (cardFields) cardFields.hidden = radio.value !== "card";
+        setCardRequired(radio.value === "card");
       });
     });
+    var checkedPay = root.querySelector("[data-pay-method]:checked");
+    setCardRequired(checkedPay && checkedPay.value === "card");
 
     if (form) {
       form.addEventListener("submit", function (e) {
@@ -1521,10 +1795,10 @@
           encodeURIComponent(lines.join("\n"));
 
         var count = cartItemCount();
-        clearOrderCart();
         form.reset();
         if (giftFields) giftFields.hidden = true;
-        renderSummary();
+        setGiftRequired(false);
+        setCardRequired(false);
         showThanks(
           "Order placed (" +
             count +
@@ -1534,19 +1808,81 @@
             total +
             "). We will confirm by email shortly."
         );
-        setTimeout(function () {
-          window.location.href = mailto;
-        }, 700);
+        openMailto(mailto);
+        clearOrderCart();
+        renderSummary();
       });
     }
 
     renderSummary();
   }
 
+  function loadUsers() {
+    try {
+      var raw = localStorage.getItem("alton-users");
+      var users = raw ? JSON.parse(raw) : [];
+      return Array.isArray(users) ? users : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveUsers(users) {
+    try {
+      localStorage.setItem("alton-users", JSON.stringify(users));
+    } catch (e) {}
+  }
+
+  function getSession() {
+    try {
+      var raw = localStorage.getItem("alton-session");
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setSession(user) {
+    try {
+      localStorage.setItem(
+        "alton-session",
+        JSON.stringify({
+          email: user.email,
+          name: user.name || "",
+          at: Date.now()
+        })
+      );
+    } catch (e) {}
+  }
+
+  function clearSession() {
+    try {
+      localStorage.removeItem("alton-session");
+    } catch (e) {}
+  }
+
+  function updateAccountLinks() {
+    var session = getSession();
+    document.querySelectorAll(".site-header__account, [data-account-link]").forEach(function (link) {
+      if (session && session.email) {
+        link.setAttribute("href", "/");
+        link.setAttribute("aria-label", "Signed in as " + (session.name || session.email));
+        link.setAttribute("title", "Signed in as " + (session.name || session.email));
+        link.classList.add("is-signed-in");
+      } else {
+        link.setAttribute("href", "/sign-in");
+        link.setAttribute("aria-label", "Account");
+        link.removeAttribute("title");
+        link.classList.remove("is-signed-in");
+      }
+    });
+  }
+
   function initAuthForms() {
     if (document.querySelector("[data-auth-page]")) {
       document.body.classList.add("is-auth-page");
     }
+    updateAccountLinks();
 
     document.querySelectorAll("[data-auth-form]").forEach(function (form) {
       if (form.dataset.boundAuth === "1") return;
@@ -1558,13 +1894,51 @@
           return;
         }
         var kind = form.getAttribute("data-auth-form");
+        var data = new FormData(form);
+        var email = String(data.get("email") || "")
+          .trim()
+          .toLowerCase();
+        var password = String(data.get("password") || "");
+        var name = String(data.get("name") || "").trim();
+        var users = loadUsers();
+
         if (kind === "signup") {
+          if (users.some(function (u) { return u.email === email; })) {
+            setFormStatus(form, "An account with this email already exists. Please sign in.", "is-error");
+            return;
+          }
+          if (password.length < 6) {
+            setFormStatus(form, "Password must be at least 6 characters.", "is-error");
+            return;
+          }
+          var user = { name: name, email: email, password: password };
+          users.push(user);
+          saveUsers(users);
+          setSession(user);
+          updateAccountLinks();
+          setFormStatus(form, "Account created.", "is-success");
           showThanks("Welcome to Alton Chocolates. Your account is ready.");
           setTimeout(function () {
-            window.location.href = "/sign-in";
+            window.location.href = "/";
           }, 1200);
         } else {
-          showThanks("Signed in. Welcome back.");
+          var found = users.filter(function (u) {
+            return u.email === email && u.password === password;
+          })[0];
+          if (!found) {
+            setFormStatus(
+              form,
+              users.some(function (u) { return u.email === email; })
+                ? "Incorrect password. Please try again."
+                : "No account found for that email. Please create an account.",
+              "is-error"
+            );
+            return;
+          }
+          setSession(found);
+          updateAccountLinks();
+          setFormStatus(form, "Signed in.", "is-success");
+          showThanks("Signed in. Welcome back" + (found.name ? ", " + found.name : "") + ".");
           setTimeout(function () {
             window.location.href = "/";
           }, 1200);
@@ -1586,6 +1960,59 @@
   function initPdp() {
     var root = document.querySelector("[data-pdp]");
     if (!root) return;
+
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get("id") || root.getAttribute("data-pdp-id") || "";
+    var catalog = getCatalogItem(id);
+    var preview = null;
+    try {
+      preview = JSON.parse(sessionStorage.getItem("alton-pdp-preview") || "null");
+    } catch (e) {
+      preview = null;
+    }
+    if (!catalog && preview && preview.id && preview.id === id) {
+      catalog = {
+        title: preview.title,
+        price: preview.price,
+        image: preview.image,
+        meta: preview.meta || "",
+        category: /gift/i.test(window.location.pathname) ? "Gift Boxes" : "Shop",
+        kind: /gift/i.test(window.location.pathname) ? "gift" : "product",
+        desc: ""
+      };
+    }
+
+    if (catalog) {
+      if (id) root.setAttribute("data-pdp-id", id);
+      root.setAttribute("data-pdp-title", catalog.title);
+      root.setAttribute("data-pdp-price", String(catalog.price));
+      if (catalog.image) root.setAttribute("data-pdp-image", catalog.image);
+      if (catalog.meta) root.setAttribute("data-pdp-meta", catalog.meta);
+      var base = catalog.kind === "gift" ? "/gift-details" : "/product";
+      root.setAttribute("data-pdp-href", base + "?id=" + encodeURIComponent(id || slugify(catalog.title)));
+
+      var titleEl = root.querySelector("#pdp-title, #gift-pdp-title, .pdp-info h1");
+      if (titleEl) titleEl.textContent = catalog.title;
+      var priceEl = root.querySelector(".pdp-info__price");
+      if (priceEl) priceEl.textContent = "$" + Number(catalog.price).toFixed(0);
+      var catEl = root.querySelector(".pdp-info__category");
+      if (catEl && catalog.category) catEl.textContent = catalog.category;
+      var descEl = root.querySelector(".pdp-info__desc");
+      if (descEl && catalog.desc) descEl.textContent = catalog.desc;
+      var crumb = root.querySelector(".pdp-breadcrumb [aria-current='page']");
+      if (crumb) crumb.textContent = catalog.title;
+      var mainImg = root.querySelector("[data-pdp-main-image]");
+      if (mainImg && catalog.image) {
+        mainImg.src = catalog.image;
+        mainImg.alt = catalog.title;
+      }
+      var firstThumb = root.querySelector("[data-pdp-thumb]");
+      if (firstThumb && catalog.image) {
+        firstThumb.setAttribute("data-pdp-thumb", catalog.image);
+        var thumbImg = firstThumb.querySelector("img");
+        if (thumbImg) thumbImg.src = catalog.image;
+      }
+    }
 
     initQtyControls(root);
 
@@ -1616,11 +2043,13 @@
     if (addBtn && addBtn.dataset.boundAddCart !== "1") {
       addBtn.dataset.boundAddCart = "1";
       addBtn.addEventListener("click", function () {
+        var pid = root.getAttribute("data-pdp-id") || id || "";
         var title =
           root.getAttribute("data-pdp-title") ||
           (root.querySelector("#pdp-title, #gift-pdp-title")
             ? root.querySelector("#pdp-title, #gift-pdp-title").textContent.trim()
             : "Item");
+        if (!pid) pid = slugify(title);
         var price = parseFloat(root.getAttribute("data-pdp-price")) || 0;
         var image = root.getAttribute("data-pdp-image") || "";
         var meta = root.getAttribute("data-pdp-meta") || "";
@@ -1629,15 +2058,16 @@
         var qtyEl = root.querySelector("[data-pdp-qty] [data-qty-value]");
         var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
         if (qty < 1) qty = 1;
-        var mainImg = root.querySelector("[data-pdp-main-image]");
-        if (mainImg && mainImg.getAttribute("src")) image = mainImg.getAttribute("src");
+        var mainImg2 = root.querySelector("[data-pdp-main-image]");
+        if (mainImg2 && mainImg2.getAttribute("src")) image = mainImg2.getAttribute("src");
         var editUrl =
           root.getAttribute("data-pdp-href") ||
           (/gift-details/i.test(window.location.pathname)
-            ? "/gift-details"
-            : "/product");
+            ? "/gift-details?id=" + encodeURIComponent(pid)
+            : "/product?id=" + encodeURIComponent(pid));
 
         addToOrderCart({
+          id: pid,
           title: title,
           price: price,
           qty: qty,
@@ -1648,11 +2078,24 @@
         window.location.href = "/cart";
       });
     }
+
+    var buildLink = root.querySelector("[data-pdp-build-box]");
+    if (buildLink) {
+      var pid2 = root.getAttribute("data-pdp-id") || id || "";
+      var title2 = root.getAttribute("data-pdp-title") || "";
+      var href = "/build-box";
+      var q = [];
+      if (pid2) q.push("product=" + encodeURIComponent(pid2));
+      if (title2) q.push("title=" + encodeURIComponent(title2));
+      if (q.length) href += "?" + q.join("&");
+      buildLink.setAttribute("href", href);
+    }
   }
 
   ready(function () {
     initAnnouncement();
     initMobileNav();
+    initProductLinks();
     initBuildBox();
     initGiftQty();
     initTestimonials();

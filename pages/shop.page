@@ -73,12 +73,12 @@
   <div class="alton-editable" data-alton-editable>
     <div class="alton-editable__fallback">
   <div class="product-grid">
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Salted Caramel" data-price="28">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Salted Caramel" data-price="28" data-product-id="salted-caramel" data-edit-url="/product?id=salted-caramel">
       <div class="product-card__image"><img src="/assets/images/shop-product-1.png" alt="Salted Caramel" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Salted Caramel</a></h3>
+        <h3 class="product-title"><a href="/product?id=salted-caramel">Salted Caramel</a></h3>
         <p class="product-card__price">$28</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -86,12 +86,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Raspberry Chocolate" data-price="12">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Raspberry Chocolate" data-price="12" data-product-id="raspberry-chocolate" data-edit-url="/product?id=raspberry-chocolate">
       <div class="product-card__image"><img src="/assets/images/shop-product-2.png" alt="Raspberry Chocolate" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Raspberry Chocolate</a></h3>
+        <h3 class="product-title"><a href="/product?id=raspberry-chocolate">Raspberry Chocolate</a></h3>
         <p class="product-card__price">$12</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -99,12 +99,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Passion Fruit Ganache" data-price="16">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Passion Fruit Ganache" data-price="16" data-product-id="passion-fruit-ganache" data-edit-url="/product?id=passion-fruit-ganache">
       <div class="product-card__image"><img src="/assets/images/shop-product-3.png" alt="Passion Fruit Ganache" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Passion Fruit Ganache</a></h3>
+        <h3 class="product-title"><a href="/product?id=passion-fruit-ganache">Passion Fruit Ganache</a></h3>
         <p class="product-card__price">$16</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -112,12 +112,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Pistachio Praline" data-price="14">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Pistachio Praline" data-price="14" data-product-id="pistachio-praline" data-edit-url="/product?id=pistachio-praline">
       <div class="product-card__image"><img src="/assets/images/shop-product-4.png" alt="Pistachio Praline" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Pistachio Praline</a></h3>
+        <h3 class="product-title"><a href="/product?id=pistachio-praline">Pistachio Praline</a></h3>
         <p class="product-card__price">$14</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -125,12 +125,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Hazelnut Praline" data-price="28">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Hazelnut Praline" data-price="28" data-product-id="hazelnut-praline" data-edit-url="/product?id=hazelnut-praline">
       <div class="product-card__image"><img src="/assets/images/shop-product-5.png" alt="Hazelnut Praline" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Hazelnut Praline</a></h3>
+        <h3 class="product-title"><a href="/product?id=hazelnut-praline">Hazelnut Praline</a></h3>
         <p class="product-card__price">$28</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -138,12 +138,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Coconut Ganache" data-price="12">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Coconut Ganache" data-price="12" data-product-id="coconut-ganache" data-edit-url="/product?id=coconut-ganache">
       <div class="product-card__image"><img src="/assets/images/shop-product-6.png" alt="Coconut Ganache" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Coconut Ganache</a></h3>
+        <h3 class="product-title"><a href="/product?id=coconut-ganache">Coconut Ganache</a></h3>
         <p class="product-card__price">$12</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -151,12 +151,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Blueberry Vanilla Ganache" data-price="16">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Blueberry Vanilla Ganache" data-price="16" data-product-id="blueberry-vanilla-ganache" data-edit-url="/product?id=blueberry-vanilla-ganache">
       <div class="product-card__image"><img src="/assets/images/shop-product-7.png" alt="Blueberry Vanilla Ganache" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Blueberry Vanilla Ganache</a></h3>
+        <h3 class="product-title"><a href="/product?id=blueberry-vanilla-ganache">Blueberry Vanilla Ganache</a></h3>
         <p class="product-card__price">$16</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -164,12 +164,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bonbons" data-title="Mint Dark Chocolate" data-price="14">
+    <article class="product-card" data-shop-product data-category="bonbons" data-title="Mint Dark Chocolate" data-price="14" data-product-id="mint-dark-chocolate" data-edit-url="/product?id=mint-dark-chocolate">
       <div class="product-card__image"><img src="/assets/images/shop-product-8.png" alt="Mint Dark Chocolate" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Mint Dark Chocolate</a></h3>
+        <h3 class="product-title"><a href="/product?id=mint-dark-chocolate">Mint Dark Chocolate</a></h3>
         <p class="product-card__price">$14</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -178,12 +178,12 @@
       </div>
     </article>
 
-    <article class="product-card" data-shop-product data-category="bars" data-title="Artisan Chocolate Bar" data-price="12" hidden>
+    <article class="product-card" data-shop-product data-category="bars" data-title="Artisan Chocolate Bar" data-price="12" hidden data-product-id="artisan-chocolate-bar" data-edit-url="/product?id=artisan-chocolate-bar">
       <div class="product-card__image"><img src="/assets/images/product-bar.png" alt="Artisan Chocolate Bar" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Artisan Chocolate Bar</a></h3>
+        <h3 class="product-title"><a href="/product?id=artisan-chocolate-bar">Artisan Chocolate Bar</a></h3>
         <p class="product-card__price">$12</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -191,12 +191,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bars" data-title="Sea Salt Chocolate Bar Set" data-price="24" hidden>
+    <article class="product-card" data-shop-product data-category="bars" data-title="Sea Salt Chocolate Bar Set" data-price="24" hidden data-product-id="sea-salt-chocolate-bar-set" data-edit-url="/product?id=sea-salt-chocolate-bar-set">
       <div class="product-card__image"><img src="/assets/images/gift-prod-3.png" alt="Sea Salt Chocolate Bar Set" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Sea Salt Chocolate Bar Set</a></h3>
+        <h3 class="product-title"><a href="/product?id=sea-salt-chocolate-bar-set">Sea Salt Chocolate Bar Set</a></h3>
         <p class="product-card__price">$24</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -205,12 +205,12 @@
       </div>
     </article>
 
-    <article class="product-card" data-shop-product data-category="bark" data-title="Chocolate Bark Box" data-price="29" hidden>
+    <article class="product-card" data-shop-product data-category="bark" data-title="Chocolate Bark Box" data-price="29" hidden data-product-id="chocolate-bark-box" data-edit-url="/product?id=chocolate-bark-box">
       <div class="product-card__image"><img src="/assets/images/gift-coll-2.png" alt="Chocolate Bark Box" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Chocolate Bark Box</a></h3>
+        <h3 class="product-title"><a href="/product?id=chocolate-bark-box">Chocolate Bark Box</a></h3>
         <p class="product-card__price">$29</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -218,12 +218,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="bark" data-title="Dark &amp; White Bark Assortment" data-price="28" hidden>
+    <article class="product-card" data-shop-product data-category="bark" data-title="Dark &amp; White Bark Assortment" data-price="28" hidden data-product-id="dark-and-white-bark-assortment" data-edit-url="/product?id=dark-and-white-bark-assortment">
       <div class="product-card__image"><img src="/assets/images/gift-prod-8.png" alt="Dark and White Bark" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Dark &amp; White Bark Assortment</a></h3>
+        <h3 class="product-title"><a href="/product?id=dark-and-white-bark-assortment">Dark &amp; White Bark Assortment</a></h3>
         <p class="product-card__price">$28</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -232,12 +232,12 @@
       </div>
     </article>
 
-    <article class="product-card" data-shop-product data-category="caramels" data-title="Sea Salt Caramels" data-price="34" hidden>
+    <article class="product-card" data-shop-product data-category="caramels" data-title="Sea Salt Caramels" data-price="34" hidden data-product-id="sea-salt-caramels" data-edit-url="/product?id=sea-salt-caramels">
       <div class="product-card__image"><img src="/assets/images/gift-coll-3.png" alt="Sea Salt Caramels" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Sea Salt Caramels</a></h3>
+        <h3 class="product-title"><a href="/product?id=sea-salt-caramels">Sea Salt Caramels</a></h3>
         <p class="product-card__price">$34</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -245,12 +245,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="caramels" data-title="Sea Salt Caramel Gift Box" data-price="28" hidden>
+    <article class="product-card" data-shop-product data-category="caramels" data-title="Sea Salt Caramel Gift Box" data-price="28" hidden data-product-id="sea-salt-caramel-gift-box" data-edit-url="/product?id=sea-salt-caramel-gift-box">
       <div class="product-card__image"><img src="/assets/images/gift-prod-5.png" alt="Sea Salt Caramel Gift Box" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Sea Salt Caramel Gift Box</a></h3>
+        <h3 class="product-title"><a href="/product?id=sea-salt-caramel-gift-box">Sea Salt Caramel Gift Box</a></h3>
         <p class="product-card__price">$28</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -259,12 +259,12 @@
       </div>
     </article>
 
-    <article class="product-card" data-shop-product data-category="toffee" data-title="Classic English Toffee" data-price="28" hidden>
+    <article class="product-card" data-shop-product data-category="toffee" data-title="Classic English Toffee" data-price="28" hidden data-product-id="classic-english-toffee" data-edit-url="/product?id=classic-english-toffee">
       <div class="product-card__image"><img src="/assets/images/gift-prod-4.png" alt="Classic English Toffee" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Classic English Toffee</a></h3>
+        <h3 class="product-title"><a href="/product?id=classic-english-toffee">Classic English Toffee</a></h3>
         <p class="product-card__price">$28</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -272,12 +272,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="toffee" data-title="Toffee Collections" data-price="28" hidden>
+    <article class="product-card" data-shop-product data-category="toffee" data-title="Toffee Collections" data-price="28" hidden data-product-id="toffee-collections" data-edit-url="/product?id=toffee-collections">
       <div class="product-card__image"><img src="/assets/images/gift-coll-5.png" alt="Toffee Collections" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Toffee Collections</a></h3>
+        <h3 class="product-title"><a href="/product?id=toffee-collections">Toffee Collections</a></h3>
         <p class="product-card__price">$28</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -286,12 +286,12 @@
       </div>
     </article>
 
-    <article class="product-card" data-shop-product data-category="cookies" data-title="Chocolate Chip Cookies" data-price="34" hidden>
+    <article class="product-card" data-shop-product data-category="cookies" data-title="Chocolate Chip Cookies" data-price="34" hidden data-product-id="chocolate-chip-cookies" data-edit-url="/product?id=chocolate-chip-cookies">
       <div class="product-card__image"><img src="/assets/images/gift-coll-6.png" alt="Chocolate Chip Cookies" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Chocolate Chip Cookies</a></h3>
+        <h3 class="product-title"><a href="/product?id=chocolate-chip-cookies">Chocolate Chip Cookies</a></h3>
         <p class="product-card__price">$34</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
@@ -299,12 +299,12 @@
         <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
       </div>
     </article>
-    <article class="product-card" data-shop-product data-category="cookies" data-title="Chocolate Cookie Collection" data-price="24" hidden>
+    <article class="product-card" data-shop-product data-category="cookies" data-title="Chocolate Cookie Collection" data-price="24" hidden data-product-id="chocolate-cookie-collection" data-edit-url="/product?id=chocolate-cookie-collection">
       <div class="product-card__image"><img src="/assets/images/gift-prod-6.png" alt="Chocolate Cookie Collection" loading="lazy"></div>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Chocolate Cookie Collection</a></h3>
+        <h3 class="product-title"><a href="/product?id=chocolate-cookie-collection">Chocolate Cookie Collection</a></h3>
         <p class="product-card__price">$24</p>
-        <div class="qty-control" data-qty>
+        <div class="qty-control" data-qty data-qty-min="1">
           <button type="button" data-qty-minus aria-label="Decrease"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>
           <span class="qty-control__value" data-qty-value>1</span>
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>

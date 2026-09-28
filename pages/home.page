@@ -97,10 +97,10 @@
   <div class="alton-editable" data-alton-editable>
     <div class="alton-editable__fallback">
       <div class="product-grid">
-        <article class="product-card" data-orderable data-shop-product data-title="Bonbon Collection" data-price="28">
+        <article class="product-card" data-orderable data-shop-product data-title="Bonbon Collection" data-price="28" data-product-id="bonbon-collection" data-edit-url="/product?id=bonbon-collection">
           <div class="product-card__image"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></div>
           <div class="product-card__meta">
-            <h3 class="product-title"><a href="/product">Bonbon Collection</a></h3>
+            <h3 class="product-title"><a href="/product?id=bonbon-collection">Bonbon Collection</a></h3>
             <p class="product-card__price">$28</p>
             <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
               <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
@@ -113,10 +113,10 @@
             <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
           </div>
         </article>
-        <article class="product-card" data-orderable data-shop-product data-title="Chocolate Bar" data-price="12">
+        <article class="product-card" data-orderable data-shop-product data-title="Chocolate Bar" data-price="12" data-product-id="chocolate-bar" data-edit-url="/product?id=chocolate-bar">
           <div class="product-card__image"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></div>
           <div class="product-card__meta">
-            <h3 class="product-title"><a href="/product">Chocolate Bar</a></h3>
+            <h3 class="product-title"><a href="/product?id=chocolate-bar">Chocolate Bar</a></h3>
             <p class="product-card__price">$12</p>
             <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
               <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
@@ -129,10 +129,10 @@
             <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
           </div>
         </article>
-        <article class="product-card" data-orderable data-shop-product data-title="Sea Salt Caramels" data-price="16">
+        <article class="product-card" data-orderable data-shop-product data-title="Sea Salt Caramels" data-price="16" data-product-id="sea-salt-caramels" data-edit-url="/product?id=sea-salt-caramels">
           <div class="product-card__image"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></div>
           <div class="product-card__meta">
-            <h3 class="product-title"><a href="/product">Sea Salt Caramels</a></h3>
+            <h3 class="product-title"><a href="/product?id=sea-salt-caramels">Sea Salt Caramels</a></h3>
             <p class="product-card__price">$16</p>
             <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
               <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">
@@ -145,10 +145,10 @@
             <button type="button" class="btn btn--terracotta product-card__order" data-shop-order>Add to Cart</button>
           </div>
         </article>
-        <article class="product-card" data-orderable data-shop-product data-title="Chocolate Cookies" data-price="14">
+        <article class="product-card" data-orderable data-shop-product data-title="Chocolate Cookies" data-price="14" data-product-id="chocolate-cookies" data-edit-url="/product?id=chocolate-cookies">
           <div class="product-card__image"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></div>
           <div class="product-card__meta">
-            <h3 class="product-title"><a href="/product">Chocolate Cookies</a></h3>
+            <h3 class="product-title"><a href="/product?id=chocolate-cookies">Chocolate Cookies</a></h3>
             <p class="product-card__price">$14</p>
             <div class="product-card__rating" aria-label="Rated 4.5 out of 5">
               <img src="/assets/icons/star-filled.svg" alt="" width="24" height="24">

@@ -10,16 +10,16 @@
 
 <header class="site-header" data-site-header>
   <div class="site-header__inner">
-    <div class="alton-editable site-header__search-wrap" data-alton-editable>
-      <div class="alton-editable__fallback">
-        <button type="button" class="site-header__search" data-search-open aria-label="Open search" aria-expanded="false" aria-controls="alton-search">
-          <img src="/assets/icons/search.svg" alt="" width="20" height="20">
-          <span>Search</span>
-        </button>
-      </div>
-      <div class="alton-editable__cms">
-        <squarespace:block-field id="headerSearchLabel" columns="12" label="EDIT: Header Search label (Text / Button)" />
-      </div>
+    <div class="site-header__search-wrap">
+      <button type="button" class="site-header__search" data-search-open aria-label="Open search" aria-expanded="false" aria-controls="alton-search">
+        <img src="/assets/icons/search.svg" alt="" width="20" height="20">
+        <span class="alton-editable" data-alton-editable>
+          <span class="alton-editable__fallback">Search</span>
+          <span class="alton-editable__cms">
+            <squarespace:block-field id="headerSearchLabel" columns="12" label="EDIT: Header Search label (Text / Button)" />
+          </span>
+        </span>
+      </button>
     </div>
 
     <div class="site-header__brand">
@@ -40,7 +40,7 @@
         <span>Cart</span>
         <span class="site-header__cart-count" data-cart-count data-empty="1"></span>
       </a>
-      <a class="site-header__account" href="/sign-in" aria-label="Account">
+      <a class="site-header__account" href="/sign-in" aria-label="Account" data-account-link>
         <img src="/assets/icons/person.svg" alt="" width="20" height="20">
       </a>
       <button type="button" class="site-header__toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -53,6 +53,7 @@
 
   <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
     <squarespace:navigation navigationId="mainNav" template="navigation" />
+    <a class="mobile-nav__account" href="/sign-in" data-mobile-account data-account-link>Account / Sign In</a>
   </div>
 </header>
 
@@ -91,7 +92,7 @@
 
     <div class="alton-editable" data-alton-editable>
       <div class="alton-editable__fallback">
-        <p class="alton-search__hint label" data-search-hint>Search you quiery with space</p>
+        <p class="alton-search__hint label" data-search-hint>Search your query — use spaces between words</p>
       </div>
       <div class="alton-editable__cms">
         <squarespace:block-field id="searchModalHint" columns="12" label="EDIT: Search hint text" />

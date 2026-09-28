@@ -247,6 +247,10 @@
             <label for="bb-message">Message</label>
             <textarea id="bb-message" name="message" rows="4"></textarea>
           </div>
+          <div class="form-field full">
+            <button type="submit" class="btn btn--terracotta" data-buildbox-submit>Place Build-a-Box Order</button>
+          </div>
+          <p class="form-status full" data-form-status hidden role="status" aria-live="polite"></p>
           <p class="body-lg full" style="font-size: 14px; color: var(--color-muted);">
             Replace this form with a Squarespace Form Block below for production submissions, or connect Build Box to Commerce Product Options.
           </p>

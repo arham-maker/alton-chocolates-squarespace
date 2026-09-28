@@ -1,6 +1,6 @@
 <!-- Product / Chocolate Details PDP -->
 
-<section class="pdp section" aria-labelledby="pdp-title" data-pdp data-pdp-href="/product" data-pdp-title="Sea Salt Chocolate Bar" data-pdp-price="12" data-pdp-image="/assets/images/product-detail-bar.png" data-pdp-meta="Mostly Dark · 70g">
+<section class="pdp section" aria-labelledby="pdp-title" data-pdp data-pdp-id="sea-salt-chocolate-bar" data-pdp-href="/product?id=sea-salt-chocolate-bar" data-pdp-title="Sea Salt Chocolate Bar" data-pdp-price="12" data-pdp-image="/assets/images/product-detail-bar.png" data-pdp-meta="Mostly Dark · 70g">
   <nav class="pdp-breadcrumb label" aria-label="Breadcrumb">
     <a href="/shop">Shop</a>
     <span aria-hidden="true">/</span>
@@ -132,30 +132,30 @@
   </div>
   <div class="product-grid">
     <article class="product-card">
-      <a class="product-card__image" href="/product"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></a>
+      <a class="product-card__image" href="/product?id=bonbon-collection"><img src="/assets/images/product-bonbon.png" alt="Bonbon Collection" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Bonbon Collection</a></h3>
+        <h3 class="product-title"><a href="/product?id=bonbon-collection">Bonbon Collection</a></h3>
         <p class="product-card__price">$28</p>
       </div>
     </article>
     <article class="product-card">
-      <a class="product-card__image" href="/product"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></a>
+      <a class="product-card__image" href="/product?id=chocolate-bar"><img src="/assets/images/product-bar.png" alt="Chocolate Bar" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Chocolate Bar</a></h3>
+        <h3 class="product-title"><a href="/product?id=chocolate-bar">Chocolate Bar</a></h3>
         <p class="product-card__price">$12</p>
       </div>
     </article>
     <article class="product-card">
-      <a class="product-card__image" href="/product"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></a>
+      <a class="product-card__image" href="/product?id=sea-salt-caramels"><img src="/assets/images/product-caramels.png" alt="Sea Salt Caramels" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Sea Salt Caramels</a></h3>
+        <h3 class="product-title"><a href="/product?id=sea-salt-caramels">Sea Salt Caramels</a></h3>
         <p class="product-card__price">$16</p>
       </div>
     </article>
     <article class="product-card">
-      <a class="product-card__image" href="/product"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></a>
+      <a class="product-card__image" href="/product?id=chocolate-cookies"><img src="/assets/images/product-cookies.png" alt="Chocolate Cookies" loading="lazy"></a>
       <div class="product-card__meta">
-        <h3 class="product-title"><a href="/product">Chocolate Cookies</a></h3>
+        <h3 class="product-title"><a href="/product?id=chocolate-cookies">Chocolate Cookies</a></h3>
         <p class="product-card__price">$14</p>
       </div>
     </article>
