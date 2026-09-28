@@ -4021,7 +4021,9 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   gap: 15px;
 }
 
-.faq-item {`r`n  border: 0;`r`n  background: #FFFFFF;
+.faq-item {
+  border: 0;
+  background: #FFFFFF;
   border-radius: 10px;
 }
 
