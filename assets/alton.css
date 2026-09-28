@@ -3275,6 +3275,18 @@ body.alton-custom-cart .cart-empty {
   display: none !important;
 }
 
+html.alton-custom-cart .alton-hide-sqs-cart,
+body.alton-custom-cart .alton-hide-sqs-cart,
+.alton-hide-sqs-cart {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
 html.alton-custom-checkout .sqs-checkout,
 html.alton-custom-checkout .Checkout,
 html.alton-custom-checkout [class*="sqs-checkout"],

@@ -1610,26 +1610,61 @@
     return /\/check-?out$/i.test(sitePath());
   }
 
+  function findNativeCartShell(el) {
+    var cur = el;
+    for (var i = 0; i < 10 && cur && cur !== document.body; i++) {
+      if (cur.closest && cur.closest("[data-cart-page], [data-checkout-page], .alton-cart-bridge, .alton-checkout-bridge, .site-header, .site-footer, .faq-section, .newsletter, .contact-section, [data-announcement]")) {
+        return null;
+      }
+      var text = String(cur.textContent || "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
+      var hasEmpty =
+        text.indexOf("nothing in your shopping cart") !== -1 ||
+        (text.indexOf("shopping cart") !== -1 && text.indexOf("continue shopping") !== -1);
+      if (hasEmpty && text.length < 800) return cur;
+      cur = cur.parentElement;
+    }
+    return (
+      el.closest(
+        ".sqs-block, .sqs-col, .sqs-layout, .sqs-row, section, article, .row, .cart, [class*='Cart'], [class*='cart']"
+      ) || el
+    );
+  }
+
   function hideNativeSquarespaceCart(main) {
-    if (!main) return;
+    var root = main || document.body;
     document.documentElement.classList.add("alton-custom-cart");
     document.body.classList.add("alton-custom-cart");
+
     try {
-      main
+      root
         .querySelectorAll(
-          ".sqs-cart-container, .Cart, .cart-wrapper, .empty-cart, .cart-empty, [class*='cartEmpty'], [class*='Cart-empty']"
+          ".sqs-cart-container, .Cart, .cart-wrapper, .empty-cart, .cart-empty, .Cart-empty, .cart-empty-message, [class*='cartEmpty'], [class*='Cart-empty'], [class*='empty-cart'], [data-cart-empty], .sqs-widgets-cart"
         )
         .forEach(function (el) {
-          if (el.closest("[data-cart-page], .alton-cart-bridge")) return;
+          if (el.closest("[data-cart-page], .alton-cart-bridge, [data-checkout-page], .alton-checkout-bridge")) {
+            return;
+          }
+          el.classList.add("alton-hide-sqs-cart");
           el.setAttribute("hidden", "");
           el.style.setProperty("display", "none", "important");
         });
     } catch (e) {}
 
     Array.prototype.slice
-      .call(main.querySelectorAll("h1, h2, p, a, button, .sqs-block-button-element"))
+      .call(
+        root.querySelectorAll(
+          "h1, h2, h3, p, a, button, .sqs-block-button-element, .sqs-block-button"
+        )
+      )
       .forEach(function (el) {
-        if (el.closest("[data-cart-page], .alton-cart-bridge, [data-checkout-page], .alton-checkout-bridge")) {
+        if (
+          el.closest(
+            "[data-cart-page], .alton-cart-bridge, [data-checkout-page], .alton-checkout-bridge, .site-header, .site-footer, .faq-section, .newsletter, .contact-section, .mobile-nav, .alton-search"
+          )
+        ) {
           return;
         }
         var t = String(el.textContent || "")
@@ -1641,13 +1676,42 @@
           t.indexOf("nothing in your shopping cart") !== -1 ||
           t === "continue shopping"
         ) {
-          var block =
-            el.closest(".sqs-block, .sqs-col, section, article, .row, .cart") || el;
-          if (block.closest("[data-cart-page], .alton-cart-bridge")) return;
+          var block = findNativeCartShell(el);
+          if (!block) return;
+          block.classList.add("alton-hide-sqs-cart");
           block.setAttribute("hidden", "");
           block.style.setProperty("display", "none", "important");
         }
       });
+  }
+
+  function watchAndHideNativeCart() {
+    if (!isSquarespaceCartPath()) return;
+    var main =
+      document.querySelector("main.alton-main, main#page, #page, .alton-main") ||
+      document.body;
+    hideNativeSquarespaceCart(main);
+
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries += 1;
+      hideNativeSquarespaceCart(main);
+      if (tries >= 20) clearInterval(timer);
+    }, 400);
+
+    if (window.MutationObserver) {
+      var obs = new MutationObserver(function () {
+        hideNativeSquarespaceCart(main);
+      });
+      try {
+        obs.observe(main, { childList: true, subtree: true });
+        setTimeout(function () {
+          try {
+            obs.disconnect();
+          } catch (e) {}
+        }, 12000);
+      } catch (e) {}
+    }
   }
 
   function hideNativeSquarespaceCheckout(main) {
@@ -1710,20 +1774,13 @@
       return;
     }
 
-    // Prefer dedicated /checkout URL when it already hosts Alton checkout
-    if (isAltonCheckoutPath() && document.querySelector("[data-checkout-page]")) {
-      document.querySelector("[data-checkout-page]").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-      return;
-    }
-
-    // Reliable path: mount checkout in-place (Squarespace system /checkout often blocks custom pages)
     var cartRoot = document.querySelector("[data-cart-page]");
     var main =
       document.querySelector("main.alton-main, main#page, #page, .alton-main") ||
       document.body;
+
+    hideNativeSquarespaceCart(main);
+    hideNativeSquarespaceCheckout(main);
 
     var existing = document.querySelector("[data-checkout-page]");
     if (existing) {
@@ -1733,6 +1790,12 @@
       }
       existing.removeAttribute("hidden");
       existing.style.removeProperty("display");
+      var existingBridge = existing.closest(".alton-checkout-bridge") || existing;
+      existingBridge.removeAttribute("hidden");
+      existingBridge.style.removeProperty("display");
+      try {
+        history.replaceState({ altonCheckout: 1 }, "", "/cart#checkout");
+      } catch (e) {}
       existing.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
@@ -1741,7 +1804,6 @@
       cartRoot.setAttribute("hidden", "");
       cartRoot.style.setProperty("display", "none", "important");
     }
-    hideNativeSquarespaceCheckout(main);
 
     var wrap = document.createElement("div");
     wrap.className = "alton-checkout-bridge";
@@ -1752,18 +1814,41 @@
       main.insertBefore(wrap, main.firstChild);
     }
 
+    // Stay on /cart — do NOT navigate to system /checkout
     try {
-      history.pushState({ altonCheckout: 1 }, "", "/checkout");
+      history.replaceState({ altonCheckout: 1 }, "", "/cart#checkout");
     } catch (e) {}
 
     var page = wrap.querySelector("[data-checkout-page]");
     if (page) page.removeAttribute("data-checkout-ready");
     initCheckoutPage();
+    hideNativeSquarespaceCart(main);
     wrap.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function bindCartCheckoutDelegation() {
+    if (document.documentElement.getAttribute("data-alton-checkout-bound") === "1") {
+      return;
+    }
+    document.documentElement.setAttribute("data-alton-checkout-bound", "1");
+    document.addEventListener(
+      "click",
+      function (e) {
+        var btn = e.target && e.target.closest ? e.target.closest("[data-cart-checkout]") : null;
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof e.stopImmediatePropagation === "function") e.stopImmediatePropagation();
+        openAltonCheckout();
+      },
+      true
+    );
   }
 
   function initCartPage() {
     mountAltonCartOnNativePage();
+    watchAndHideNativeCart();
+    bindCartCheckoutDelegation();
     var root = document.querySelector("[data-cart-page]");
     if (!root) return;
     if (root.getAttribute("data-cart-ready") === "1") return;
@@ -1835,6 +1920,7 @@
           var desc = item.desc
             ? '<p class="cart-line__desc">' + escapeHtml(item.desc) + "</p>"
             : "";
+          var qty = parseInt(item.qty, 10) || 0;
           return (
             '<article class="cart-line" data-cart-index="' +
             idx +
@@ -1850,6 +1936,9 @@
             (item.meta
               ? '<p class="cart-line__meta">' + escapeHtml(item.meta) + "</p>"
               : "") +
+            '<p class="cart-line__meta">Quantity: ' +
+            qty +
+            "</p>" +
             "</div>" +
             '<div class="cart-line__side">' +
             '<span class="cart-line__price">' +
@@ -1886,6 +1975,7 @@
     }
 
     if (checkoutBtn) {
+      // Primary binding; capture-phase delegation is also registered
       checkoutBtn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -1893,9 +1983,13 @@
       });
     }
 
-    // Support /cart?checkout=1 deep link
+    // Support /cart?checkout=1 or #checkout deep link
     try {
-      if (/[?&]checkout=1(?:&|$)/.test(window.location.search) && orderCart.length) {
+      if (
+        (/[?&]checkout=1(?:&|$)/.test(window.location.search) ||
+          /#checkout$/i.test(window.location.hash)) &&
+        orderCart.length
+      ) {
         setTimeout(openAltonCheckout, 50);
       }
     } catch (e) {}
