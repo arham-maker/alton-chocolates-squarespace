@@ -4,14 +4,18 @@
   <div class="cart-page__header">
     <div class="alton-editable" data-alton-editable>
       <div class="alton-editable__fallback">
-        <h1 id="cart-heading" class="heading-lg">Your Cart</h1>
-        <p class="label cart-page__count" data-cart-heading-count>(0 Products)</p>
+        <h1 id="cart-heading" class="heading-lg cart-page__title">
+          Your Cart <span class="cart-page__count" data-cart-heading-count>(0 Products)</span>
+        </h1>
       </div>
       <div class="alton-editable__cms">
         <squarespace:block-field id="cartHeadingEdit" columns="12" label="EDIT: Cart heading" />
       </div>
     </div>
-    <button type="button" class="btn btn--text cart-page__clear" data-cart-clear>Clear All</button>
+    <button type="button" class="btn btn--text cart-page__clear" data-cart-clear>
+      <img src="/assets/icons/cancel.svg" alt="" width="16" height="16">
+      <span>Clear All</span>
+    </button>
   </div>
 
   <div class="cart-layout">
@@ -34,7 +38,7 @@
       <div class="cart-summary__rows">
         <div class="cart-summary__row">
           <span>Subtotal</span>
-          <span data-cart-subtotal>$0.00</span>
+          <span data-cart-subtotal>$0</span>
         </div>
         <div class="cart-summary__row">
           <span>Tax</span>
@@ -42,12 +46,11 @@
         </div>
         <div class="cart-summary__row cart-summary__row--total">
           <span>Total</span>
-          <span data-cart-total>$0.00</span>
+          <span data-cart-total>$0</span>
         </div>
       </div>
 
-      <a class="btn btn--terracotta cart-summary__cta" href="/checkout" data-cart-checkout>Proceed to Checkout</a>
-      <a class="btn btn--text cart-summary__continue" href="/shop">Continue Shopping</a>
+      <button type="button" class="btn btn--terracotta cart-summary__cta" data-cart-checkout>Proceed to Checkout →</button>
     </aside>
   </div>
 </section>

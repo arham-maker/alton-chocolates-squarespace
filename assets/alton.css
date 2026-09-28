@@ -3292,9 +3292,35 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
   margin-bottom: 40px;
 }
 
+.cart-page__title {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 14px;
+}
+
 .cart-page__count {
-  margin-top: 10px !important;
+  margin: 0 !important;
   color: #5D5958 !important;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 0.55em;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.cart-page__clear {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  color: #b42318 !important;
+}
+
+.cart-page__clear img {
+  width: 16px;
+  height: 16px;
+  filter: invert(18%) sepia(84%) saturate(2878%) hue-rotate(346deg) brightness(90%) contrast(95%);
 }
 
 .cart-layout,
@@ -3455,6 +3481,8 @@ body.alton-custom-checkout [class*="sqs-checkout"] {
 .cart-summary__cta {
   width: 100%;
   text-align: center;
+  border: 0;
+  cursor: pointer;
 }
 
 .cart-summary__cta[aria-disabled="true"] {

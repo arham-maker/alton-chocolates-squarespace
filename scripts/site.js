@@ -1518,11 +1518,9 @@
     return (
       '<section class="cart-page section" aria-labelledby="cart-heading" data-cart-page data-cart-bridged="1">' +
       '<div class="cart-page__header">' +
-      "<div>" +
-      '<h1 id="cart-heading" class="heading-lg">Your Cart</h1>' +
-      '<p class="label cart-page__count" data-cart-heading-count>(0 Products)</p>' +
-      "</div>" +
-      '<button type="button" class="btn btn--text cart-page__clear" data-cart-clear>Clear All</button>' +
+      '<h1 id="cart-heading" class="heading-lg cart-page__title">Your Cart <span class="cart-page__count" data-cart-heading-count>(0 Products)</span></h1>' +
+      '<button type="button" class="btn btn--text cart-page__clear" data-cart-clear>' +
+      '<img src="/assets/icons/cancel.svg" alt="" width="16" height="16"><span>Clear All</span></button>' +
       "</div>" +
       '<div class="cart-layout">' +
       '<div class="cart-lines" data-cart-lines>' +
@@ -1532,12 +1530,11 @@
       '<h2 id="cart-summary-heading" class="cart-summary__title">Order Summary</h2>' +
       '<div class="cart-summary__items" data-cart-summary-items></div>' +
       '<div class="cart-summary__rows">' +
-      '<div class="cart-summary__row"><span>Subtotal</span><span data-cart-subtotal>$0.00</span></div>' +
+      '<div class="cart-summary__row"><span>Subtotal</span><span data-cart-subtotal>$0</span></div>' +
       '<div class="cart-summary__row"><span>Tax</span><span data-cart-tax>5%</span></div>' +
-      '<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span data-cart-total>$0.00</span></div>' +
+      '<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span data-cart-total>$0</span></div>' +
       "</div>" +
-      '<a class="btn btn--terracotta cart-summary__cta" href="/checkout" data-cart-checkout>Proceed to Checkout</a>' +
-      '<a class="btn btn--text cart-summary__continue" href="/shop">Continue Shopping</a>' +
+      '<button type="button" class="btn btn--terracotta cart-summary__cta" data-cart-checkout>Proceed to Checkout →</button>' +
       "</aside></div></section>"
     );
   }
@@ -1703,7 +1700,66 @@
   }
 
   function goToCheckout() {
-    window.location.assign("/checkout");
+    openAltonCheckout();
+  }
+
+  function openAltonCheckout() {
+    loadOrderCart();
+    if (!orderCart.length) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    // Prefer dedicated /checkout URL when it already hosts Alton checkout
+    if (isAltonCheckoutPath() && document.querySelector("[data-checkout-page]")) {
+      document.querySelector("[data-checkout-page]").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+      return;
+    }
+
+    // Reliable path: mount checkout in-place (Squarespace system /checkout often blocks custom pages)
+    var cartRoot = document.querySelector("[data-cart-page]");
+    var main =
+      document.querySelector("main.alton-main, main#page, #page, .alton-main") ||
+      document.body;
+
+    var existing = document.querySelector("[data-checkout-page]");
+    if (existing) {
+      if (cartRoot) {
+        cartRoot.setAttribute("hidden", "");
+        cartRoot.style.setProperty("display", "none", "important");
+      }
+      existing.removeAttribute("hidden");
+      existing.style.removeProperty("display");
+      existing.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (cartRoot) {
+      cartRoot.setAttribute("hidden", "");
+      cartRoot.style.setProperty("display", "none", "important");
+    }
+    hideNativeSquarespaceCheckout(main);
+
+    var wrap = document.createElement("div");
+    wrap.className = "alton-checkout-bridge";
+    wrap.innerHTML = getAltonCheckoutMarkup();
+    if (cartRoot && cartRoot.parentNode) {
+      cartRoot.parentNode.insertBefore(wrap, cartRoot.nextSibling);
+    } else {
+      main.insertBefore(wrap, main.firstChild);
+    }
+
+    try {
+      history.pushState({ altonCheckout: 1 }, "", "/checkout");
+    } catch (e) {}
+
+    var page = wrap.querySelector("[data-checkout-page]");
+    if (page) page.removeAttribute("data-checkout-ready");
+    initCheckoutPage();
+    wrap.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function initCartPage() {
@@ -1730,7 +1786,7 @@
       var tax = orderCart.length ? cartTaxAmount(subtotal) : 0;
       if (countEl) countEl.textContent = "(" + count + " Product" + (count === 1 ? "" : "s") + ")";
       if (subtotalEl) subtotalEl.textContent = money(subtotal);
-      if (taxEl) taxEl.textContent = orderCart.length ? "5%" : "$0.00";
+      if (taxEl) taxEl.textContent = orderCart.length ? "5%" : "$0";
       if (totalEl) totalEl.textContent = money(subtotal + tax);
       updateCartCountBadge();
 
@@ -1776,6 +1832,9 @@
                   ? "/gift-details?id=" + encodeURIComponent(item.id)
                   : "/product?id=" + encodeURIComponent(item.id))
               : "/product");
+          var desc = item.desc
+            ? '<p class="cart-line__desc">' + escapeHtml(item.desc) + "</p>"
+            : "";
           return (
             '<article class="cart-line" data-cart-index="' +
             idx +
@@ -1787,6 +1846,7 @@
             '<h3 class="cart-line__title">' +
             escapeHtml(item.title) +
             "</h3>" +
+            desc +
             (item.meta
               ? '<p class="cart-line__meta">' + escapeHtml(item.meta) + "</p>"
               : "") +
@@ -1826,18 +1886,19 @@
     }
 
     if (checkoutBtn) {
-      checkoutBtn.setAttribute("href", "/checkout");
       checkoutBtn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        loadOrderCart();
-        if (!orderCart.length) {
-          alert("Your cart is empty.");
-          return;
-        }
-        goToCheckout();
+        openAltonCheckout();
       });
     }
+
+    // Support /cart?checkout=1 deep link
+    try {
+      if (/[?&]checkout=1(?:&|$)/.test(window.location.search) && orderCart.length) {
+        setTimeout(openAltonCheckout, 50);
+      }
+    } catch (e) {}
 
     render();
   }
@@ -1946,6 +2007,25 @@
       giftToggle.addEventListener("change", syncGiftPanel);
       syncGiftPanel();
     }
+
+    root.querySelectorAll(".checkout-summary__edit").forEach(function (editLink) {
+      editLink.addEventListener("click", function (e) {
+        var cartRoot = document.querySelector("[data-cart-page]");
+        var checkoutBridge = root.closest(".alton-checkout-bridge") || root;
+        if (!cartRoot) return;
+        e.preventDefault();
+        cartRoot.removeAttribute("hidden");
+        cartRoot.style.removeProperty("display");
+        if (checkoutBridge && checkoutBridge !== cartRoot) {
+          checkoutBridge.setAttribute("hidden", "");
+          checkoutBridge.style.setProperty("display", "none", "important");
+        }
+        try {
+          history.pushState({}, "", "/cart");
+        } catch (err) {}
+        cartRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
 
     root.querySelectorAll("[data-pay-method]").forEach(function (radio) {
       radio.addEventListener("change", function () {
