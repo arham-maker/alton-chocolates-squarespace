@@ -57,19 +57,15 @@
       </div>
 
       <fieldset class="pdp-options">
-        <legend class="label">Chocolate Type</legend>
-        <div class="pdp-options__list" role="radiogroup" aria-label="Chocolate type">
+        <legend class="label">Chocolate type</legend>
+        <div class="pdp-options__list pdp-options__list--radio" role="radiogroup" aria-label="Chocolate type">
           <label class="pdp-options__option is-selected">
-            <input type="radio" name="chocolate_type" value="Mostly Dark" checked data-pdp-type>
-            Mostly Dark
+            <input type="radio" name="chocolate_type" value="Dark Chocolate" checked data-pdp-type>
+            Dark Chocolate
           </label>
           <label class="pdp-options__option">
-            <input type="radio" name="chocolate_type" value="Milk" data-pdp-type>
-            Milk
-          </label>
-          <label class="pdp-options__option">
-            <input type="radio" name="chocolate_type" value="70% Dark" data-pdp-type>
-            70% Dark
+            <input type="radio" name="chocolate_type" value="White Chocolate" data-pdp-type>
+            White Chocolate
           </label>
         </div>
       </fieldset>
@@ -81,7 +77,7 @@
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
         <button type="button" class="btn btn--terracotta" data-pdp-add-cart>Add to Cart</button>
-        <a class="btn btn--olive" href="/build-box" data-pdp-build-box>Add to Build a Box</a>
+        <a class="btn btn--outline" href="/build-box" data-pdp-build-box>Add to Build a Box</a>
       </div>
     </div>
   </div>
@@ -89,27 +85,46 @@
   <div class="pdp-details">
     <div class="alton-editable" data-alton-editable>
       <div class="alton-editable__fallback">
-        <div class="pdp-details__grid">
-          <article>
-            <h2 class="product-title">Details</h2>
-            <p class="body-lg">Single-origin cacao tempered in small batches. Net weight 70g. Best enjoyed within 3 months of purchase.</p>
+        <h2 class="pdp-details__heading">Description</h2>
+        <div class="pdp-details__intro">
+          <p class="label">A classic, reimagined</p>
+          <p class="body-lg">Smooth, full-bodied dark chocolate meets a touch of sea salt in this modern classic. Each bar is crafted with premium cocoa and finished with hand-sprinkled sea salt for the perfect balance of rich and subtle flavors.</p>
+        </div>
+        <div class="pdp-details__columns">
+          <article class="pdp-details__col">
+            <h3 class="label">Product details</h3>
+            <dl class="pdp-spec-list">
+              <div><dt>Chocolate Type</dt><dd>Dark Chocolate</dd></div>
+              <div><dt>Net Weight</dt><dd>3 oz (85 g)</dd></div>
+              <div><dt>Flavor Notes</dt><dd>Rich cocoa, subtle bitterness, hint of sea salt.</dd></div>
+              <div><dt>Texture</dt><dd>Smooth with a delicate crunch</dd></div>
+              <div><dt>Best For</dt><dd>Everyday indulgence, thoughtful gifting</dd></div>
+            </dl>
           </article>
-          <article>
-            <h2 class="product-title">Ingredients</h2>
-            <p class="body-lg">Cacao beans, cane sugar, cocoa butter, sea salt. May contain traces of milk and tree nuts.</p>
+          <article class="pdp-details__col">
+            <h3 class="label">Ingredients</h3>
+            <ul class="pdp-plain-list">
+              <li>Dark chocolate</li>
+              <li>Cocoa mass</li>
+              <li>Cane sugar</li>
+              <li>Cocoa butter</li>
+              <li>Sunflower lecithin</li>
+              <li>Natural vanilla extract</li>
+              <li>Sea salt</li>
+            </ul>
           </article>
-          <article>
-            <h2 class="product-title">Allergens</h2>
-            <p class="body-lg">Produced in a facility that handles dairy, tree nuts, soy, and wheat.</p>
+          <article class="pdp-details__col">
+            <h3 class="label">Allergens</h3>
+            <p class="body-lg">Contains soy. May contain traces of milk, peanuts, tree nuts, wheat, and sesame due to shared production equipment.</p>
           </article>
-          <article>
-            <h2 class="product-title">Shipping</h2>
-            <p class="body-lg">Ships in insulated packaging with cold packs when needed. Free shipping on orders over $75.</p>
-          </article>
+        </div>
+        <div class="pdp-details__shipping">
+          <h3 class="label">Shipping and storage</h3>
+          <p class="body-lg">Orders are carefully packed to protect freshness and typically ship within 1–2 business days. During warmer weather, insulated packaging and cooling materials may be used. Store in a cool, dry place between 60–68°F (16–20°C). Enjoy at room temperature.</p>
         </div>
       </div>
       <div class="alton-editable__cms">
-        <squarespace:block-field id="pdpDetailsEdit" columns="12" label="EDIT: Product details / ingredients / allergens / shipping" />
+        <squarespace:block-field id="pdpDetailsEdit" columns="12" label="EDIT: Product description, details, ingredients, allergens &amp; shipping" />
       </div>
     </div>
   </div>

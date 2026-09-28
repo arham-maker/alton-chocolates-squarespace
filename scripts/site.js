@@ -1478,12 +1478,23 @@
       section.querySelectorAll("[data-faq-item]").forEach(function (item) {
         var trigger = item.querySelector("[data-faq-trigger]");
         var panel = item.querySelector("[data-faq-panel]");
-        if (!trigger || !panel || trigger.dataset.boundFaq === "1") return;
+        if (!trigger || !panel) return;
+        if (trigger.dataset.boundFaq === "1") return;
         trigger.dataset.boundFaq = "1";
         trigger.addEventListener("click", function () {
-          var open = item.classList.toggle("is-open");
-          trigger.setAttribute("aria-expanded", open ? "true" : "false");
-          panel.hidden = !open;
+          var open = item.classList.contains("is-open");
+          section.querySelectorAll("[data-faq-item]").forEach(function (other) {
+            other.classList.remove("is-open");
+            var t = other.querySelector("[data-faq-trigger]");
+            var p = other.querySelector("[data-faq-panel]");
+            if (t) t.setAttribute("aria-expanded", "false");
+            if (p) p.hidden = true;
+          });
+          if (!open) {
+            item.classList.add("is-open");
+            trigger.setAttribute("aria-expanded", "true");
+            panel.hidden = false;
+          }
         });
       });
     });
@@ -1497,15 +1508,20 @@
       .replace(/"/g, "&quot;");
   }
 
+  function cartTaxAmount(subtotal) {
+    return Math.round(subtotal * 0.05 * 100) / 100;
+  }
+
   function initCartPage() {
     var root = document.querySelector("[data-cart-page]");
     if (!root) return;
     loadOrderCart();
 
     var list = root.querySelector("[data-cart-lines]");
-    var empty = root.querySelector("[data-cart-empty]");
     var countEl = root.querySelector("[data-cart-heading-count]");
+    var summaryItems = root.querySelector("[data-cart-summary-items]");
     var subtotalEl = root.querySelector("[data-cart-subtotal]");
+    var taxEl = root.querySelector("[data-cart-tax]");
     var totalEl = root.querySelector("[data-cart-total]");
     var clearBtn = root.querySelector("[data-cart-clear]");
     var checkoutBtn = root.querySelector("[data-cart-checkout]");
@@ -1513,10 +1529,31 @@
     function render() {
       loadOrderCart();
       var count = cartItemCount();
+      var subtotal = cartGrandTotal();
+      var tax = orderCart.length ? cartTaxAmount(subtotal) : 0;
       if (countEl) countEl.textContent = "(" + count + " Product" + (count === 1 ? "" : "s") + ")";
-      if (subtotalEl) subtotalEl.textContent = money(cartGrandTotal());
-      if (totalEl) totalEl.textContent = money(cartGrandTotal());
+      if (subtotalEl) subtotalEl.textContent = money(subtotal);
+      if (taxEl) taxEl.textContent = orderCart.length ? "5%" : "$0.00";
+      if (totalEl) totalEl.textContent = money(subtotal + tax);
       updateCartCountBadge();
+
+      if (summaryItems) {
+        summaryItems.innerHTML = orderCart.length
+          ? orderCart
+              .map(function (item) {
+                var line =
+                  (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0);
+                return (
+                  '<div class="cart-summary__item"><span>' +
+                  escapeHtml(item.title) +
+                  "</span><span>" +
+                  money(line) +
+                  "</span></div>"
+                );
+              })
+              .join("")
+          : "";
+      }
 
       if (!list) return;
 
@@ -1530,15 +1567,15 @@
       if (checkoutBtn) checkoutBtn.removeAttribute("aria-disabled");
       list.innerHTML = orderCart
         .map(function (item, idx) {
-          var img =
-            item.image || "/assets/images/cart-gift-box.png";
+          var img = item.image || "/assets/images/cart-gift-box.png";
           var lineTotal = money(
             (parseFloat(item.price) || 0) * (parseInt(item.qty, 10) || 0)
           );
           var editHref =
             item.editUrl ||
             (item.id
-              ? (/gift/i.test(item.editUrl || "") || (getCatalogItem(item.id) || {}).kind === "gift"
+              ? (/gift/i.test(item.editUrl || "") ||
+                (getCatalogItem(item.id) || {}).kind === "gift"
                   ? "/gift-details?id=" + encodeURIComponent(item.id)
                   : "/product?id=" + encodeURIComponent(item.id))
               : "/product");
@@ -1556,15 +1593,6 @@
             (item.meta
               ? '<p class="cart-line__meta">' + escapeHtml(item.meta) + "</p>"
               : "") +
-            '<div class="qty-control cart-line__qty" data-qty data-qty-min="1" data-cart-qty="' +
-            idx +
-            '">' +
-            '<button type="button" data-qty-minus aria-label="Decrease quantity"><img src="/assets/icons/minus.svg" alt="" width="16" height="16"></button>' +
-            '<span class="qty-control__value" data-qty-value>' +
-            item.qty +
-            "</span>" +
-            '<button type="button" data-qty-plus aria-label="Increase quantity"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>' +
-            "</div>" +
             "</div>" +
             '<div class="cart-line__side">' +
             '<span class="cart-line__price">' +
@@ -1573,27 +1601,14 @@
             '<div class="cart-line__actions">' +
             '<a class="cart-line__btn" href="' +
             escapeHtml(editHref) +
-            '" aria-label="Edit ' +
-            escapeHtml(item.title) +
-            '"><img src="/assets/icons/edit.svg" alt="" width="16" height="16"></a>' +
+            '"><img src="/assets/icons/edit.svg" alt="" width="16" height="16"><span>Edit</span></a>' +
             '<button type="button" class="cart-line__btn" data-cart-remove="' +
             idx +
-            '" aria-label="Remove ' +
-            escapeHtml(item.title) +
-            '"><img src="/assets/icons/delete.svg" alt="" width="16" height="16"></button>' +
+            '"><img src="/assets/icons/delete.svg" alt="" width="16" height="16"><span>Delete</span></button>' +
             "</div></div></article>"
           );
         })
         .join("");
-
-      initQtyControls(list);
-      list.querySelectorAll("[data-cart-qty]").forEach(function (control) {
-        control.addEventListener("qtychange", function (e) {
-          var idx = parseInt(control.getAttribute("data-cart-qty"), 10);
-          setOrderCartQty(idx, e.detail && e.detail.value);
-          render();
-        });
-      });
 
       list.querySelectorAll("[data-cart-remove]").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -1633,6 +1648,7 @@
 
     var itemsEl = root.querySelector("[data-checkout-items]");
     var subtotalEl = root.querySelector("[data-checkout-subtotal]");
+    var taxEl = root.querySelector("[data-checkout-tax]");
     var shippingEl = root.querySelector("[data-checkout-shipping]");
     var totalEl = root.querySelector("[data-checkout-total]");
     var form = root.querySelector("[data-checkout-form]");
@@ -1643,16 +1659,18 @@
     function renderSummary() {
       loadOrderCart();
       var subtotal = cartGrandTotal();
-      var shipping = orderCart.length ? (subtotal >= 75 ? 0 : 8) : 0;
+      var tax = orderCart.length ? cartTaxAmount(subtotal) : 0;
       if (subtotalEl) subtotalEl.textContent = money(subtotal);
+      if (taxEl) taxEl.textContent = orderCart.length ? "5%" : "$0.00";
       if (shippingEl) {
+        var shipping = orderCart.length ? (subtotal >= 75 ? 0 : 8) : 0;
         shippingEl.textContent = !orderCart.length
           ? "$0.00"
           : shipping === 0
             ? "Free"
             : money(shipping);
       }
-      if (totalEl) totalEl.textContent = money(subtotal + shipping);
+      if (totalEl) totalEl.textContent = money(subtotal + tax);
       var submitBtn = form ? form.querySelector('[type="submit"]') : null;
       if (submitBtn) {
         if (!orderCart.length) {
@@ -1737,7 +1755,9 @@
         }
 
         var data = new FormData(form);
-        var total = cartGrandTotal().toFixed(2);
+        var subtotal = cartGrandTotal();
+        var tax = cartTaxAmount(subtotal);
+        var total = (subtotal + tax).toFixed(2);
         var itemLines = orderCart.map(function (item) {
           return (
             "- " +
@@ -1751,19 +1771,28 @@
             (item.price * item.qty).toFixed(2)
           );
         });
+        var fullName = [
+          String(data.get("first_name") || ""),
+          String(data.get("last_name") || "")
+        ]
+          .join(" ")
+          .trim();
         var lines = [
           "New Alton Chocolates checkout order",
           "",
           "Items:",
           itemLines.join("\n"),
           "",
+          "Subtotal: $" + subtotal.toFixed(2),
+          "Tax (5%): $" + tax.toFixed(2),
           "Order total: $" + total,
           "",
           "Contact:",
-          "Name: " + String(data.get("name") || ""),
+          "Name: " + fullName,
           "Email: " + String(data.get("email") || ""),
           "Phone: " + String(data.get("phone") || ""),
           "Address: " + String(data.get("address") || ""),
+          "Apartment: " + String(data.get("apartment") || ""),
           "City: " + String(data.get("city") || ""),
           "State: " + String(data.get("state") || ""),
           "ZIP: " + String(data.get("zip") || ""),
@@ -2029,13 +2058,23 @@
       });
     });
 
-    root.querySelectorAll("[data-pdp-type]").forEach(function (radio) {
+    root.querySelectorAll(".pdp-options__option input[type='radio']").forEach(function (radio) {
       if (radio.dataset.boundType === "1") return;
       radio.dataset.boundType = "1";
       radio.addEventListener("change", function () {
-        root.querySelectorAll(".pdp-options__option").forEach(function (opt) {
+        var group = radio.closest(".pdp-options__list") || root;
+        group.querySelectorAll(".pdp-options__option").forEach(function (opt) {
           opt.classList.toggle("is-selected", opt.querySelector("input") === radio);
         });
+        if (radio.hasAttribute("data-pdp-price")) {
+          var nextPrice = parseFloat(radio.getAttribute("data-pdp-price")) || 0;
+          root.setAttribute("data-pdp-price", String(nextPrice));
+          var priceEl2 = root.querySelector(".pdp-info__price");
+          if (priceEl2) priceEl2.textContent = "$" + nextPrice.toFixed(0);
+        }
+        if (radio.hasAttribute("data-pdp-type")) {
+          root.setAttribute("data-pdp-meta", radio.value);
+        }
       });
     });
 
@@ -2050,11 +2089,17 @@
             ? root.querySelector("#pdp-title, #gift-pdp-title").textContent.trim()
             : "Item");
         if (!pid) pid = slugify(title);
-        var price = parseFloat(root.getAttribute("data-pdp-price")) || 0;
+        var priceRadio = root.querySelector("input[data-pdp-price]:checked");
+        var price = priceRadio
+          ? parseFloat(priceRadio.getAttribute("data-pdp-price")) || 0
+          : parseFloat(root.getAttribute("data-pdp-price")) || 0;
         var image = root.getAttribute("data-pdp-image") || "";
-        var meta = root.getAttribute("data-pdp-meta") || "";
+        var metaParts = [];
+        var sizeRadio = root.querySelector("[name='box_size']:checked");
         var typeRadio = root.querySelector("[data-pdp-type]:checked");
-        if (typeRadio) meta = typeRadio.value;
+        if (sizeRadio) metaParts.push(sizeRadio.value);
+        if (typeRadio) metaParts.push(typeRadio.value);
+        var meta = metaParts.join(" · ") || root.getAttribute("data-pdp-meta") || "";
         var qtyEl = root.querySelector("[data-pdp-qty] [data-qty-value]");
         var qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
         if (qty < 1) qty = 1;

@@ -1,4 +1,4 @@
-<!-- Cart page — Figma commerce flow -->
+<!-- Cart page — Figma 572:2010 -->
 
 <section class="cart-page section" aria-labelledby="cart-heading" data-cart-page>
   <div class="cart-page__header">
@@ -29,14 +29,16 @@
         </div>
       </div>
 
+      <div class="cart-summary__items" data-cart-summary-items></div>
+
       <div class="cart-summary__rows">
         <div class="cart-summary__row">
           <span>Subtotal</span>
           <span data-cart-subtotal>$0.00</span>
         </div>
         <div class="cart-summary__row">
-          <span>Shipping</span>
-          <span data-cart-shipping>Calculated at checkout</span>
+          <span>Tax</span>
+          <span data-cart-tax>5%</span>
         </div>
         <div class="cart-summary__row cart-summary__row--total">
           <span>Total</span>
@@ -45,7 +47,6 @@
       </div>
 
       <a class="btn btn--terracotta cart-summary__cta" href="/checkout" data-cart-checkout>Proceed to Checkout</a>
-      <button type="button" class="btn btn--olive cart-summary__cta" data-order-open style="width:100%;margin-top:10px;">Quick Order Form</button>
       <a class="btn btn--text cart-summary__continue" href="/shop">Continue Shopping</a>
     </aside>
   </div>

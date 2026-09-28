@@ -57,19 +57,37 @@
       </div>
 
       <fieldset class="pdp-options">
-        <legend class="label">Box Style</legend>
-        <div class="pdp-options__list" role="radiogroup" aria-label="Box style">
+        <legend class="label">Choose your box size</legend>
+        <div class="pdp-options__list pdp-options__list--radio" role="radiogroup" aria-label="Box size" data-gift-size>
+          <label class="pdp-options__option">
+            <input type="radio" name="box_size" value="6 Pieces" data-pdp-price="28">
+            6 Pieces — $28.00
+          </label>
           <label class="pdp-options__option is-selected">
-            <input type="radio" name="box_style" value="Mostly Dark · 12 pieces" checked data-pdp-type>
-            Mostly Dark · 12 pieces
+            <input type="radio" name="box_size" value="12 Pieces" checked data-pdp-price="48">
+            12 Pieces — $48.00
           </label>
           <label class="pdp-options__option">
-            <input type="radio" name="box_style" value="Assorted · 12 pieces" data-pdp-type>
-            Assorted · 12 pieces
+            <input type="radio" name="box_size" value="24 Pieces" data-pdp-price="82">
+            24 Pieces — $82.00
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="pdp-options">
+        <legend class="label">Chocolate preference</legend>
+        <div class="pdp-options__list pdp-options__list--radio" role="radiogroup" aria-label="Chocolate preference">
+          <label class="pdp-options__option">
+            <input type="radio" name="box_pref" value="Assorted" data-pdp-type>
+            Assorted
+          </label>
+          <label class="pdp-options__option is-selected">
+            <input type="radio" name="box_pref" value="Mostly Dark" checked data-pdp-type>
+            Mostly Dark
           </label>
           <label class="pdp-options__option">
-            <input type="radio" name="box_style" value="Milk &amp; Dark · 16 pieces" data-pdp-type>
-            Milk &amp; Dark · 16 pieces
+            <input type="radio" name="box_pref" value="Mostly Milk" data-pdp-type>
+            Mostly Milk
           </label>
         </div>
       </fieldset>
@@ -81,7 +99,7 @@
           <button type="button" data-qty-plus aria-label="Increase"><img src="/assets/icons/plus.svg" alt="" width="16" height="16"></button>
         </div>
         <button type="button" class="btn btn--terracotta" data-pdp-add-cart>Add to Cart</button>
-        <a class="btn btn--olive" href="/build-box" data-pdp-build-box>Add to Build a Box</a>
+        <a class="btn btn--outline" href="/build-box" data-pdp-build-box>Customize This Box</a>
       </div>
     </div>
   </div>
@@ -89,27 +107,35 @@
   <div class="pdp-details">
     <div class="alton-editable" data-alton-editable>
       <div class="alton-editable__fallback">
-        <div class="pdp-details__grid">
-          <article>
-            <h2 class="product-title">Details</h2>
-            <p class="body-lg">Signature assortment of 12 bonbons and bars in ribbon-ready gift packaging. Ideal for birthdays, hostess gifts, and corporate thank-yous.</p>
+        <h2 class="pdp-details__heading">Description</h2>
+        <div class="pdp-details__columns">
+          <article class="pdp-details__col">
+            <h3 class="label">Box contents</h3>
+            <ul class="pdp-plain-list">
+              <li>3x Salted caramel bonbons</li>
+              <li>2x Chocolate pistachio barks</li>
+              <li>2x Chocolate and sea salt caramel bars</li>
+              <li>2x Sea salt caramels</li>
+              <li>1x Scone toffee</li>
+              <li>2x Chocolate and hazelnut cookies</li>
+            </ul>
           </article>
-          <article>
-            <h2 class="product-title">Ingredients</h2>
-            <p class="body-lg">Cacao, cane sugar, cocoa butter, cream, fruit purées, nuts, and natural flavors. See insert for full piece list.</p>
+          <article class="pdp-details__col">
+            <h3 class="label">Allergens</h3>
+            <p class="body-lg">May contain milk, eggs, wheat, soy, peanuts, tree nuts, and sesame. Products are prepared in a facility that handles these allergens, so cross-contact may occur.</p>
           </article>
-          <article>
-            <h2 class="product-title">Allergens</h2>
-            <p class="body-lg">Contains dairy and tree nuts. Produced in a facility that also handles soy and wheat.</p>
+          <article class="pdp-details__col">
+            <h3 class="label">Gift Information</h3>
+            <p class="body-lg">Each gift box is carefully hand-packed and presented in elegant, gift-ready packaging. Add a complimentary personal message at checkout.</p>
           </article>
-          <article>
-            <h2 class="product-title">Shipping</h2>
-            <p class="body-lg">Gift boxes ship with care cards and optional message inserts. Free shipping on orders over $75.</p>
-          </article>
+        </div>
+        <div class="pdp-details__shipping">
+          <h3 class="label">Shipping and storage</h3>
+          <p class="body-lg">Gift boxes are carefully packed to preserve freshness and presentation. Orders typically ship within 1–2 business days. Store in a cool, dry place between 60–68°F (16–20°C), away from sunlight, heat, moisture, and strong odors.</p>
         </div>
       </div>
       <div class="alton-editable__cms">
-        <squarespace:block-field id="giftPdpDetailsEdit" columns="12" label="EDIT: Gift details / ingredients / allergens / shipping" />
+        <squarespace:block-field id="giftPdpDetailsEdit" columns="12" label="EDIT: Gift description, box contents, allergens, gift info &amp; shipping" />
       </div>
     </div>
   </div>

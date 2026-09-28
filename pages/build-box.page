@@ -345,6 +345,7 @@
   </div>
 </section>
 
+{@|apply faq-section.block}
 {@|apply contact-section.block}
 {@|apply testimonials.block}
 {@|apply newsletter.block}

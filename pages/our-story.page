@@ -251,4 +251,5 @@
   </div>
 </section>
 
+{@|apply faq-section.block}
 {@|apply newsletter.block}

@@ -284,4 +284,6 @@
 
 {@|apply testimonials.block}
 
+{@|apply faq-section.block}
+
 {@|apply newsletter.block}
